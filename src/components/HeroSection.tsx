@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Sparkles, Code2, Zap } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-pixel-coding.png";
 import { GlitchText } from "@/components/GlitchText";
 import { getNextEvent } from "@/data/events";
@@ -63,19 +63,6 @@ export const HeroSection = () => {
             }}>
               A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
-            
-            {/* Tech Icons Row */}
-            <div className="flex gap-4 justify-center animate-slide-in" style={{ animationDelay: "0.3s" }}>
-              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
-                <Code2 className="w-6 h-6 text-accent" />
-              </div>
-              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
-                <Zap className="w-6 h-6 text-primary-glow" />
-              </div>
-              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-            </div>
             
             {/* Event Badge */}
             <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border-2 border-accent/50 animate-slide-in" style={{ 
