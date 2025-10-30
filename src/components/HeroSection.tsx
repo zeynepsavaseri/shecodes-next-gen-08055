@@ -7,13 +7,13 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20">
       {/* Hero image as background */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-35">
         <img
           src={heroImage}
           alt="Women coding at HerCode hackathon"
           className="w-full h-full object-cover pixelated-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-background/95" />
       </div>
       
       {/* Animated tech grid background */}
@@ -30,14 +30,18 @@ export const HeroSection = () => {
           <div className="space-y-6 md:space-y-8">
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-mono font-bold leading-tight tracking-wider">
                 <div className="relative inline-block">
+                  <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl mr-2">{"{"}</span>
                   <GlitchText 
                     text="HerCode" 
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-primary-glow" 
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-glow" 
                   />
-                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-primary-glow blur-xl opacity-50" style={{ letterSpacing: '0.05em' }}>
-                    HerCode
+                  <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl ml-2">{"}"}</span>
+                  <div className="absolute inset-0 blur-2xl opacity-40">
+                    <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl mr-2">{"{"}</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-glow">HerCode</span>
+                    <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl ml-2">{"}"}</span>
                   </div>
                 </div>
               </h1>
