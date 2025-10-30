@@ -53,7 +53,7 @@ export const MissionSection = () => {
               Our Mission
             </h3>
             <p className="text-sm md:text-base font-mono text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Empowering women to explore, create, and lead confidently in technology.<br />
+              Empowering women to explore, create, and lead confidently.<br />
               Everything we do is guided by three core principles that drive real impact:
             </p>
           </div>
