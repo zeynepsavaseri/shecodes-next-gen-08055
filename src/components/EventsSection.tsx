@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Users, ArrowRight, Code, Cpu } from "lucide-react";
+import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 const upcomingEvents = [
@@ -15,19 +15,11 @@ const pastEvents: any[] = [];
 
 export const EventsSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
-      {/* Tech grid background */}
-      <div className="absolute inset-0 tech-grid-bg opacity-30" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+      <div className="container mx-auto px-4">
         {/* Upcoming Events */}
         <div className="mb-20">
-          <div className="text-center mb-12 scanline">
-            <div className="inline-flex items-center gap-2 mb-4 text-primary">
-              <Cpu className="w-6 h-6 animate-pulse-glow" />
-              <span className="terminal-text text-sm tracking-wider">UPCOMING_EVENTS.init()</span>
-              <Code className="w-6 h-6 animate-pulse-glow" />
-            </div>
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
               Upcoming Events
             </h2>
@@ -40,11 +32,10 @@ export const EventsSection = () => {
             {upcomingEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-card rounded-lg border-2 border-primary/20 p-8 hover:border-primary/50 hover:shadow-pixel-lg transition-all hover:-translate-y-1 animate-fade-in relative overflow-hidden scanline"
+                className="bg-card rounded-lg shadow-card p-8 hover:shadow-pixel transition-all hover:-translate-y-1 animate-fade-in shadow-pixel-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full" />
-                <h3 className="text-2xl font-bold mb-4 text-foreground terminal-text">{event.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">{event.title}</h3>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center text-muted-foreground">
                     <Calendar className="w-5 h-5 mr-3 text-primary" />
@@ -60,8 +51,7 @@ export const EventsSection = () => {
                   </div>
                 </div>
                 <p className="text-foreground mb-6">{event.description}</p>
-                <Button className="w-full group shadow-pixel hover:shadow-pixel-lg terminal-text">
-                  <Code className="mr-2 w-4 h-4" />
+                <Button className="w-full group">
                   Register Now
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>

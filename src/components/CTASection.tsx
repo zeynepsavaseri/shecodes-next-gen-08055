@@ -1,19 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Heart, Zap } from "lucide-react";
+import { ArrowRight, Users, Sparkles, Heart } from "lucide-react";
 
 export const CTASection = () => {
   return (
     <section className="py-20 px-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-primary opacity-10" />
-      <div className="absolute inset-0 tech-grid-bg opacity-20" />
       
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-12 scanline">
-          <div className="inline-flex items-center gap-2 mb-4 text-primary">
-            <Zap className="w-6 h-6 animate-pulse-glow" />
-            <span className="terminal-text text-sm tracking-wider">&lt;Join /&gt;</span>
-            <Zap className="w-6 h-6 animate-pulse-glow" />
-          </div>
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Step Into the HerCode Community
@@ -23,13 +17,11 @@ export const CTASection = () => {
 
         <div className="grid md:grid-cols-1 gap-8 mb-8 max-w-2xl mx-auto">
           {/* Community Member */}
-          <div className="bg-card rounded-2xl border-2 border-primary/20 p-8 hover:border-primary/50 hover:shadow-pixel-lg transition-all hover:-translate-y-1 relative overflow-hidden scanline">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-br-full" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary/5 rounded-tl-full" />
-            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-6 mx-auto shine-dot shadow-pixel animate-pulse-glow relative z-10">
+          <div className="bg-card rounded-2xl shadow-card p-8 hover:shadow-pixel transition-all hover:-translate-y-1 shadow-pixel-sm">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-6 mx-auto animate-float shine-dot shadow-pixel-sm">
               <Heart className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-center terminal-text">Community Member</h3>
+            <h3 className="text-2xl font-bold mb-4 text-center">Community Member</h3>
             <p className="text-muted-foreground text-center mb-6">
               Become part of our empowering community. Stay connected with inspiring women, find co-founders, and access exclusive events.
             </p>
@@ -51,8 +43,7 @@ export const CTASection = () => {
                 <span className="text-foreground">Get mentorship for your startup & VC connections</span>
               </li>
             </ul>
-            <Button size="lg" className="w-full group shadow-pixel hover:shadow-pixel-lg terminal-text">
-              <Zap className="mr-2 h-5 w-5" />
+            <Button size="lg" className="w-full group shadow-glow">
               Become a Member
               <Users className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
