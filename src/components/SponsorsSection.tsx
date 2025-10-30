@@ -1,4 +1,3 @@
-import { Briefcase, Award, Users, Network } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -16,24 +15,19 @@ export const SponsorsSection = () => {
 
   const companyBenefits = [
     {
-      icon: Briefcase,
-      title: "Talent Discovery",
-      description: "Access a pool of skilled women developers ready to join your team",
+      emoji: "💼",
+      title: "Talent & Engagement",
+      description: "Connect with skilled women through collaborative events and experience their talent in action.",
     },
     {
-      icon: Award,
-      title: "Diversity Goals",
-      description: "Build a more diverse team aligned with modern workplace values",
+      emoji: "🎯",
+      title: "Diversity & Inclusion",
+      description: "Build a stronger, more inclusive team that reflects modern workplace values and fuels innovation.",
     },
     {
-      icon: Users,
-      title: "Brand Building",
-      description: "Showcase your commitment to diversity and inclusion in tech",
-    },
-    {
-      icon: Network,
-      title: "Direct Engagement",
-      description: "Interact with potential hires in a collaborative environment",
+      emoji: "🌐",
+      title: "Brand Impact",
+      description: "Demonstrate your commitment to diversity and equality while positioning your company as a forward-thinking industry leader.",
     },
   ];
 
@@ -79,13 +73,13 @@ export const SponsorsSection = () => {
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {companyBenefits.map((benefit, index) => (
             <Card key={index} className="bg-card hover:shadow-glow transition-all group hover:-translate-y-1">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform pixel-border">
-                    <benefit.icon className="w-6 h-6 text-white" />
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="text-4xl group-hover:scale-110 transition-transform">
+                    {benefit.emoji}
                   </div>
                   <div>
                     <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
