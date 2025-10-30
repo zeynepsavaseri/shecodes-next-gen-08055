@@ -75,12 +75,12 @@ export const HeroSection = () => {
             }}>
               <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
               <span className="text-sm md:text-base text-white font-medium" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)' }}>
-                Next Event: Coming Soon
+                Next Event: March 15, 2026
               </span>
             </div>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
+            {/* CTA Button */}
+            <div className="flex justify-center pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
               <Button 
                 size="lg" 
                 className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-base md:text-lg px-8 py-6 overflow-hidden transition-all duration-300"
@@ -100,23 +100,6 @@ export const HeroSection = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-white/40 text-white hover:bg-white/20 hover:border-accent text-base md:text-lg px-8 py-6 transition-all duration-300"
-                style={{ 
-                  background: 'rgba(0, 0, 0, 0.4)',
-                  backdropFilter: 'blur(12px)',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
-                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)'
-                }}
-                onClick={() => {
-                  const element = document.getElementById('mission');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Learn More
               </Button>
             </div>
           </div>
