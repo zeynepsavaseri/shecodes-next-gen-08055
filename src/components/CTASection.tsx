@@ -8,7 +8,7 @@ export const CTASection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel leading-tight mb-4 uppercase" style={{ letterSpacing: '0.1em' }}>
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Step Into the HerCode Community
             </span>
@@ -21,38 +21,38 @@ export const CTASection = () => {
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-6 mx-auto animate-float shine-dot shadow-pixel-sm">
               <Heart className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-center">Community Member</h3>
-            <p className="text-muted-foreground text-center mb-6">
-              Become part of our empowering community. Stay connected with inspiring women, find co-founders, and access exclusive events.
+            <h3 className="text-xl font-mono font-bold mb-4 text-center uppercase tracking-wider">Community Member</h3>
+            <p className="text-sm font-mono text-muted-foreground text-center mb-6">
+              {">"} Become part of our empowering community. Stay connected with inspiring women, find co-founders, and access exclusive events.
             </p>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
-                <ArrowRight className="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Join exclusive member events</span>
+                <ArrowRight className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                <span className="text-sm font-mono text-foreground">Join exclusive member events</span>
               </li>
               <li className="flex items-start">
-                <ArrowRight className="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Find co-founders & build together</span>
+                <ArrowRight className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                <span className="text-sm font-mono text-foreground">Find co-founders & build together</span>
               </li>
               <li className="flex items-start">
-                <ArrowRight className="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Stay in the loop with our network and access whatsapp account</span>
+                <ArrowRight className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                <span className="text-sm font-mono text-foreground">Stay in the loop with our network and access whatsapp account</span>
               </li>
               <li className="flex items-start">
-                <ArrowRight className="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Get mentorship for your startup & VC connections</span>
+                <ArrowRight className="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" />
+                <span className="text-sm font-mono text-foreground">Get mentorship for your startup & VC connections</span>
               </li>
             </ul>
-            <Button size="lg" className="w-full group shadow-glow">
-              Become a Member
-              <Users className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="w-full group shadow-glow font-mono font-bold uppercase text-sm tracking-wider">
+              {">"} Become a Member
+              <Users className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
         
         <div className="text-center">
-          <p className="text-sm text-muted-foreground">
-            Questions or inquiries? Reach out to us at <a href="mailto:zsavaseri@ethz.ch" className="text-primary font-medium hover:underline">zsavaseri@ethz.ch</a>
+          <p className="text-xs font-mono text-muted-foreground">
+            {">"} Questions or inquiries? Reach out to us at <a href="mailto:zsavaseri@ethz.ch" className="text-primary font-mono font-bold hover:underline">zsavaseri@ethz.ch</a>
           </p>
         </div>
       </div>

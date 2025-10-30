@@ -50,18 +50,18 @@ export const MissionSection = () => {
         {/* What is HerCode */}
         <div className="relative mb-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-primary">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel mb-6 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
               What is HerCode?
             </h2>
-            <div className="space-y-6 text-base md:text-lg text-foreground/80 leading-relaxed">
+            <div className="space-y-6 text-sm md:text-base font-mono text-foreground/80 leading-relaxed">
               <p>
-                HerCode started from a simple observation: women are vastly underrepresented in the tech and entrepreneurial space, yet their potential is limitless.
+                {">"} HerCode started from a simple observation: women are vastly underrepresented in the tech and entrepreneurial space, yet their potential is limitless.
               </p>
               <p>
-                Many talented women hesitate to join these environments. Not because of a lack of ability, but because they often don't see themselves represented or encouraged. HerCode was created to change that.
+                {">"} Many talented women hesitate to join these environments. Not because of a lack of ability, but because they often don't see themselves represented or encouraged. HerCode was created to change that.
               </p>
               <p>
-                We're building a space where women feel welcome to explore technology, experiment fearlessly, and grow their confidence through hands-on learning. HerCode connects ambitious, curious women who want to challenge themselves, support one another, and step boldly into the world of tech.
+                {">"} We're building a space where women feel welcome to explore technology, experiment fearlessly, and grow their confidence through hands-on learning. HerCode connects ambitious, curious women who want to challenge themselves, support one another, and step boldly into the world of tech.
               </p>
             </div>
           </div>
@@ -70,10 +70,10 @@ export const MissionSection = () => {
         {/* Our Values */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
-              Our Core Values
+            <h3 className="text-xl md:text-2xl font-mono font-bold mb-3 text-foreground uppercase tracking-wider">
+              {">"} Our Core Values
             </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
@@ -95,8 +95,8 @@ export const MissionSection = () => {
                   {/* Glowing ring */}
                   <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:scale-125 transition-transform duration-500" />
                 </div>
-                <h4 className="text-xl font-bold mb-4 text-foreground">{value.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">
+                <h4 className="text-lg font-mono font-bold mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
+                <p className="text-sm font-mono text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </div>
