@@ -33,7 +33,7 @@ export const BenefitsSection = () => {
             Why Join Us
           </h2>
           <p className="text-sm font-mono text-muted-foreground">
-            {">"} Value for everyone in our community
+            Value for everyone in our community
           </p>
         </div>
 

@@ -24,7 +24,7 @@ export const EventsSection = () => {
               Upcoming Events
             </h2>
             <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
-              {">"} Join us at our next events and be part of the change
+              Join us at our next events and be part of the change
             </p>
           </div>
 
@@ -39,20 +39,20 @@ export const EventsSection = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center text-sm font-mono text-muted-foreground">
                     <Calendar className="w-5 h-5 mr-3 text-primary" />
-                    <span>{">"} {event.date}</span>
+                    <span>{event.date}</span>
                   </div>
                   <div className="flex items-center text-sm font-mono text-muted-foreground">
                     <MapPin className="w-5 h-5 mr-3 text-primary" />
-                    <span>{">"} {event.location}</span>
+                    <span>{event.location}</span>
                   </div>
                   <div className="flex items-center text-sm font-mono text-muted-foreground">
                     <Users className="w-5 h-5 mr-3 text-primary" />
-                    <span>{">"} {event.participants}</span>
+                    <span>{event.participants}</span>
                   </div>
                 </div>
                 <p className="text-sm font-mono text-foreground mb-6">{event.description}</p>
                 <Button className="w-full group font-mono font-bold uppercase text-xs tracking-wider">
-                  {">"} Register Now
+                  Register Now
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>

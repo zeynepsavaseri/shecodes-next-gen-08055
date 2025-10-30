@@ -55,13 +55,13 @@ export const MissionSection = () => {
             </h2>
             <div className="space-y-6 text-sm md:text-base font-mono text-foreground/80 leading-relaxed">
               <p>
-                {">"} HerCode started from a simple observation: women are vastly underrepresented in the tech and entrepreneurial space, yet their potential is limitless.
+              HerCode started from a simple observation: women are vastly underrepresented in the tech and entrepreneurial space, yet their potential is limitless.
               </p>
               <p>
-                {">"} Many talented women hesitate to join these environments. Not because of a lack of ability, but because they often don't see themselves represented or encouraged. HerCode was created to change that.
+                Many talented women hesitate to join these environments. Not because of a lack of ability, but because they often don't see themselves represented or encouraged. HerCode was created to change that.
               </p>
               <p>
-                {">"} We're building a space where women feel welcome to explore technology, experiment fearlessly, and grow their confidence through hands-on learning. HerCode connects ambitious, curious women who want to challenge themselves, support one another, and step boldly into the world of tech.
+                We're building a space where women feel welcome to explore technology, experiment fearlessly, and grow their confidence through hands-on learning. HerCode connects ambitious, curious women who want to challenge themselves, support one another, and step boldly into the world of tech.
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export const MissionSection = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-xl md:text-2xl font-mono font-bold mb-3 text-foreground uppercase tracking-wider">
-              {">"} Our Core Values
+              Our Core Values
             </h3>
             <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do

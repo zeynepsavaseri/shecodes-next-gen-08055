@@ -10,32 +10,32 @@ export const Footer = () => {
               HerCode
             </h3>
             <p className="text-xs font-mono text-muted-foreground">
-              {">"} Empowering women in technology through community, mentorship, and opportunity.
+              Empowering women in technology through community, mentorship, and opportunity.
             </p>
           </div>
           
           <div>
-            <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">{">"} Quick Links</h4>
+            <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2 text-xs font-mono text-muted-foreground">
-              <li><a href="#mission" className="hover:text-primary transition-colors">{">"} Mission</a></li>
-              <li><a href="#events" className="hover:text-primary transition-colors">{">"} Events</a></li>
-              <li><a href="#testimonials" className="hover:text-primary transition-colors">{">"} Testimonials</a></li>
-              <li><a href="#sponsors" className="hover:text-primary transition-colors">{">"} Sponsors</a></li>
+              <li><a href="#mission" className="hover:text-primary transition-colors">Mission</a></li>
+              <li><a href="#events" className="hover:text-primary transition-colors">Events</a></li>
+              <li><a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a></li>
+              <li><a href="#sponsors" className="hover:text-primary transition-colors">Sponsors</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">{">"} Get Involved</h4>
+            <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">Get Involved</h4>
             <ul className="space-y-2 text-xs font-mono text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">{">"} Participate</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{">"} Mentor</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{">"} Sponsor</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{">"} Volunteer</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Participate</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Mentor</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Sponsor</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Volunteer</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">{">"} Connect</h4>
+            <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">Connect</h4>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Linkedin className="w-5 h-5" />
@@ -48,9 +48,9 @@ export const Footer = () => {
         </div>
         
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-muted-foreground">
-          <p>{">"} &copy; 2025 HerCode. All rights reserved.</p>
+          <p>&copy; 2025 HerCode. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            {">"} Made with <Heart className="w-3 h-3 text-primary fill-current" /> for women in tech
+            Made with <Heart className="w-3 h-3 text-primary fill-current" /> for women in tech
           </p>
         </div>
       </div>

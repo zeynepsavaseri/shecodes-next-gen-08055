@@ -58,7 +58,7 @@ export const SponsorsSection = () => {
                 className="flex-shrink-0 w-64 h-32 mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover:shadow-pixel transition-all p-6"
               >
                 {sponsor.isComingSoon ? (
-                  <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">{">"} Coming Soon</span>
+                  <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
                 ) : (
                   <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
                 )}
@@ -71,9 +71,9 @@ export const SponsorsSection = () => {
           <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Become a Partner
           </h2>
-          <p className="text-sm font-mono text-muted-foreground mb-6">{">"} Benefits for companies</p>
+          <p className="text-sm font-mono text-muted-foreground mb-6">Benefits for companies</p>
           <Button size="lg" className="shadow-glow font-mono font-bold uppercase text-sm tracking-wider">
-            {">"} Partner Up with Us
+            Partner Up with Us
           </Button>
         </div>
 

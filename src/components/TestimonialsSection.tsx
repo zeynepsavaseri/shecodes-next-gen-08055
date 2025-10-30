@@ -12,7 +12,7 @@ export const TestimonialsSection = () => {
             What Our Participants Say
           </h2>
           <p className="text-xs md:text-sm font-mono text-muted-foreground max-w-2xl mx-auto px-4">
-            {">"} Participant statements coming soon
+            Participant statements coming soon
           </p>
         </div>
 

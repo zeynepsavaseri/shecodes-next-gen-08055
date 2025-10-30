@@ -64,7 +64,7 @@ export const Header = () => {
               className="bg-gradient-primary hover:shadow-glow-intense text-xs sm:text-sm font-mono font-bold uppercase tracking-wider px-3 sm:px-4 transition-all duration-300"
               size="sm"
             >
-              <span className="hidden sm:inline">{">"} Become a Member</span>
+              <span className="hidden sm:inline">Become a Member</span>
               <span className="sm:hidden">Join</span>
             </Button>
           </nav>

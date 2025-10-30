@@ -23,7 +23,7 @@ export const CTASection = () => {
             </div>
             <h3 className="text-xl font-mono font-bold mb-4 text-center uppercase tracking-wider">Community Member</h3>
             <p className="text-sm font-mono text-muted-foreground text-center mb-6">
-              {">"} Become part of our empowering community. Stay connected with inspiring women, find co-founders, and access exclusive events.
+              Become part of our empowering community. Stay connected with inspiring women, find co-founders, and access exclusive events.
             </p>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
@@ -44,7 +44,7 @@ export const CTASection = () => {
               </li>
             </ul>
             <Button size="lg" className="w-full group shadow-glow font-mono font-bold uppercase text-sm tracking-wider">
-              {">"} Become a Member
+              Become a Member
               <Users className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
@@ -52,7 +52,7 @@ export const CTASection = () => {
         
         <div className="text-center">
           <p className="text-xs font-mono text-muted-foreground">
-            {">"} Questions or inquiries? Reach out to us at <a href="mailto:zsavaseri@ethz.ch" className="text-primary font-mono font-bold hover:underline">zsavaseri@ethz.ch</a>
+            Questions or inquiries? Reach out to us at <a href="mailto:zsavaseri@ethz.ch" className="text-primary font-mono font-bold hover:underline">zsavaseri@ethz.ch</a>
           </p>
         </div>
       </div>

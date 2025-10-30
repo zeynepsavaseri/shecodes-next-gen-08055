@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Sparkles, Code2, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-pixel-coding.png";
+import { GlitchText } from "@/components/GlitchText";
 
 export const HeroSection = () => {
   return (
@@ -30,12 +31,12 @@ export const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel leading-tight">
-                <span className="text-white" style={{ 
+                <div className="text-white" style={{ 
                   textShadow: '4px 4px 0px rgba(290, 85, 75, 0.8), 0 0 40px rgba(290, 85, 75, 0.6)',
                   letterSpacing: '0.05em'
                 }}>
-                  HerCode
-                </span>
+                  <GlitchText text="HerCode" className="text-white" />
+                </div>
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
                 Empowering Women in Tech
@@ -50,7 +51,7 @@ export const HeroSection = () => {
               animationDelay: "0.2s",
               textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
             }}>
-              {">"} A hackathon and event series where young women explore, build, and grow in the world of technology.
+              A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
             
             {/* Tech Icons Row */}
@@ -75,7 +76,7 @@ export const HeroSection = () => {
             }}>
               <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
               <span className="text-xs md:text-sm text-white font-mono font-bold uppercase tracking-wider" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)' }}>
-                {">"} Next Event: March 15, 2026
+                Next Event: March 15, 2026
               </span>
             </div>
             
@@ -96,7 +97,7 @@ export const HeroSection = () => {
                 }}
               >
                 <span className="relative z-10 flex items-center gap-2 font-mono font-bold uppercase tracking-wider text-sm md:text-base">
-                  {">"} Join Our Events
+                  Join Our Events
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
