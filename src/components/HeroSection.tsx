@@ -1,20 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Sparkles, Code2, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-coding.png";
-import { GlitchText } from "@/components/GlitchText";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20 scanline-effect">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20">
       {/* Animated tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-30" />
-      
-      {/* Data streams */}
-      <div className="data-stream" style={{ left: "10%", animationDelay: "0s" }} />
-      <div className="data-stream" style={{ left: "30%", animationDelay: "0.5s" }} />
-      <div className="data-stream" style={{ left: "50%", animationDelay: "1s" }} />
-      <div className="data-stream" style={{ left: "70%", animationDelay: "1.5s" }} />
-      <div className="data-stream" style={{ left: "90%", animationDelay: "0.3s" }} />
       
       {/* Floating orbs */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float-slow" />
@@ -28,10 +20,9 @@ export const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <GlitchText 
-                  text="HerCode" 
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white"
-                />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
+                  HerCode
+                </span>
               </h1>
               <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
                 Empowering Women in Tech
@@ -48,19 +39,19 @@ export const HeroSection = () => {
             
             {/* Tech Icons Row */}
             <div className="flex gap-4 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: "0.3s" }}>
-              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all animate-tech-flicker">
+              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
                 <Code2 className="w-6 h-6 text-accent" />
               </div>
-              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all animate-tech-flicker" style={{ animationDelay: "0.5s" }}>
+              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
                 <Zap className="w-6 h-6 text-primary-glow" />
               </div>
-              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all animate-tech-flicker" style={{ animationDelay: "1s" }}>
+              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
             </div>
             
             {/* Event Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-3 glass-effect rounded-full border border-accent/30 animate-slide-in animate-hologram" style={{ animationDelay: "0.4s" }}>
+            <div className="inline-flex items-center gap-2 px-5 py-3 glass-effect rounded-full border border-accent/30 animate-slide-in" style={{ animationDelay: "0.4s" }}>
               <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
               <span className="text-sm md:text-base text-white/90 font-medium">
                 Next Event: Coming Soon
