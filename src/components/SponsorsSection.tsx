@@ -6,7 +6,7 @@ export const SponsorsSection = () => {
   const sponsors = [
     {
       name: "Lovable",
-      logo: "https://lovable.dev/lovable-logo.svg",
+      logo: "/lovable-logo.png",
       isComingSoon: false,
     },
     { name: "Coming Soon", logo: "", isComingSoon: true },
@@ -57,12 +57,6 @@ export const SponsorsSection = () => {
               >
                 {sponsor.isComingSoon ? (
                   <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
-                ) : sponsor.name === "Lovable" ? (
-                  <div className="flex items-center gap-2">
-                    <span className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary-glow bg-clip-text text-transparent">
-                      Lovable
-                    </span>
-                  </div>
                 ) : (
                   <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
                 )}
