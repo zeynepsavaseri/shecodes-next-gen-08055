@@ -32,10 +32,10 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-sm shadow-glow border-b border-border"
-          : "bg-card/80 backdrop-blur-sm border-b border-border/50"
+          ? "bg-card/98 backdrop-blur-xl shadow-elevated border-b border-primary/20"
+          : "bg-card/90 backdrop-blur-md border-b border-border/30"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4">
@@ -43,7 +43,7 @@ export const Header = () => {
           <img 
             src={hercodeLogo}
             alt="HerCode Logo"
-            className="h-9 sm:h-10 md:h-12 w-auto cursor-pointer hover:scale-105 transition-transform"
+            className="h-9 sm:h-10 md:h-12 w-auto cursor-pointer hover:scale-105 transition-all duration-300 filter drop-shadow-lg"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
 
@@ -53,15 +53,15 @@ export const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-xs lg:text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group"
+                className="text-xs lg:text-sm text-foreground/70 hover:text-primary transition-all font-display font-semibold uppercase tracking-wide relative group"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full shadow-glow" />
               </button>
             ))}
             <Button
               onClick={() => scrollToSection("cta")}
-              className="bg-gradient-primary hover:shadow-glow-intense text-xs sm:text-sm font-mono font-bold uppercase tracking-wider px-3 sm:px-4 transition-all duration-300"
+              className="bg-gradient-primary hover:shadow-glow-intense text-xs sm:text-sm font-display font-bold uppercase tracking-wider px-4 sm:px-6 transition-all duration-300 hover:scale-105"
               size="sm"
             >
               <span className="hidden sm:inline">Become a Member</span>
