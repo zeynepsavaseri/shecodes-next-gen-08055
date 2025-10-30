@@ -228,6 +228,84 @@ All colors MUST be HSL.
     background-size: 50px 50px;
   }
 
+  /* Scanline effect */
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .scanline-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent)), transparent);
+    animation: scanline 3s linear infinite;
+    opacity: 0.3;
+  }
+
+  /* Data stream effect */
+  @keyframes data-stream {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  .data-stream {
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, hsl(var(--primary-glow)), transparent);
+    animation: data-stream 2s linear infinite;
+  }
+
+  /* Tech flicker */
+  @keyframes tech-flicker {
+    0%, 100% { opacity: 1; }
+    41% { opacity: 1; }
+    42% { opacity: 0.8; }
+    43% { opacity: 1; }
+    45% { opacity: 0.9; }
+    46% { opacity: 1; }
+  }
+
+  .animate-tech-flicker {
+    animation: tech-flicker 4s infinite;
+  }
+
+  /* Hologram effect */
+  @keyframes hologram {
+    0%, 100% {
+      opacity: 0.8;
+      text-shadow: 0 0 10px hsl(var(--primary-glow)), 0 0 20px hsl(var(--accent));
+    }
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 20px hsl(var(--primary-glow)), 0 0 40px hsl(var(--accent));
+    }
+  }
+
+  .animate-hologram {
+    animation: hologram 2s ease-in-out infinite;
+  }
+
   @keyframes pixel-pop {
     0%, 100% {
       transform: translateY(0) scale(1);
