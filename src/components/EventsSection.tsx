@@ -9,7 +9,7 @@ export const EventsSection = () => {
         {/* Upcoming Events */}
         <div className="mb-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               Upcoming Events
             </h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto font-medium">
@@ -58,7 +58,7 @@ export const EventsSection = () => {
         {/* Past Events */}
         <div>
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-pixel mb-6 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+            <h3 className="text-2xl md:text-3xl font-pixel mb-6 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               Past Events
             </h3>
             <p className="text-base text-muted-foreground font-medium">

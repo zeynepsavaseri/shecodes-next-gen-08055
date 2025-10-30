@@ -31,7 +31,7 @@ export const MissionSection = () => {
         {/* What is HerCode */}
         <div className="relative mb-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-pixel mb-8 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel mb-6 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
               What is HerCode?
             </h2>
             <div className="space-y-6 text-base md:text-lg text-foreground/80 leading-relaxed font-medium">
@@ -48,7 +48,7 @@ export const MissionSection = () => {
         {/* Our Mission */}
         <div>
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-pixel mb-8 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
+            <h3 className="text-2xl md:text-3xl font-pixel mb-6 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
               Our Mission
             </h3>
             <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">

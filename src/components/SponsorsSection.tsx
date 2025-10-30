@@ -36,7 +36,7 @@ export const SponsorsSection = () => {
     <section className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+          <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Backed by Industry Leaders
           </h2>
         </div>
@@ -65,7 +65,7 @@ export const SponsorsSection = () => {
         </div>
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-pixel mb-6 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+          <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Become a Partner
           </h2>
           <p className="text-base text-muted-foreground mb-8 font-medium">Benefits for companies</p>

@@ -10,7 +10,7 @@ export const CTASection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Step Into the HerCode Community
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
