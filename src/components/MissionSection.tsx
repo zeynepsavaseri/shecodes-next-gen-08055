@@ -1,21 +1,19 @@
-import { Users, Lightbulb, Heart } from "lucide-react";
-
 export const MissionSection = () => {
   const values = [
     {
-      icon: Heart,
+      emoji: "💜",
       title: "Inclusion",
-      description: "We're building a welcoming space where every woman feels empowered to step into tech — and stay. By closing the gender gap, we open new pathways for representation and opportunity."
+      description: "A space where every woman feels welcome in tech and empowered to thrive."
     },
     {
-      icon: Lightbulb,
-      title: "Curiosity", 
-      description: "We encourage learning, exploration, and the courage to try something new. Diverse ideas spark innovation, and collaboration allows them to grow."
+      emoji: "⚡",
+      title: "Courage", 
+      description: "Curiosity and bold ideas drive us to learn, build, and create fearlessly."
     },
     {
-      icon: Users,
+      emoji: "👭",
       title: "Community",
-      description: "We're creating a strong support network where women lift each other up through mentorship, shared experience, and lasting friendships — because success is easier together."
+      description: "Women supporting women, growing together through connection and collaboration."
     }
   ];
 
@@ -69,8 +67,8 @@ export const MissionSection = () => {
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity" />
                 
                 <div className="relative inline-block mb-3 md:mb-6">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow">
-                    <value.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow text-2xl md:text-3xl">
+                    {value.emoji}
                   </div>
                   {/* Glowing ring */}
                   <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:scale-125 transition-transform duration-500" />
