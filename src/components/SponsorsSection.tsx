@@ -58,7 +58,12 @@ export const SponsorsSection = () => {
                 {sponsor.isComingSoon ? (
                   <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
                 ) : (
-                  <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+                  <img 
+                    src={sponsor.logo} 
+                    alt={sponsor.name} 
+                    className="max-w-full max-h-full object-contain"
+                    style={sponsor.name === "Lovable" ? { filter: 'brightness(0) invert(1)' } : {}}
+                  />
                 )}
               </div>
             ))}
