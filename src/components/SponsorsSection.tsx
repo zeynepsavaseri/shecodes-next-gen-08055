@@ -1,3 +1,4 @@
+import { Briefcase, Target, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -15,17 +16,17 @@ export const SponsorsSection = () => {
 
   const companyBenefits = [
     {
-      emoji: "💼",
+      icon: Briefcase,
       title: "Talent & Engagement",
       description: "Connect with skilled women through collaborative events and experience their talent in action.",
     },
     {
-      emoji: "🎯",
+      icon: Target,
       title: "Diversity & Inclusion",
       description: "Build a stronger, more inclusive team that reflects modern workplace values and fuels innovation.",
     },
     {
-      emoji: "🌐",
+      icon: Globe,
       title: "Brand Impact",
       description: "Demonstrate your commitment to diversity and equality while positioning your company as a forward-thinking industry leader.",
     },
@@ -78,8 +79,8 @@ export const SponsorsSection = () => {
             <Card key={index} className="bg-card hover:shadow-glow transition-all group hover:-translate-y-1">
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center gap-4">
-                  <div className="text-4xl group-hover:scale-110 transition-transform">
-                    {benefit.emoji}
+                  <div className="w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-pixel-sm">
+                    <benefit.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
