@@ -1,18 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Code2, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles, Zap, Code } from "lucide-react";
 import heroImage from "@/assets/hero-pixel.jpg";
-import { PixelDecoration } from "@/components/PixelDecoration";
 import { GlitchText } from "@/components/GlitchText";
 
 export const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-hero pt-16 md:pt-20">
-      {/* Pixel decorations scattered throughout */}
-      <PixelDecoration variant="small" color="secondary" animation="drift" position={{ top: '10%', left: '5%' }} />
-      <PixelDecoration variant="medium" color="accent" animation="pulse" position={{ top: '20%', right: '10%' }} />
-      <PixelDecoration variant="small" color="primary" animation="float" position={{ bottom: '30%', left: '15%' }} />
-      <PixelDecoration variant="large" color="secondary" animation="pop" position={{ top: '40%', right: '5%' }} />
-      <PixelDecoration variant="medium" color="accent" animation="drift" position={{ bottom: '20%', right: '20%' }} />
+      {/* Animated gradient orbs */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       
       {/* Scanline effect */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
@@ -23,15 +20,31 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-6 md:space-y-8 animate-fade-in">
             {/* Main Tagline */}
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
-                <Code2 className="w-5 h-5 text-primary-glow animate-pulse-glow" />
-                <span className="text-sm text-white/80 font-mono tracking-wider">HACKATHON · COMMUNITY · INNOVATION</span>
-                <Sparkles className="w-4 h-4 text-accent animate-pulse-glow" />
+            <div className="space-y-6">
+              <div className="relative inline-block">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white pixel-border inline-block px-8 md:px-12 py-4 md:py-6 bg-white/5 backdrop-blur-sm relative">
+                  <GlitchText text="HerCode" />
+                  {/* Decorative tech elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 border-4 border-accent animate-spin" style={{ animationDuration: '8s' }} />
+                  <div className="absolute -bottom-4 -left-4 w-6 h-6 border-4 border-secondary animate-pulse" />
+                </h1>
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white pixel-border inline-block px-8 py-4 bg-white/5 backdrop-blur-sm">
-                <GlitchText text="HerCode" />
-              </h1>
+              
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
+                  <Code className="w-4 h-4 text-white animate-pulse" />
+                  <span className="text-sm md:text-base text-white/90 font-mono">Code</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
+                  <Zap className="w-4 h-4 text-white animate-pulse" style={{ animationDelay: '0.5s' }} />
+                  <span className="text-sm md:text-base text-white/90 font-mono">Create</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
+                  <Sparkles className="w-4 h-4 text-white animate-pulse" style={{ animationDelay: '1s' }} />
+                  <span className="text-sm md:text-base text-white/90 font-mono">Connect</span>
+                </div>
+              </div>
+              
               <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white/95 font-mono">
                 Empowering Women in Tech & Entrepreneurship
               </p>
