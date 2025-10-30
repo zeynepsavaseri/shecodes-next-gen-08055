@@ -1,14 +1,18 @@
-import { Heart, Linkedin, Instagram } from "lucide-react";
+import { Heart, Linkedin, Instagram, Terminal } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="border-t bg-card/50">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="border-t-2 border-primary/20 bg-card/50 relative overflow-hidden">
+      <div className="absolute inset-0 tech-grid-bg opacity-10" />
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
-              HerCode
-            </h3>
+            <div className="flex items-center gap-2">
+              <Terminal className="w-5 h-5 text-primary animate-pulse-glow" />
+              <h3 className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent terminal-text">
+                HerCode
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               Empowering women in technology through community, mentorship, and opportunity.
             </p>
@@ -35,12 +39,12 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-sm mb-4">Connect</h4>
+            <h4 className="font-semibold text-sm mb-4 terminal-text">Connect</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-lg border-2 border-primary/30 bg-muted flex items-center justify-center hover:border-primary hover:bg-primary hover:text-white hover:shadow-pixel transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-lg border-2 border-primary/30 bg-muted flex items-center justify-center hover:border-primary hover:bg-primary hover:text-white hover:shadow-pixel transition-all">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
