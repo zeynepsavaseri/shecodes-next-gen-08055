@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Sparkles, Code2, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-coding.png";
+import heroImage from "@/assets/hero-pixel-coding.png";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20">
       {/* Hero image as background */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <img
           src={heroImage}
           alt="Women coding at HerCode hackathon"
           className="w-full h-full object-cover pixelated-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-background/90" />
       </div>
       
       {/* Animated tech grid background */}
@@ -30,20 +30,26 @@ export const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white drop-shadow-lg">
+                <span className="text-white" style={{ 
+                  textShadow: '0 0 30px rgba(290, 85, 75, 0.8), 0 0 60px rgba(290, 85, 75, 0.6), 0 4px 20px rgba(0, 0, 0, 0.5)',
+                  WebkitTextStroke: '2px rgba(290, 85, 75, 0.3)'
+                }}>
                   HerCode
                 </span>
               </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95 drop-shadow-md">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white" style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.9), 0 4px 10px rgba(0, 0, 0, 0.7)' }}>
                 Empowering Women in Tech
               </p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95 drop-shadow-md">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white" style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.9), 0 4px 10px rgba(0, 0, 0, 0.7)' }}>
                 & Entrepreneurship
               </p>
             </div>
             
             {/* Value Proposition */}
-            <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed animate-slide-in drop-shadow-md" style={{ animationDelay: "0.2s" }}>
+            <p className="text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto leading-relaxed animate-slide-in" style={{ 
+              animationDelay: "0.2s",
+              textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
+            }}>
               A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
             
@@ -61,9 +67,14 @@ export const HeroSection = () => {
             </div>
             
             {/* Event Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-3 glass-effect rounded-full border border-accent/30 animate-slide-in" style={{ animationDelay: "0.4s" }}>
+            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border-2 border-accent/50 animate-slide-in" style={{ 
+              animationDelay: "0.4s",
+              background: 'rgba(0, 0, 0, 0.6)',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 0 30px rgba(290, 85, 75, 0.4)'
+            }}>
               <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
-              <span className="text-sm md:text-base text-white/90 font-medium">
+              <span className="text-sm md:text-base text-white font-medium" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)' }}>
                 Next Event: Coming Soon
               </span>
             </div>
@@ -72,7 +83,13 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
               <Button 
                 size="lg" 
-                className="group relative bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white hover:bg-white hover:text-primary shadow-glow text-base md:text-lg px-8 py-6 overflow-hidden transition-all duration-300"
+                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-base md:text-lg px-8 py-6 overflow-hidden transition-all duration-300"
+                style={{ 
+                  background: 'rgba(0, 0, 0, 0.5)',
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 0 40px rgba(290, 85, 75, 0.5), 0 4px 20px rgba(0, 0, 0, 0.6)',
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)'
+                }}
                 onClick={() => {
                   const element = document.getElementById('events');
                   element?.scrollIntoView({ behavior: 'smooth' });
@@ -87,7 +104,13 @@ export const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="glass-effect border-white/30 text-white hover:bg-white/20 hover:border-accent text-base md:text-lg px-8 py-6 transition-all duration-300"
+                className="border-2 border-white/40 text-white hover:bg-white/20 hover:border-accent text-base md:text-lg px-8 py-6 transition-all duration-300"
+                style={{ 
+                  background: 'rgba(0, 0, 0, 0.4)',
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)'
+                }}
                 onClick={() => {
                   const element = document.getElementById('mission');
                   element?.scrollIntoView({ behavior: 'smooth' });
