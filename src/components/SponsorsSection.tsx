@@ -62,7 +62,6 @@ export const SponsorsSection = () => {
                     src={sponsor.logo} 
                     alt={sponsor.name} 
                     className="max-w-full max-h-full object-contain"
-                    style={sponsor.name === "Lovable" ? { filter: 'brightness(0) invert(1)' } : {}}
                   />
                 )}
               </div>
