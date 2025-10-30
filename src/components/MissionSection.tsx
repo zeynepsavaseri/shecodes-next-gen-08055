@@ -38,12 +38,19 @@ export const MissionSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 bg-background overflow-hidden">
+      {/* Tech grid background */}
+      <div className="absolute inset-0 tech-grid opacity-20" />
+      
+      {/* Floating orbs */}
+      <div className="absolute top-20 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+
+      <div className="container relative mx-auto px-4">
         {/* What is HerCode */}
         <div className="relative mb-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-primary">
               What is HerCode?
             </h2>
             <div className="space-y-6 text-base md:text-lg text-foreground/80 leading-relaxed">
@@ -75,13 +82,18 @@ export const MissionSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group bg-card rounded-lg shadow-card p-8 hover:shadow-pixel transition-all hover:-translate-y-2 animate-fade-in border border-border/50"
+                className="group relative bg-card rounded-xl shadow-card p-8 hover:shadow-glow transition-all hover:-translate-y-2 animate-fade-in border border-primary/20 overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity" />
+                
                 <div className="relative inline-block mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center animate-shine-pulse transition-transform shadow-pixel-sm">
+                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow">
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
+                  {/* Glowing ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:scale-125 transition-transform duration-500" />
                 </div>
                 <h4 className="text-xl font-bold mb-4 text-foreground">{value.title}</h4>
                 <p className="text-muted-foreground leading-relaxed">
@@ -107,14 +119,17 @@ export const MissionSection = () => {
             {whyItMatters.map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-8 border border-primary/20 animate-fade-in"
+                className="relative glass-effect rounded-xl p-8 border border-primary/30 animate-fade-in hover:border-accent/50 transition-all group overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="mb-4">
-                  <item.icon className="w-10 h-10 text-primary" />
+                {/* Gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="relative mb-4">
+                  <item.icon className="w-10 h-10 text-primary group-hover:text-accent transition-colors" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-foreground">{item.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">
+                <h4 className="relative text-xl font-bold mb-3 text-foreground">{item.title}</h4>
+                <p className="relative text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>

@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 260 25% 97%;
+    --background: 250 20% 98%;
     --foreground: 260 15% 15%;
 
     --card: 0 0% 100%;
@@ -17,39 +17,41 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 260 15% 15%;
 
-    --primary: 260 85% 65%;
+    --primary: 270 75% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 260 90% 75%;
+    --primary-glow: 280 80% 70%;
 
-    --secondary: 230 75% 60%;
+    --secondary: 320 70% 65%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 260 10% 95%;
     --muted-foreground: 260 5% 45%;
 
-    --accent: 270 80% 70%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 290 85% 75%;
+    --accent-foreground: 260 90% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 260 15% 88%;
     --input: 260 15% 88%;
-    --ring: 260 85% 65%;
+    --ring: 270 75% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(270 85% 65%), hsl(230 75% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(230 75% 60%), hsl(260 80% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(270 85% 65%), hsl(230 75% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(270 75% 60%) 0%, hsl(280 80% 70%) 50%, hsl(320 70% 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(320 70% 65%), hsl(290 85% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(250 60% 25%) 0%, hsl(270 70% 40%) 50%, hsl(280 60% 50%) 100%);
+    --gradient-overlay: linear-gradient(135deg, hsla(270 75% 60% / 0.9), hsla(320 70% 65% / 0.8));
     
-    --shadow-glow: 0 0 30px hsla(260 85% 65% / 0.3);
-    --shadow-card: 0 10px 30px -5px hsla(260 85% 65% / 0.2);
-    --shadow-pixel: 4px 4px 0px hsla(260 85% 65% / 0.3);
-    --shadow-pixel-sm: 2px 2px 0px hsla(260 85% 65% / 0.2);
-    --shadow-pixel-lg: 6px 6px 0px hsla(260 85% 65% / 0.4);
+    --shadow-glow: 0 0 40px hsla(270 75% 60% / 0.4), 0 0 80px hsla(280 80% 70% / 0.2);
+    --shadow-glow-intense: 0 0 60px hsla(270 75% 60% / 0.6), 0 0 100px hsla(280 80% 70% / 0.4);
+    --shadow-card: 0 20px 60px -15px hsla(270 75% 60% / 0.3);
+    --shadow-pixel: 4px 4px 0px hsla(270 75% 60% / 0.3);
+    --shadow-pixel-sm: 2px 2px 0px hsla(270 75% 60% / 0.2);
+    --shadow-pixel-lg: 6px 6px 0px hsla(270 75% 60% / 0.4);
     
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -69,17 +71,18 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 260 20% 12%;
+    --background: 260 30% 8%;
     --foreground: 0 0% 95%;
     
-    --card: 260 15% 15%;
+    --card: 260 25% 12%;
     --card-foreground: 0 0% 95%;
     
-    --muted: 260 15% 22%;
+    --muted: 260 20% 18%;
     --muted-foreground: 260 8% 65%;
     
-    --shadow-glow: 0 0 40px hsla(260 85% 65% / 0.4);
-    --shadow-card: 0 10px 40px -5px hsla(260 85% 65% / 0.3);
+    --shadow-glow: 0 0 50px hsla(270 75% 60% / 0.5), 0 0 100px hsla(280 80% 70% / 0.3);
+    --shadow-glow-intense: 0 0 70px hsla(270 75% 60% / 0.7), 0 0 120px hsla(280 80% 70% / 0.5);
+    --shadow-card: 0 20px 60px -15px hsla(270 75% 60% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -171,17 +174,58 @@ All colors MUST be HSL.
     filter: contrast(1.1) saturate(1.2);
   }
 
-  @keyframes pulse-subtle {
+  @keyframes float-slow {
     0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-      filter: contrast(1.1) saturate(1.2);
+      transform: translateY(0px);
     }
     50% {
-      opacity: 0.95;
-      transform: scale(1.02);
-      filter: contrast(1.15) saturate(1.3);
+      transform: translateY(-15px);
     }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsla(var(--primary) / 0.4), 0 0 40px hsla(var(--primary-glow) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px hsla(var(--primary) / 0.6), 0 0 80px hsla(var(--primary-glow) / 0.4);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.8s ease-out forwards;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tech-grid {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 
   @keyframes pixel-pop {

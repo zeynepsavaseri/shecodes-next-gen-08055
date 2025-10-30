@@ -1,53 +1,91 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles, Code2, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-coding.png";
 
 export const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero pt-16 md:pt-20">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-6 md:space-y-8 animate-fade-in">
-            {/* Main Tagline */}
-            <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-                HerCode
+    <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20">
+      {/* Animated tech grid background */}
+      <div className="absolute inset-0 tech-grid opacity-30" />
+      
+      {/* Floating orbs */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float-slow" />
+      <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-glow/15 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "4s" }} />
+
+      <div className="container relative mx-auto px-4 py-12 md:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+            {/* Glowing badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 glass-effect rounded-full animate-glow-pulse">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm text-white/90 font-medium">
+                Building the Future Together
+              </span>
+            </div>
+
+            {/* Main Headline */}
+            <div className="space-y-4 animate-slide-in">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
+                  HerCode
+                </span>
               </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white/95">
-                Empowering Women in Tech & Entrepreneurship
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
+                Empowering Women in Tech
+              </p>
+              <p className="text-xl sm:text-2xl font-medium text-accent">
+                & Entrepreneurship
               </p>
             </div>
             
             {/* Value Proposition */}
-            <p className="text-base md:text-lg lg:text-xl text-white/85 max-w-2xl leading-relaxed mx-auto">
-              A hackathon and event series where young women explore, build, and grow.
+            <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-slide-in" style={{ animationDelay: "0.2s" }}>
+              A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
             
-            {/* Upcoming Event Info */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <Calendar className="w-4 h-4 text-white" />
+            {/* Tech Icons Row */}
+            <div className="flex gap-4 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: "0.3s" }}>
+              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
+                <Code2 className="w-6 h-6 text-accent" />
+              </div>
+              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
+                <Zap className="w-6 h-6 text-primary-glow" />
+              </div>
+              <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            
+            {/* Event Badge */}
+            <div className="inline-flex items-center gap-2 px-5 py-3 glass-effect rounded-full border border-accent/30 animate-slide-in" style={{ animationDelay: "0.4s" }}>
+              <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
               <span className="text-sm md:text-base text-white/90 font-medium">
                 Next Event: Coming Soon
               </span>
             </div>
             
-            {/* Primary CTA */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
               <Button 
                 size="lg" 
-                className="group bg-white text-primary hover:bg-white/90 shadow-xl text-base md:text-lg px-8 py-6 w-full sm:w-auto font-semibold"
+                className="group relative bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white hover:bg-white hover:text-primary shadow-glow text-base md:text-lg px-8 py-6 overflow-hidden transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById('events');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Join Our Events
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <span className="relative z-10 flex items-center gap-2">
+                  Join Our Events
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-white/10 border-white/30 text-white hover:bg-white/20 w-full sm:w-auto text-base md:text-lg px-8 py-6"
+                className="glass-effect border-white/30 text-white hover:bg-white/20 hover:border-accent text-base md:text-lg px-8 py-6 transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById('mission');
                   element?.scrollIntoView({ behavior: 'smooth' });
@@ -57,17 +95,42 @@ export const HeroSection = () => {
               </Button>
             </div>
           </div>
+
+          {/* Right Image */}
+          <div className="relative animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            {/* Glowing frame effect */}
+            <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-2xl rounded-3xl" />
+            
+            <div className="relative glass-effect rounded-2xl overflow-hidden border-2 border-white/20 shadow-glow-intense group">
+              {/* Image container */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={heroImage}
+                  alt="Women founders coding together at HerCode startup hackathon with city skyline"
+                  className="w-full h-full object-cover pixelated-image group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-60" />
+              </div>
+
+              {/* Floating tech elements */}
+              <div className="absolute top-4 right-4 glass-effect p-2 rounded-lg animate-float-slow">
+                <Code2 className="w-5 h-5 text-accent" />
+              </div>
+              <div className="absolute bottom-4 left-4 glass-effect p-2 rounded-lg animate-float-slow" style={{ animationDelay: "1s" }}>
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+            </div>
+
+            {/* Decorative corner accents */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent rounded-tl-lg" />
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent rounded-br-lg" />
+          </div>
         </div>
       </div>
-      
-      {/* Thin strip banner image */}
-      <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden border-y-2 border-primary/30">
-        <img
-          src={heroImage}
-          alt="Women founders coding together at HerCode startup hackathon with city skyline"
-          className="w-full h-full object-cover object-center pixelated-image"
-        />
-      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

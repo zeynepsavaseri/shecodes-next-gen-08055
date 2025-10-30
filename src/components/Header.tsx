@@ -34,8 +34,8 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white/90 backdrop-blur-sm"
+          ? "glass-effect shadow-glow"
+          : "bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4">
@@ -53,15 +53,15 @@ export const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm lg:text-base text-foreground/80 hover:text-primary transition-colors font-medium relative group"
+                className="text-sm lg:text-base text-foreground/80 hover:text-primary transition-all font-medium relative group"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
               </button>
             ))}
             <Button
               onClick={() => scrollToSection("cta")}
-              className="shadow-glow text-xs sm:text-sm lg:text-base px-3 sm:px-4"
+              className="bg-gradient-primary hover:shadow-glow-intense text-xs sm:text-sm lg:text-base px-3 sm:px-4 transition-all duration-300"
               size="sm"
             >
               <span className="hidden sm:inline">Become a Member</span>
