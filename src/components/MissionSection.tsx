@@ -82,21 +82,21 @@ export const MissionSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group relative bg-card rounded-xl shadow-card p-8 hover:shadow-glow transition-all hover:-translate-y-2 animate-fade-in border border-primary/20 overflow-hidden"
+                className="group relative bg-card rounded-xl shadow-card p-4 md:p-8 hover:shadow-glow transition-all hover:-translate-y-2 animate-fade-in border border-primary/20 overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity" />
                 
-                <div className="relative inline-block mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow">
-                    <value.icon className="w-8 h-8 text-white" />
+                <div className="relative inline-block mb-3 md:mb-6">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow">
+                    <value.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
                   {/* Glowing ring */}
                   <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:scale-125 transition-transform duration-500" />
                 </div>
-                <h4 className="text-lg font-mono font-bold mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
-                <p className="text-sm font-mono text-muted-foreground leading-relaxed">
+                <h4 className="text-sm md:text-lg font-mono font-bold mb-2 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
+                <p className="text-xs md:text-sm font-mono text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -119,17 +119,17 @@ export const MissionSection = () => {
             {whyItMatters.map((item, index) => (
               <div
                 key={index}
-                className="relative glass-effect rounded-xl p-8 border border-primary/30 animate-fade-in hover:border-accent/50 transition-all group overflow-hidden"
+                className="relative glass-effect rounded-xl p-4 md:p-8 border border-primary/30 animate-fade-in hover:border-accent/50 transition-all group overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
                 
-                <div className="relative mb-4">
-                  <item.icon className="w-10 h-10 text-primary group-hover:text-accent transition-colors" />
+                <div className="relative mb-2 md:mb-4">
+                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-primary group-hover:text-accent transition-colors" />
                 </div>
-                <h4 className="relative text-xl font-bold mb-3 text-foreground">{item.title}</h4>
-                <p className="relative text-muted-foreground leading-relaxed">
+                <h4 className="relative text-sm md:text-xl font-bold mb-2 md:mb-3 text-foreground">{item.title}</h4>
+                <p className="relative text-xs md:text-base text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>
