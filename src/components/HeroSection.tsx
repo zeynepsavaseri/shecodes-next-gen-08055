@@ -31,11 +31,14 @@ export const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel leading-tight">
-                <div className="text-white" style={{ 
-                  textShadow: '4px 4px 0px rgba(290, 85, 75, 0.8), 0 0 40px rgba(290, 85, 75, 0.6)',
-                  letterSpacing: '0.05em'
-                }}>
-                  <GlitchText text="HerCode" className="text-white" />
+                <div className="relative inline-block">
+                  <GlitchText 
+                    text="HerCode" 
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-primary-glow" 
+                  />
+                  <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-primary-glow blur-xl opacity-50" style={{ letterSpacing: '0.05em' }}>
+                    HerCode
+                  </div>
                 </div>
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
