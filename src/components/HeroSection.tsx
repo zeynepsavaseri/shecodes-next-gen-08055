@@ -5,6 +5,16 @@ import heroImage from "@/assets/hero-coding.png";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20">
+      {/* Hero image as background */}
+      <div className="absolute inset-0 opacity-20">
+        <img
+          src={heroImage}
+          alt="Women coding at HerCode hackathon"
+          className="w-full h-full object-cover pixelated-image"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      </div>
+      
       {/* Animated tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-30" />
       
@@ -14,31 +24,31 @@ export const HeroSection = () => {
       <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-glow/15 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "4s" }} />
 
       <div className="container relative mx-auto px-4 py-12 md:py-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+        <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-12">
+          {/* Main Content */}
+          <div className="space-y-6 md:space-y-8">
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white drop-shadow-lg">
                   HerCode
                 </span>
               </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95 drop-shadow-md">
                 Empowering Women in Tech
               </p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95 drop-shadow-md">
                 & Entrepreneurship
               </p>
             </div>
             
             {/* Value Proposition */}
-            <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-slide-in" style={{ animationDelay: "0.2s" }}>
+            <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed animate-slide-in drop-shadow-md" style={{ animationDelay: "0.2s" }}>
               A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
             
             {/* Tech Icons Row */}
-            <div className="flex gap-4 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex gap-4 justify-center animate-slide-in" style={{ animationDelay: "0.3s" }}>
               <div className="glass-effect p-3 rounded-lg hover:bg-white/10 transition-all">
                 <Code2 className="w-6 h-6 text-accent" />
               </div>
@@ -59,7 +69,7 @@ export const HeroSection = () => {
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
               <Button 
                 size="lg" 
                 className="group relative bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white hover:bg-white hover:text-primary shadow-glow text-base md:text-lg px-8 py-6 overflow-hidden transition-all duration-300"
@@ -86,37 +96,6 @@ export const HeroSection = () => {
                 Learn More
               </Button>
             </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            {/* Glowing frame effect */}
-            <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-2xl rounded-3xl" />
-            
-            <div className="relative glass-effect rounded-2xl overflow-hidden border-2 border-white/20 shadow-glow-intense">
-              {/* Image container */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={heroImage}
-                  alt="Women founders coding together at HerCode startup hackathon with city skyline"
-                  className="w-full h-full object-cover pixelated-image"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-60" />
-              </div>
-
-              {/* Floating tech elements */}
-              <div className="absolute top-4 right-4 glass-effect p-2 rounded-lg animate-float-slow">
-                <Code2 className="w-5 h-5 text-accent" />
-              </div>
-              <div className="absolute bottom-4 left-4 glass-effect p-2 rounded-lg animate-float-slow" style={{ animationDelay: "1s" }}>
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-            </div>
-
-            {/* Decorative corner accents */}
-            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent rounded-tl-lg" />
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent rounded-br-lg" />
           </div>
         </div>
       </div>
