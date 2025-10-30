@@ -1,17 +1,6 @@
 import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-
-const upcomingEvents = [
-  {
-    title: "EY Hackathon",
-    date: "February 28, 2026",
-    location: "EY Office, Zürich",
-    participants: "60 participants",
-    description: "Join us for an exciting hackathon at the EY office in Zürich",
-  },
-];
-
-const pastEvents: any[] = [];
+import { upcomingEvents, pastEvents } from "@/data/events";
 
 export const EventsSection = () => {
   return (

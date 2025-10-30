@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Sparkles, Code2, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-pixel-coding.png";
 import { GlitchText } from "@/components/GlitchText";
+import { getNextEvent } from "@/data/events";
 
 export const HeroSection = () => {
+  const nextEvent = getNextEvent();
+  
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-hero pt-16 md:pt-20">
       {/* Hero image as background */}
@@ -83,7 +86,7 @@ export const HeroSection = () => {
             }}>
               <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
               <span className="text-xs md:text-sm text-white font-mono font-bold uppercase tracking-wider" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)' }}>
-                Next Event: March 15, 2026
+                {nextEvent ? `Next Event: ${nextEvent.date}` : 'Next Event: Coming Soon'}
               </span>
             </div>
             
