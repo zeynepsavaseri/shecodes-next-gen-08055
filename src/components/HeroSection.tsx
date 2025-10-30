@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
-import heroImage from "@/assets/hero-pixel.jpg";
+import heroImage from "@/assets/hero-coding.png";
 
 export const HeroSection = () => {
   return (
@@ -64,8 +64,8 @@ export const HeroSection = () => {
       <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden border-y-2 border-primary/30">
         <img
           src={heroImage}
-          alt="Diverse young women coding together at HerCode hackathon"
-          className="w-full h-full object-cover object-center"
+          alt="Women founders coding together at HerCode startup hackathon with city skyline"
+          className="w-full h-full object-cover object-center pixelated-image"
         />
       </div>
     </section>
