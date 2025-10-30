@@ -27,7 +27,7 @@ export const HeroSection = () => {
               <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
                 Empowering Women in Tech
               </p>
-              <p className="text-xl sm:text-2xl font-medium text-white">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
                 & Entrepreneurship
               </p>
             </div>
