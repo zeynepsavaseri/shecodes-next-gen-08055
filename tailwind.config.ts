@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Fira Code', 'Space Mono', 'monospace'],
         mono: ['Space Mono', 'Fira Code', 'monospace'],
+        pixel: ['Press Start 2P', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

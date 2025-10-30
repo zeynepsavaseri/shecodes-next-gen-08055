@@ -29,28 +29,28 @@ export const HeroSection = () => {
           <div className="space-y-6 md:space-y-8">
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel leading-tight">
                 <span className="text-white" style={{ 
-                  textShadow: '0 0 30px rgba(290, 85, 75, 0.8), 0 0 60px rgba(290, 85, 75, 0.6), 0 4px 20px rgba(0, 0, 0, 0.5)',
-                  WebkitTextStroke: '2px rgba(290, 85, 75, 0.3)'
+                  textShadow: '4px 4px 0px rgba(290, 85, 75, 0.8), 0 0 40px rgba(290, 85, 75, 0.6)',
+                  letterSpacing: '0.05em'
                 }}>
                   HerCode
                 </span>
               </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white" style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.9), 0 4px 10px rgba(0, 0, 0, 0.7)' }}>
+              <p className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
                 Empowering Women in Tech
               </p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white" style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.9), 0 4px 10px rgba(0, 0, 0, 0.7)' }}>
+              <p className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
                 & Entrepreneurship
               </p>
             </div>
             
             {/* Value Proposition */}
-            <p className="text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto leading-relaxed animate-slide-in" style={{ 
+            <p className="text-base md:text-lg font-mono text-white max-w-2xl mx-auto leading-relaxed animate-slide-in tracking-wide" style={{ 
               animationDelay: "0.2s",
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
+              textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
             }}>
-              A hackathon and event series where young women explore, build, and grow in the world of technology.
+              {">"} A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
             
             {/* Tech Icons Row */}
@@ -74,8 +74,8 @@ export const HeroSection = () => {
               boxShadow: '0 0 30px rgba(290, 85, 75, 0.4)'
             }}>
               <Calendar className="w-5 h-5 text-accent animate-glow-pulse" />
-              <span className="text-sm md:text-base text-white font-medium" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)' }}>
-                Next Event: March 15, 2026
+              <span className="text-xs md:text-sm text-white font-mono font-bold uppercase tracking-wider" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)' }}>
+                {">"} Next Event: March 15, 2026
               </span>
             </div>
             
@@ -95,9 +95,9 @@ export const HeroSection = () => {
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  Join Our Events
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="relative z-10 flex items-center gap-2 font-mono font-bold uppercase tracking-wider text-sm md:text-base">
+                  {">"} Join Our Events
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               </Button>
