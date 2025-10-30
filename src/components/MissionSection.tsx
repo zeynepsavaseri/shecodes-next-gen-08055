@@ -1,39 +1,21 @@
-import { Target, Users, Lightbulb, TrendingUp, Heart, Sparkles } from "lucide-react";
+import { Users, Lightbulb, Heart } from "lucide-react";
 
 export const MissionSection = () => {
   const values = [
     {
       icon: Heart,
       title: "Inclusion",
-      description: "Creating a welcoming space where every woman feels empowered to step into tech and stay."
+      description: "We're building a welcoming space where every woman feels empowered to step into tech — and stay. By closing the gender gap, we open new pathways for representation and opportunity."
     },
     {
       icon: Lightbulb,
       title: "Curiosity", 
-      description: "Encouraging learning, exploration, and the confidence to try something new."
+      description: "We encourage learning, exploration, and the courage to try something new. Diverse ideas spark innovation, and collaboration allows them to grow."
     },
     {
       icon: Users,
       title: "Community",
-      description: "Building a supportive network where women lift each other up and grow together."
-    }
-  ];
-
-  const whyItMatters = [
-    {
-      icon: TrendingUp,
-      title: "Close the Gender Gap",
-      description: "Women remain underrepresented in tech. We're here to change that by creating pathways and opportunities."
-    },
-    {
-      icon: Sparkles,
-      title: "Foster Collaboration",
-      description: "Innovation thrives when diverse minds come together. We create spaces for meaningful connections and teamwork."
-    },
-    {
-      icon: Heart,
-      title: "Build a Support Network",
-      description: "Success is easier with the right support. Our community provides mentorship, guidance, and lasting friendships."
+      description: "We're creating a strong support network where women lift each other up through mentorship, shared experience, and lasting friendships — because success is easier together."
     }
   ];
 
@@ -64,14 +46,15 @@ export const MissionSection = () => {
           </div>
         </div>
 
-        {/* Our Values */}
-        <div className="mb-20">
+        {/* Our Mission */}
+        <div>
           <div className="text-center mb-12">
-            <h3 className="text-xl md:text-2xl font-mono font-bold mb-3 text-foreground uppercase tracking-wider">
-              Our Core Values
+            <h3 className="text-2xl md:text-3xl font-pixel mb-6 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
+              Our Mission
             </h3>
-            <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do
+            <p className="text-sm md:text-base font-mono text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Empowering women to explore, create, and lead confidently in technology.<br />
+              Everything we do is guided by three core principles that drive real impact:
             </p>
           </div>
           
@@ -95,39 +78,6 @@ export const MissionSection = () => {
                 <h4 className="text-sm md:text-lg font-mono font-bold mb-2 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
                 <p className="text-xs md:text-sm font-mono text-muted-foreground leading-relaxed">
                   {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Why It Matters */}
-        <div>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
-              Why It Matters
-            </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              The impact we're working to create
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
-            {whyItMatters.map((item, index) => (
-              <div
-                key={index}
-                className="relative glass-effect rounded-xl p-4 md:p-8 border border-primary/30 animate-fade-in hover:border-accent/50 transition-all group overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
-                
-                <div className="relative mb-2 md:mb-4">
-                  <item.icon className="w-8 h-8 md:w-10 md:h-10 text-primary group-hover:text-accent transition-colors" />
-                </div>
-                <h4 className="relative text-sm md:text-xl font-bold mb-2 md:mb-3 text-foreground">{item.title}</h4>
-                <p className="relative text-xs md:text-base text-muted-foreground leading-relaxed">
-                  {item.description}
                 </p>
               </div>
             ))}
