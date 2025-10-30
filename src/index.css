@@ -169,7 +169,6 @@ All colors MUST be HSL.
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     filter: contrast(1.1) saturate(1.2);
-    animation: pulse-subtle 3s ease-in-out infinite;
   }
 
   @keyframes pulse-subtle {
