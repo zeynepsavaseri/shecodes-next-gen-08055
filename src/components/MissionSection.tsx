@@ -1,17 +1,19 @@
+import { Code2, Zap, Sparkles } from "lucide-react";
+
 export const MissionSection = () => {
   const values = [
     {
-      emoji: "💜",
+      icon: Code2,
       title: "Inclusion",
       description: "A space where every woman feels welcome in tech and empowered to thrive."
     },
     {
-      emoji: "⚡",
+      icon: Zap,
       title: "Courage", 
       description: "Curiosity and bold ideas drive us to learn, build, and create fearlessly."
     },
     {
-      emoji: "👭",
+      icon: Sparkles,
       title: "Community",
       description: "Women supporting women, growing together through connection and collaboration."
     }
@@ -67,11 +69,11 @@ export const MissionSection = () => {
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity" />
                 
                 <div className="relative inline-block mb-3 md:mb-6">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow text-2xl md:text-3xl">
-                    {value.emoji}
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow border border-primary/20">
+                    <value.icon className="w-6 h-6 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
                   </div>
                   {/* Glowing ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-primary/30 group-hover:scale-125 transition-transform duration-500" />
+                  <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <h4 className="text-sm md:text-lg font-mono font-bold mb-2 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
                 <p className="text-xs md:text-sm font-mono text-muted-foreground leading-relaxed">
