@@ -17,14 +17,6 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
-            {/* Glowing badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 glass-effect rounded-full animate-glow-pulse">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm text-white/90 font-medium">
-                Building the Future Together
-              </span>
-            </div>
-
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
@@ -35,7 +27,7 @@ export const HeroSection = () => {
               <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white/95">
                 Empowering Women in Tech
               </p>
-              <p className="text-xl sm:text-2xl font-medium text-accent">
+              <p className="text-xl sm:text-2xl font-medium text-white">
                 & Entrepreneurship
               </p>
             </div>
@@ -101,13 +93,13 @@ export const HeroSection = () => {
             {/* Glowing frame effect */}
             <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-2xl rounded-3xl" />
             
-            <div className="relative glass-effect rounded-2xl overflow-hidden border-2 border-white/20 shadow-glow-intense group">
+            <div className="relative glass-effect rounded-2xl overflow-hidden border-2 border-white/20 shadow-glow-intense">
               {/* Image container */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={heroImage}
                   alt="Women founders coding together at HerCode startup hackathon with city skyline"
-                  className="w-full h-full object-cover pixelated-image group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover pixelated-image"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-60" />
