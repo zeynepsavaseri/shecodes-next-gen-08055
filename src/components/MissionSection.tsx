@@ -78,7 +78,7 @@ export const MissionSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
             {values.map((value, index) => (
               <div
                 key={index}
@@ -115,7 +115,7 @@ export const MissionSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
             {whyItMatters.map((item, index) => (
               <div
                 key={index}
