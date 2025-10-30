@@ -33,31 +33,31 @@ export const HeroSection = () => {
           <div className="space-y-6 md:space-y-8">
             {/* Main Headline */}
             <div className="space-y-4 animate-slide-in">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-mono font-bold leading-tight tracking-wider">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold leading-tight tracking-wider">
                 <div className="relative inline-block">
-                  <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl mr-2">{"{"}</span>
+                  <span className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl mr-1 sm:mr-2">{"{"}</span>
                   <GlitchText 
                     text="HerCode" 
                     className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-glow" 
                   />
-                  <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl ml-2">{"}"}</span>
+                  <span className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl ml-1 sm:ml-2">{"}"}</span>
                   <div className="absolute inset-0 blur-2xl opacity-40">
-                    <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl mr-2">{"{"}</span>
+                    <span className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl mr-1 sm:mr-2">{"{"}</span>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-glow">HerCode</span>
-                    <span className="text-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl ml-2">{"}"}</span>
+                    <span className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl ml-1 sm:ml-2">{"}"}</span>
                   </div>
                 </div>
               </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
+              <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
                 Empowering Women in Tech
               </p>
-              <p className="text-xl sm:text-2xl md:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
+              <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-mono font-bold text-white uppercase tracking-wider" style={{ textShadow: '3px 3px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(290, 85, 75, 0.4)' }}>
                 & Entrepreneurship
               </p>
             </div>
             
             {/* Value Proposition */}
-            <p className="text-base md:text-lg font-mono text-white max-w-2xl mx-auto leading-relaxed animate-slide-in tracking-wide" style={{ 
+            <p className="text-sm md:text-base lg:text-lg font-mono text-white max-w-2xl mx-auto leading-relaxed animate-slide-in tracking-wide px-4" style={{ 
               animationDelay: "0.2s",
               textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
             }}>
@@ -91,10 +91,10 @@ export const HeroSection = () => {
             </div>
             
             {/* CTA Button */}
-            <div className="flex justify-center pt-4 animate-slide-in" style={{ animationDelay: "0.5s" }}>
+            <div className="flex justify-center pt-4 animate-slide-in px-4" style={{ animationDelay: "0.5s" }}>
               <Button 
                 size="lg" 
-                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-base md:text-lg px-8 py-6 overflow-hidden transition-all duration-300"
+                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-sm md:text-base px-6 md:px-8 py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px]"
                 style={{ 
                   background: 'rgba(0, 0, 0, 0.5)',
                   backdropFilter: 'blur(12px)',
@@ -106,7 +106,7 @@ export const HeroSection = () => {
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <span className="relative z-10 flex items-center gap-2 font-mono font-bold uppercase tracking-wider text-sm md:text-base">
+                <span className="relative z-10 flex items-center justify-center gap-2 font-mono font-bold uppercase tracking-wider text-sm md:text-base">
                   Join Our Events
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
