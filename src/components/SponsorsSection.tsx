@@ -36,7 +36,7 @@ export const SponsorsSection = () => {
     <section className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Backed by Industry Leaders
           </h2>
         </div>
@@ -65,11 +65,11 @@ export const SponsorsSection = () => {
         </div>
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 bg-gradient-secondary bg-clip-text text-transparent uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-pixel mb-6 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Become a Partner
           </h2>
           <p className="text-base text-muted-foreground mb-8 font-medium">Benefits for companies</p>
-          <Button size="lg" className="shadow-glow hover:shadow-glow-intense font-display font-bold uppercase text-sm tracking-wider px-8 py-6 transition-all duration-300 hover:scale-105">
+          <Button size="lg" className="shadow-glow hover:shadow-glow-intense font-mono font-bold uppercase text-sm tracking-wider px-8 py-6 transition-all duration-300 hover:scale-105">
             Partner Up with Us
           </Button>
         </div>
@@ -83,7 +83,7 @@ export const SponsorsSection = () => {
                     <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-display font-bold mb-3 text-foreground uppercase tracking-tight">{benefit.title}</h3>
+                    <h3 className="text-base font-mono font-bold mb-3 text-foreground uppercase tracking-wide">{benefit.title}</h3>
                     <p className="text-sm text-muted-foreground font-medium leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>

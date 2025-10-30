@@ -10,10 +10,8 @@ export const CTASection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight mb-6 uppercase tracking-tight">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Step Into the HerCode Community
-            </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+            Step Into the HerCode Community
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
             Join a thriving community of ambitious women in tech
@@ -26,7 +24,7 @@ export const CTASection = () => {
             <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-primary mb-8 mx-auto animate-float shadow-glow">
               <Heart className="w-10 h-10 text-white" strokeWidth={2.5} />
             </div>
-            <h3 className="text-2xl font-display font-bold mb-6 text-center uppercase tracking-tight">Community Member</h3>
+            <h3 className="text-xl font-mono font-bold mb-6 text-center uppercase tracking-wide">Community Member</h3>
             <p className="text-base text-muted-foreground text-center mb-8 leading-relaxed">
               Become part of our empowering community. Stay connected with inspiring women, find co-founders, and access exclusive events.
             </p>
@@ -56,7 +54,7 @@ export const CTASection = () => {
                 <span className="text-sm text-foreground/90 font-medium leading-relaxed">Get mentorship for your startup & VC connections</span>
               </li>
             </ul>
-            <Button size="lg" className="w-full group shadow-glow hover:shadow-glow-intense font-display font-bold uppercase text-sm tracking-wider transition-all duration-300 py-6">
+            <Button size="lg" className="w-full group shadow-glow hover:shadow-glow-intense font-mono font-bold uppercase text-sm tracking-wider transition-all duration-300 py-6">
               Become a Member
               <Users className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
             </Button>

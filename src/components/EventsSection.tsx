@@ -24,7 +24,7 @@ export const EventsSection = () => {
                 className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated p-10 hover:shadow-glow-intense transition-all duration-500 hover:-translate-y-2 animate-fade-in border border-primary/10"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-2xl font-display font-bold mb-6 text-foreground uppercase tracking-tight">{event.title}</h3>
+                <h3 className="text-xl font-mono font-bold mb-6 text-foreground uppercase tracking-wide">{event.title}</h3>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center text-base text-foreground/80 font-medium">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
@@ -46,7 +46,7 @@ export const EventsSection = () => {
                   </div>
                 </div>
                 <p className="text-base text-muted-foreground mb-8 leading-relaxed font-medium">{event.description}</p>
-                <Button className="w-full group font-display font-bold uppercase text-sm tracking-wider py-6 shadow-glow hover:shadow-glow-intense transition-all duration-300">
+                <Button className="w-full group font-mono font-bold uppercase text-sm tracking-wider py-6 shadow-glow hover:shadow-glow-intense transition-all duration-300">
                   Register Now
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
                 </Button>
@@ -58,7 +58,7 @@ export const EventsSection = () => {
         {/* Past Events */}
         <div>
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase tracking-tight">
+            <h3 className="text-3xl md:text-4xl font-pixel mb-6 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               Past Events
             </h3>
             <p className="text-base text-muted-foreground font-medium">
@@ -78,7 +78,7 @@ export const EventsSection = () => {
                   className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated p-8 border-l-4 border-primary animate-slide-up hover:shadow-glow-intense transition-all duration-500"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <h3 className="text-xl font-display font-bold mb-3 text-foreground uppercase tracking-tight">{event.title}</h3>
+                  <h3 className="text-lg font-mono font-bold mb-3 text-foreground uppercase tracking-wide">{event.title}</h3>
                   <p className="text-sm text-muted-foreground mb-6 font-medium">{event.date}</p>
                   <div className="space-y-3">
                     <div className="flex items-center text-sm">

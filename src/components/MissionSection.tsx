@@ -31,7 +31,7 @@ export const MissionSection = () => {
         {/* What is HerCode */}
         <div className="relative mb-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-8 text-transparent bg-clip-text bg-gradient-primary uppercase tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-pixel mb-8 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
               What is HerCode?
             </h2>
             <div className="space-y-6 text-base md:text-lg text-foreground/80 leading-relaxed font-medium">
@@ -48,7 +48,7 @@ export const MissionSection = () => {
         {/* Our Mission */}
         <div>
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-8 text-transparent bg-clip-text bg-gradient-primary uppercase tracking-tight">
+            <h3 className="text-3xl md:text-4xl font-pixel mb-8 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
               Our Mission
             </h3>
             <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
@@ -74,7 +74,7 @@ export const MissionSection = () => {
                   {/* Glowing ring */}
                   <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <h4 className="text-lg md:text-xl font-display font-bold mb-3 md:mb-4 text-foreground uppercase tracking-tight">{value.title}</h4>
+                <h4 className="text-base md:text-lg font-mono font-bold mb-3 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-medium">
                   {value.description}
                 </p>
