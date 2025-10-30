@@ -55,13 +55,10 @@ export const MissionSection = () => {
             </h2>
             <div className="space-y-6 text-sm md:text-base font-mono text-foreground/80 leading-relaxed">
               <p>
-              HerCode started from a simple observation: women are vastly underrepresented in the tech and entrepreneurial space, yet their potential is limitless.
+                HerCode grew out of a simple observation: too many women are missing from tech and entrepreneurship, and it's certainly not because they lack the talent or drive to belong there.
               </p>
               <p>
-                Many talented women hesitate to join these environments. Not because of a lack of ability, but because they often don't see themselves represented or encouraged. HerCode was created to change that.
-              </p>
-              <p>
-                We're building a space where women feel welcome to explore technology, experiment fearlessly, and grow their confidence through hands-on learning. HerCode connects ambitious, curious women who want to challenge themselves, support one another, and step boldly into the world of tech.
+                We're creating a space where women feel encouraged to explore technology, build confidently, and learn through hands-on experience. HerCode brings together ambitious, curious women who want to challenge themselves, support one another, and make their mark in the world of tech.
               </p>
             </div>
           </div>
