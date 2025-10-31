@@ -32,7 +32,7 @@ export const MissionSection = () => {
         {/* What is HerCode */}
         <div className="relative mb-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel mb-6 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
+            <h2 className="text-2xl md:text-3xl font-pixel mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               What is HerCode?
             </h2>
             <div className="space-y-6 text-sm md:text-base font-mono text-foreground/80 leading-relaxed">

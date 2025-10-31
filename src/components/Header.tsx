@@ -53,7 +53,7 @@ export const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-xs lg:text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group"
+                className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
@@ -61,11 +61,10 @@ export const Header = () => {
             ))}
             <Button
               onClick={() => scrollToSection("cta")}
-              className="bg-gradient-primary hover:shadow-glow-intense text-xs sm:text-sm font-mono font-bold uppercase tracking-wider px-3 sm:px-4 transition-all duration-300"
+              className="bg-gradient-primary hover:shadow-glow-intense text-sm font-mono font-bold uppercase tracking-wider px-4 transition-all duration-300"
               size="sm"
             >
-              <span className="hidden sm:inline">Become a Member</span>
-              <span className="sm:hidden">Join</span>
+              Become a Member
             </Button>
           </nav>
 

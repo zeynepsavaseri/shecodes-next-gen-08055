@@ -52,10 +52,10 @@ export const EventsSection = () => {
         {/* Past Events */}
         <div>
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-secondary bg-clip-text text-transparent">
+            <h3 className="text-2xl md:text-3xl font-pixel mb-2 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               Past Events
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm font-mono text-muted-foreground">
               More events coming soon
             </p>
           </div>

@@ -8,10 +8,8 @@ export const CTASection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel leading-tight mb-4 uppercase" style={{ letterSpacing: '0.1em' }}>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Step Into the HerCode Community
-            </span>
+          <h2 className="text-2xl md:text-3xl font-pixel leading-tight mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+            Step Into the HerCode Community
           </h2>
         </div>
 
