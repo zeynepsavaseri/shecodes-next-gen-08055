@@ -1,8 +1,19 @@
-import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Users, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { upcomingEvents, pastEvents } from "@/data/events";
+import { useState } from "react";
 
 export const EventsSection = () => {
+  const [expandedEvents, setExpandedEvents] = useState<number[]>([]);
+
+  const toggleEvent = (index: number) => {
+    setExpandedEvents(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
@@ -39,11 +50,25 @@ export const EventsSection = () => {
                     <span>{event.participants}</span>
                   </div>
                 </div>
-                <p className="text-sm font-mono text-foreground mb-6 whitespace-pre-line">{event.description}</p>
-                <Button className="w-full group font-mono font-bold uppercase text-xs tracking-wider">
-                  Register Now
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                {expandedEvents.includes(index) && (
+                  <p className="text-sm font-mono text-foreground mb-6 whitespace-pre-line animate-fade-in">
+                    {event.description}
+                  </p>
+                )}
+                <div className="flex gap-3">
+                  <Button 
+                    variant="outline"
+                    onClick={() => toggleEvent(index)}
+                    className="flex-1 group font-mono font-bold uppercase text-xs tracking-wider"
+                  >
+                    {expandedEvents.includes(index) ? 'Show Less' : 'Learn More'}
+                    <ChevronDown className={`ml-2 w-4 h-4 transition-transform ${expandedEvents.includes(index) ? 'rotate-180' : ''}`} />
+                  </Button>
+                  <Button className="flex-1 group font-mono font-bold uppercase text-xs tracking-wider">
+                    Register Now
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
