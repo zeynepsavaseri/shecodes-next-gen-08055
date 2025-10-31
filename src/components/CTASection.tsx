@@ -88,7 +88,7 @@ export const CTASection = () => {
         
         <div className="text-center">
           <p className="text-xs font-mono text-muted-foreground">
-            Questions or inquiries? Reach out to us at <a href="mailto:zsavaseri@ethz.ch" className="text-primary font-mono font-bold hover:underline">zsavaseri@ethz.ch</a>
+            Questions or inquiries? I am happy to help <a href="mailto:zsavaseri@ethz.ch" className="text-primary font-mono font-bold hover:underline">zsavaseri@ethz.ch</a>
           </p>
         </div>
       </div>
