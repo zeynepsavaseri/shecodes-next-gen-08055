@@ -39,7 +39,7 @@ export const EventsSection = () => {
                     <span>{event.participants}</span>
                   </div>
                 </div>
-                <p className="text-sm font-mono text-foreground mb-6">{event.description}</p>
+                <p className="text-sm font-mono text-foreground mb-6 whitespace-pre-line">{event.description}</p>
                 <Button className="w-full group font-mono font-bold uppercase text-xs tracking-wider">
                   Register Now
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
