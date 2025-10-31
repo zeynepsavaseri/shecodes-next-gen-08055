@@ -128,6 +128,96 @@ All colors MUST be HSL.
     letter-spacing: 0.05em;
   }
   
+  .hover-glitch {
+    position: relative;
+  }
+  
+  .hover-glitch:hover::before,
+  .hover-glitch:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+  
+  .hover-glitch:hover::before {
+    animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: rgba(180, 148, 246, 0.8);
+    z-index: -1;
+  }
+  
+  .hover-glitch:hover::after {
+    animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: rgba(157, 127, 245, 0.8);
+    z-index: -2;
+  }
+  
+  @keyframes glitch-anim {
+    0% {
+      clip-path: inset(40% 0 61% 0);
+      transform: translate(0);
+    }
+    20% {
+      clip-path: inset(92% 0 1% 0);
+      transform: translate(-2px);
+    }
+    40% {
+      clip-path: inset(43% 0 1% 0);
+      transform: translate(2px);
+    }
+    60% {
+      clip-path: inset(25% 0 58% 0);
+      transform: translate(-2px);
+    }
+    80% {
+      clip-path: inset(54% 0 7% 0);
+      transform: translate(2px);
+    }
+    100% {
+      clip-path: inset(58% 0 43% 0);
+      transform: translate(0);
+    }
+  }
+  
+  .card-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      hsl(var(--primary)) 90deg,
+      transparent 180deg
+    );
+    animation: rotate-gradient 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .card-glow:hover::before {
+    opacity: 0.1;
+  }
+  
+  @keyframes rotate-gradient {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
   .shine-dot {
     position: relative;
     display: inline-block;

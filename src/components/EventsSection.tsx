@@ -21,9 +21,13 @@ export const EventsSection = () => {
             {upcomingEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated p-10 hover:shadow-glow-intense transition-all duration-500 hover:-translate-y-2 animate-fade-in border border-primary/10"
+                className="card-glow bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated p-10 hover:shadow-glow-intense transition-all duration-500 hover:-translate-y-2 animate-fade-in border border-primary/10 relative"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Tech corner accent */}
+                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/30 rounded-tl-2xl" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/30 rounded-br-2xl" />
+                
                 <h3 className="text-xl font-mono font-bold mb-6 text-foreground uppercase tracking-wide">{event.title}</h3>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center text-base text-foreground/80 font-medium">

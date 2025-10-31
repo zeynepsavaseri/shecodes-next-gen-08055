@@ -34,8 +34,11 @@ export const BenefitsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {companyBenefits.map((benefit, index) => (
-            <Card key={index} className="bg-card/80 backdrop-blur-sm hover:shadow-glow-intense transition-all duration-500 group hover:-translate-y-2 border border-primary/10">
+            <Card key={index} className="card-glow bg-card/80 backdrop-blur-sm hover:shadow-glow-intense transition-all duration-500 group hover:-translate-y-2 border border-primary/10 relative overflow-visible">
               <CardContent className="p-8">
+                {/* Tech decoration */}
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary/20 rounded-br-lg border-t border-l border-primary/40" />
+                
                 <div className="flex flex-col items-center text-center gap-6">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-glow border border-primary/20">
                     <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />

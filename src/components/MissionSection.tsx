@@ -61,18 +61,22 @@ export const MissionSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group relative bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated p-6 md:p-10 hover:shadow-glow-intense transition-all duration-500 hover:-translate-y-2 animate-fade-in border border-primary/10"
+                className="card-glow group relative bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated p-10 hover:shadow-glow-intense transition-all duration-500 hover:-translate-y-2 animate-fade-in border border-primary/10"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity rounded-2xl" />
                 
+                {/* Tech corner decorations */}
+                <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-primary/40" />
+                <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-primary/40" />
+                
                 <div className="relative inline-block mb-6 md:mb-8">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow border border-primary/20">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow border border-primary/20 group-hover:scale-110 duration-300">
                     <value.icon className="w-8 h-8 md:w-10 md:h-10 text-white" strokeWidth={2.5} />
                   </div>
                   {/* Glowing ring */}
-                  <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 group-hover:scale-125 transition-transform duration-500" />
                 </div>
                 <h4 className="text-base md:text-lg font-mono font-bold mb-3 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-medium">
