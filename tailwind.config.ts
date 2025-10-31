@@ -14,10 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        pixel: ['Press Start 2P', 'cursive'],
-        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['Fira Code', 'Space Mono', 'monospace'],
+        mono: ['Space Mono', 'Fira Code', 'monospace'],
+        pixel: ['Press Start 2P', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -74,14 +73,11 @@ export default {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-secondary': 'var(--gradient-secondary)',
         'gradient-hero': 'var(--gradient-hero)',
-        'gradient-mesh': 'var(--gradient-mesh)',
       },
       boxShadow: {
-        card: 'var(--shadow-card)',
-        glow: 'var(--shadow-glow)',
-        'glow-intense': 'var(--shadow-glow-intense)',
-        elevated: 'var(--shadow-elevated)',
-        pixel: 'var(--shadow-pixel)',
+        'glow': 'var(--shadow-glow)',
+        'card': 'var(--shadow-card)',
+        'pixel': 'var(--shadow-pixel)',
         'pixel-sm': 'var(--shadow-pixel-sm)',
         'pixel-lg': 'var(--shadow-pixel-lg)',
       },

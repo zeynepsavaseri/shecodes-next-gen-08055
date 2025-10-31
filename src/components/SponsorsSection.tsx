@@ -33,30 +33,30 @@ export const SponsorsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-16 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Backed by Industry Leaders
           </h2>
         </div>
 
         {/* Scrolling sponsors marquee */}
-        <div className="relative overflow-hidden mb-24 py-8">
+        <div className="relative overflow-hidden mb-20 py-4">
           <div className="flex animate-scroll-left">
             {/* First set of sponsors */}
             {sponsors.concat(sponsors).map((sponsor, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-64 h-36 mx-6 flex items-center justify-center bg-card/80 backdrop-blur-sm rounded-2xl shadow-elevated hover:shadow-glow-intense transition-all duration-500 p-8 border border-primary/10"
+                className="flex-shrink-0 w-64 h-32 mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover:shadow-pixel transition-all p-6"
               >
                 {sponsor.isComingSoon ? (
-                  <span className="text-muted-foreground font-display font-bold text-sm uppercase tracking-wider">Coming Soon</span>
+                  <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
                 ) : (
                   <img 
                     src={sponsor.logo} 
                     alt={sponsor.name} 
-                    className="max-w-full max-h-full object-contain filter drop-shadow-lg"
+                    className="max-w-full max-h-full object-contain"
                   />
                 )}
               </div>
@@ -64,30 +64,27 @@ export const SponsorsSection = () => {
           </div>
         </div>
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Become a Partner
           </h2>
-          <p className="text-base text-muted-foreground mb-8 font-medium">Benefits for companies</p>
-          <Button size="lg" className="shadow-glow hover:shadow-glow-intense font-mono font-bold uppercase text-sm tracking-wider px-8 py-6 transition-all duration-300 hover:scale-105">
+          <p className="text-sm font-mono text-muted-foreground mb-6">Benefits for companies</p>
+          <Button size="lg" className="shadow-glow font-mono font-bold uppercase text-sm tracking-wider">
             Partner Up with Us
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {companyBenefits.map((benefit, index) => (
-            <Card key={index} className="card-glow bg-card/80 backdrop-blur-sm hover:shadow-glow-intense transition-all duration-500 group hover:-translate-y-2 border border-primary/10 relative overflow-visible">
-              <CardContent className="p-8">
-                {/* Tech decoration */}
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary/20 rounded-br-lg border-t border-l border-primary/40" />
-                
-                <div className="flex flex-col items-center text-center gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-glow border border-primary/20">
-                    <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+            <Card key={index} className="bg-card hover:shadow-glow transition-all group hover:-translate-y-1">
+              <CardContent className="p-6">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-pixel-sm">
+                    <benefit.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-base font-mono font-bold mb-3 text-foreground uppercase tracking-wide">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground font-medium leading-relaxed">{benefit.description}</p>
+                    <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
+                    <p className="text-xs font-mono text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>
               </CardContent>
