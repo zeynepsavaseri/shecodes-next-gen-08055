@@ -1,6 +1,7 @@
-import { Briefcase, Target, Globe } from "lucide-react";
+import { Briefcase, Target, Globe, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export const SponsorsSection = () => {
   const sponsors = [
@@ -14,21 +15,26 @@ export const SponsorsSection = () => {
     { name: "Coming Soon", logo: "", isComingSoon: true },
   ];
 
+  const [expandedBenefit, setExpandedBenefit] = useState<number | null>(null);
+
   const companyBenefits = [
     {
       icon: Briefcase,
       title: "Talent & Engagement",
       description: "Connect with skilled women through collaborative events and experience their talent in action.",
+      detailedDescription: "Gain direct access to a pre-vetted pool of ambitious, highly motivated women in tech. Our events are more than just meet-and-greets; they are hands-on workshops and hackathons where you can witness talent in action, identify future leaders, and build a strong pipeline for your recruitment teams.",
     },
     {
       icon: Target,
       title: "Diversity & Inclusion",
       description: "Build a stronger, more inclusive team that reflects modern workplace values and fuels innovation.",
+      detailedDescription: "Move your D&I goals from a metric to a movement. Partnering with {HerCode} sends a powerful, public message to your employees and the industry. You will actively help build a more inclusive tech ecosystem, fostering the diverse perspectives that are proven to fuel innovation and strengthen company culture.",
     },
     {
       icon: Globe,
       title: "Brand Impact",
       description: "Demonstrate your commitment to diversity and equality while positioning your company as a forward-thinking industry leader.",
+      detailedDescription: "Position your company as a forward-thinking industry leader that actively invests in the future of tech. Your brand will be prominently featured to our dedicated community of members, mentors, and fellow partners, demonstrating a tangible commitment to equality and empowering the next generation of female tech leaders.",
     },
   ];
 
@@ -76,7 +82,11 @@ export const SponsorsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {companyBenefits.map((benefit, index) => (
-            <Card key={index} className="bg-card hover:shadow-glow transition-all group hover:-translate-y-1">
+            <Card 
+              key={index} 
+              className="bg-card hover:shadow-glow transition-all group hover:-translate-y-1 cursor-pointer"
+              onClick={() => setExpandedBenefit(expandedBenefit === index ? null : index)}
+            >
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-pixel-sm">
@@ -84,8 +94,13 @@ export const SponsorsSection = () => {
                   </div>
                   <div>
                     <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
-                    <p className="text-xs font-mono text-muted-foreground">{benefit.description}</p>
+                    <p className="text-xs font-mono text-muted-foreground">
+                      {expandedBenefit === index ? benefit.detailedDescription : benefit.description}
+                    </p>
                   </div>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-primary transition-transform ${expandedBenefit === index ? 'rotate-180' : ''}`}
+                  />
                 </div>
               </CardContent>
             </Card>
