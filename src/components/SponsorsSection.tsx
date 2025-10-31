@@ -89,15 +89,8 @@ export const SponsorsSection = () => {
             >
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center gap-4">
-                  <div 
-                    className={`w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-pixel-sm animate-float ${expandedBenefit === index ? 'scale-125 rotate-12' : ''}`}
-                    style={{ imageRendering: 'pixelated' }}
-                  >
-                    <benefit.icon 
-                      className={`w-6 h-6 text-white transition-transform duration-500 ${expandedBenefit === index ? 'scale-110 rotate-[-12deg]' : ''}`}
-                      style={{ imageRendering: 'pixelated' }}
-                      strokeWidth={3}
-                    />
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-pixel-sm ${expandedBenefit === index ? 'scale-125 rotate-12' : ''}`}>
+                    <benefit.icon className={`w-6 h-6 text-white transition-transform duration-500 ${expandedBenefit === index ? 'scale-110 rotate-[-12deg]' : ''}`} />
                   </div>
                   <div>
                     <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
