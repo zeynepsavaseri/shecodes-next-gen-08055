@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import founderPixel from "@/assets/founder-pixel.png";
 
 interface FounderStoryProps {
@@ -7,43 +8,29 @@ interface FounderStoryProps {
 }
 
 export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
-  const [displayedText, setDisplayedText] = useState("");
-  const [currentLine, setCurrentLine] = useState(0);
+  const [visibleLines, setVisibleLines] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    ">Studying health sciences & technology at ETH zurich.",
-    ">Passionate about creating, exploring, and turning ideas into something real.",
-    ">Happiest when running, sipping matcha, or baking something sweet.",
+    "Studying health sciences & technology at ETH zurich.",
+    "Passionate about creating, exploring, and turning ideas into something real.",
+    "Happiest when running, sipping matcha, or baking something sweet.",
   ];
-
 
   useEffect(() => {
     if (!isOpen) {
-      setDisplayedText("");
-      setCurrentLine(0);
+      setVisibleLines(0);
       return;
     }
 
-    if (currentLine >= lines.length) return;
+    if (visibleLines >= lines.length) return;
 
-    const currentText = lines[currentLine];
-    let charIndex = 0;
+    const timer = setTimeout(() => {
+      setVisibleLines(visibleLines + 1);
+    }, 300);
 
-    const typingInterval = setInterval(() => {
-      if (charIndex <= currentText.length) {
-        setDisplayedText(lines.slice(0, currentLine).join("\n") + "\n" + currentText.slice(0, charIndex));
-        charIndex++;
-      } else {
-        clearInterval(typingInterval);
-        setTimeout(() => {
-          setCurrentLine(currentLine + 1);
-        }, 500);
-      }
-    }, 30);
-
-    return () => clearInterval(typingInterval);
-  }, [currentLine, isOpen]);
+    return () => clearTimeout(timer);
+  }, [visibleLines, isOpen]);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -51,6 +38,10 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
         {trigger}
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-card border-2 border-primary shadow-glow-intense">
+        <VisuallyHidden>
+          <DialogTitle>Founder Story</DialogTitle>
+          <DialogDescription>Learn about the founder of HerCode</DialogDescription>
+        </VisuallyHidden>
         <div className="space-y-6">
           {/* Pixel Art Avatar */}
           <div className="flex justify-center pt-2 pb-4">
@@ -74,19 +65,40 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
 
           {/* Terminal Content */}
           <div 
-            className="bg-background/50 p-6 rounded-lg font-mono text-sm min-h-[120px] border border-primary/20"
+            className="bg-background/50 p-6 rounded-lg font-mono text-sm min-h-[120px] border border-primary/20 space-y-2"
             style={{ imageRendering: 'pixelated' }}
           >
-            <div className="whitespace-pre-wrap text-foreground">
-              {displayedText}
-              {currentLine < lines.length && (
-                <span className="inline-block w-2 h-4 bg-primary animate-pulse ml-1" style={{ imageRendering: 'pixelated' }} />
-              )}
-            </div>
+            {lines.map((line, index) => (
+              <div
+                key={index}
+                className={`flex items-start gap-2 group transition-opacity duration-300 ${
+                  index < visibleLines ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <span className="text-primary transition-all duration-300 group-hover:brightness-150 group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))]">
+                  &gt;
+                </span>
+                <span className="text-foreground flex-1">
+                  {line.includes('matcha') ? (
+                    <>
+                      {line.split('matcha')[0]}
+                      matcha
+                      <span className="inline-block ml-1 animate-fade-in">☕</span>
+                      {line.split('matcha')[1]}
+                    </>
+                  ) : (
+                    line
+                  )}
+                </span>
+              </div>
+            ))}
+            {visibleLines < lines.length && (
+              <span className="inline-block w-2 h-4 bg-primary animate-pulse ml-1" style={{ imageRendering: 'pixelated' }} />
+            )}
           </div>
 
           {/* LinkedIn Link */}
-          {currentLine >= lines.length && (
+          {visibleLines >= lines.length && (
             <div className="text-center animate-fade-in">
               <p className="text-foreground">
                 connect with me on{" "}
@@ -94,7 +106,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
                   href="https://www.linkedin.com/in/zeynep-savaseri-9653b92aa/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 underline font-mono transition-colors"
+                  className="text-primary hover:text-primary/80 underline font-mono transition-colors animate-glow-pulse"
                 >
                   LinkedIn ↗
                 </a>
