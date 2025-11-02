@@ -98,7 +98,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
           {currentLine >= lines.length && (
             <div className="text-center animate-fade-in">
               <p className="text-foreground">
-                💜 connect with me on{" "}
+                connect with me on{" "}
                 <a 
                   href="https://www.linkedin.com/in/zeynepsavaseri" 
                   target="_blank" 
@@ -109,7 +109,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
                 </a>
               </p>
               <p className="text-muted-foreground text-sm mt-1">
-                let's become friends on LinkedIn
+                let's become friends.
               </p>
             </div>
           )}
