@@ -12,9 +12,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "Studying health sciences & technology at ETH zurich.",
-    "Passionate about creating, exploring, and turning ideas into something real.",
-    "Happiest when running, sipping matcha, or baking something sweet.",
+    "studying health sciences & technology at ETH zurich.",
+    "obsessed with building ideas that actually work.",
+    "powered by matcha, long runs, and good playlists.",
   ];
 
   useEffect(() => {
@@ -79,12 +79,29 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
                   &gt;
                 </span>
                 <span className="text-foreground flex-1">
-                  {line.includes('matcha') ? (
+                  {line.includes('matcha') && line.includes('playlists') ? (
+                    <>
+                      {line.split('matcha')[0]}
+                      matcha
+                      <span className="inline-block ml-1 animate-fade-in">☕</span>
+                      {line.split('matcha')[1].split('playlists')[0]}
+                      playlists
+                      <span className="inline-block ml-1 animate-fade-in">🎧</span>
+                      {line.split('playlists')[1]}
+                    </>
+                  ) : line.includes('matcha') ? (
                     <>
                       {line.split('matcha')[0]}
                       matcha
                       <span className="inline-block ml-1 animate-fade-in">☕</span>
                       {line.split('matcha')[1]}
+                    </>
+                  ) : line.includes('playlists') ? (
+                    <>
+                      {line.split('playlists')[0]}
+                      playlists
+                      <span className="inline-block ml-1 animate-fade-in">🎧</span>
+                      {line.split('playlists')[1]}
                     </>
                   ) : (
                     line
