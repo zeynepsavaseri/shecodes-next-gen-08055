@@ -90,7 +90,7 @@ export const SponsorsSection = () => {
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center gap-4">
                   <div className={`w-16 h-16 pixel-border bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-pixel ${expandedBenefit === index ? 'scale-125 rotate-12' : ''}`} style={{ imageRendering: 'pixelated' }}>
-                    <benefit.icon className={`w-7 h-7 text-white transition-transform duration-500 ${expandedBenefit === index ? 'scale-110 rotate-[-12deg]' : ''}`} strokeWidth={5} style={{ imageRendering: 'pixelated', filter: 'contrast(1.2)' }} />
+                    <benefit.icon className={`w-4 h-4 text-white transition-transform duration-500 ${expandedBenefit === index ? 'rotate-[-12deg]' : ''}`} strokeWidth={2} style={{ imageRendering: 'pixelated', transform: 'scale(2)' }} />
                   </div>
                   <div>
                     <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
