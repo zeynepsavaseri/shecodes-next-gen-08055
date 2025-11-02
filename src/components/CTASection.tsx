@@ -20,7 +20,7 @@ export const CTASection = () => {
     }
   };
 
-  const whatsappGroupLink = "https://chat.whatsapp.com/your-group-link"; // TODO: Replace with actual WhatsApp group link
+  const whatsappGroupLink = "https://chat.whatsapp.com/HVJlizkRiFVDonC0TCeWgi";
 
   return (
     <section className="py-20 px-4 relative overflow-hidden" id="cta">
