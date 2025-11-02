@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import founderPixel from "@/assets/founder-pixel.png";
 
 interface FounderStoryProps {
@@ -13,7 +11,6 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
 
   const lines = [
@@ -173,47 +170,6 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
               >
                 connect on linkedin ↗
               </a>
-            </div>
-          )}
-
-          {/* Read More Button */}
-          {isTypingComplete && (
-            <Button
-              onClick={() => setIsExpanded(!isExpanded)}
-              variant="outline"
-              className="w-full font-mono text-xs uppercase tracking-wider border-primary/30 hover:border-primary hover:shadow-glow transition-all"
-            >
-              {isExpanded ? (
-                <>
-                  <ChevronUp className="w-4 h-4 mr-2" />
-                  show less
-                </>
-              ) : (
-                <>
-                  <ChevronDown className="w-4 h-4 mr-2" />
-                  read more
-                </>
-              )}
-            </Button>
-          )}
-
-          {/* Expanded Content */}
-          {isExpanded && (
-            <div className="space-y-4 animate-fade-in pt-4 border-t border-primary/20">
-              <h3 className="font-mono font-semibold text-primary text-sm uppercase tracking-wider">
-                why hercode?
-              </h3>
-              <div className="space-y-4 text-foreground/90 text-sm leading-relaxed font-mono">
-                <p>
-                  i started hercode after noticing how few women were present at the student project house at ETH or participating in hackathons. many didn't even know what hackathons were, or felt too intimidated to join them.
-                </p>
-                <p>
-                  at the same time, i kept meeting ambitious, inspiring women at company networking events. but those spaces often felt competitive, not collaborative. it was hard to find a community where we could truly come together, share ideas, and start building.
-                </p>
-                <p>
-                  so i created one. hercode is that space. a place where women can connect, learn, and create through hackathons and creative projects, while also giving them the opportunity to connect with companies, collaborate, and grow their ideas.
-                </p>
-              </div>
             </div>
           )}
         </div>
