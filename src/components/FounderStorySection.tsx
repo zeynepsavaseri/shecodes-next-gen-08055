@@ -109,7 +109,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
                 </a>
               </p>
               <p className="text-muted-foreground text-sm mt-1">
-                let's create, learn, and grow together.
+                let's become friends on LinkedIn
               </p>
             </div>
           )}
@@ -151,31 +151,6 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
                   <p>
                     So I created one. HerCode is that space. A place where women can connect, learn, and create through hackathons and creative projects, while also giving them the opportunity to connect with companies, collaborate, and grow their ideas.
                   </p>
-                </div>
-              </div>
-
-              {/* Timeline */}
-              <div className="space-y-4">
-                <h3 className="font-mono font-bold uppercase tracking-wider text-primary">Journey Timeline</h3>
-                <div className="space-y-3">
-                  {timeline.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex gap-4 p-4 bg-background/50 border border-primary/20 rounded-lg hover:border-primary/40 transition-all animate-fade-in"
-                      style={{ 
-                        animationDelay: `${index * 100}ms`,
-                        imageRendering: 'pixelated' 
-                      }}
-                    >
-                      <div className="text-primary font-mono font-bold text-lg min-w-[60px]">
-                        {item.year}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-mono font-bold text-foreground mb-1">{item.event}</h4>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
