@@ -40,7 +40,7 @@ export const TestimonialsSection = () => {
             From Our Participants & Partners
           </h2>
           <p className="text-sm md:text-base font-mono text-muted-foreground max-w-3xl mx-auto px-4">
-            Real feedback from women who joined our hackathons and partners who built with us.
+            Real feedback from women who joined our hackathons and partners, who collaborated with us.
           </p>
         </div>
 
