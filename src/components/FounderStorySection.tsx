@@ -15,9 +15,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "> Studying Health Sciences & Technology at ETH Zurich.",
-    "> Drawn to entrepreneurship and creative building.",
-    "> Usually found reading, baking, or starting one more project.",
+    ">Studying health sciences & technology at ETH zurich.",
+    ">Passionate about creating, exploring, and turning ideas into something real.",
+    ">Happiest when running, sipping matcha, or baking something sweet.",
   ];
 
   const timeline = [
