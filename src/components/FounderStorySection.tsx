@@ -15,9 +15,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "> studying Health Sciences & Technology at ETH Zurich.",
-    "> drawn to entrepreneurship and creative building.",
-    "> usually found reading, baking, or starting one more project.",
+    "> Studying Health Sciences & Technology at ETH Zurich.",
+    "> Drawn to entrepreneurship and creative building.",
+    "> Usually found reading, baking, or starting one more project.",
   ];
 
   const timeline = [
@@ -65,7 +65,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             <img 
               src={founderPixel} 
               alt="Founder pixel art" 
-              className="w-32 h-32 object-contain"
+              className="w-32 h-32 object-contain animate-fade-in"
               style={{ imageRendering: 'pixelated' }}
             />
           </div>
