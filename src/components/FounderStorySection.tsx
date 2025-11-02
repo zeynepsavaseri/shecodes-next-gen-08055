@@ -100,7 +100,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
               <p className="text-foreground">
                 connect with me on{" "}
                 <a 
-                  href="https://www.linkedin.com/in/zeynepsavaseri" 
+                  href="https://www.linkedin.com/in/zeynep-savaseri-9653b92aa/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 underline font-mono transition-colors"
