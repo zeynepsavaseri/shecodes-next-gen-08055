@@ -15,58 +15,58 @@ export const EventsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
+      <div className="container mx-auto px-3 sm:px-4">
         {/* Upcoming Events */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+        <div className="mb-12 sm:mb-16 md:mb-20">
+          <div className="text-center mb-8 sm:mb-12 px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               Upcoming Events
             </h2>
-            <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
               Join us at our next events and be part of the change
             </p>
           </div>
 
-          <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
             {upcomingEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-card rounded-lg shadow-card p-8 hover:shadow-pixel transition-all hover:-translate-y-1 animate-fade-in shadow-pixel-sm"
+                className="bg-card rounded-lg shadow-card p-5 sm:p-6 md:p-8 hover:shadow-pixel transition-all hover:-translate-y-1 animate-fade-in shadow-pixel-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-xl font-mono font-bold mb-4 text-foreground uppercase tracking-wide">{event.title}</h3>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-sm font-mono text-muted-foreground">
-                    <Calendar className="w-5 h-5 mr-3 text-primary" />
+                <h3 className="text-base sm:text-lg md:text-xl font-mono font-bold mb-3 sm:mb-4 text-foreground uppercase tracking-wide">{event.title}</h3>
+                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                  <div className="flex items-center text-xs sm:text-sm font-mono text-muted-foreground">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-primary flex-shrink-0" />
                     <span>{event.date}</span>
                   </div>
-                  <div className="flex items-center text-sm font-mono text-muted-foreground">
-                    <MapPin className="w-5 h-5 mr-3 text-primary" />
+                  <div className="flex items-center text-xs sm:text-sm font-mono text-muted-foreground">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-primary flex-shrink-0" />
                     <span>{event.location}</span>
                   </div>
-                  <div className="flex items-center text-sm font-mono text-muted-foreground">
-                    <Users className="w-5 h-5 mr-3 text-primary" />
+                  <div className="flex items-center text-xs sm:text-sm font-mono text-muted-foreground">
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-primary flex-shrink-0" />
                     <span>{event.participants}</span>
                   </div>
                 </div>
                 {expandedEvents.includes(index) && (
-                  <p className="text-sm font-mono text-foreground mb-6 whitespace-pre-line animate-fade-in">
+                  <p className="text-xs sm:text-sm font-mono text-foreground mb-4 sm:mb-6 whitespace-pre-line animate-fade-in">
                     {event.description}
                   </p>
                 )}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <Button 
                     variant="outline"
                     onClick={() => toggleEvent(index)}
-                    className="flex-1 group font-mono font-bold uppercase text-xs tracking-wider"
+                    className="flex-1 group font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px]"
                   >
                     {expandedEvents.includes(index) ? 'Show Less' : 'Learn More'}
-                    <ChevronDown className={`ml-2 w-4 h-4 transition-transform ${expandedEvents.includes(index) ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform ${expandedEvents.includes(index) ? 'rotate-180' : ''}`} />
                   </Button>
-                  <Button className="flex-1 group font-mono font-bold uppercase text-xs tracking-wider">
+                  <Button className="flex-1 group font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px]">
                     Register Now
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </div>
@@ -76,11 +76,11 @@ export const EventsSection = () => {
 
         {/* Past Events */}
         <div>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-pixel mb-2 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+          <div className="text-center mb-6 sm:mb-8 px-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-2 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               Past Events
             </h3>
-            <p className="text-sm font-mono text-muted-foreground">
+            <p className="text-xs sm:text-sm font-mono text-muted-foreground">
               More events coming soon
             </p>
           </div>
