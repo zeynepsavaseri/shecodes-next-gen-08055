@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import founderPixel from "@/assets/founder-pixel.png";
 
 interface FounderStoryProps {
   trigger?: React.ReactNode;
@@ -60,6 +61,16 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
       </DialogTrigger>
       <DialogContent className="max-w-2xl bg-card border-2 border-primary shadow-glow-intense">
         <div className="space-y-6">
+          {/* Pixel Art Avatar */}
+          <div className="flex justify-center -mt-2">
+            <img 
+              src={founderPixel} 
+              alt="Founder pixel art" 
+              className="w-32 h-32 object-contain"
+              style={{ imageRendering: 'pixelated' }}
+            />
+          </div>
+
           {/* Terminal Header */}
           <div className="flex items-center gap-2 pb-4 border-b border-primary/30">
             <div className="flex gap-1.5">
