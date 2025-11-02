@@ -1,18 +1,6 @@
-import { Quote, MessageCircle } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { Quote } from "lucide-react";
 
 export const TestimonialsSection = () => {
-  const plugin = useRef(
-    Autoplay({ delay: 6000, stopOnInteraction: true })
-  );
   const testimonials = [
     {
       quote: "I never thought I'd feel confident building something tech-related — HerCode changed that.",
@@ -56,71 +44,57 @@ export const TestimonialsSection = () => {
           </p>
         </div>
 
+        {/* Horizontal scrolling carousel */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Floating message icon */}
-          <div className="absolute -top-8 right-4 md:right-8 z-10 animate-float-slow">
-            <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-primary/60" />
-          </div>
-
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            plugins={[plugin.current]}
-            className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div 
-                    className="group bg-background/40 backdrop-blur-sm rounded-lg md:rounded-xl border-2 p-6 md:p-8 h-full min-h-[300px] flex flex-col justify-between transition-all duration-500 ease-out"
-                    style={{
-                      borderColor: `${getAccentColor(testimonial.type)}50`,
-                      boxShadow: `0 0 0 ${getGlowColor(testimonial.type)}`,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = getAccentColor(testimonial.type);
-                      e.currentTarget.style.boxShadow = `0 0 20px ${getGlowColor(testimonial.type)}`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = `${getAccentColor(testimonial.type)}50`;
-                      e.currentTarget.style.boxShadow = `0 0 0 ${getGlowColor(testimonial.type)}`;
-                    }}
-                  >
-                    <div>
-                      <Quote 
-                        className="w-8 h-8 md:w-10 md:h-10 mb-4 transition-all duration-300" 
-                        style={{ color: `${getAccentColor(testimonial.type)}80` }}
-                      />
-                      <p className="text-sm md:text-base font-mono text-foreground/90 leading-relaxed">
-                        "{testimonial.quote}"
-                      </p>
-                    </div>
-                    <div className="pt-4 mt-6 space-y-2" style={{ borderTop: `1px solid ${getAccentColor(testimonial.type)}30` }}>
-                      <p 
-                        className="text-xs md:text-sm font-mono font-semibold"
-                        style={{ color: getAccentColor(testimonial.type) }}
-                      >
-                        — {testimonial.author}
-                      </p>
-                      <p className="text-xs font-mono text-muted-foreground/70">
-                        {testimonial.event}
-                      </p>
-                    </div>
+          <div className="flex gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] snap-center"
+              >
+                <div 
+                  className="group bg-background/40 backdrop-blur-sm rounded-lg md:rounded-xl border-2 p-6 md:p-8 h-full min-h-[300px] flex flex-col justify-between transition-all duration-300"
+                  style={{
+                    borderColor: `${getAccentColor(testimonial.type)}50`,
+                    boxShadow: `0 0 0 ${getGlowColor(testimonial.type)}`,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = getAccentColor(testimonial.type);
+                    e.currentTarget.style.boxShadow = `0 0 20px ${getGlowColor(testimonial.type)}`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = `${getAccentColor(testimonial.type)}50`;
+                    e.currentTarget.style.boxShadow = `0 0 0 ${getGlowColor(testimonial.type)}`;
+                  }}
+                >
+                  <div>
+                    <Quote 
+                      className="w-8 h-8 md:w-10 md:h-10 mb-4 transition-all duration-300" 
+                      style={{ color: `${getAccentColor(testimonial.type)}80` }}
+                    />
+                    <p className="text-sm md:text-base font-mono text-foreground/90 leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-background/80 border-primary/30 hover:bg-primary/20" />
-            <CarouselNext className="hidden md:flex -right-12 bg-background/80 border-primary/30 hover:bg-primary/20" />
-          </Carousel>
+                  <div className="pt-4 mt-6 space-y-2" style={{ borderTop: `1px solid ${getAccentColor(testimonial.type)}30` }}>
+                    <p 
+                      className="text-xs md:text-sm font-mono font-semibold"
+                      style={{ color: getAccentColor(testimonial.type) }}
+                    >
+                      — {testimonial.author}
+                    </p>
+                    <p className="text-xs font-mono text-muted-foreground/70">
+                      {testimonial.event}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <p className="text-center text-xs md:text-sm text-muted-foreground mt-8 italic">
-          Swipe or wait for auto-slide • Pauses on hover
+        <p className="text-center text-xs md:text-sm text-muted-foreground mt-6 italic">
+          Swipe to see more testimonials (coming soon)
         </p>
       </div>
     </section>
