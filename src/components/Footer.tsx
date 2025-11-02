@@ -37,10 +37,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">Connect</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.linkedin.com/company/109190205/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.instagram.com/hercode.ai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
