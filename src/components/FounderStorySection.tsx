@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import founderPixel from "@/assets/founder-pixel.png";
 
 interface FounderStoryProps {
@@ -8,177 +9,149 @@ interface FounderStoryProps {
 }
 
 export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentLine, setCurrentLine] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [visibleLineCount, setVisibleLineCount] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
 
   const lines = [
-    "opening founder.log...",
-    "connected.",
-    "",
-    "hi, i'm zeynep — founder of hercode.",
-    "i study health sciences & technology at ETH zurich, but i've always been drawn to building things that don't yet exist.",
-    "i love creating, exploring, and bringing people together around ideas.",
-    "most days you'll find me running, sipping matcha, or baking something sweet — usually while dreaming up the next project.",
-    "",
-    "i started hercode to make tech feel less intimidating and more human.",
+    ">Studying health sciences & technology at ETH zurich.",
+    ">Passionate about creating, exploring, and turning ideas into something real.",
+    ">Happiest when running, sipping matcha, or baking something sweet.",
   ];
 
-  // Sequential fade-in effect (one line every 0.3s)
+  const timeline = [
+    { year: "2024", event: "Founded HerCode", description: "Started the journey to empower women in tech" },
+    { year: "2023", event: "ETH Zurich", description: "Pursuing Computer Science degree" },
+    { year: "2022", event: "First Hackathon", description: "Discovered the power of collaborative coding" },
+  ];
+
   useEffect(() => {
     if (!isOpen) {
-      setVisibleLineCount(0);
+      setDisplayedText("");
+      setCurrentLine(0);
       return;
     }
 
-    if (visibleLineCount >= lines.length) {
-      return;
-    }
+    if (currentLine >= lines.length) return;
 
-    const timeout = setTimeout(() => {
-      setVisibleLineCount(prev => prev + 1);
-    }, 300);
+    const currentText = lines[currentLine];
+    let charIndex = 0;
 
-    return () => clearTimeout(timeout);
-  }, [isOpen, visibleLineCount, lines.length]);
+    const typingInterval = setInterval(() => {
+      if (charIndex <= currentText.length) {
+        setDisplayedText(lines.slice(0, currentLine).join("\n") + "\n" + currentText.slice(0, charIndex));
+        charIndex++;
+      } else {
+        clearInterval(typingInterval);
+        setTimeout(() => {
+          setCurrentLine(currentLine + 1);
+        }, 500);
+      }
+    }, 30);
 
-  // Cursor blink effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 530);
-    return () => clearInterval(interval);
-  }, []);
-
-  const isComplete = visibleLineCount >= lines.length;
+    return () => clearInterval(typingInterval);
+  }, [currentLine, isOpen]);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto border border-primary/30 relative overflow-hidden">
-        <VisuallyHidden>
-          <DialogTitle>Founder Story</DialogTitle>
-          <DialogDescription>Learn about Zeynep, the founder of HerCode</DialogDescription>
-        </VisuallyHidden>
-        
-        {/* Gradient Background */}
-        <div 
-          className="absolute inset-0 -z-10"
-          style={{
-            background: 'linear-gradient(135deg, hsl(270 70% 15%) 0%, hsl(240 50% 10%) 100%)'
-          }}
-        />
-        
-        {/* Particle Effect */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-primary/30 rounded-full animate-float-slow"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${8 + Math.random() * 4}s`,
-                boxShadow: '0 0 8px hsla(var(--primary) / 0.4)'
-              }}
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-card border-2 border-primary shadow-glow-intense">
+        <div className="space-y-6">
+          {/* Pixel Art Avatar */}
+          <div className="flex justify-center pt-2 pb-4">
+            <img 
+              src={founderPixel} 
+              alt="Founder pixel art" 
+              className="w-32 h-32 object-contain animate-float-subtle"
+              style={{ imageRendering: 'pixelated' }}
             />
-          ))}
-        </div>
+          </div>
 
-        <div className="space-y-6 relative">
           {/* Terminal Header */}
-          <div className="flex items-center gap-3 pb-4 border-b border-primary/20">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-destructive/80" />
-              <div className="w-3 h-3 rounded-full bg-accent/80" />
-              <div className="w-3 h-3 rounded-full bg-primary/80" />
+          <div className="flex items-center gap-2 pb-4 border-b border-primary/30">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-destructive" style={{ imageRendering: 'pixelated' }} />
+              <div className="w-3 h-3 rounded-full bg-accent" style={{ imageRendering: 'pixelated' }} />
+              <div className="w-3 h-3 rounded-full bg-primary" style={{ imageRendering: 'pixelated' }} />
             </div>
-            <span className="text-xs text-muted-foreground font-mono tracking-wider">founder.log</span>
+            <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">founder.terminal</span>
           </div>
 
           {/* Terminal Content */}
-          <div className="min-h-[320px] font-mono text-sm space-y-3 text-foreground/90">
-            {lines.slice(0, visibleLineCount).map((line, index) => (
-              <div 
-                key={index} 
-                className="leading-relaxed flex items-start gap-2 group animate-fade-in"
-                style={{ 
-                  animationDelay: `${index * 0.05}s`,
-                }}
-              >
-                {line && (
-                  <>
-                    <span 
-                      className="text-primary animate-pulse select-none flex-shrink-0 transition-all duration-300 group-hover:brightness-150"
-                      style={{ 
-                        textShadow: '0 0 12px hsla(var(--primary) / 0.6)',
-                        animationDuration: '2s'
-                      }}
-                    >
-                      &gt;
-                    </span>
-                    <span 
-                      style={{
-                        textShadow: line.includes('hercode') ? '0 0 20px hsla(var(--primary) / 0.3)' : 'none'
-                      }}
-                    >
-                      {line}
-                    </span>
-                  </>
-                )}
-                {!line && <br />}
-              </div>
-            ))}
-
-            {isComplete && showCursor && (
-              <span 
-                className="inline-block w-2 h-4 ml-1 bg-primary"
-                style={{ 
-                  boxShadow: '0 0 10px hsla(var(--primary) / 0.6)',
-                  verticalAlign: 'middle'
-                }}
-              />
-            )}
+          <div 
+            className="bg-background/50 p-6 rounded-lg font-mono text-sm min-h-[120px] border border-primary/20"
+            style={{ imageRendering: 'pixelated' }}
+          >
+            <div className="whitespace-pre-wrap text-foreground">
+              {displayedText}
+              {currentLine < lines.length && (
+                <span className="inline-block w-2 h-4 bg-primary animate-pulse ml-1" style={{ imageRendering: 'pixelated' }} />
+              )}
+            </div>
           </div>
 
-          {/* Avatar - Shows after complete */}
-          {isComplete && (
-            <div className="flex justify-center animate-fade-in pt-4">
-              <div className="relative">
-                <img 
-                  src={founderPixel} 
-                  alt="Zeynep, founder of HerCode" 
-                  className="w-24 h-24 object-contain rounded-xl"
-                  style={{ imageRendering: 'pixelated' }}
-                />
-                <div 
-                  className="absolute -inset-2 rounded-xl -z-10 blur-lg"
-                  style={{ 
-                    background: 'var(--gradient-founder)',
-                    opacity: 0.4
-                  }}
-                />
-              </div>
+          {/* LinkedIn Link */}
+          {currentLine >= lines.length && (
+            <div className="text-center animate-fade-in">
+              <p className="text-foreground">
+                connect with me on{" "}
+                <a 
+                  href="https://www.linkedin.com/in/zeynep-savaseri-9653b92aa/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 underline font-mono transition-colors"
+                >
+                  LinkedIn ↗
+                </a>
+              </p>
+              <p className="text-muted-foreground text-sm mt-1">
+                Always open to meet new people & ideas.
+              </p>
             </div>
           )}
 
-          {/* LinkedIn Link with Glow */}
-          {isComplete && (
-            <div className="text-center animate-fade-in pt-2">
-              <a 
-                href="https://www.linkedin.com/in/zeynep-savaseri-9653b92aa/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-sm font-mono animate-glow-pulse"
-                style={{
-                  textShadow: '0 0 15px hsla(var(--primary) / 0.5)'
-                }}
-              >
-                connect on linkedin ↗
-              </a>
+          {/* Read More Button */}
+          {currentLine >= lines.length && (
+            <Button
+              onClick={() => setIsExpanded(!isExpanded)}
+              variant="outline"
+              className="w-full font-mono uppercase tracking-wider border-primary/30 hover:border-primary hover:shadow-glow transition-all"
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp className="w-4 h-4 mr-2" />
+                  Show Less
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="w-4 h-4 mr-2" />
+                  Read More
+                </>
+              )}
+            </Button>
+          )}
+
+          {/* Expanded Content */}
+          {isExpanded && (
+            <div className="space-y-6 animate-fade-in">
+              {/* Story */}
+              <div className="space-y-3">
+                <h3 className="font-mono font-bold uppercase tracking-wider text-primary">Why HerCode?</h3>
+                <div className="space-y-3 text-foreground leading-relaxed">
+                  <p>
+                    I started HerCode after noticing how few women were present at the Student Project House at ETH or participating in hackathons. Many didn't even know what hackathons were, or felt too intimidated to join them.
+                  </p>
+                  <p>
+                    At the same time, I kept meeting ambitious, inspiring women at company networking events. But those spaces often felt competitive, not collaborative. It was hard to find a community where we could truly come together, share ideas, and start building.
+                  </p>
+                  <p>
+                    So I created one. HerCode is that space. A place where women can connect, learn, and create through hackathons and creative projects, while also giving them the opportunity to connect with companies, collaborate, and grow their ideas.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
         </div>
