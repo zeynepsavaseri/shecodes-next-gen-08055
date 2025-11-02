@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import founderPixel from "@/assets/founder-pixel.png";
 
 interface FounderStoryProps {
@@ -11,7 +9,6 @@ interface FounderStoryProps {
 export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentLine, setCurrentLine] = useState(0);
-  const [isExpanded, setIsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
@@ -20,11 +17,6 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
     ">Happiest when running, sipping matcha, or baking something sweet.",
   ];
 
-  const timeline = [
-    { year: "2024", event: "Founded HerCode", description: "Started the journey to empower women in tech" },
-    { year: "2023", event: "ETH Zurich", description: "Pursuing Computer Science degree" },
-    { year: "2022", event: "First Hackathon", description: "Discovered the power of collaborative coding" },
-  ];
 
   useEffect(() => {
     if (!isOpen) {
@@ -113,47 +105,6 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             </div>
           )}
 
-          {/* Read More Button */}
-          {currentLine >= lines.length && (
-            <Button
-              onClick={() => setIsExpanded(!isExpanded)}
-              variant="outline"
-              className="w-full font-mono uppercase tracking-wider border-primary/30 hover:border-primary hover:shadow-glow transition-all"
-            >
-              {isExpanded ? (
-                <>
-                  <ChevronUp className="w-4 h-4 mr-2" />
-                  Show Less
-                </>
-              ) : (
-                <>
-                  <ChevronDown className="w-4 h-4 mr-2" />
-                  Read More
-                </>
-              )}
-            </Button>
-          )}
-
-          {/* Expanded Content */}
-          {isExpanded && (
-            <div className="space-y-6 animate-fade-in">
-              {/* Story */}
-              <div className="space-y-3">
-                <h3 className="font-mono font-bold uppercase tracking-wider text-primary">Why HerCode?</h3>
-                <div className="space-y-3 text-foreground leading-relaxed">
-                  <p>
-                    I started HerCode after noticing how few women were present at the Student Project House at ETH or participating in hackathons. Many didn't even know what hackathons were, or felt too intimidated to join them.
-                  </p>
-                  <p>
-                    At the same time, I kept meeting ambitious, inspiring women at company networking events. But those spaces often felt competitive, not collaborative. It was hard to find a community where we could truly come together, share ideas, and start building.
-                  </p>
-                  <p>
-                    So I created one. HerCode is that space. A place where women can connect, learn, and create through hackathons and creative projects, while also giving them the opportunity to connect with companies, collaborate, and grow their ideas.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </DialogContent>
     </Dialog>
