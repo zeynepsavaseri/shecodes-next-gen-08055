@@ -9,10 +9,10 @@ export const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-pixel mb-3 md:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
-            What Our Participants Say
+            What our participants and partners say
           </h2>
           <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto px-4">
-            Participant statements coming soon
+            Statements coming soon
           </p>
         </div>
 
