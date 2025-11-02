@@ -15,9 +15,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "i build spaces where women create and explore.",
-    "my mission is to make innovation feel less intimidating and more joyful.",
-    "i'm a health sciences & technology student at ETH zurich, drawn to entrepreneurship. From student associations to creative projects alongside my studies. i love creating, building, reading, and baking (especially brownies ).",
+    "> studying Health Sciences & Technology at ETH Zurich.",
+    "> drawn to entrepreneurship and creative building.",
+    "> usually found reading, baking, or starting one more project.",
   ];
 
   const timeline = [
@@ -48,7 +48,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
           setCurrentLine(currentLine + 1);
         }, 500);
       }
-    }, 50);
+    }, 30);
 
     return () => clearInterval(typingInterval);
   }, [currentLine, isOpen]);
