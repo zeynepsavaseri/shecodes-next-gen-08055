@@ -15,10 +15,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "> whoami",
     "i build spaces where women create and explore.",
-    "> mission",
-    "make innovation feel less intimidating and more joyful.",
+    "my mission is to make innovation feel less intimidating and more joyful.",
+    "i'm a health sciences & technology student at ETH zurich, drawn to entrepreneurship. From student associations to creative projects alongside my studies. i love creating, building, reading, and baking (especially brownies ).",
   ];
 
   const timeline = [
