@@ -8,9 +8,7 @@ interface FounderStoryProps {
 
 export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
-  const [currentLineIndex, setCurrentLineIndex] = useState(0);
-  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [visibleLineCount, setVisibleLineCount] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
 
   const lines = [
@@ -25,68 +23,66 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
     "i started hercode to make tech feel less intimidating and more human.",
   ];
 
+  // Sequential fade-in effect (one line every 0.3s)
   useEffect(() => {
     if (!isOpen) {
-      setDisplayedLines([]);
-      setCurrentLineIndex(0);
-      setCurrentCharIndex(0);
+      setVisibleLineCount(0);
       return;
     }
 
-    if (currentLineIndex >= lines.length) {
+    if (visibleLineCount >= lines.length) {
       return;
     }
 
-    const currentLine = lines[currentLineIndex];
+    const timeout = setTimeout(() => {
+      setVisibleLineCount(prev => prev + 1);
+    }, 300);
 
-    if (currentLine === "") {
-      // Empty line, skip to next
-      setTimeout(() => {
-        setDisplayedLines(prev => [...prev, ""]);
-        setCurrentLineIndex(prev => prev + 1);
-        setCurrentCharIndex(0);
-      }, 100);
-      return;
-    }
+    return () => clearTimeout(timeout);
+  }, [isOpen, visibleLineCount, lines.length]);
 
-    if (currentCharIndex < currentLine.length) {
-      const timeout = setTimeout(() => {
-        setCurrentCharIndex(prev => prev + 1);
-      }, 30);
-      return () => clearTimeout(timeout);
-    } else {
-      // Finished current line, move to next
-      const timeout = setTimeout(() => {
-        setDisplayedLines(prev => [...prev, currentLine]);
-        setCurrentLineIndex(prev => prev + 1);
-        setCurrentCharIndex(0);
-      }, 400);
-      return () => clearTimeout(timeout);
-    }
-  }, [isOpen, currentLineIndex, currentCharIndex]);
-
+  // Cursor blink effect
   useEffect(() => {
-    // Cursor blink effect
     const interval = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 530);
     return () => clearInterval(interval);
   }, []);
 
-  const getCurrentLineText = () => {
-    if (currentLineIndex >= lines.length) return "";
-    return lines[currentLineIndex].slice(0, currentCharIndex);
-  };
-
-  const isTypingComplete = currentLineIndex >= lines.length;
+  const isComplete = visibleLineCount >= lines.length;
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-card/95 backdrop-blur-sm border border-primary/30">
-        <div className="space-y-6">
+      <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto border border-primary/30 relative overflow-hidden">
+        {/* Gradient Background */}
+        <div 
+          className="absolute inset-0 -z-10"
+          style={{
+            background: 'linear-gradient(135deg, hsl(270 70% 15%) 0%, hsl(240 50% 10%) 100%)'
+          }}
+        />
+        
+        {/* Particle Effect */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-primary/30 rounded-full animate-float-slow"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`,
+                boxShadow: '0 0 8px hsla(var(--primary) / 0.4)'
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="space-y-6 relative">
           {/* Terminal Header */}
           <div className="flex items-center gap-3 pb-4 border-b border-primary/20">
             <div className="flex gap-2">
@@ -98,36 +94,40 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
           </div>
 
           {/* Terminal Content */}
-          <div className="min-h-[320px] font-mono text-sm space-y-2 text-foreground/90">
-            {displayedLines.map((line, index) => (
+          <div className="min-h-[320px] font-mono text-sm space-y-3 text-foreground/90">
+            {lines.slice(0, visibleLineCount).map((line, index) => (
               <div 
                 key={index} 
-                className="animate-fade-in leading-relaxed"
+                className="leading-relaxed flex items-start gap-2 group animate-fade-in"
                 style={{ 
-                  animationDelay: `${index * 0.1}s`,
-                  textShadow: line.includes('hercode') ? '0 0 20px hsla(var(--primary) / 0.3)' : 'none'
+                  animationDelay: `${index * 0.05}s`,
                 }}
               >
-                {line || <br />}
+                {line && (
+                  <>
+                    <span 
+                      className="text-primary animate-pulse select-none flex-shrink-0 transition-all duration-300 group-hover:brightness-150"
+                      style={{ 
+                        textShadow: '0 0 12px hsla(var(--primary) / 0.6)',
+                        animationDuration: '2s'
+                      }}
+                    >
+                      &gt;
+                    </span>
+                    <span 
+                      style={{
+                        textShadow: line.includes('hercode') ? '0 0 20px hsla(var(--primary) / 0.3)' : 'none'
+                      }}
+                    >
+                      {line}
+                    </span>
+                  </>
+                )}
+                {!line && <br />}
               </div>
             ))}
-            
-            {!isTypingComplete && (
-              <div className="leading-relaxed">
-                {getCurrentLineText()}
-                {showCursor && (
-                  <span 
-                    className="inline-block w-2 h-4 ml-0.5 bg-primary"
-                    style={{ 
-                      boxShadow: '0 0 10px hsla(var(--primary) / 0.6)',
-                      verticalAlign: 'middle'
-                    }}
-                  />
-                )}
-              </div>
-            )}
 
-            {isTypingComplete && showCursor && (
+            {isComplete && showCursor && (
               <span 
                 className="inline-block w-2 h-4 ml-1 bg-primary"
                 style={{ 
@@ -138,8 +138,8 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             )}
           </div>
 
-          {/* Avatar - Shows after typing completes */}
-          {isTypingComplete && (
+          {/* Avatar - Shows after complete */}
+          {isComplete && (
             <div className="flex justify-center animate-fade-in pt-4">
               <div className="relative">
                 <img 
@@ -159,14 +159,17 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             </div>
           )}
 
-          {/* LinkedIn Link */}
-          {isTypingComplete && (
+          {/* LinkedIn Link with Glow */}
+          {isComplete && (
             <div className="text-center animate-fade-in pt-2">
               <a 
                 href="https://www.linkedin.com/in/zeynep-savaseri-9653b92aa/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-mono"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-sm font-mono animate-glow-pulse"
+                style={{
+                  textShadow: '0 0 15px hsla(var(--primary) / 0.5)'
+                }}
               >
                 connect on linkedin ↗
               </a>
