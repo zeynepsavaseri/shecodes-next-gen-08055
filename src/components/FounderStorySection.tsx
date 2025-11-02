@@ -59,7 +59,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="max-w-2xl bg-card border-2 border-primary shadow-glow-intense">
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-card border-2 border-primary shadow-glow-intense">
         <div className="space-y-6">
           {/* Pixel Art Avatar */}
           <div className="flex justify-center -mt-2">
