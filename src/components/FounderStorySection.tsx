@@ -57,7 +57,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             <img 
               src={founderPixel} 
               alt="Founder pixel art" 
-              className="w-32 h-32 object-contain animate-float-subtle"
+              className="w-32 h-32 object-contain avatar-hover-animate"
               style={{ imageRendering: 'pixelated' }}
             />
           </div>
