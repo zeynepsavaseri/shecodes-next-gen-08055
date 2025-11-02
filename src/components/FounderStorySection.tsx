@@ -14,7 +14,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const lines = [
     "> system: zeynep initialized.",
     "> focus: health sciences × creativity × tech.",
-    "> status: online — running on matcha & ideas.",
+    "> status: online — building things that connect people & ideas.",
   ];
 
 
