@@ -224,39 +224,6 @@ All colors MUST be HSL.
     }
   }
 
-  @keyframes avatar-wave {
-    0% {
-      transform: rotate(0deg);
-    }
-    15% {
-      transform: rotate(-2deg) translateY(-2px);
-    }
-    30% {
-      transform: rotate(3deg) translateY(-1px);
-    }
-    45% {
-      transform: rotate(-2deg) translateY(-2px);
-    }
-    60% {
-      transform: rotate(2deg) translateY(0px);
-    }
-    75% {
-      transform: rotate(-1deg) translateY(-1px);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-  @keyframes avatar-blink {
-    0%, 40%, 100% {
-      filter: brightness(1);
-    }
-    45%, 50% {
-      filter: brightness(0.7);
-    }
-  }
-
   .animate-float-slow {
     animation: float-slow 6s ease-in-out infinite;
   }
@@ -275,15 +242,6 @@ All colors MUST be HSL.
 
   .animate-blink {
     animation: blink 1s step-end infinite;
-  }
-
-  .avatar-hover-animate {
-    transition: transform 0.2s ease;
-  }
-
-  .avatar-hover-animate:hover {
-    animation: avatar-wave 1s ease-in-out, avatar-blink 0.8s ease-in-out;
-    transform-origin: bottom center;
   }
 
   .glass-effect {
