@@ -51,17 +51,22 @@ export const Header = () => {
           />
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
-              </button>
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
+            {navItems.map((item, index) => (
+              <div key={item.id} className="flex items-center gap-4 lg:gap-6">
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
+                </button>
+                {index < navItems.length - 1 && (
+                  <div className="h-4 w-px bg-border/60" />
+                )}
+              </div>
             ))}
+            <div className="h-4 w-px bg-border/60" />
             <FounderStorySection 
               trigger={
                 <button className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group">
@@ -84,16 +89,21 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden pb-4 space-y-2 animate-fade-in">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-mono font-bold uppercase min-h-[44px]"
-              >
-                {item.label}
-              </button>
+          <nav className="md:hidden pb-4 space-y-1 animate-fade-in">
+            {navItems.map((item, index) => (
+              <div key={item.id}>
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-mono font-bold uppercase min-h-[44px]"
+                >
+                  {item.label}
+                </button>
+                {index < navItems.length - 1 && (
+                  <div className="h-px bg-border/40 mx-2" />
+                )}
+              </div>
             ))}
+            <div className="h-px bg-border/40 mx-2" />
             <FounderStorySection 
               trigger={
                 <button className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-mono font-bold uppercase min-h-[44px]">
