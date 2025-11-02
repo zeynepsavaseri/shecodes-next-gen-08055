@@ -16,9 +16,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
 
   const lines = [
     "> whoami",
-    "Founder of HerCode, ETH Zurich student, tech optimist.",
-    "> Mission:",
-    "Make tech creation accessible & fun for women.",
+    "i build spaces where women create and explore.",
+    "> mission",
+    "make innovation feel less intimidating and more joyful.",
   ];
 
   const timeline = [
@@ -93,6 +93,26 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
               )}
             </div>
           </div>
+
+          {/* LinkedIn Link */}
+          {currentLine >= lines.length && (
+            <div className="text-center animate-fade-in">
+              <p className="text-foreground">
+                💜 connect with me on{" "}
+                <a 
+                  href="https://www.linkedin.com/in/zeynepsavaseri" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 underline font-mono transition-colors"
+                >
+                  LinkedIn ↗
+                </a>
+              </p>
+              <p className="text-muted-foreground text-sm mt-1">
+                let's create, learn, and grow together.
+              </p>
+            </div>
+          )}
 
           {/* Read More Button */}
           {currentLine >= lines.length && (
