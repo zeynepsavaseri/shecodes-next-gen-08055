@@ -65,7 +65,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             <img 
               src={founderPixel} 
               alt="Founder pixel art" 
-              className="w-32 h-32 object-contain animate-fade-in"
+              className="w-32 h-32 object-contain animate-[float_3s_ease-in-out_infinite]"
               style={{ imageRendering: 'pixelated' }}
             />
           </div>
@@ -82,7 +82,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
 
           {/* Terminal Content */}
           <div 
-            className="bg-background/50 p-6 rounded-lg font-mono text-sm min-h-[200px] border border-primary/20"
+            className="bg-background/50 p-6 rounded-lg font-mono text-sm min-h-[120px] border border-primary/20"
             style={{ imageRendering: 'pixelated' }}
           >
             <div className="whitespace-pre-wrap text-foreground">
