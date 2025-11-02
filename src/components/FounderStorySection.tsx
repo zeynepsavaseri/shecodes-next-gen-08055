@@ -12,9 +12,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    ">Studying health sciences & technology at ETH zurich.",
-    ">Passionate about creating, exploring, and turning ideas into something real.",
-    ">Happiest when running, sipping matcha, or baking something sweet.",
+    "> system: zeynep initialized.",
+    "> focus: health sciences × creativity × tech.",
+    "> status: online — running on matcha & ideas.",
   ];
 
 
@@ -78,9 +78,20 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             style={{ imageRendering: 'pixelated' }}
           >
             <div className="whitespace-pre-wrap text-foreground">
-              {displayedText}
+              {displayedText.split('\n').map((line, idx) => {
+                // Highlight "system" and "status" keywords
+                const highlightedLine = line
+                  .replace(/(system|status):/g, '<span class="text-primary animate-console-flicker">$1:</span>');
+                
+                return (
+                  <div key={idx} dangerouslySetInnerHTML={{ __html: highlightedLine }} />
+                );
+              })}
               {currentLine < lines.length && (
                 <span className="inline-block w-2 h-4 bg-primary animate-pulse ml-1" style={{ imageRendering: 'pixelated' }} />
+              )}
+              {currentLine >= lines.length && (
+                <span className="inline-block w-2 h-4 bg-primary animate-blink ml-1" style={{ imageRendering: 'pixelated' }} />
               )}
             </div>
           </div>
