@@ -135,29 +135,48 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
             </Button>
           )}
 
-          {/* Expanded Timeline */}
+          {/* Expanded Content */}
           {isExpanded && (
-            <div className="space-y-4 animate-fade-in">
-              <h3 className="font-mono font-bold uppercase tracking-wider text-primary">Journey Timeline</h3>
+            <div className="space-y-6 animate-fade-in">
+              {/* Story */}
               <div className="space-y-3">
-                {timeline.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-4 p-4 bg-background/50 border border-primary/20 rounded-lg hover:border-primary/40 transition-all animate-fade-in"
-                    style={{ 
-                      animationDelay: `${index * 100}ms`,
-                      imageRendering: 'pixelated' 
-                    }}
-                  >
-                    <div className="text-primary font-mono font-bold text-lg min-w-[60px]">
-                      {item.year}
+                <h3 className="font-mono font-bold uppercase tracking-wider text-primary">Why HerCode?</h3>
+                <div className="space-y-3 text-foreground leading-relaxed">
+                  <p>
+                    I started HerCode after noticing how few women were present at the Student Project House at ETH or participating in hackathons. Many didn't even know what hackathons were, or felt too intimidated to join them.
+                  </p>
+                  <p>
+                    At the same time, I kept meeting ambitious, inspiring women at company networking events. But those spaces often felt competitive, not collaborative. It was hard to find a community where we could truly come together, share ideas, and start building.
+                  </p>
+                  <p>
+                    So I created one. HerCode is that space. A place where women can connect, learn, and create through hackathons and creative projects, while also giving them the opportunity to connect with companies, collaborate, and grow their ideas.
+                  </p>
+                </div>
+              </div>
+
+              {/* Timeline */}
+              <div className="space-y-4">
+                <h3 className="font-mono font-bold uppercase tracking-wider text-primary">Journey Timeline</h3>
+                <div className="space-y-3">
+                  {timeline.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex gap-4 p-4 bg-background/50 border border-primary/20 rounded-lg hover:border-primary/40 transition-all animate-fade-in"
+                      style={{ 
+                        animationDelay: `${index * 100}ms`,
+                        imageRendering: 'pixelated' 
+                      }}
+                    >
+                      <div className="text-primary font-mono font-bold text-lg min-w-[60px]">
+                        {item.year}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-mono font-bold text-foreground mb-1">{item.event}</h4>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-mono font-bold text-foreground mb-1">{item.event}</h4>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           )}
