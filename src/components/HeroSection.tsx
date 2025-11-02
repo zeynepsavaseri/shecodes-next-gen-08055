@@ -77,8 +77,8 @@ export const HeroSection = () => {
               </span>
             </div>
             
-            {/* CTA Button */}
-            <div className="flex justify-center pt-4 animate-slide-in px-4" style={{ animationDelay: "0.5s" }}>
+            {/* CTA Buttons */}
+            <div className="flex flex-col items-center gap-4 pt-4 animate-slide-in px-4" style={{ animationDelay: "0.5s" }}>
               <Button 
                 size="lg" 
                 className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-sm md:text-base px-6 md:px-8 py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px]"
@@ -95,6 +95,27 @@ export const HeroSection = () => {
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 font-mono font-bold uppercase tracking-wider text-sm md:text-base">
                   Join Our Events
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Button>
+              
+              <Button 
+                size="lg" 
+                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-sm md:text-base px-6 md:px-8 py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px]"
+                style={{ 
+                  background: 'rgba(0, 0, 0, 0.5)',
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 0 40px rgba(290, 85, 75, 0.5), 0 4px 20px rgba(0, 0, 0, 0.6)',
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8)'
+                }}
+                onClick={() => {
+                  const element = document.getElementById('sponsors');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2 font-mono font-bold uppercase tracking-wider text-sm md:text-base">
+                  Become a Partner
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
