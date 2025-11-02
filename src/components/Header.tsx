@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import hercodeLogo from "@/assets/hercode-logo.png";
+import { FounderStorySection } from "@/components/FounderStorySection";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,6 +30,8 @@ export const Header = () => {
     { label: "Testimonials", id: "testimonials" },
     { label: "Become a Partner", id: "sponsors" },
   ];
+
+  const [showFounderStory, setShowFounderStory] = useState(false);
 
   return (
     <header
@@ -59,6 +62,14 @@ export const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
               </button>
             ))}
+            <FounderStorySection 
+              trigger={
+                <button className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group">
+                  About the Founder
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
+                </button>
+              }
+            />
             <Button
               onClick={() => scrollToSection("cta")}
               className="bg-gradient-primary hover:shadow-glow-intense text-sm font-mono font-bold uppercase tracking-wider px-4 transition-all duration-300"
@@ -90,6 +101,13 @@ export const Header = () => {
                 {item.label}
               </button>
             ))}
+            <FounderStorySection 
+              trigger={
+                <button className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-mono font-bold uppercase min-h-[44px]">
+                  About the Founder
+                </button>
+              }
+            />
             <Button
               onClick={() => scrollToSection("cta")}
               className="w-full shadow-glow min-h-[44px]"
