@@ -109,7 +109,7 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
                 </a>
               </p>
               <p className="text-muted-foreground text-sm mt-1">
-                let's become friends.
+                Always open to meet new people & ideas.
               </p>
             </div>
           )}
