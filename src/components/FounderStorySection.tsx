@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import founderPixel from "@/assets/founder-pixel.png";
 
 interface FounderStoryProps {
@@ -57,6 +58,11 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
         {trigger}
       </DialogTrigger>
       <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto border border-primary/30 relative overflow-hidden">
+        <VisuallyHidden>
+          <DialogTitle>Founder Story</DialogTitle>
+          <DialogDescription>Learn about Zeynep, the founder of HerCode</DialogDescription>
+        </VisuallyHidden>
+        
         {/* Gradient Background */}
         <div 
           className="absolute inset-0 -z-10"
