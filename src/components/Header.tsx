@@ -70,13 +70,6 @@ export const Header = () => {
                 </button>
               }
             />
-            <Button
-              onClick={() => scrollToSection("cta")}
-              className="bg-gradient-primary hover:shadow-glow-intense text-sm font-mono font-bold uppercase tracking-wider px-4 transition-all duration-300"
-              size="sm"
-            >
-              Become a Member
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -108,13 +101,6 @@ export const Header = () => {
                 </button>
               }
             />
-            <Button
-              onClick={() => scrollToSection("cta")}
-              className="w-full shadow-glow min-h-[44px]"
-              size="lg"
-            >
-              Become a Member
-            </Button>
           </nav>
         )}
       </div>
