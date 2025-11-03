@@ -1,5 +1,6 @@
 import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 import { Event } from "@/data/events";
 import {
   Accordion,
@@ -131,41 +132,29 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         </div>
 
         {/* CTA Button */}
-        <Button 
-          className="w-full group/btn font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px] relative overflow-hidden transition-all duration-300"
-          style={{
-            boxShadow: `0 0 0 hsla(${accentColor} / 0)`,
-          }}
-          onClick={() => {
-            const element = document.getElementById('partner-form');
-            if (element) {
-              element.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start',
-              });
-              // Set URL parameter for auto-fill
-              const url = new URL(window.location.href);
-              url.searchParams.set('source', 'event');
-              url.searchParams.set('eventTitle', event.title);
-              window.history.replaceState({}, '', url);
-            }
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow = `0 0 20px hsla(${accentColor} / 0.5)`;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow = `0 0 0 hsla(${accentColor} / 0)`;
-          }}
-        >
-          <span className="relative z-10">Register Now</span>
-          <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform relative z-10" />
-          <div 
-            className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+        <Link to="/partner">
+          <Button 
+            className="w-full group/btn font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px] relative overflow-hidden transition-all duration-300"
             style={{
-              background: `linear-gradient(135deg, hsl(${accentColor}) 0%, hsla(${accentColor} / 0.8) 100%)`,
+              boxShadow: `0 0 0 hsla(${accentColor} / 0)`,
             }}
-          />
-        </Button>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = `0 0 20px hsla(${accentColor} / 0.5)`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = `0 0 0 hsla(${accentColor} / 0)`;
+            }}
+          >
+            <span className="relative z-10">Register Now</span>
+            <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform relative z-10" />
+            <div 
+              className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+              style={{
+                background: `linear-gradient(135deg, hsl(${accentColor}) 0%, hsla(${accentColor} / 0.8) 100%)`,
+              }}
+            />
+          </Button>
+        </Link>
       </div>
     </div>
   );

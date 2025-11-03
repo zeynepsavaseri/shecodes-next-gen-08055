@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 
 export const StickyPartnerCTA = () => {
@@ -22,16 +23,6 @@ export const StickyPartnerCTA = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleCTAClick = () => {
-    const element = document.getElementById('partner-form');
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
   if (!isVisible || isDismissed) return null;
 
   return (
@@ -48,14 +39,15 @@ export const StickyPartnerCTA = () => {
           </div>
           
           <div className="flex items-center gap-2 flex-shrink-0">
-            <Button
-              onClick={handleCTAClick}
-              size="sm"
-              variant="secondary"
-              className="font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider shadow-glow hover:shadow-[0_0_30px_hsla(280,65%,60%,0.6)] transition-all duration-300 bg-white text-primary hover:bg-white/90"
-            >
-              Open Form
-            </Button>
+            <Link to="/partner">
+              <Button
+                size="sm"
+                variant="secondary"
+                className="font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider shadow-glow hover:shadow-[0_0_30px_hsla(280,65%,60%,0.6)] transition-all duration-300 bg-white text-primary hover:bg-white/90"
+              >
+                Open Form
+              </Button>
+            </Link>
             
             <button
               onClick={() => setIsDismissed(true)}

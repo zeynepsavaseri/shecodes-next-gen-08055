@@ -1,6 +1,7 @@
 import { Briefcase, Target, Globe, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const SponsorsSection = () => {
@@ -75,21 +76,14 @@ export const SponsorsSection = () => {
             Become a Partner
           </h2>
           <p className="text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-6">Benefits for companies</p>
-          <Button 
-            size="lg" 
-            className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
-            onClick={() => {
-              const element = document.getElementById('partner-form');
-              if (element) {
-                element.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }
-            }}
-          >
-            Partner Up with Us
-          </Button>
+          <Link to="/partner">
+            <Button 
+              size="lg" 
+              className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
+            >
+              Partner Up with Us
+            </Button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
