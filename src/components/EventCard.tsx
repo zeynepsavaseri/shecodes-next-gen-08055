@@ -136,6 +136,20 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           style={{
             boxShadow: `0 0 0 hsla(${accentColor} / 0)`,
           }}
+          onClick={() => {
+            const element = document.getElementById('partner-form');
+            if (element) {
+              element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start',
+              });
+              // Set URL parameter for auto-fill
+              const url = new URL(window.location.href);
+              url.searchParams.set('source', 'event');
+              url.searchParams.set('eventTitle', event.title);
+              window.history.replaceState({}, '', url);
+            }
+          }}
           onMouseEnter={(e) => {
             e.currentTarget.style.boxShadow = `0 0 20px hsla(${accentColor} / 0.5)`;
           }}

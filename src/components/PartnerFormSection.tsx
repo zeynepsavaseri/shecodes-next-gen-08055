@@ -45,17 +45,36 @@ export const PartnerFormSection = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   
-  const [formData, setFormData] = useState<Partial<PartnerFormData>>({
-    company: "",
-    contactName: "",
-    email: "",
-    websiteLinkedIn: "",
-    partnershipTypes: [],
-    budgetRange: "",
-    timeline: "",
-    notes: "",
-    consent: false,
-    referrer: typeof window !== 'undefined' ? document.referrer || window.location.search : "",
+  const [formData, setFormData] = useState<Partial<PartnerFormData>>(() => {
+    // Auto-fill context from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const source = urlParams.get('source');
+    const eventTitle = urlParams.get('eventTitle');
+    
+    const initialTypes: string[] = [];
+    if (source === 'event') {
+      initialTypes.push('Event Sponsorship');
+    }
+    
+    return {
+      company: "",
+      contactName: "",
+      email: "",
+      websiteLinkedIn: "",
+      partnershipTypes: initialTypes,
+      budgetRange: "",
+      timeline: "",
+      notes: eventTitle ? `Interested in partnering for: ${eventTitle}` : "",
+      consent: false,
+      referrer: typeof window !== 'undefined' ? document.referrer || window.location.search : "",
+    };
+  });
+
+  // Initialize selectedTypes from formData
+  useState(() => {
+    if (formData.partnershipTypes && formData.partnershipTypes.length > 0) {
+      setSelectedTypes(formData.partnershipTypes);
+    }
   });
 
   const togglePartnershipType = (type: string) => {
@@ -118,6 +137,14 @@ export const PartnerFormSection = () => {
     });
   };
 
+  const handleBookCall = () => {
+    // TODO: Replace with actual Calendly link
+    toast({
+      title: "Coming soon",
+      description: "Calendly integration will be available shortly.",
+    });
+  };
+
   if (isSubmitted) {
     return (
       <section id="partner-form" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
@@ -133,6 +160,13 @@ export const PartnerFormSection = () => {
               We'll reach out within 2–3 days to discuss partnership opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                onClick={handleBookCall}
+                size="lg"
+                className="font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] shadow-glow"
+              >
+                Book a 15-min Intro Call
+              </Button>
               <Button
                 onClick={handleDownloadDeck}
                 size="lg"

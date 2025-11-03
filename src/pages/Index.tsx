@@ -8,6 +8,7 @@ import { PartnerFormSection } from "@/components/PartnerFormSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { StickyPartnerCTA } from "@/components/StickyPartnerCTA";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <PartnerFormSection />
       <section id="cta"><CTASection /></section>
       <Footer />
+      <StickyPartnerCTA />
     </main>
   );
 };
