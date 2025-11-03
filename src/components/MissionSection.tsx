@@ -68,17 +68,21 @@ export const MissionSection = () => {
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity" />
                 
-                <div className="relative inline-block mb-3 sm:mb-4 md:mb-6">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow border border-primary/20">
-                    <value.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="relative inline-block">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow border border-primary/20">
+                      <value.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
+                    </div>
+                    {/* Glowing ring */}
+                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  {/* Glowing ring */}
-                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500" />
+                  <div>
+                    <h4 className="text-xs sm:text-sm md:text-lg font-mono font-bold mb-2 sm:mb-3 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
+                    <p className="text-[11px] sm:text-xs md:text-sm font-mono text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
-                <h4 className="text-xs sm:text-sm md:text-lg font-mono font-bold mb-2 sm:mb-3 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
-                <p className="text-[11px] sm:text-xs md:text-sm font-mono text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
               </div>
             ))}
           </div>
