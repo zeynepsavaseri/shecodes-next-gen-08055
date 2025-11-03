@@ -13,8 +13,10 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
 
   const lines = [
     "> system: zeynep initialized.",
-    "> focus: health sciences × creativity × tech.",
-    "> status: online — building things that connect people & ideas.",
+    "> focus: tech × creativity × health.",
+    "> origin: founded {hercode} after seeing too few women creating at ETH.",
+    "> mission: make tech more inclusive, hands-on, and human.",
+    "> status: online — building communities where ideas turn real.",
   ];
 
 
@@ -79,9 +81,9 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
           >
             <div className="whitespace-pre-wrap text-foreground">
               {displayedText.split('\n').map((line, idx) => {
-                // Highlight "system" and "status" keywords
+                // Highlight keywords
                 const highlightedLine = line
-                  .replace(/(system|status):/g, '<span class="text-primary animate-console-flicker">$1:</span>');
+                  .replace(/(system|focus|origin|mission|status):/g, '<span class="text-primary animate-console-flicker">$1:</span>');
                 
                 return (
                   <div key={idx} dangerouslySetInnerHTML={{ __html: highlightedLine }} />
