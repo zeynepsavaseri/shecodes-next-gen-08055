@@ -35,18 +35,19 @@ export const EventsSection = () => {
                 className="bg-card rounded-lg shadow-card p-5 sm:p-6 md:p-8 hover:shadow-pixel transition-all hover:-translate-y-1 animate-fade-in shadow-pixel-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-base sm:text-lg md:text-xl font-mono font-bold mb-3 sm:mb-4 text-foreground uppercase tracking-wide">{event.title}</h3>
-                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                  <div className="flex items-center text-xs sm:text-sm font-mono text-muted-foreground">
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-primary flex-shrink-0" />
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{event.title}</h3>
+                <p className="text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-5">{event.subtitle}</p>
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 sm:mb-6 text-xs sm:text-sm font-mono text-muted-foreground">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>{event.date}</span>
                   </div>
-                  <div className="flex items-center text-xs sm:text-sm font-mono text-muted-foreground">
-                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-primary flex-shrink-0" />
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>{event.location}</span>
                   </div>
-                  <div className="flex items-center text-xs sm:text-sm font-mono text-muted-foreground">
-                    <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-primary flex-shrink-0" />
+                  <div className="flex items-center gap-1.5">
+                    <Users className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>{event.participants}</span>
                   </div>
                 </div>

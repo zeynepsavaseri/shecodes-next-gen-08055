@@ -1,5 +1,6 @@
 export interface Event {
   title: string;
+  subtitle: string;
   date: string;
   location: string;
   participants: string;
@@ -10,6 +11,7 @@ export interface Event {
 export const upcomingEvents: Event[] = [
   {
     title: "EY Hackathon",
+    subtitle: "Build. Network. Win.",
     date: "February 28, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",
