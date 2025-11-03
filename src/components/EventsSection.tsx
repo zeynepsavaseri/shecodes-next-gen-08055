@@ -1,18 +1,14 @@
-import { Calendar, MapPin, Users, ArrowRight, ChevronDown } from "lucide-react";
+import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { upcomingEvents, pastEvents } from "@/data/events";
-import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const EventsSection = () => {
-  const [expandedEvents, setExpandedEvents] = useState<number[]>([]);
-
-  const toggleEvent = (index: number) => {
-    setExpandedEvents(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
-  };
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
@@ -51,20 +47,44 @@ export const EventsSection = () => {
                     <span>{event.participants}</span>
                   </div>
                 </div>
-                {expandedEvents.includes(index) && (
-                  <p className="text-xs sm:text-sm font-mono text-foreground mb-4 sm:mb-6 whitespace-pre-line animate-fade-in">
-                    {event.description}
-                  </p>
-                )}
+                
+                <Accordion type="single" collapsible className="mb-4 sm:mb-6">
+                  <AccordionItem value="overview" className="border-b border-border/40">
+                    <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
+                      Overview
+                    </AccordionTrigger>
+                    <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
+                      {event.description.overview}
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="what-to-expect" className="border-b border-border/40">
+                    <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
+                      What to Expect
+                    </AccordionTrigger>
+                    <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
+                      <ul className="space-y-2">
+                        {event.description.whatToExpect.map((item, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-primary mr-2">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="why-join" className="border-b-0">
+                    <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
+                      Why Join
+                    </AccordionTrigger>
+                    <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
+                      {event.description.whyJoin}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+                
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                  <Button 
-                    variant="outline"
-                    onClick={() => toggleEvent(index)}
-                    className="flex-1 group font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px]"
-                  >
-                    {expandedEvents.includes(index) ? 'Show Less' : 'Learn More'}
-                    <ChevronDown className={`ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform ${expandedEvents.includes(index) ? 'rotate-180' : ''}`} />
-                  </Button>
                   <Button className="flex-1 group font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px]">
                     Register Now
                     <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />

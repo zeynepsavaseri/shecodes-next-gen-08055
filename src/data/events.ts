@@ -4,7 +4,11 @@ export interface Event {
   date: string;
   location: string;
   participants: string;
-  description: string;
+  description: {
+    overview: string;
+    whatToExpect: string[];
+    whyJoin: string;
+  };
   achievements?: string;
 }
 
@@ -15,7 +19,15 @@ export const upcomingEvents: Event[] = [
     date: "February 28, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",
-    description: "This isn't just a hackathon; it's a launchpad. Join us for an inspiring day at the EY office in Zürich, where you'll collaborate in teams to build a tech solution for a real-world challenge.\n\nWhat to expect:\n\n• Hands-on mentorship from EY experts and tech leaders\n• Network with recruiters and professionals from top companies\n• Prizes, food, and an amazing community of builders\n\nWhether you're a beginner or an experienced coder, this is your chance to learn, build, and connect. All skill levels are welcome!",
+    description: {
+      overview: "This isn't just a hackathon; it's a launchpad. Join us for an inspiring day at the EY office in Zürich, where you'll collaborate in teams to build a tech solution for a real-world challenge.",
+      whatToExpect: [
+        "Hands-on mentorship from EY experts and tech leaders",
+        "Network with recruiters and professionals from top companies",
+        "Prizes, food, and an amazing community of builders"
+      ],
+      whyJoin: "Whether you're a beginner or an experienced coder, this is your chance to learn, build, and connect. All skill levels are welcome!"
+    },
   },
 ];
 
