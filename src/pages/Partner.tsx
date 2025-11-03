@@ -10,6 +10,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { z } from "zod";
 import { CheckCircle2, ArrowLeft, Calendar, Home } from "lucide-react";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { WhyPartnerSection } from "@/components/WhyPartnerSection";
 
 const partnershipInterests = [
   "Event Sponsorship",
@@ -145,11 +146,11 @@ export default function Partner() {
   }
 
   return (
-    <main className="min-h-screen relative py-12 sm:py-16 px-3 sm:px-4">
+    <main className="min-h-screen relative">
       <ParticleBackground />
       
       {/* Back Button */}
-      <div className="container mx-auto max-w-2xl mb-6 relative z-10">
+      <div className="container mx-auto max-w-2xl pt-12 mb-6 relative z-10 px-3 sm:px-4">
         <Link 
           to="/"
           className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -159,11 +160,14 @@ export default function Partner() {
         </Link>
       </div>
 
+      {/* Why Partner Section */}
+      <WhyPartnerSection />
+
       {/* Form Container */}
-      <div className="container mx-auto max-w-2xl relative z-10">
+      <div className="container mx-auto max-w-2xl relative z-10 py-12 sm:py-16 px-3 sm:px-4">
         <div className="text-center mb-8 sm:mb-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-pixel mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
-            Partner with HerCode
+            Partner Up with Us
           </h1>
           <p className="text-xs sm:text-sm font-mono text-muted-foreground">
             Let's build something impactful together.
