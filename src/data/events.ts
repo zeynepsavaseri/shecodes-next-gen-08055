@@ -7,6 +7,7 @@ export interface Event {
   partner?: {
     name: string;
     logo: string;
+    accentColor: string; // HSL color for gradient
   };
   description: {
     overview: string;
@@ -25,7 +26,8 @@ export const upcomingEvents: Event[] = [
     participants: "Only 60 spots available",
     partner: {
       name: "EY",
-      logo: "/EY Logo.png"
+      logo: "/EY Logo.png",
+      accentColor: "48 96% 53%" // EY yellow
     },
     description: {
       overview: "This isn't just a hackathon; it's a launchpad. Join us for an inspiring day at the EY office in Zürich, where you'll collaborate in teams to build a tech solution for a real-world challenge.",

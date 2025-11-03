@@ -1,12 +1,6 @@
-import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
-import { Button } from "./ui/button";
+import { Users } from "lucide-react";
 import { upcomingEvents, pastEvents } from "@/data/events";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { EventCard } from "./EventCard";
 
 export const EventsSection = () => {
 
@@ -26,90 +20,7 @@ export const EventsSection = () => {
 
           <div className="grid md:grid-cols-1 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
             {upcomingEvents.map((event, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-lg shadow-card p-5 sm:p-6 md:p-8 hover:shadow-pixel transition-all hover:-translate-y-1 animate-fade-in shadow-pixel-sm"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{event.title}</h3>
-                
-                {event.partner && (
-                  <div className="flex items-center justify-center gap-2 mb-3 pb-3 border-b border-primary/20">
-                    <span className="text-[10px] sm:text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                      In collaboration with
-                    </span>
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5">
-                      <img src={event.partner.logo} alt={event.partner.name} className="h-4 sm:h-5 w-auto object-contain" />
-                    </div>
-                  </div>
-                )}
-                
-                <p className="text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-5">{event.subtitle}</p>
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 sm:mb-6 text-xs sm:text-sm font-mono text-muted-foreground">
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>{event.location}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Users className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>{event.participants}</span>
-                  </div>
-                </div>
-                
-                <Accordion type="single" collapsible className="mb-4 sm:mb-6">
-                  <AccordionItem value="overview" className="border-b border-border/40">
-                    <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
-                      Overview
-                    </AccordionTrigger>
-                    <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
-                      {event.description.overview}
-                    </AccordionContent>
-                  </AccordionItem>
-                  
-                  <AccordionItem value="what-to-expect" className="border-b border-border/40">
-                    <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
-                      What to Expect
-                    </AccordionTrigger>
-                    <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
-                      <ul className="space-y-2">
-                        {event.description.whatToExpect.map((item, i) => (
-                          <li key={i} className="flex items-start">
-                            <span className="text-primary mr-2">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                  
-                  <AccordionItem value="why-join" className="border-b-0">
-                    <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
-                      Why Join
-                    </AccordionTrigger>
-                    <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
-                      {event.description.whyJoin}
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-                
-                <div className="mb-3 text-center">
-                  <p className="text-xs sm:text-sm font-mono text-foreground">
-                    <span className="font-bold text-primary">{event.participants.split(' ')[1]} spots</span> — applications open now
-                  </p>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                  <Button className="flex-1 group font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px] relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:scale-[1.02]">
-                    <span className="relative z-10">Register Now</span>
-                    <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform relative z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </Button>
-                </div>
-              </div>
+              <EventCard key={index} event={event} index={index} />
             ))}
           </div>
         </div>
