@@ -1,21 +1,21 @@
-import { Code2, Zap, Sparkles } from "lucide-react";
+import { Heart, Zap, Users } from "lucide-react";
 
 export const MissionSection = () => {
   const values = [
     {
-      icon: Code2,
+      icon: Heart,
       title: "Inclusion",
-      description: "A space where every woman feels welcome in tech and empowered to thrive."
+      description: "A space where every woman feels welcome and empowered to thrive in tech."
     },
     {
       icon: Zap,
       title: "Courage", 
-      description: "Curiosity and bold ideas drive us to learn, build, and create fearlessly."
+      description: "Bold ideas and fearless experimentation drive everything we create."
     },
     {
-      icon: Sparkles,
+      icon: Users,
       title: "Community",
-      description: "Women supporting women, growing together through connection and collaboration."
+      description: "Women supporting women, learning and growing together."
     }
   ];
 
@@ -25,60 +25,60 @@ export const MissionSection = () => {
       <div className="absolute inset-0 tech-grid opacity-20" />
       
       {/* Floating orbs */}
-      <div className="absolute top-20 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '7s' }} />
 
       <div className="container relative mx-auto px-3 sm:px-4">
-        {/* What is HerCode */}
-        <div className="relative mb-12 sm:mb-16 md:mb-20">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Headline */}
+          <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-4 sm:mb-6 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
               What is HerCode?
             </h2>
-            <div className="space-y-4 sm:space-y-6 text-xs sm:text-sm md:text-base font-mono text-foreground/80 leading-relaxed px-2">
+          </div>
+
+          {/* Flowing Story */}
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 px-2">
+            <div className="text-xs sm:text-sm md:text-base font-mono text-foreground/90 leading-relaxed space-y-4 sm:space-y-5 max-w-3xl mx-auto">
               <p>
-                HerCode grew out of a simple observation: too many women are missing from tech and entrepreneurship, and it's certainly not because they lack the talent or drive to belong there.
+                HerCode started from a simple observation: too many talented women are missing from tech — not because they lack the skills or ambition, but because the space doesn't always feel like it's made for them.
               </p>
               <p>
-                We're creating a space where women feel encouraged to explore technology, build confidently, and learn through hands-on experience. HerCode brings together ambitious, curious women who want to challenge themselves, support one another, and make their mark in the world of tech.
+                We're building a community where women feel encouraged to explore technology, learn by doing, and create fearlessly. HerCode is for the curious, the bold, and the ambitious — women who want to challenge themselves, support one another, and shape the future of tech on their own terms.
+              </p>
+              <p className="text-foreground font-semibold">
+                Everything we do is guided by our three core values.
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Our Mission */}
-        <div>
-          <div className="text-center mb-8 sm:mb-12 px-2">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-primary uppercase" style={{ letterSpacing: '0.1em' }}>
-              Our Mission
-            </h3>
-            <p className="text-xs sm:text-sm md:text-base font-mono text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Empowering women to explore, create, and lead confidently.<br />
-              Everything we do is guided by three core principles that drive real impact:
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8 max-w-5xl mx-auto">
+          {/* Core Values - Compact Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group relative bg-card rounded-lg sm:rounded-xl shadow-card p-4 sm:p-6 md:p-8 hover:shadow-glow transition-all hover:-translate-y-2 animate-fade-in border border-primary/20 overflow-hidden"
+                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-1 border border-primary/20 overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity" />
+                {/* Subtle gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
                 
-                <div className="flex flex-col items-center text-center gap-4">
+                <div className="relative flex flex-col items-center text-center gap-3">
+                  {/* Icon */}
                   <div className="relative inline-block">
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow-intense transition-all shadow-glow border border-primary/20">
-                      <value.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center group-hover:shadow-glow transition-all duration-500 shadow-glow">
+                      <value.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />
                     </div>
-                    {/* Glowing ring */}
-                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500" />
+                    {/* Glowing ring effect */}
+                    <div className="absolute inset-0 rounded-xl border-2 border-primary/30 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   </div>
+                  
+                  {/* Content */}
                   <div>
-                    <h4 className="text-xs sm:text-sm md:text-lg font-mono font-bold mb-2 sm:mb-3 md:mb-4 text-foreground uppercase tracking-wide">{value.title}</h4>
-                    <p className="text-[11px] sm:text-xs md:text-sm font-mono text-muted-foreground leading-relaxed">
+                    <h4 className="text-sm sm:text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wider">
+                      {value.title}
+                    </h4>
+                    <p className="text-xs sm:text-sm font-mono text-muted-foreground leading-relaxed">
                       {value.description}
                     </p>
                   </div>
