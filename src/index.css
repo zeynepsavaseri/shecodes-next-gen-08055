@@ -311,6 +311,86 @@ All colors MUST be HSL.
     bottom: -4px;
     right: -4px;
   }
+
+  /* Premium micro-interactions */
+  @keyframes pixel-glitch {
+    0% {
+      transform: translate(0);
+      filter: none;
+    }
+    33% {
+      transform: translate(-1px, 1px);
+      filter: drop-shadow(2px 0 0 hsla(0 100% 60% / 0.8)) 
+             drop-shadow(-2px 0 0 hsla(180 100% 60% / 0.8));
+    }
+    66% {
+      transform: translate(1px, -1px);
+      filter: drop-shadow(-1px 0 0 hsla(0 100% 60% / 0.6)) 
+             drop-shadow(1px 0 0 hsla(240 100% 60% / 0.6));
+    }
+    100% {
+      transform: translate(0);
+      filter: none;
+    }
+  }
+
+  @keyframes neon-trace {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    25% {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    50% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    75% {
+      clip-path: polygon(100% 100%, 100% 100%, 0 100%, 0 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  @keyframes scanline-sweep {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.15;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-pixel-glitch {
+    animation: pixel-glitch 120ms steps(3) forwards;
+  }
+
+  .grain-overlay {
+    position: relative;
+  }
+
+  .grain-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.3;
+  }
 }
 
 /* Hide scrollbar for horizontal scroll */
