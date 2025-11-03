@@ -73,7 +73,7 @@ export const SponsorsSection = () => {
         </div>
 
         {/* Why Partner with HerCode Section */}
-        <div className="relative py-12 overflow-hidden">
+        <div className="relative overflow-hidden">
           {/* Glowing orbs */}
           <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
@@ -96,7 +96,7 @@ export const SponsorsSection = () => {
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
                 <Card
                   key={index}
