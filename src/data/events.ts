@@ -4,6 +4,10 @@ export interface Event {
   date: string;
   location: string;
   participants: string;
+  partner?: {
+    name: string;
+    logo: string;
+  };
   description: {
     overview: string;
     whatToExpect: string[];
@@ -19,6 +23,10 @@ export const upcomingEvents: Event[] = [
     date: "February 28, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",
+    partner: {
+      name: "EY",
+      logo: "/EY Logo.png"
+    },
     description: {
       overview: "This isn't just a hackathon; it's a launchpad. Join us for an inspiring day at the EY office in Zürich, where you'll collaborate in teams to build a tech solution for a real-world challenge.",
       whatToExpect: [
