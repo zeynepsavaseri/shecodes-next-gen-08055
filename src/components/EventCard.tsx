@@ -102,6 +102,15 @@ export const EventCard = ({ event, index }: EventCardProps) => {
             </AccordionContent>
           </AccordionItem>
           
+          <AccordionItem value="who-can-join" className="border-b border-border/40">
+            <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
+              Who Can Join
+            </AccordionTrigger>
+            <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
+              {event.description.whoCanJoin}
+            </AccordionContent>
+          </AccordionItem>
+          
           <AccordionItem value="why-join" className="border-b-0">
             <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
               Why Join

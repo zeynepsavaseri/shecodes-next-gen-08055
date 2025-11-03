@@ -12,6 +12,7 @@ export interface Event {
   description: {
     overview: string;
     whatToExpect: string[];
+    whoCanJoin: string;
     whyJoin: string;
   };
   achievements?: string;
@@ -36,7 +37,8 @@ export const upcomingEvents: Event[] = [
         "Network with recruiters and professionals from top companies",
         "Prizes, food, and an amazing community of builders"
       ],
-      whyJoin: "Whether you're a beginner or an experienced coder, this is your chance to learn, build, and connect. All skill levels are welcome!"
+      whoCanJoin: "Whether you're a first-time coder or an experienced builder, you're welcome here. HerCode hackathons are designed for all skill levels — with mentors on site to support beginners.",
+      whyJoin: "This is your chance to learn, build, and connect with a supportive community of women in tech. Make meaningful connections and gain real-world experience."
     },
   },
 ];
