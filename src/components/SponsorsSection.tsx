@@ -83,9 +83,17 @@ export const SponsorsSection = () => {
               <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase tracking-wider">
                 Why Partner with HerCode
               </h2>
-              <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto mb-6">
                 Join forward-thinking companies investing in the future of tech diversity
               </p>
+              <Link to="/partner">
+                <Button 
+                  size="lg" 
+                  className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
+                >
+                  Partner Up with Us
+                </Button>
+              </Link>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
@@ -167,17 +175,6 @@ export const SponsorsSection = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="text-center px-2">
-          <Link to="/partner">
-            <Button 
-              size="lg" 
-              className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
-            >
-              Partner Up with Us
-            </Button>
-          </Link>
         </div>
       </div>
     </section>
