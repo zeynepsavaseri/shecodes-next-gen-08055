@@ -35,7 +35,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in ${
         isScrolled
           ? "bg-card/95 backdrop-blur-sm shadow-glow border-b border-border"
           : "bg-card/80 backdrop-blur-sm border-b border-border/50"

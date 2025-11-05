@@ -14,11 +14,11 @@ const Index = () => {
       <ParticleBackground />
       <Header />
       <HeroSection />
-      <section id="mission"><MissionSection /></section>
-      <section id="events"><EventsSection /></section>
-      <section id="testimonials"><TestimonialsSection /></section>
-      <section id="sponsors"><SponsorsSection /></section>
-      <section id="cta"><CTASection /></section>
+      <section id="mission" className="animate-fade-in" style={{ animationDelay: "0.1s" }}><MissionSection /></section>
+      <section id="events" className="animate-fade-in" style={{ animationDelay: "0.2s" }}><EventsSection /></section>
+      <section id="testimonials" className="animate-fade-in" style={{ animationDelay: "0.3s" }}><TestimonialsSection /></section>
+      <section id="sponsors" className="animate-fade-in" style={{ animationDelay: "0.4s" }}><SponsorsSection /></section>
+      <section id="cta" className="animate-fade-in" style={{ animationDelay: "0.5s" }}><CTASection /></section>
       <Footer />
     </main>
   );

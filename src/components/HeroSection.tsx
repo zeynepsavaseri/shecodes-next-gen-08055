@@ -22,17 +22,17 @@ export const HeroSection = () => {
       {/* Animated tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-30" />
       
-      {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float-slow" />
-      <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-glow/15 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: "4s" }} />
+      {/* Floating orbs with scale animation */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-float-slow animate-scale-in" />
+      <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float-slow animate-scale-in" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-glow/15 rounded-full blur-3xl animate-float-slow animate-scale-in" style={{ animationDelay: "4s" }} />
 
       <div className="container relative mx-auto px-3 sm:px-4 py-8 sm:py-12 md:py-16">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 md:space-y-12">
           {/* Main Content */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
             {/* Main Headline */}
-            <div className="space-y-3 sm:space-y-4 animate-slide-in">
+            <div className="space-y-3 sm:space-y-4 animate-fade-in animate-scale-in">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold leading-tight tracking-wider">
                 <div className="relative inline-block">
                   <span className="text-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl mr-1 sm:mr-2">{"{"}</span>
@@ -57,16 +57,16 @@ export const HeroSection = () => {
             </div>
             
             {/* Value Proposition */}
-            <p className="text-sm sm:text-base md:text-base lg:text-lg font-mono text-white max-w-2xl mx-auto leading-relaxed animate-slide-in tracking-wide px-2 sm:px-4" style={{ 
-              animationDelay: "0.2s",
+            <p className="text-sm sm:text-base md:text-base lg:text-lg font-mono text-white max-w-2xl mx-auto leading-relaxed animate-fade-in tracking-wide px-2 sm:px-4" style={{ 
+              animationDelay: "0.3s",
               textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
             }}>
               A hackathon and event series where young women explore, build, and grow in the world of technology.
             </p>
             
             {/* Event Badge */}
-            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border-2 border-accent/50 animate-slide-in" style={{ 
-              animationDelay: "0.4s",
+            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border-2 border-accent/50 animate-fade-in animate-scale-in" style={{ 
+              animationDelay: "0.5s",
               background: 'rgba(0, 0, 0, 0.6)',
               backdropFilter: 'blur(12px)',
               boxShadow: '0 0 30px rgba(290, 85, 75, 0.4)'
@@ -78,10 +78,10 @@ export const HeroSection = () => {
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col items-center gap-3 sm:gap-4 pt-2 sm:pt-4 animate-slide-in px-2 sm:px-4" style={{ animationDelay: "0.5s" }}>
+            <div className="flex flex-col items-center gap-3 sm:gap-4 pt-2 sm:pt-4 animate-fade-in px-2 sm:px-4" style={{ animationDelay: "0.7s" }}>
               <Button 
                 size="lg" 
-                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-xs sm:text-sm md:text-base px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px]"
+                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-xs sm:text-sm md:text-base px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px] hover-scale"
                 style={{ 
                   background: 'rgba(0, 0, 0, 0.5)',
                   backdropFilter: 'blur(12px)',
@@ -102,7 +102,7 @@ export const HeroSection = () => {
               
               <Button 
                 size="lg" 
-                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-xs sm:text-sm md:text-base px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px]"
+                className="group relative border-2 border-white/40 text-white hover:bg-white hover:text-primary text-xs sm:text-sm md:text-base px-5 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 overflow-hidden transition-all duration-300 w-full sm:w-auto min-h-[48px] hover-scale"
                 style={{ 
                   background: 'rgba(0, 0, 0, 0.5)',
                   backdropFilter: 'blur(12px)',
