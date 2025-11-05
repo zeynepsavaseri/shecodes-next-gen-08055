@@ -36,7 +36,7 @@ export const MissionSection = () => {
     {
       icon: Sparkles,
       title: "Well-Being",
-      description: "A reminder that innovation starts with a clear mind and balanced energy. We nurture creativity through mindful, healthy, and sustainable ways of learning and building together.",
+      description: "Innovation thrives on a clear mind and balanced energy. We value health and mindfulness in everything we build.",
       microLine: "Clarity fuels creativity."
     }
   ];
