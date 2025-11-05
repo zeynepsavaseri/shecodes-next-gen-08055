@@ -89,7 +89,7 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           
           <AccordionItem value="what-to-expect" className="border-b border-border/40">
             <AccordionTrigger className="text-xs sm:text-sm font-mono font-semibold uppercase tracking-wide hover:no-underline py-3">
-              What to Expect
+              Prizes & Opportunities
             </AccordionTrigger>
             <AccordionContent className="text-xs sm:text-sm font-mono text-muted-foreground pb-3">
               <ul className="space-y-2">

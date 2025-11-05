@@ -32,13 +32,13 @@ export const upcomingEvents: Event[] = [
       accentColor: "48 96% 53%" // EY yellow
     },
     description: {
-      overview: "This isn't just a hackathon; it's a launchpad. Join us for an inspiring day at the EY office in Zürich, where you'll collaborate in teams to build a tech solution for a real-world challenge.",
+      overview: "Join us at EY Zürich for a day of innovation, collaboration, and real-world problem-solving. You'll team up with driven students to tackle an actual EY challenge — guided by experts working at the intersection of business and technology. This is your chance to get inside one of the world's leading firms, turn ideas into solutions, and make connections that can shape your future.",
       whatToExpect: [
-        "Hands-on mentorship from EY experts and tech leaders",
-        "Network with recruiters and professionals from top companies",
-        "Prizes, food, and an amazing community of builders"
+        "1-year mentorship with EY professionals",
+        "Exclusive dinner with EY mentors and team members",
+        "Recognition and exposure within the EY innovation network"
       ],
-      whoCanJoin: "Whether you're a first-time coder or an experienced builder, you're welcome here. HerCode hackathons are designed for all skill levels — with mentors on site to support beginners.",
+      whoCanJoin: "Open to students of all backgrounds : From first-time coders to experienced builders. Curiosity and creativity are all you need.",
       whyJoin: "This is your chance to learn, build, and connect with a supportive community of women in tech. Make meaningful connections and gain real-world experience."
     },
     registrationUrl: "https://www.ey.com"
