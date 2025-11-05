@@ -56,7 +56,7 @@ export const SponsorsSection = () => {
             {sponsors.concat(sponsors).map((sponsor, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 mx-4 sm:mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover:shadow-pixel transition-all p-4 sm:p-6"
+                className="flex-shrink-0 w-64 sm:w-72 md:w-80 h-32 sm:h-36 md:h-40 mx-4 sm:mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover:shadow-pixel transition-all p-6 sm:p-8"
               >
                 {sponsor.isComingSoon ? (
                   <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
