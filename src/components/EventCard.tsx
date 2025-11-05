@@ -132,29 +132,55 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         </div>
 
         {/* CTA Button */}
-        <Link to="/partner">
-          <Button 
-            className="w-full group/btn font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px] relative overflow-hidden transition-all duration-300"
-            style={{
-              boxShadow: `0 0 0 hsla(${accentColor} / 0)`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = `0 0 20px hsla(${accentColor} / 0.5)`;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = `0 0 0 hsla(${accentColor} / 0)`;
-            }}
-          >
-            <span className="relative z-10">Register Now</span>
-            <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform relative z-10" />
-            <div 
-              className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+        {event.registrationUrl ? (
+          <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+            <Button 
+              className="w-full group/btn font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px] relative overflow-hidden transition-all duration-300"
               style={{
-                background: `linear-gradient(135deg, hsl(${accentColor}) 0%, hsla(${accentColor} / 0.8) 100%)`,
+                boxShadow: `0 0 0 hsla(${accentColor} / 0)`,
               }}
-            />
-          </Button>
-        </Link>
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 20px hsla(${accentColor} / 0.5)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 0 hsla(${accentColor} / 0)`;
+              }}
+            >
+              <span className="relative z-10">Register Now</span>
+              <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform relative z-10" />
+              <div 
+                className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: `linear-gradient(135deg, hsl(${accentColor}) 0%, hsla(${accentColor} / 0.8) 100%)`,
+                }}
+              />
+            </Button>
+          </a>
+        ) : (
+          <Link to="/partner">
+            <Button 
+              className="w-full group/btn font-mono font-bold uppercase text-[10px] sm:text-xs tracking-wider min-h-[44px] relative overflow-hidden transition-all duration-300"
+              style={{
+                boxShadow: `0 0 0 hsla(${accentColor} / 0)`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 20px hsla(${accentColor} / 0.5)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 0 hsla(${accentColor} / 0)`;
+              }}
+            >
+              <span className="relative z-10">Register Now</span>
+              <ArrowRight className="ml-1 sm:ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform relative z-10" />
+              <div 
+                className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: `linear-gradient(135deg, hsl(${accentColor}) 0%, hsla(${accentColor} / 0.8) 100%)`,
+                }}
+              />
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );

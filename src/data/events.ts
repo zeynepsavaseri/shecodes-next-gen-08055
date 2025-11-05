@@ -16,6 +16,7 @@ export interface Event {
     whyJoin: string;
   };
   achievements?: string;
+  registrationUrl?: string;
 }
 
 export const upcomingEvents: Event[] = [
@@ -40,6 +41,7 @@ export const upcomingEvents: Event[] = [
       whoCanJoin: "Whether you're a first-time coder or an experienced builder, you're welcome here. HerCode hackathons are designed for all skill levels — with mentors on site to support beginners.",
       whyJoin: "This is your chance to learn, build, and connect with a supportive community of women in tech. Make meaningful connections and gain real-world experience."
     },
+    registrationUrl: "https://www.ey.com"
   },
 ];
 
