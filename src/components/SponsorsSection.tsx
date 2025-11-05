@@ -64,7 +64,7 @@ export const SponsorsSection = () => {
                   <img 
                     src={sponsor.logo} 
                     alt={sponsor.name} 
-                    className="max-w-full max-h-full object-contain"
+                    className="w-full h-full object-contain"
                   />
                 )}
               </div>
