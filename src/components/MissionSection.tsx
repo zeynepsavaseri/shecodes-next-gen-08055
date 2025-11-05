@@ -1,4 +1,4 @@
-import { Heart, Zap, Users, Sparkles } from "lucide-react";
+import { Heart, Zap, Users, Brain } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 export const MissionSection = () => {
@@ -34,7 +34,7 @@ export const MissionSection = () => {
       microLine: "500+ builders (and growing)."
     },
     {
-      icon: Sparkles,
+      icon: Brain,
       title: "Well-Being",
       description: "A clear mind and balanced energy fuel creativity and innovation.",
       microLine: "Clarity fuels creativity."
