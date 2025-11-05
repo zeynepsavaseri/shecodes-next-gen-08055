@@ -1,4 +1,4 @@
-import { Heart, Zap, Users } from "lucide-react";
+import { Heart, Zap, Users, Sparkles } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 export const MissionSection = () => {
@@ -32,6 +32,12 @@ export const MissionSection = () => {
       title: "Community",
       description: "Women supporting women, learning and growing together.",
       microLine: "500+ builders (and growing)."
+    },
+    {
+      icon: Sparkles,
+      title: "Well-Being",
+      description: "A reminder that innovation starts with a clear mind and balanced energy. We nurture creativity through mindful, healthy, and sustainable ways of learning and building together.",
+      microLine: "Clarity fuels creativity."
     }
   ];
 
@@ -97,13 +103,13 @@ export const MissionSection = () => {
                 We're building a community where women feel encouraged to explore technology, learn by doing, and create fearlessly. HerCode is for the curious, the bold, and the ambitious — women who want to challenge themselves, support one another, and shape the future of tech on their own terms.
               </p>
               <p className="text-foreground font-semibold">
-                Everything we do is guided by our three core values.
+                Everything we do is guided by our core values.
               </p>
             </div>
           </div>
 
           {/* Core Values - Premium Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
             {values.map((value, index) => (
               <div
                 key={index}
