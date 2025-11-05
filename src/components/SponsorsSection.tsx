@@ -31,7 +31,7 @@ export const SponsorsSection = () => {
   const sponsors = [
     {
       name: "Lovable",
-      logo: "/lovable-logo.png?v=2",
+      logo: "/lovable-logo-white.png",
       isComingSoon: false,
     },
     { name: "Coming Soon", logo: "", isComingSoon: true },
