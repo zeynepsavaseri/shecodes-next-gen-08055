@@ -31,7 +31,7 @@ export const MissionSection = () => {
       icon: Users,
       title: "Community",
       description: "Women supporting women, learning and growing together.",
-      microLine: "500+ builders (and growing)."
+      microLine: "Building together, every day."
     },
     {
       icon: Brain,
@@ -109,7 +109,7 @@ export const MissionSection = () => {
           </div>
 
           {/* Core Values - Premium Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto lg:flex lg:justify-center lg:gap-6">
             {values.map((value, index) => (
               <div
                 key={index}
