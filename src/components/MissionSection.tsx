@@ -71,10 +71,7 @@ export const MissionSection = () => {
 
   const handleMouseEnter = (index: number) => {
     setHoveredCard(index);
-    if (!isMobile) {
-      setGlitchingCard(index);
-      setTimeout(() => setGlitchingCard(null), 120);
-    }
+    // Removed glitch effect on hover for smoother transitions
   };
 
   return (
@@ -119,13 +116,14 @@ export const MissionSection = () => {
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
-                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 min-h-[300px] sm:min-h-[320px] h-full border border-primary/20 grain-overlay cursor-pointer"
+                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 border border-primary/20 grain-overlay cursor-pointer flex flex-col"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
-                  transition: 'transform 120ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 300ms ease',
+                  transition: 'transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms ease',
                   willChange: 'transform',
                   transform: 'perspective(1000px) translateZ(0)',
-                  contain: 'layout paint'
+                  contain: 'layout paint',
+                  minHeight: '320px'
                 }}
               >
                 {/* Neon trace border */}
@@ -143,17 +141,7 @@ export const MissionSection = () => {
                   }}
                 />
 
-                {/* CRT scanline sweep */}
-                {hoveredCard === index && !isMobile && (
-                  <div 
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: 'linear-gradient(180deg, transparent 0%, hsla(var(--primary) / 0.15) 50%, transparent 100%)',
-                      height: '50%',
-                      animation: 'scanline-sweep 180ms linear forwards'
-                    }}
-                  />
-                )}
+                {/* CRT scanline sweep - removed for smoother transitions */}
 
                 {/* Subtle gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
@@ -165,13 +153,11 @@ export const MissionSection = () => {
                   />
                 )}
                 
-                <div className="relative flex flex-col items-center text-center gap-3">
-                  {/* Icon with glitch */}
+                <div className="relative flex flex-col items-center text-center gap-3 flex-1">
+                  {/* Icon */}
                   <div className="relative inline-block">
                     <div 
-                      className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow transition-all duration-500 ${
-                        glitchingCard === index ? 'animate-pixel-glitch' : ''
-                      }`}
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow transition-all duration-300"
                       style={{
                         boxShadow: hoveredCard === index 
                           ? 'var(--shadow-glow-intense)' 
@@ -189,28 +175,32 @@ export const MissionSection = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className="w-full">
+                  <div className="w-full flex-1 flex flex-col">
                     <h4 className="text-sm sm:text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wider">
                       {value.title}
                     </h4>
-                    <p className="text-xs sm:text-sm font-mono text-muted-foreground leading-relaxed">
+                    <p className="text-xs sm:text-sm font-mono text-muted-foreground leading-relaxed mb-3">
                       {value.description}
                     </p>
                     
-                    {/* Typewriter micro-line */}
-                    <div className="h-5 mt-3 flex items-center justify-center">
-                      {hoveredCard === index && (
-                        <div className="flex items-center gap-1">
-                          <span 
-                            className="text-[10px] sm:text-xs font-mono text-primary/90 overflow-hidden whitespace-nowrap border-r-2 border-primary/80"
-                            style={{
-                              animation: 'typewriter 300ms steps(30) forwards, blink 1s step-end 300ms infinite'
-                            }}
-                          >
-                            {value.microLine}
-                          </span>
-                        </div>
-                      )}
+                    {/* Typewriter micro-line - always reserve space */}
+                    <div className="h-6 mt-auto flex items-center justify-center">
+                      <div className="flex items-center gap-1 min-h-[1.5rem]">
+                        <span 
+                          className={`text-[10px] sm:text-xs font-mono overflow-hidden whitespace-nowrap transition-all duration-300 ${
+                            hoveredCard === index 
+                              ? 'text-primary/90 border-r-2 border-primary/80' 
+                              : 'text-transparent border-r-2 border-transparent'
+                          }`}
+                          style={{
+                            animation: hoveredCard === index 
+                              ? 'typewriter 300ms steps(30) forwards, blink 1s step-end 300ms infinite'
+                              : 'none'
+                          }}
+                        >
+                          {value.microLine}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
