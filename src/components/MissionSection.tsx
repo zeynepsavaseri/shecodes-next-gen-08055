@@ -47,16 +47,18 @@ export const MissionSection = () => {
     const card = cardRefs.current[index];
     if (!card) return;
 
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = ((y - centerY) / centerY) * -4;
-    const rotateY = ((x - centerX) / centerX) * 4;
-    
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    requestAnimationFrame(() => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -3;
+      const rotateY = ((x - centerX) / centerX) * 3;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
   };
 
   const handleMouseLeave = (index: number) => {
@@ -120,8 +122,9 @@ export const MissionSection = () => {
                 className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 border border-primary/20 grain-overlay cursor-pointer"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
-                  transition: 'transform 180ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms ease',
-                  willChange: 'transform'
+                  transition: 'transform 100ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 300ms ease',
+                  willChange: 'transform',
+                  transform: 'perspective(1000px) translateZ(0)'
                 }}
               >
                 {/* Neon trace border */}
