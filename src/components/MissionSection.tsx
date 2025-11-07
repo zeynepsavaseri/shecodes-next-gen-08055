@@ -116,14 +116,14 @@ export const MissionSection = () => {
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
-                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 border border-primary/20 grain-overlay cursor-pointer flex flex-col"
+                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-4 sm:p-5 border border-primary/20 grain-overlay cursor-pointer flex flex-col"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
                   transition: 'transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms ease',
                   willChange: 'transform',
                   transform: 'perspective(1000px) translateZ(0)',
                   contain: 'layout paint',
-                  minHeight: '320px'
+                  minHeight: '260px'
                 }}
               >
                 {/* Neon trace border */}
