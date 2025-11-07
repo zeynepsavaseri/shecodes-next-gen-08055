@@ -117,7 +117,7 @@ export const MissionSection = () => {
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
-                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 border border-primary/20 overflow-hidden grain-overlay cursor-pointer"
+                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 border border-primary/20 grain-overlay cursor-pointer"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
                   transition: 'transform 180ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms ease',
