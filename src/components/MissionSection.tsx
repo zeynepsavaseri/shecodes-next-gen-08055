@@ -54,17 +54,17 @@ export const MissionSection = () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       
-      const rotateX = ((y - centerY) / centerY) * -3;
-      const rotateY = ((x - centerX) / centerX) * 3;
+      const rotateX = ((y - centerY) / centerY) * -2;
+      const rotateY = ((x - centerX) / centerX) * 2;
       
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
   };
 
   const handleMouseLeave = (index: number) => {
     const card = cardRefs.current[index];
     if (card) {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     }
     setHoveredCard(null);
   };
@@ -119,12 +119,13 @@ export const MissionSection = () => {
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
-                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 border border-primary/20 grain-overlay cursor-pointer"
+                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-5 sm:p-6 min-h-[300px] sm:min-h-[320px] h-full border border-primary/20 grain-overlay cursor-pointer"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
-                  transition: 'transform 100ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 300ms ease',
+                  transition: 'transform 120ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 300ms ease',
                   willChange: 'transform',
-                  transform: 'perspective(1000px) translateZ(0)'
+                  transform: 'perspective(1000px) translateZ(0)',
+                  contain: 'layout paint'
                 }}
               >
                 {/* Neon trace border */}
@@ -181,8 +182,8 @@ export const MissionSection = () => {
                     </div>
                     {/* Glowing ring effect */}
                     <div 
-                      className={`absolute inset-0 rounded-xl border-2 border-primary/30 transition-all duration-500 ${
-                        hoveredCard === index ? 'scale-110 opacity-100' : 'opacity-0'
+                      className={`absolute inset-0 rounded-xl border-2 border-primary/30 transition-opacity duration-500 ${
+                        hoveredCard === index ? 'opacity-100' : 'opacity-0'
                       }`}
                     />
                   </div>
