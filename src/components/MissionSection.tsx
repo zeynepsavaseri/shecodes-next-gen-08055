@@ -31,7 +31,7 @@ export const MissionSection = () => {
       icon: Users,
       title: "Community",
       description: "Women supporting women, learning and growing together.",
-      microLine: "Building together, every day."
+      microLine: "Build together, grow together."
     },
     {
       icon: Brain,
