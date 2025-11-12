@@ -27,10 +27,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-mono font-bold text-xs mb-4 uppercase tracking-wider">Get Involved</h4>
             <ul className="space-y-2 text-xs font-mono text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Participate</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mentor</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Sponsor</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Volunteer</a></li>
+              <li><a href="mailto:contact@hercode.com?subject=Mentorship Inquiry" className="hover:text-primary transition-colors">Mentor</a></li>
+              <li><a href="mailto:contact@hercode.com?subject=Sponsorship Inquiry" className="hover:text-primary transition-colors">Sponsor</a></li>
+              <li><a href="mailto:contact@hercode.com?subject=Volunteer Inquiry" className="hover:text-primary transition-colors">Volunteer</a></li>
             </ul>
           </div>
           
