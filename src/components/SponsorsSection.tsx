@@ -11,20 +11,20 @@ export const SponsorsSection = () => {
     {
       icon: Users,
       title: "TALENT & ENGAGEMENT",
-      front: "Connect with exceptional women in tech through hackathons and workshops.",
-      expanded: "Gain direct access to top talent from ETH and leading European universities. Experience creativity in action and meet future leaders ready to make impact."
+      front: "Access top female tech talent and a pool of CVs from ETH Zurich and Europe's leading universities.",
+      expanded: "See CVs in action and connect with future tech leaders."
     },
     {
       icon: Target,
-      title: "DIVERSITY & INCLUSION",
-      front: "Move your D&I goals from a statement to action.",
-      expanded: "Partnering with HerCode helps you build an inclusive, future-ready tech ecosystem. Work with ambitious female innovators who fuel creativity and growth."
+      title: "CHALLENGE PARTNERSHIPS",
+      front: "Bring your company's real challenge and let brilliant women solve it.",
+      expanded: "Contribute a case study, gain fresh perspectives, and turn inclusion into action."
     },
     {
       icon: Award,
       title: "BRAND IMPACT",
       front: "Position your company as a catalyst for innovation and equality.",
-      expanded: "Be featured alongside Europe's most forward-thinking partners. Strengthen your reputation as a brand investing in the next generation of women shaping technology."
+      expanded: "Boost your female ratio and stand beside Europe's most forward-thinking partners."
     }
   ];
 
