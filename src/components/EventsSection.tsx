@@ -5,20 +5,20 @@ import { EventCard } from "./EventCard";
 export const EventsSection = () => {
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
-      <div className="container mx-auto px-3 sm:px-4">
+    <section className="py-16 sm:py-20 bg-muted/20" id="events">
+      <div className="container mx-auto px-4">
         {/* Upcoming Events */}
-        <div className="mb-12 sm:mb-16 md:mb-20">
-          <div className="text-center mb-8 sm:mb-12 px-2">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+        <div className="mb-20">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Upcoming Events
             </h2>
-            <p className="text-xs sm:text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
               Join us at our next events and be part of the change
             </p>
           </div>
 
-          <div className="grid md:grid-cols-1 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-6 max-w-3xl mx-auto animate-fade-in-delay">
             {upcomingEvents.map((event, index) => (
               <EventCard key={index} event={event} index={index} />
             ))}
@@ -26,12 +26,12 @@ export const EventsSection = () => {
         </div>
 
         {/* Past Events */}
-        <div>
-          <div className="text-center mb-6 sm:mb-8 px-2">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-2 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+        <div className="animate-fade-in-delay">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Past Events
             </h3>
-            <p className="text-xs sm:text-sm font-mono text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               More events coming soon
             </p>
           </div>
@@ -45,8 +45,7 @@ export const EventsSection = () => {
               {pastEvents.map((event, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-lg shadow-card p-6 border-l-4 border-primary animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="bg-card rounded-lg shadow-card p-6 border-l-2 border-primary"
                 >
                   <h3 className="text-xl font-bold mb-2 text-foreground">{event.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{event.date}</p>
