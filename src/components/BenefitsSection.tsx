@@ -33,10 +33,13 @@ export const BenefitsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto animate-fade-in-delay">
           {companyBenefits.map((benefit, index) => (
-            <Card key={index} className="bg-card hover:shadow-card transition-all group">
-              <CardContent className="p-6 relative">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="text-4xl transition-transform group-hover:scale-110">
+            <Card key={index} className="group bg-card hover-lift">
+              <CardContent className="p-6 relative overflow-hidden">
+                {/* Subtle glow overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+                
+                <div className="relative flex flex-col items-center text-center gap-4">
+                  <div className="text-4xl transition-transform duration-300 group-hover:scale-110">
                     {benefit.emoji}
                   </div>
                   <div>
