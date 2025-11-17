@@ -2,17 +2,6 @@ import { Heart, Zap, Users, Brain } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 export const MissionSection = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [glitchingCard, setGlitchingCard] = useState<number | null>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const values = [
     {
@@ -41,38 +30,6 @@ export const MissionSection = () => {
     }
   ];
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
-    if (isMobile) return;
-    
-    const card = cardRefs.current[index];
-    if (!card) return;
-
-    requestAnimationFrame(() => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -2;
-      const rotateY = ((x - centerX) / centerX) * 2;
-      
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-  };
-
-  const handleMouseLeave = (index: number) => {
-    const card = cardRefs.current[index];
-    if (card) {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-    }
-    setHoveredCard(null);
-  };
-
-  const handleMouseEnter = (index: number) => {
-    setHoveredCard(index);
-    // Removed glitch effect on hover for smoother transitions
-  };
 
   return (
     <section className="relative py-12 sm:py-16 md:py-20 bg-background overflow-hidden">
@@ -112,66 +69,21 @@ export const MissionSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                ref={(el) => (cardRefs.current[index] = el)}
-                onMouseMove={(e) => handleMouseMove(e, index)}
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={() => handleMouseLeave(index)}
-                className="group relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-4 sm:p-5 border border-primary/20 grain-overlay cursor-pointer flex flex-col"
+                className="relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-4 sm:p-5 border border-primary/20 grain-overlay flex flex-col"
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
-                  transition: 'transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms ease',
-                  willChange: 'transform',
-                  transform: 'perspective(1000px) translateZ(0)',
-                  contain: 'layout paint',
                   minHeight: '260px'
                 }}
               >
-                {/* Neon trace border */}
-                <div 
-                  className="absolute inset-0 rounded-lg pointer-events-none"
-                  style={{
-                    padding: '1px',
-                    background: hoveredCard === index && !isMobile
-                      ? 'linear-gradient(90deg, transparent, hsl(var(--primary)), transparent)'
-                      : 'transparent',
-                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                    WebkitMaskComposite: 'xor',
-                    maskComposite: 'exclude',
-                    animation: hoveredCard === index && !isMobile ? 'neon-trace 300ms linear forwards' : 'none'
-                  }}
-                />
-
-                {/* CRT scanline sweep - removed for smoother transitions */}
-
-                {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-                
-                {/* Parallax glow under title */}
-                {hoveredCard === index && !isMobile && (
-                  <div 
-                    className="absolute top-1/3 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-primary/10 blur-xl rounded-full pointer-events-none"
-                  />
-                )}
                 
                 <div className="relative flex flex-col items-center text-center gap-3 flex-1">
                   {/* Icon */}
                   <div className="relative inline-block">
                     <div 
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow transition-all duration-300"
-                      style={{
-                        boxShadow: hoveredCard === index 
-                          ? 'var(--shadow-glow-intense)' 
-                          : 'var(--shadow-glow)'
-                      }}
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow"
                     >
                       <value.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />
                     </div>
-                    {/* Glowing ring effect */}
-                    <div 
-                      className={`absolute inset-0 rounded-xl border-2 border-primary/30 transition-opacity duration-500 ${
-                        hoveredCard === index ? 'opacity-100' : 'opacity-0'
-                      }`}
-                    />
                   </div>
                   
                   {/* Content */}
@@ -183,21 +95,10 @@ export const MissionSection = () => {
                       {value.description}
                     </p>
                     
-                    {/* Typewriter micro-line - always reserve space */}
+                    {/* Micro-line */}
                     <div className="h-6 mt-auto flex items-center justify-center">
                       <div className="flex items-center gap-1 min-h-[1.5rem]">
-                        <span 
-                          className={`text-[10px] sm:text-xs font-mono overflow-hidden whitespace-nowrap transition-all duration-300 ${
-                            hoveredCard === index 
-                              ? 'text-primary/90 border-r-2 border-primary/80' 
-                              : 'text-transparent border-r-2 border-transparent'
-                          }`}
-                          style={{
-                            animation: hoveredCard === index 
-                              ? 'typewriter 300ms steps(30) forwards, blink 1s step-end 300ms infinite'
-                              : 'none'
-                          }}
-                        >
+                        <span className="text-[10px] sm:text-xs font-mono text-primary/90">
                           {value.microLine}
                         </span>
                       </div>
