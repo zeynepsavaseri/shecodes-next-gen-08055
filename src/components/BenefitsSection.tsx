@@ -20,28 +20,28 @@ export const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-16 sm:py-20 bg-muted/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Benefits for Companies
           </h2>
-          <p className="text-sm font-mono text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             Partner with us to strengthen your team and brand
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto animate-fade-in-delay">
           {companyBenefits.map((benefit, index) => (
-            <Card key={index} className="bg-card hover:shadow-pixel transition-all group hover:-translate-y-1">
+            <Card key={index} className="bg-card hover:shadow-card transition-all group">
               <CardContent className="p-6 relative">
                 <div className="flex flex-col items-center text-center gap-4">
-                  <div className="text-4xl group-hover:scale-110 transition-transform">
+                  <div className="text-4xl transition-transform group-hover:scale-110">
                     {benefit.emoji}
                   </div>
                   <div>
-                    <h3 className="text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wide">{benefit.title}</h3>
-                    <p className="text-xs font-mono text-muted-foreground">{benefit.description}</p>
+                    <h3 className="text-sm font-semibold mb-2 text-foreground">{benefit.title}</h3>
+                    <p className="text-xs text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>
               </CardContent>
