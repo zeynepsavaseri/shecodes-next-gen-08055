@@ -56,7 +56,7 @@ export const SponsorsSection = () => {
             {sponsors.concat(sponsors).map((sponsor, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 mx-4 sm:mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover:shadow-pixel transition-all p-2"
+                className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 mx-4 sm:mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover-scale-sm p-2"
               >
                 {sponsor.isComingSoon ? (
                   <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
@@ -101,41 +101,20 @@ export const SponsorsSection = () => {
                 <Card
                   key={index}
                   onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                  className={`
-                    group relative bg-card/80 backdrop-blur-sm cursor-pointer
-                    transition-all duration-500 ease-out
-                    hover:shadow-glow hover:-translate-y-2
-                    border border-primary/20
-                    ${expandedCard === index ? 'md:col-span-1 shadow-glow scale-105' : ''}
-                  `}
+                  className="group relative bg-card/80 backdrop-blur-sm cursor-pointer hover-lift border border-primary/20"
                 >
                   <CardContent className="p-8 relative overflow-hidden">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-                    
-                    {/* Neon glow effect on active card */}
-                    {expandedCard === index && (
-                      <div className="absolute inset-0 bg-gradient-primary opacity-5 animate-pulse" />
-                    )}
+                    {/* Subtle gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
 
                     <div className="relative flex flex-col items-center text-center gap-6">
-                      {/* Icon with glow */}
+                      {/* Icon with smooth hover effect */}
                       <div className="relative">
-                        <div className={`
-                          w-16 h-16 rounded-2xl bg-gradient-primary 
-                          flex items-center justify-center
-                          shadow-glow
-                          transition-all duration-500
-                          ${expandedCard === index ? 'scale-110 shadow-glow-intense' : 'group-hover:scale-110'}
-                        `}>
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                           <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                         </div>
-                        {/* Rotating ring */}
-                        <div className={`
-                          absolute inset-0 rounded-2xl border-2 border-primary/30 
-                          transition-transform duration-700
-                          ${expandedCard === index ? 'scale-125 opacity-0' : 'group-hover:scale-110'}
-                        `} />
+                        {/* Subtle ring */}
+                        <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-110 transition-all duration-300" />
                       </div>
 
                       {/* Content */}
@@ -148,10 +127,7 @@ export const SponsorsSection = () => {
                         </p>
                         
                         {/* Expanded content */}
-                        <div className={`
-                          overflow-hidden transition-all duration-500 ease-out
-                          ${expandedCard === index ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'}
-                        `}>
+                        <div className={`overflow-hidden transition-all duration-300 ease-out ${expandedCard === index ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                           <div className="pt-4 border-t border-primary/20">
                             <p className="text-sm font-mono text-foreground/90 leading-relaxed">
                               {benefit.expanded}
@@ -161,12 +137,7 @@ export const SponsorsSection = () => {
                       </div>
 
                       {/* Click indicator */}
-                      <div className={`
-                        absolute bottom-4 right-4
-                        text-xs font-mono text-primary/60
-                        transition-all duration-300
-                        ${expandedCard === index ? 'rotate-180' : 'group-hover:text-primary'}
-                      `}>
+                      <div className={`absolute bottom-4 right-4 text-xs font-mono text-primary/60 transition-all duration-300 ${expandedCard === index ? 'rotate-180' : 'group-hover:text-primary'}`}>
                         {expandedCard === index ? '▲' : '▼'}
                       </div>
                     </div>

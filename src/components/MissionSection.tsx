@@ -69,22 +69,25 @@ export const MissionSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-4 flex flex-col items-center text-center gap-3 transition-all duration-300 hover:bg-card/60 hover:border-primary/40 cursor-pointer"
+                className="group relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-4 flex flex-col items-center text-center gap-3 cursor-pointer hover-lift"
                 style={{ 
                   minHeight: '180px'
                 }}
               >
+                {/* Subtle glow overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 rounded transition-opacity duration-300" />
+                
                 {/* Icon with gradient and hover effects */}
                 <div className="relative">
                   <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                     <value.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
                   </div>
-                  {/* Rotating ring on hover */}
-                  <div className="absolute inset-0 rounded-lg border-2 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                  {/* Subtle ring on hover */}
+                  <div className="absolute inset-0 rounded-lg border-2 border-primary/30 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-110 transition-all duration-300" />
                 </div>
                 
                 {/* Content */}
-                <div className="flex-1 flex flex-col">
+                <div className="relative flex-1 flex flex-col">
                   <h4 className="text-xs sm:text-sm font-semibold mb-2 text-foreground">
                     {value.title}
                   </h4>
