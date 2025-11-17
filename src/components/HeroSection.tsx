@@ -27,8 +27,8 @@ export const HeroSection = () => {
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
       <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: '7s' }} />
 
-      <div className="container relative mx-auto px-3 sm:px-4 py-8 sm:py-12 md:py-16">
-        <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 md:space-y-12">
+      <div className="container relative mx-auto px-3 sm:px-4 py-6 sm:py-10 md:py-12">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
           {/* Main Content */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
             {/* Main Headline */}
@@ -75,36 +75,46 @@ export const HeroSection = () => {
               </span>
             </div>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2 sm:pt-4 animate-slide-in px-2 sm:px-4" style={{ animationDelay: "0.5s" }}>
-              <Button 
-                size="lg" 
-                className="group bg-foreground text-background hover:bg-foreground/90 px-6 py-6 text-sm font-medium transition-all duration-300 w-full sm:w-auto"
+            {/* CTA Buttons - Creative Grid Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto pt-4 animate-slide-in px-2 sm:px-4" style={{ animationDelay: "0.5s" }}>
+              {/* Join Events - Primary Card */}
+              <div 
+                className="group relative bg-gradient-to-br from-primary via-accent to-primary-glow p-[2px] rounded-lg overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-glow"
                 onClick={() => {
                   const element = document.getElementById('events');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <span className="flex items-center gap-2">
-                  Join Our Events
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-border hover:bg-card px-6 py-6 text-sm font-medium transition-all duration-300 w-full sm:w-auto"
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-accent/50 to-primary-glow/50 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+                <div className="relative bg-background rounded-lg p-6 h-full flex flex-col items-center justify-center gap-3 min-h-[140px]">
+                  <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-glow">
+                    Join Our Events
+                  </span>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Experience innovation firsthand
+                  </p>
+                  <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-2 transition-transform duration-300" />
+                </div>
+              </div>
+
+              {/* Become Partner - Secondary Card */}
+              <div 
+                className="group relative bg-border/40 p-[2px] rounded-lg overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-primary/30 hover:via-accent/30 hover:to-primary-glow/30"
                 onClick={() => {
                   const element = document.getElementById('sponsors');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <span className="flex items-center gap-2">
-                  Become a Partner
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
+                <div className="relative bg-background rounded-lg p-6 h-full flex flex-col items-center justify-center gap-3 min-h-[140px] group-hover:bg-card/50 transition-colors duration-300">
+                  <span className="text-lg font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:via-accent group-hover:to-primary-glow transition-all duration-300">
+                    Become a Partner
+                  </span>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Shape the future together
+                  </p>
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
