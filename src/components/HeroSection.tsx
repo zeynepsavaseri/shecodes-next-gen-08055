@@ -11,17 +11,21 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-14 sm:pt-16 md:pt-20">
       {/* Hero image as background */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-50">
         <img
           src={heroImage}
           alt="Women coding at HerCode hackathon"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover pixelated-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/90" />
       </div>
       
       {/* Subtle grid background */}
-      <div className="absolute inset-0 tech-grid opacity-10" />
+      <div className="absolute inset-0 tech-grid opacity-15" />
+      
+      {/* Floating purple orbs */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
+      <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: '7s' }} />
 
       <div className="container relative mx-auto px-3 sm:px-4 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
@@ -31,15 +35,15 @@ export const HeroSection = () => {
             <div className="space-y-4 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <div className="relative inline-block">
-                  <span className="text-primary mr-2">{"{"}</span>
+                  <span className="text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl mr-2">{"{"}</span>
                   <GlitchText 
                     text="HerCode" 
                     className="text-transparent bg-clip-text bg-gradient-primary" 
                   />
-                  <span className="text-primary ml-2">{"}"}</span>
+                  <span className="text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl ml-2">{"}"}</span>
                 </div>
               </h1>
-              <div className="text-xl sm:text-2xl md:text-3xl text-foreground/80 min-h-[2.5rem] sm:min-h-[3rem]">
+              <div className="text-xl sm:text-2xl md:text-3xl text-foreground/90 min-h-[2.5rem] sm:min-h-[3rem]">
                 <TypewriterText 
                   texts={[
                     "Empowering Women in Tech",
@@ -59,7 +63,7 @@ export const HeroSection = () => {
             </p>
             
             {/* Event Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border bg-card/40 backdrop-blur-sm animate-fade-in-delay">
+            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-primary/30 bg-card/40 backdrop-blur-sm animate-fade-in-delay shadow-lg shadow-primary/10">
               <Calendar className="w-4 h-4 text-primary" />
               <span className="text-sm text-foreground/80">
                 {nextEvent ? `Next Event: ${nextEvent.date}` : 'Next Event: Coming Soon'}
