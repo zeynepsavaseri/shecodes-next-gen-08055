@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, Star, Heart, Laptop } from "lucide-react";
 import heroImage from "@/assets/hero-pixel-coding.png";
 import { TypewriterText } from "@/components/TypewriterText";
 import { GlitchText } from "@/components/GlitchText";
@@ -75,44 +75,89 @@ export const HeroSection = () => {
               </span>
             </div>
             
-            {/* CTA Buttons - Creative Grid Layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto pt-4 animate-slide-in px-2 sm:px-4" style={{ animationDelay: "0.5s" }}>
-              {/* Join Events - Primary Card */}
+            {/* CTA Buttons - Pixel Sticker Style */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-3xl mx-auto pt-6 animate-slide-in px-2 sm:px-4" style={{ animationDelay: "0.5s" }}>
+              {/* Join Events - Purple Sticker */}
               <div 
-                className="group relative bg-gradient-to-br from-primary via-accent to-primary-glow p-[2px] rounded-lg overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-glow"
+                className="group relative cursor-pointer transform transition-all duration-300 hover:scale-105"
+                style={{
+                  animation: "wobble 2s ease-in-out infinite"
+                }}
                 onClick={() => {
                   const element = document.getElementById('events');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-accent/50 to-primary-glow/50 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
-                <div className="relative bg-background rounded-lg p-6 h-full flex flex-col items-center justify-center gap-3 min-h-[140px]">
-                  <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-glow">
-                    Join Our Events
-                  </span>
-                  <p className="text-xs text-muted-foreground text-center">
-                    Experience innovation firsthand
-                  </p>
-                  <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-2 transition-transform duration-300" />
+                <div 
+                  className="relative bg-gradient-to-br from-primary to-secondary rounded-2xl p-6 sm:p-8 border-4 border-white shadow-lg overflow-hidden"
+                  style={{
+                    boxShadow: "0 8px 32px rgba(195, 166, 255, 0.5), 0 0 0 4px white, 0 0 40px rgba(195, 166, 255, 0.3)",
+                  }}
+                >
+                  {/* Glossy highlight */}
+                  <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-t-xl" />
+                  
+                  {/* Pixel decoration */}
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-white/40 pixelated-image" />
+                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-white/40 pixelated-image" />
+                  
+                  {/* Content */}
+                  <div className="relative flex flex-col items-center gap-3 text-center min-w-[200px]">
+                    <div className="relative">
+                      <Heart className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 absolute -top-8 left-1/2 -translate-x-1/2 group-hover:animate-bounce pixelated-image" />
+                      <span className="text-xl sm:text-2xl font-bold text-white font-mono tracking-wide drop-shadow-lg">
+                        Join Our Events
+                      </span>
+                    </div>
+                    <p className="text-xs text-white/90 font-mono">
+                      ✨ Experience innovation
+                    </p>
+                    <div className="mt-2 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                      <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Become Partner - Secondary Card */}
+              {/* Become Partner - Blue Sticker */}
               <div 
-                className="group relative bg-border/40 p-[2px] rounded-lg overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-primary/30 hover:via-accent/30 hover:to-primary-glow/30"
+                className="group relative cursor-pointer transform transition-all duration-300 hover:scale-105"
+                style={{
+                  animation: "wobble 2s ease-in-out infinite 0.5s"
+                }}
                 onClick={() => {
                   const element = document.getElementById('sponsors');
                   element?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <div className="relative bg-background rounded-lg p-6 h-full flex flex-col items-center justify-center gap-3 min-h-[140px] group-hover:bg-card/50 transition-colors duration-300">
-                  <span className="text-lg font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:via-accent group-hover:to-primary-glow transition-all duration-300">
-                    Become a Partner
-                  </span>
-                  <p className="text-xs text-muted-foreground text-center">
-                    Shape the future together
-                  </p>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" />
+                <div 
+                  className="relative bg-gradient-to-br from-primary-glow to-accent rounded-2xl p-6 sm:p-8 border-4 border-white shadow-lg overflow-hidden"
+                  style={{
+                    boxShadow: "0 8px 32px rgba(122, 224, 255, 0.5), 0 0 0 4px white, 0 0 40px rgba(122, 224, 255, 0.3)",
+                  }}
+                >
+                  {/* Glossy highlight */}
+                  <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-t-xl" />
+                  
+                  {/* Pixel decoration */}
+                  <div className="absolute top-2 left-2 w-3 h-3 bg-white/40 pixelated-image" />
+                  <div className="absolute bottom-2 right-2 w-2 h-2 bg-white/40 pixelated-image" />
+                  
+                  {/* Content */}
+                  <div className="relative flex flex-col items-center gap-3 text-center min-w-[200px]">
+                    <div className="relative">
+                      <Star className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 absolute -top-8 left-1/2 -translate-x-1/2 group-hover:animate-bounce pixelated-image" />
+                      <span className="text-xl sm:text-2xl font-bold text-white font-mono tracking-wide drop-shadow-lg">
+                        Become a Partner
+                      </span>
+                    </div>
+                    <p className="text-xs text-white/90 font-mono">
+                      💜 Shape the future
+                    </p>
+                    <div className="mt-2 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                      <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
