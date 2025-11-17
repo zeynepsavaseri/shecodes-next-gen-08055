@@ -64,46 +64,29 @@ export const MissionSection = () => {
             </div>
           </div>
 
-          {/* Core Values - Premium Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto lg:flex lg:justify-center lg:gap-6">
+          {/* Core Values - Clean Cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="relative bg-card/60 backdrop-blur-sm rounded-lg shadow-card p-4 sm:p-5 border border-primary/20 grain-overlay flex flex-col"
+                className="relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-4 flex flex-col items-center text-center gap-3 transition-all duration-300 hover:bg-card/60 hover:border-border/60"
                 style={{ 
-                  animationDelay: `${index * 0.1}s`,
-                  minHeight: '260px'
+                  minHeight: '180px'
                 }}
               >
+                {/* Icon */}
+                <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                  <value.icon className="w-5 h-5 text-foreground" strokeWidth={2} />
+                </div>
                 
-                <div className="relative flex flex-col items-center text-center gap-3 flex-1">
-                  {/* Icon */}
-                  <div className="relative inline-block">
-                    <div 
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow"
-                    >
-                      <value.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="w-full flex-1 flex flex-col">
-                    <h4 className="text-sm sm:text-base font-mono font-bold mb-2 text-foreground uppercase tracking-wider">
-                      {value.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm font-mono text-muted-foreground leading-relaxed mb-3">
-                      {value.description}
-                    </p>
-                    
-                    {/* Micro-line */}
-                    <div className="h-6 mt-auto flex items-center justify-center">
-                      <div className="flex items-center gap-1 min-h-[1.5rem]">
-                        <span className="text-[10px] sm:text-xs font-mono text-primary/90">
-                          {value.microLine}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                {/* Content */}
+                <div className="flex-1 flex flex-col">
+                  <h4 className="text-xs sm:text-sm font-medium mb-2 text-foreground uppercase tracking-wide">
+                    {value.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </div>
             ))}
