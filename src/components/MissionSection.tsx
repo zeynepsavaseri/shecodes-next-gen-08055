@@ -65,14 +65,18 @@ export const MissionSection = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-4 flex flex-col items-center text-center gap-3 transition-all duration-300 hover:bg-card/60 hover:border-primary/40"
+                className="group relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-4 flex flex-col items-center text-center gap-3 transition-all duration-300 hover:bg-card/60 hover:border-primary/40 cursor-pointer"
                 style={{ 
                   minHeight: '180px'
                 }}
               >
-                {/* Icon */}
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <value.icon className="w-5 h-5 text-primary" strokeWidth={2} />
+                {/* Icon with gradient and hover effects */}
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                    <value.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
+                  </div>
+                  {/* Rotating ring on hover */}
+                  <div className="absolute inset-0 rounded-lg border-2 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
                 </div>
                 
                 {/* Content */}
