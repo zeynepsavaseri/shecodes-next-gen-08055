@@ -54,10 +54,14 @@ export const MissionSection = () => {
               <p>
                 We're building a community where women feel encouraged to explore technology, learn by doing, and create fearlessly. HerCode is for the curious, the bold, and the ambitious — women who want to challenge themselves, support one another, and shape the future of tech on their own terms.
               </p>
-              <p className="text-foreground font-semibold">
-                Everything we do is guided by our core values.
-              </p>
             </div>
+          </div>
+
+          {/* Core Values Intro */}
+          <div className="text-center mb-8 animate-fade-in-delay">
+            <p className="text-base sm:text-lg text-foreground font-semibold">
+              Everything we do is guided by our core values.
+            </p>
           </div>
 
           {/* Core Values - Clean Cards */}
