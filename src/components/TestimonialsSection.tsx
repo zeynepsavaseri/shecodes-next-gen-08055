@@ -3,22 +3,22 @@ import { Quote } from "lucide-react";
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "I never thought I'd feel confident building something tech-related — HerCode changed that.",
-      author: "Participant",
+      quote: "More testimonials coming soon from our upcoming events.",
+      author: "HerCode Community",
       type: "participant",
-      event: "EY Hackathon, Spring 2024"
+      event: "Stay tuned"
     },
     {
-      quote: "The creativity and energy these women bring is inspiring.",
-      author: "Partner Company",
+      quote: "Join us to be part of the next success story.",
+      author: "Future Participant",
       type: "partner",
-      event: "Corporate Partnership Program"
+      event: "Upcoming Events"
     },
     {
-      quote: "HerCode made coding feel fun, collaborative, and human.",
-      author: "Student Participant",
+      quote: "We're building something special together.",
+      author: "HerCode Team",
       type: "participant",
-      event: "University Workshop Series, 2024"
+      event: "2025 and beyond"
     }
   ];
 
@@ -40,7 +40,7 @@ export const TestimonialsSection = () => {
             From Our Participants & Partners
           </h2>
           <p className="text-xs sm:text-sm md:text-base font-mono text-muted-foreground max-w-3xl mx-auto px-2 sm:px-4">
-            Real feedback from women who joined our hackathons and partners who collaborated with us.
+            Feedback from women who joined our events and partners who collaborated with us.
           </p>
         </div>
 
