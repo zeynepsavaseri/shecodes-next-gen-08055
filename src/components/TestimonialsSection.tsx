@@ -3,22 +3,22 @@ import { Quote } from "lucide-react";
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "More testimonials coming soon from our upcoming events.",
-      author: "HerCode Community",
+      quote: "Coming soon.",
+      author: "Participant",
       type: "participant",
-      event: "Stay tuned"
+      event: "Upcoming Events"
     },
     {
-      quote: "Join us to be part of the next success story.",
-      author: "Future Participant",
+      quote: "Coming soon.",
+      author: "Partner",
       type: "partner",
       event: "Upcoming Events"
     },
     {
-      quote: "We're building something special together.",
-      author: "HerCode Team",
+      quote: "Coming soon.",
+      author: "Participant",
       type: "participant",
-      event: "2025 and beyond"
+      event: "Upcoming Events"
     }
   ];
 
