@@ -32,7 +32,7 @@ export const MissionSection = () => {
 
 
   return (
-    <section className="relative pt-4 sm:pt-6 pb-16 sm:pb-20 bg-background overflow-hidden">
+    <section className="relative pt-0 sm:pt-2 pb-16 sm:pb-20 bg-background overflow-hidden">
       {/* Subtle grid background */}
       <div className="absolute inset-0 tech-grid opacity-5" />
 
