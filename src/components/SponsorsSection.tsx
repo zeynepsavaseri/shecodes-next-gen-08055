@@ -34,7 +34,11 @@ export const SponsorsSection = () => {
       logo: "/lovable-logo-white.png",
       isComingSoon: false,
     },
-    { name: "Coming Soon", logo: "", isComingSoon: true },
+    {
+      name: "Claude",
+      logo: "/claude-logo.png",
+      isComingSoon: false,
+    },
     { name: "Coming Soon", logo: "", isComingSoon: true },
     { name: "Coming Soon", logo: "", isComingSoon: true },
   ];
