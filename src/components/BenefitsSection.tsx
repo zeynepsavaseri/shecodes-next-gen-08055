@@ -1,19 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Briefcase, Target, Globe } from "lucide-react";
 
 export const BenefitsSection = () => {
   const companyBenefits = [
     {
-      emoji: "💼",
+      icon: Briefcase,
       title: "Talent & Engagement",
       description: "Connect with skilled women through collaborative events and experience their talent in action."
     },
     {
-      emoji: "🎯",
+      icon: Target,
       title: "Diversity & Inclusion",
       description: "Build a stronger, more inclusive team that reflects modern workplace values and fuels innovation."
     },
     {
-      emoji: "🌐",
+      icon: Globe,
       title: "Brand Impact",
       description: "Demonstrate your commitment to diversity and equality while positioning your company as a forward-thinking industry leader."
     }
@@ -39,8 +40,8 @@ export const BenefitsSection = () => {
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
                 
                 <div className="relative flex flex-col items-center text-center gap-4">
-                  <div className="text-4xl transition-transform duration-300 group-hover:scale-110">
-                    {benefit.emoji}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow mx-auto">
+                    <benefit.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold mb-2 text-foreground">{benefit.title}</h3>

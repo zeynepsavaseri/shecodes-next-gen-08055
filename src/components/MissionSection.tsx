@@ -79,11 +79,9 @@ export const MissionSection = () => {
                 
                 {/* Icon with gradient and hover effects */}
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
                     <value.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
                   </div>
-                  {/* Subtle ring on hover */}
-                  <div className="absolute inset-0 rounded-lg border-2 border-primary/30 opacity-0 group-hover:opacity-100 scale-100 group-hover:scale-110 transition-all duration-300" />
                 </div>
                 
                 {/* Content */}
