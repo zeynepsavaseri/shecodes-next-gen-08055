@@ -79,7 +79,7 @@ export const MissionSection = () => {
                 
                 {/* Icon with gradient and hover effects */}
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
                     <value.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
                   </div>
                 </div>

@@ -114,7 +114,7 @@ export const SponsorsSection = () => {
                     <div className="relative flex flex-col items-center text-center gap-6">
                       {/* Icon with smooth hover effect */}
                       <div className="relative">
-                        <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
                           <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                         </div>
                       </div>
