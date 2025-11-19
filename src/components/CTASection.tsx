@@ -39,7 +39,7 @@ export const CTASection = () => {
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {/* WhatsApp Channel */}
           <div className="bg-card rounded-xl sm:rounded-2xl shadow-card p-5 sm:p-6 md:p-8 hover:shadow-pixel transition-all hover:-translate-y-1">
-            <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-primary mb-4 sm:mb-5 md:mb-6 mx-auto shadow-glow">
+            <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-primary mb-4 sm:mb-5 md:mb-6 mx-auto shadow-glow">
               <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
             <h3 className="text-sm sm:text-base md:text-lg font-mono font-bold mb-3 sm:mb-4 text-center uppercase tracking-wider">WhatsApp Community</h3>
@@ -58,7 +58,7 @@ export const CTASection = () => {
 
           {/* Email Subscription */}
           <div className="bg-card rounded-xl sm:rounded-2xl shadow-card p-5 sm:p-6 md:p-8 hover:shadow-pixel transition-all hover:-translate-y-1">
-            <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-secondary mb-4 sm:mb-5 md:mb-6 mx-auto shadow-glow">
+            <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-secondary mb-4 sm:mb-5 md:mb-6 mx-auto shadow-glow">
               <Mail className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
             </div>
             <h3 className="text-sm sm:text-base md:text-lg font-mono font-bold mb-3 sm:mb-4 text-center uppercase tracking-wider">Email Updates</h3>
