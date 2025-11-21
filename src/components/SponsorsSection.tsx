@@ -39,6 +39,11 @@ export const SponsorsSection = () => {
       logo: "/claude-logo.png",
       isComingSoon: false,
     },
+    {
+      name: "Women In Robotics",
+      logo: "/women-in-robotics-logo.png",
+      isComingSoon: false,
+    },
     { name: "Coming Soon", logo: "", isComingSoon: true },
     { name: "Coming Soon", logo: "", isComingSoon: true },
   ];
