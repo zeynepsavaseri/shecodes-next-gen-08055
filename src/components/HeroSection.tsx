@@ -5,7 +5,6 @@ import { TypewriterText } from "@/components/TypewriterText";
 import { GlitchText } from "@/components/GlitchText";
 import { getNextEvent } from "@/data/events";
 import { GalaxyBackground } from "@/components/GalaxyBackground";
-import { SectionTransition } from "@/components/SectionTransition";
 
 export const HeroSection = () => {
   const nextEvent = getNextEvent();
@@ -15,8 +14,8 @@ export const HeroSection = () => {
       {/* Galaxy background */}
       <GalaxyBackground />
       
-      {/* Cool transition to next section */}
-      <SectionTransition />
+      {/* Smooth gradient transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none z-10" />
 
       <div className="container relative mx-auto px-3 sm:px-4 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
