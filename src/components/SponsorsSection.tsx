@@ -49,7 +49,11 @@ export const SponsorsSection = () => {
       logo: "/tf-logo.png",
       isComingSoon: false,
     },
-    { name: "Coming Soon", logo: "", isComingSoon: true },
+    {
+      name: "ETH Diversity",
+      logo: "/eth-diversity-logo.png",
+      isComingSoon: false,
+    },
     { name: "Coming Soon", logo: "", isComingSoon: true },
   ];
 
