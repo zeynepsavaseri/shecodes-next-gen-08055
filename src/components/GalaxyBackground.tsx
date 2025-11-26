@@ -21,10 +21,10 @@ export const GalaxyBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size - extend below hero section
+    // Set canvas size - extend below hero section further
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight + 300;
+      canvas.height = window.innerHeight + 500;
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
@@ -150,10 +150,11 @@ export const GalaxyBackground = () => {
       }
       
       // Add gradient fade at bottom for smooth transition into next section
-      const fadeHeight = 350;
+      const fadeHeight = 450;
       const fadeGradient = ctx.createLinearGradient(0, canvas.height - fadeHeight, 0, canvas.height);
       fadeGradient.addColorStop(0, 'transparent');
-      fadeGradient.addColorStop(0.7, 'rgba(0, 0, 0, 0.3)');
+      fadeGradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.2)');
+      fadeGradient.addColorStop(0.8, 'rgba(0, 0, 0, 0.5)');
       fadeGradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
       ctx.fillStyle = fadeGradient;
       ctx.fillRect(0, canvas.height - fadeHeight, canvas.width, fadeHeight);
@@ -176,7 +177,7 @@ export const GalaxyBackground = () => {
       ref={canvasRef}
       className="absolute top-0 left-0 w-full pointer-events-none"
       style={{ 
-        height: 'calc(100vh + 300px)',
+        height: 'calc(100vh + 500px)',
         mixBlendMode: 'screen'
       }}
     />
