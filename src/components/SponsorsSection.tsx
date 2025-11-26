@@ -41,8 +41,9 @@ export const SponsorsSection = () => {
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ],
     food: [
-      { name: "Coming Soon", logo: "", isComingSoon: true },
-      { name: "Coming Soon", logo: "", isComingSoon: true },
+      { name: "Cosmic Dealer", logo: "/cosmic-dealer-logo.png" },
+      { name: "Focus Water", logo: "/focus-water-logo.png" },
+      { name: "MAD", logo: "/mad-logo.png" },
     ]
   };
 
