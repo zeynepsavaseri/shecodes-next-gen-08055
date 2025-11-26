@@ -55,10 +55,11 @@ export const MissionSection = () => {
           <div className="text-center mb-16 px-4 animate-fade-in-delay">
             <div className="text-sm sm:text-base text-foreground/80 leading-relaxed space-y-4 max-w-3xl mx-auto">
               <p>
-                HerCode started from a simple observation: too many talented women are missing from tech — not because they lack the skills or ambition, but because the space doesn't always feel like it's made for them.
+                HerCode began with a simple insight: many talented women stay out of tech not because of ability, but because the spaces around them often don't feel built for them.
+                In entrepreneurial environments, I often saw women feel less encouraged to enter or "just start," even when they had strong ideas. And at hackathons, there were barely any women at all — and the few who joined were often spoken over before they even had the chance to contribute.
               </p>
               <p>
-                We're building a community where women feel encouraged to explore technology, learn by doing, and create fearlessly. HerCode is for the curious, the bold, and the ambitious — women who want to challenge themselves, support one another, and shape the future of tech on their own terms.
+                HerCode fills that gap by creating a space where women can explore tech comfortably, build meaningful connections, and grow with confidence
               </p>
             </div>
           </div>
