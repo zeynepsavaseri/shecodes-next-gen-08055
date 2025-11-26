@@ -21,10 +21,10 @@ export const GalaxyBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
+    // Set canvas size - extend below hero section
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = window.innerHeight + 300;
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
@@ -149,12 +149,14 @@ export const GalaxyBackground = () => {
         }
       }
       
-      // Add gradient fade at bottom for smooth transition
-      const fadeGradient = ctx.createLinearGradient(0, canvas.height - 200, 0, canvas.height);
+      // Add gradient fade at bottom for smooth transition into next section
+      const fadeHeight = 350;
+      const fadeGradient = ctx.createLinearGradient(0, canvas.height - fadeHeight, 0, canvas.height);
       fadeGradient.addColorStop(0, 'transparent');
-      fadeGradient.addColorStop(1, 'rgba(0, 0, 0, 1)');
+      fadeGradient.addColorStop(0.7, 'rgba(0, 0, 0, 0.3)');
+      fadeGradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
       ctx.fillStyle = fadeGradient;
-      ctx.fillRect(0, canvas.height - 200, canvas.width, 200);
+      ctx.fillRect(0, canvas.height - fadeHeight, canvas.width, fadeHeight);
 
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -172,8 +174,11 @@ export const GalaxyBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
-      style={{ mixBlendMode: 'screen' }}
+      className="absolute top-0 left-0 w-full pointer-events-none"
+      style={{ 
+        height: 'calc(100vh + 300px)',
+        mixBlendMode: 'screen'
+      }}
     />
   );
 };
