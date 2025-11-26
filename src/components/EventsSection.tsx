@@ -5,20 +5,20 @@ import { EventCard } from "./EventCard";
 export const EventsSection = () => {
 
   return (
-    <section className="py-16 sm:py-20 bg-muted/20" id="events">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 md:py-20 bg-muted/20" id="events">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Upcoming Events */}
-        <div className="mb-20">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
+        <div className="mb-12 sm:mb-16 md:mb-20">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in px-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
               Upcoming Events
             </h2>
-            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
               Join us at our next events and be part of the change
             </p>
           </div>
 
-          <div className="grid md:grid-cols-1 gap-6 max-w-3xl mx-auto animate-fade-in-delay">
+          <div className="grid md:grid-cols-1 gap-4 sm:gap-6 max-w-3xl mx-auto animate-fade-in-delay px-2">
             {upcomingEvents.map((event, index) => (
               <EventCard key={index} event={event} index={index} />
             ))}
@@ -27,34 +27,34 @@ export const EventsSection = () => {
 
         {/* Past Events */}
         <div className="animate-fade-in-delay">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <div className="text-center mb-8 sm:mb-12 px-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
               Past Events
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               More events coming soon
             </p>
           </div>
 
           {pastEvents.length === 0 ? (
-            <div className="text-center text-muted-foreground">
-              <p>No past events yet. Stay tuned!</p>
+            <div className="text-center text-muted-foreground px-2">
+              <p className="text-sm">No past events yet. Stay tuned!</p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto px-2">
               {pastEvents.map((event, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-lg shadow-card p-6 border-l-2 border-primary"
+                  className="bg-card rounded-lg shadow-card p-4 sm:p-6 border-l-2 border-primary"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-foreground">{event.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{event.date}</p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-foreground">{event.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{event.date}</p>
                   <div className="space-y-2">
-                    <div className="flex items-center text-sm">
-                      <Users className="w-4 h-4 mr-2 text-primary" />
+                    <div className="flex items-center text-xs sm:text-sm">
+                      <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 text-primary flex-shrink-0" />
                       <span className="text-foreground">{event.participants}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{event.achievements}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{event.achievements}</p>
                   </div>
                 </div>
               ))}

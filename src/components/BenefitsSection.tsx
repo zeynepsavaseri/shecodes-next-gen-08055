@@ -21,31 +21,31 @@ export const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-muted/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
+    <section className="py-12 sm:py-16 md:py-20 bg-muted/20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-12 animate-fade-in px-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
             Benefits for Companies
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             Partner with us to strengthen your team and brand
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto animate-fade-in-delay">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto animate-fade-in-delay px-2">
           {companyBenefits.map((benefit, index) => (
             <Card key={index} className="group bg-card hover-lift">
-              <CardContent className="p-6 relative overflow-hidden">
+              <CardContent className="p-4 sm:p-6 relative overflow-hidden">
                 {/* Subtle glow overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
                 
-                <div className="relative flex flex-col items-center text-center gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow mx-auto">
-                    <benefit.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" strokeWidth={2.5} />
+                <div className="relative flex flex-col items-center text-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow mx-auto">
+                    <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" strokeWidth={2.5} />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold mb-2 text-foreground">{benefit.title}</h3>
-                    <p className="text-xs text-muted-foreground">{benefit.description}</p>
+                    <h3 className="text-xs sm:text-sm font-semibold mb-1.5 sm:mb-2 text-foreground">{benefit.title}</h3>
+                    <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
               </CardContent>
