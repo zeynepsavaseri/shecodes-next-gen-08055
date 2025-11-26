@@ -32,7 +32,7 @@ export const MissionSection = () => {
 
 
   return (
-    <section className="relative pt-0 sm:pt-2 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+    <section className="relative pt-4 sm:pt-8 md:pt-12 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
       {/* Gradient overlay for smooth transition from stars */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background" style={{ top: 0, height: '400px' }} />
       
