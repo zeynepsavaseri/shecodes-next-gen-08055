@@ -56,18 +56,20 @@ export const SponsorsSection = () => {
           </h2>
         </div>
 
-        {/* Partner Categories */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12 sm:mb-16 md:mb-20">
+        {/* Partner Categories - Horizontal Scrolling */}
+        <div className="space-y-12 mb-12 sm:mb-16 md:mb-20">
           {/* Tech Partners */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity duration-300" />
-            <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20">
-              <h3 className="text-lg font-pixel uppercase tracking-wider text-primary mb-6 text-center">Tech Partners</h3>
-              <div className="space-y-4">
-                {sponsorCategories.tech.map((sponsor, index) => (
+          <div className="relative">
+            <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-primary opacity-50 blur-sm" />
+            <h3 className="text-base sm:text-lg font-pixel uppercase tracking-wider text-primary mb-6 text-center">
+              Tech Partners
+            </h3>
+            <div className="relative overflow-hidden py-4">
+              <div className="flex animate-scroll-left">
+                {sponsorCategories.tech.concat(sponsorCategories.tech).concat(sponsorCategories.tech).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="h-20 flex items-center justify-center bg-background/50 rounded-lg p-3 hover-scale-sm transition-all duration-300"
+                    className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 mx-4 sm:mx-6 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale p-3 shadow-glow"
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
@@ -81,15 +83,17 @@ export const SponsorsSection = () => {
           </div>
 
           {/* Community Partners */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-secondary opacity-10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity duration-300" />
-            <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-accent/20">
-              <h3 className="text-lg font-pixel uppercase tracking-wider text-accent mb-6 text-center">Community</h3>
-              <div className="space-y-4">
-                {sponsorCategories.community.map((sponsor, index) => (
+          <div className="relative">
+            <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-secondary opacity-50 blur-sm" />
+            <h3 className="text-base sm:text-lg font-pixel uppercase tracking-wider text-accent mb-6 text-center">
+              Community
+            </h3>
+            <div className="relative overflow-hidden py-4">
+              <div className="flex animate-scroll-left" style={{ animationDuration: '25s' }}>
+                {sponsorCategories.community.concat(sponsorCategories.community).concat(sponsorCategories.community).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="h-20 flex items-center justify-center bg-background/50 rounded-lg p-3 hover-scale-sm transition-all duration-300"
+                    className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 mx-4 sm:mx-6 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale p-3"
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
@@ -103,15 +107,17 @@ export const SponsorsSection = () => {
           </div>
 
           {/* Food Partners */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-pink-500/10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity duration-300" />
-            <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/20">
-              <h3 className="text-lg font-pixel uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-6 text-center">Food Partners</h3>
-              <div className="space-y-4">
-                {sponsorCategories.food.map((sponsor, index) => (
+          <div className="relative">
+            <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 opacity-50 blur-sm" />
+            <h3 className="text-base sm:text-lg font-pixel uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-6 text-center">
+              Food Partners
+            </h3>
+            <div className="relative overflow-hidden py-4">
+              <div className="flex animate-scroll-left" style={{ animationDuration: '22s' }}>
+                {sponsorCategories.food.concat(sponsorCategories.food).concat(sponsorCategories.food).concat(sponsorCategories.food).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="h-20 flex items-center justify-center bg-background/50 rounded-lg p-3 hover-scale-sm transition-all duration-300"
+                    className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 mx-4 sm:mx-6 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-orange-500/20 hover-scale p-3"
                   >
                     <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                   </div>
