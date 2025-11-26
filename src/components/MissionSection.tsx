@@ -32,7 +32,7 @@ export const MissionSection = () => {
 
 
   return (
-    <section className="relative pt-0 sm:pt-2 pb-16 sm:pb-20 overflow-hidden">
+    <section className="relative pt-0 sm:pt-2 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
       {/* Gradient overlay for smooth transition from stars */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background" style={{ top: 0, height: '400px' }} />
       
@@ -42,18 +42,18 @@ export const MissionSection = () => {
       {/* Subtle grid background */}
       <div className="absolute inset-0 tech-grid opacity-5" style={{ top: '200px' }} />
 
-      <div className="container relative mx-auto px-4">
+      <div className="container relative mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground px-2">
               What is HerCode?
             </h2>
           </div>
 
           {/* Flowing Story */}
-          <div className="text-center mb-16 px-4 animate-fade-in-delay">
-            <div className="text-sm sm:text-base text-foreground/80 leading-relaxed space-y-4 max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16 px-3 sm:px-4 animate-fade-in-delay">
+            <div className="text-sm sm:text-base text-foreground/80 leading-relaxed space-y-3 sm:space-y-4 max-w-3xl mx-auto">
               <p>
                 HerCode began with a simple insight: many talented women stay out of tech not because of ability, but because the spaces around them often don't feel built for them.
                 In entrepreneurial environments, I often saw women feel less encouraged to enter or "just start," even when they had strong ideas. And at hackathons, there were barely any women at all — and the few who joined were often spoken over before they even had the chance to contribute.
@@ -65,20 +65,20 @@ export const MissionSection = () => {
           </div>
 
           {/* Core Values Intro */}
-          <div className="text-center mb-8 animate-fade-in-delay">
-            <p className="text-base sm:text-lg text-foreground font-semibold">
+          <div className="text-center mb-6 sm:mb-8 animate-fade-in-delay px-2">
+            <p className="text-sm sm:text-base md:text-lg text-foreground font-semibold">
               Everything we do is guided by our core values.
             </p>
           </div>
 
           {/* Core Values - Clean Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto animate-fade-in-delay">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto animate-fade-in-delay px-2">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="group relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-4 flex flex-col items-center text-center gap-3 cursor-pointer hover-lift"
+                className="group relative bg-card/40 backdrop-blur-sm rounded border border-border/40 p-3 sm:p-4 flex flex-col items-center text-center gap-2 sm:gap-3 cursor-pointer hover-lift"
                 style={{ 
-                  minHeight: '180px'
+                  minHeight: '160px'
                 }}
               >
                 {/* Subtle glow overlay on hover */}
@@ -86,17 +86,17 @@ export const MissionSection = () => {
                 
                 {/* Icon with gradient and hover effects */}
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
-                    <value.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
+                    <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={2.5} />
                   </div>
                 </div>
                 
                 {/* Content */}
                 <div className="relative flex-1 flex flex-col">
-                  <h4 className="text-xs sm:text-sm font-semibold mb-2 text-foreground">
+                  <h4 className="text-xs sm:text-sm font-semibold mb-1.5 sm:mb-2 text-foreground">
                     {value.title}
                   </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
                 </div>
