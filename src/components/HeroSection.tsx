@@ -13,6 +13,9 @@ export const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden bg-background pt-14 sm:pt-16 md:pt-20">
       {/* Galaxy background */}
       <GalaxyBackground />
+      
+      {/* Smooth gradient transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none z-10" />
 
       <div className="container relative mx-auto px-3 sm:px-4 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
