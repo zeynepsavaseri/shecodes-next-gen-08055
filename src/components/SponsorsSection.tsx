@@ -28,34 +28,23 @@ export const SponsorsSection = () => {
     }
   ];
 
-  const sponsors = [
-    {
-      name: "Lovable",
-      logo: "/lovable-logo-white.png",
-      isComingSoon: false,
-    },
-    {
-      name: "Claude",
-      logo: "/claude-logo.png",
-      isComingSoon: false,
-    },
-    {
-      name: "Women In Robotics",
-      logo: "/women-in-robotics-logo.png",
-      isComingSoon: false,
-    },
-    {
-      name: "TF",
-      logo: "/tf-logo.png",
-      isComingSoon: false,
-    },
-    {
-      name: "ETH Diversity",
-      logo: "/eth-diversity-logo.png",
-      isComingSoon: false,
-    },
-    { name: "Coming Soon", logo: "", isComingSoon: true },
-  ];
+  const sponsorCategories = {
+    tech: [
+      { name: "Lovable", logo: "/lovable-logo-white.png" },
+      { name: "Claude", logo: "/claude-logo.png" },
+      { name: "TF", logo: "/tf-logo.png" },
+      { name: "Coming Soon", logo: "", isComingSoon: true },
+    ],
+    community: [
+      { name: "Women In Robotics", logo: "/women-in-robotics-logo.png" },
+      { name: "ETH Diversity", logo: "/eth-diversity-logo.png" },
+      { name: "Coming Soon", logo: "", isComingSoon: true },
+    ],
+    food: [
+      { name: "Coming Soon", logo: "", isComingSoon: true },
+      { name: "Coming Soon", logo: "", isComingSoon: true },
+    ]
+  };
 
 
   return (
@@ -67,26 +56,68 @@ export const SponsorsSection = () => {
           </h2>
         </div>
 
-        {/* Scrolling sponsors marquee */}
-        <div className="relative overflow-hidden mb-12 sm:mb-16 md:mb-20 py-4">
-          <div className="flex animate-scroll-left">
-            {/* First set of sponsors */}
-            {sponsors.concat(sponsors).map((sponsor, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-48 sm:w-56 md:w-64 h-24 sm:h-28 md:h-32 mx-4 sm:mx-6 flex items-center justify-center bg-card rounded-lg shadow-card hover-scale-sm p-2"
-              >
-                {sponsor.isComingSoon ? (
-                  <span className="text-muted-foreground font-mono font-bold text-xs uppercase tracking-wider">Coming Soon</span>
-                ) : (
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name} 
-                    className="w-full h-full object-contain"
-                  />
-                )}
+        {/* Partner Categories */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12 sm:mb-16 md:mb-20">
+          {/* Tech Partners */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity duration-300" />
+            <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20">
+              <h3 className="text-lg font-pixel uppercase tracking-wider text-primary mb-6 text-center">Tech Partners</h3>
+              <div className="space-y-4">
+                {sponsorCategories.tech.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className="h-20 flex items-center justify-center bg-background/50 rounded-lg p-3 hover-scale-sm transition-all duration-300"
+                  >
+                    {sponsor.isComingSoon ? (
+                      <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
+                    ) : (
+                      <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Community Partners */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-secondary opacity-10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity duration-300" />
+            <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-accent/20">
+              <h3 className="text-lg font-pixel uppercase tracking-wider text-accent mb-6 text-center">Community</h3>
+              <div className="space-y-4">
+                {sponsorCategories.community.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className="h-20 flex items-center justify-center bg-background/50 rounded-lg p-3 hover-scale-sm transition-all duration-300"
+                  >
+                    {sponsor.isComingSoon ? (
+                      <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
+                    ) : (
+                      <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Food Partners */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-pink-500/10 rounded-2xl blur-xl group-hover:opacity-20 transition-opacity duration-300" />
+            <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/20">
+              <h3 className="text-lg font-pixel uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-6 text-center">Food Partners</h3>
+              <div className="space-y-4">
+                {sponsorCategories.food.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className="h-20 flex items-center justify-center bg-background/50 rounded-lg p-3 hover-scale-sm transition-all duration-300"
+                  >
+                    <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
