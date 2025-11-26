@@ -32,7 +32,7 @@ export const MissionSection = () => {
 
 
   return (
-    <section className="relative pt-0 sm:pt-8 md:pt-12 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+    <section className="relative -mt-8 sm:pt-8 md:pt-12 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
       {/* Gradient overlay for smooth transition from stars */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background" style={{ top: 0, height: '400px' }} />
       
@@ -45,7 +45,7 @@ export const MissionSection = () => {
       <div className="container relative mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
-          <div className="text-center mb-8 sm:mb-12 animate-fade-in mt-8 sm:mt-0">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in mt-0 sm:mt-0">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground px-2">
               What is HerCode?
             </h2>
