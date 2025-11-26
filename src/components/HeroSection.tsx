@@ -13,23 +13,6 @@ export const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden bg-background pt-14 sm:pt-16 md:pt-20">
       {/* Galaxy background */}
       <GalaxyBackground />
-      
-      {/* Hero image as background */}
-      <div className="absolute inset-0 opacity-30">
-        <img
-          src={heroImage}
-          alt="Women coding at HerCode hackathon"
-          className="w-full h-full object-cover pixelated-image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background/95" />
-      </div>
-      
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 tech-grid opacity-10" />
-      
-      {/* Floating purple orbs */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
-      <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s", animationDuration: '7s' }} />
 
       <div className="container relative mx-auto px-3 sm:px-4 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
