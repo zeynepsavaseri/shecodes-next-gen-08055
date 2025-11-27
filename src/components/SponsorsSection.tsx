@@ -44,7 +44,7 @@ export const SponsorsSection = () => {
     food: [
       { name: "Cosmic Dealer", logo: "/cosmic-dealer-logo.png" },
       { name: "Focus Water", logo: "/focus-water-logo.png" },
-      { name: "MAD", logo: "/mad-logo.png" },
+      { name: "MAD", logo: "/mad-logo.png", featured: true },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ]
   };
@@ -77,7 +77,7 @@ export const SponsorsSection = () => {
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                     ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-125' : ''}`} />
+                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-150' : ''}`} />
                     )}
                   </div>
                 ))}
@@ -101,7 +101,7 @@ export const SponsorsSection = () => {
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                     ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-125' : ''}`} />
+                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-150' : ''}`} />
                     )}
                   </div>
                 ))}
@@ -120,12 +120,12 @@ export const SponsorsSection = () => {
                 {sponsorCategories.food.concat(sponsorCategories.food).concat(sponsorCategories.food).concat(sponsorCategories.food).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-orange-500/20 hover-scale p-2"
+                    className={`flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-orange-500/20 hover-scale ${sponsor.featured ? 'p-1' : 'p-2'}`}
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                     ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-150' : ''}`} />
                     )}
                   </div>
                 ))}
