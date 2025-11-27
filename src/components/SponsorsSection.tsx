@@ -55,7 +55,7 @@ export const SponsorsSection = () => {
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-8 sm:mb-12 px-2">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
-            Backed by Industry Leaders
+            Our Partners
           </h2>
         </div>
 
@@ -65,7 +65,7 @@ export const SponsorsSection = () => {
           <div className="relative">
             <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-primary opacity-50 blur-sm" />
             <h3 className="text-sm sm:text-base font-pixel uppercase tracking-wider text-primary mb-4 text-center">
-              Tech Partners
+              Tech
             </h3>
             <div className="relative overflow-hidden py-2">
               <div className="flex animate-scroll-left">
@@ -113,7 +113,7 @@ export const SponsorsSection = () => {
           <div className="relative">
             <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 opacity-50 blur-sm" />
             <h3 className="text-sm sm:text-base font-pixel uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-4 text-center">
-              Food Partners
+              Food
             </h3>
             <div className="relative overflow-hidden py-2">
               <div className="flex animate-scroll-left" style={{ animationDuration: '22s' }}>
