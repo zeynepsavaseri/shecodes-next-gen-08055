@@ -7,13 +7,11 @@ import { SponsorsSection } from "@/components/SponsorsSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   return (
     <main className="min-h-screen relative">
       <ParticleBackground />
-      <ThemeToggle />
       <Header />
       <HeroSection />
       <section id="mission"><MissionSection /></section>
