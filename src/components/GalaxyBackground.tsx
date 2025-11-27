@@ -29,44 +29,22 @@ export const GalaxyBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Create stars - subtle and elegant
-    const numStars = 300;
+    // Create stars - more realistic
+    const numStars = 500;
     const stars: Star[] = [];
     
     for (let i = 0; i < numStars; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        z: Math.random() * 1.2 + 0.3,
-        size: Math.random() * 1 + 0.2,
-        speed: Math.random() * 0.2 + 0.1,
-        opacity: Math.random() * 0.3 + 0.1,
-        twinkleSpeed: Math.random() * 0.02 + 0.01,
+        z: Math.random() * 1.5 + 0.3,
+        size: Math.random() * 1.5 + 0.3,
+        speed: Math.random() * 0.3 + 0.1,
+        opacity: Math.random() * 0.8 + 0.2,
+        twinkleSpeed: Math.random() * 0.03 + 0.01,
         twinklePhase: Math.random() * Math.PI * 2,
       });
     }
-
-    // Shooting stars
-    interface ShootingStar {
-      x: number;
-      y: number;
-      length: number;
-      speed: number;
-      opacity: number;
-      angle: number;
-    }
-    
-    const shootingStars: ShootingStar[] = [];
-    const createShootingStar = () => {
-      shootingStars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height * 0.5,
-        length: Math.random() * 80 + 60,
-        speed: Math.random() * 3 + 2,
-        opacity: 1,
-        angle: Math.PI / 4 + Math.random() * 0.3,
-      });
-    };
 
     // Animation
     let animationFrameId: number;
@@ -81,18 +59,11 @@ export const GalaxyBackground = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     let frame = 0;
-    let lastShootingStarTime = 0;
     
     const animate = () => {
       frame++;
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Create shooting stars rarely
-      if (Date.now() - lastShootingStarTime > 8000 && Math.random() < 0.01) {
-        createShootingStar();
-        lastShootingStarTime = Date.now();
-      }
 
       stars.forEach((star, index) => {
         // Move stars
@@ -105,15 +76,15 @@ export const GalaxyBackground = () => {
           star.x = Math.random() * canvas.width;
         }
 
-        // Subtle interactive effect
+        // Interactive effect - stars move away from cursor
         const dx = star.x - mouseX;
         const dy = star.y - mouseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < 120) {
-          const force = (120 - distance) / 120;
-          star.x += dx * force * 0.08;
-          star.y += dy * force * 0.08;
+        if (distance < 150) {
+          const force = (150 - distance) / 150;
+          star.x += dx * force * 0.1;
+          star.y += dy * force * 0.1;
         }
 
         // Twinkle effect
@@ -121,95 +92,55 @@ export const GalaxyBackground = () => {
         const twinkle = Math.sin(star.twinklePhase) * 0.5 + 0.5;
         const currentOpacity = star.opacity * twinkle;
 
-        // Draw star with subtle elegance
+        // Draw star more realistically
         ctx.save();
         
-        // Soft, sophisticated colors
-        const colorVariant = index % 3;
-        let hue;
-        if (colorVariant === 0) hue = 240; // Soft blue
-        else if (colorVariant === 1) hue = 270; // Soft purple
-        else hue = 260; // Blue-purple
+        // Main star body
+        const hue = 280 + Math.sin(star.y * 0.01 + index) * 30;
         
-        // Subtle core
+        // Core of the star (bright white center)
         ctx.beginPath();
-        ctx.fillStyle = `hsla(0, 0%, 100%, ${currentOpacity * 0.4})`;
-        ctx.arc(star.x, star.y, star.size * star.z * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(0, 0%, 100%, ${currentOpacity * 0.9})`;
+        ctx.arc(star.x, star.y, star.size * star.z * 0.5, 0, Math.PI * 2);
         ctx.fill();
         
-        // Soft glow
-        const glow = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size * star.z * 3);
-        glow.addColorStop(0, `hsla(${hue}, 50%, 70%, ${currentOpacity * 0.3})`);
-        glow.addColorStop(0.5, `hsla(${hue}, 40%, 60%, ${currentOpacity * 0.15})`);
-        glow.addColorStop(1, 'transparent');
+        // Glow around star
+        const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size * star.z * 4);
+        gradient.addColorStop(0, `hsla(${hue}, 80%, 90%, ${currentOpacity * 0.6})`);
+        gradient.addColorStop(0.4, `hsla(${hue}, 70%, 70%, ${currentOpacity * 0.3})`);
+        gradient.addColorStop(1, 'transparent');
         
-        ctx.fillStyle = glow;
+        ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * star.z * 3, 0, Math.PI * 2);
+        ctx.arc(star.x, star.y, star.size * star.z * 4, 0, Math.PI * 2);
         ctx.fill();
         
-        // Minimal sparkle effect
-        if (star.size > 0.8 && twinkle > 0.8) {
-          ctx.strokeStyle = `hsla(0, 0%, 100%, ${currentOpacity * 0.3})`;
+        // Add sparkle effect to larger stars
+        if (star.size > 1 && twinkle > 0.7) {
+          ctx.strokeStyle = `hsla(0, 0%, 100%, ${currentOpacity * 0.5})`;
           ctx.lineWidth = 0.5;
           ctx.beginPath();
-          ctx.moveTo(star.x - star.size * 1.5, star.y);
-          ctx.lineTo(star.x + star.size * 1.5, star.y);
-          ctx.moveTo(star.x, star.y - star.size * 1.5);
-          ctx.lineTo(star.x, star.y + star.size * 1.5);
+          ctx.moveTo(star.x - star.size * 2, star.y);
+          ctx.lineTo(star.x + star.size * 2, star.y);
+          ctx.moveTo(star.x, star.y - star.size * 2);
+          ctx.lineTo(star.x, star.y + star.size * 2);
           ctx.stroke();
         }
         
         ctx.restore();
       });
 
-      // Draw and update shooting stars
-      for (let i = shootingStars.length - 1; i >= 0; i--) {
-        const shootingStar = shootingStars[i];
-        
-        shootingStar.x += Math.cos(shootingStar.angle) * shootingStar.speed;
-        shootingStar.y += Math.sin(shootingStar.angle) * shootingStar.speed;
-        shootingStar.opacity -= 0.01;
-        
-        if (shootingStar.opacity <= 0 || shootingStar.x > canvas.width || shootingStar.y > canvas.height) {
-          shootingStars.splice(i, 1);
-          continue;
-        }
-        
-        ctx.save();
-        const gradient = ctx.createLinearGradient(
-          shootingStar.x,
-          shootingStar.y,
-          shootingStar.x - Math.cos(shootingStar.angle) * shootingStar.length,
-          shootingStar.y - Math.sin(shootingStar.angle) * shootingStar.length
-        );
-        gradient.addColorStop(0, `rgba(255, 255, 255, ${shootingStar.opacity * 0.5})`);
-        gradient.addColorStop(0.3, `rgba(200, 180, 255, ${shootingStar.opacity * 0.3})`);
-        gradient.addColorStop(1, 'transparent');
-        
-        ctx.strokeStyle = gradient;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(shootingStar.x, shootingStar.y);
-        ctx.lineTo(
-          shootingStar.x - Math.cos(shootingStar.angle) * shootingStar.length,
-          shootingStar.y - Math.sin(shootingStar.angle) * shootingStar.length
-        );
-        ctx.stroke();
-        ctx.restore();
-      }
-
-      // Very subtle connecting lines
+      // Draw subtle connecting lines between very close stars
       for (let i = 0; i < stars.length; i++) {
         for (let j = i + 1; j < stars.length; j++) {
           const dx = stars[i].x - stars[j].x;
           const dy = stars[i].y - stars[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 60) {
-            const opacity = (60 - distance) / 60 * 0.05;
+          if (distance < 80) {
+            const opacity = (80 - distance) / 80 * 0.1;
             ctx.strokeStyle = `rgba(200, 180, 255, ${opacity})`;
-            ctx.lineWidth = 0.3;
+            ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(stars[i].x, stars[i].y);
             ctx.lineTo(stars[j].x, stars[j].y);
