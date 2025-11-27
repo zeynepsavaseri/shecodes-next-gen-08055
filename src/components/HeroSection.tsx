@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Star, Heart, Laptop } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-pixel-coding.png";
 import { TypewriterText } from "@/components/TypewriterText";
 import { GlitchText } from "@/components/GlitchText";
