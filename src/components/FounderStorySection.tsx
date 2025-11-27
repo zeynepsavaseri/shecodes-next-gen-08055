@@ -12,8 +12,8 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "Zeynep",
-    "Exploring health & technology at ETH.",
+    "⟨ zeynep ⟩",
+    "exploring health & technology at ETH",
   ];
 
 
