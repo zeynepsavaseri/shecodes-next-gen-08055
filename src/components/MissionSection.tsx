@@ -1,5 +1,4 @@
-import { Heart, Zap, Brain } from "lucide-react";
-import longevityHacksLogo from "@/assets/longevity-hacks-logo.png";
+import { Heart, Zap, Users, Brain } from "lucide-react";
 
 export const MissionSection = () => {
 
@@ -17,7 +16,7 @@ export const MissionSection = () => {
       microLine: "Ideas → prototypes. Fast."
     },
     {
-      icon: "image",
+      icon: Users,
       title: "Community",
       description: "Women supporting women, learning and growing together.",
       microLine: "Build together, grow together."
@@ -87,11 +86,7 @@ export const MissionSection = () => {
                 {/* Icon with gradient and hover effects */}
                 <div className="relative">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
-                    {value.icon === "image" ? (
-                      <img src={longevityHacksLogo} alt="Longevity Hacks" className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
-                    ) : (
-                      <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={2.5} />
-                    )}
+                    <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={2.5} />
                   </div>
                 </div>
                 
