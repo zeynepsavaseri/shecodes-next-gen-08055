@@ -60,7 +60,7 @@ export const SponsorsSection = () => {
         </div>
 
         {/* Partner Categories - Horizontal Scrolling */}
-        <div className="space-y-8 mb-8 sm:mb-12">
+        <div className="space-y-6 mb-16 sm:mb-20">
           {/* Tech Partners */}
           <div className="relative">
             <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-primary opacity-50 blur-sm" />
@@ -72,7 +72,7 @@ export const SponsorsSection = () => {
                 {sponsorCategories.tech.concat(sponsorCategories.tech).concat(sponsorCategories.tech).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-32 sm:w-40 md:w-44 h-16 sm:h-20 mx-3 sm:mx-4 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale p-2 shadow-glow"
+                    className="flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale p-2 shadow-glow"
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
@@ -96,7 +96,7 @@ export const SponsorsSection = () => {
                 {sponsorCategories.community.concat(sponsorCategories.community).concat(sponsorCategories.community).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-32 sm:w-40 md:w-44 h-16 sm:h-20 mx-3 sm:mx-4 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale p-2"
+                    className="flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale p-2"
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
@@ -120,7 +120,7 @@ export const SponsorsSection = () => {
                 {sponsorCategories.food.concat(sponsorCategories.food).concat(sponsorCategories.food).concat(sponsorCategories.food).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-32 sm:w-40 md:w-44 h-16 sm:h-20 mx-3 sm:mx-4 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-orange-500/20 hover-scale p-2"
+                    className="flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-orange-500/20 hover-scale p-2"
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
