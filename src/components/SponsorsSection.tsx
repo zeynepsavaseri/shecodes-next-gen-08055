@@ -60,7 +60,7 @@ export const SponsorsSection = () => {
         </div>
 
         {/* Partner Categories - Horizontal Scrolling */}
-        <div className="space-y-6 mb-12 sm:mb-14">
+        <div className="space-y-6 mb-16 sm:mb-24">
           {/* Tech Partners */}
           <div className="relative">
             <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-primary opacity-50 blur-sm" />
