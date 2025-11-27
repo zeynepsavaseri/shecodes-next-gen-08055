@@ -46,7 +46,7 @@ export const HeroSection = () => {
             
             {/* Value Proposition */}
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay px-4">
-              A hackathon and event series where young women explore, build, and grow in the world of technology.
+              A hackathon and event series that empowers young women to step into the world of tech and entrepreneurship.
             </p>
             
             {/* Event Badge */}
