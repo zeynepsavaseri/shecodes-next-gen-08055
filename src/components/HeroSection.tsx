@@ -11,6 +11,9 @@ export const HeroSection = () => {
   
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-14 sm:pt-16 md:pt-20">
+      {/* Galaxy background - extends below hero */}
+      <GalaxyBackground />
+
       <div className="container relative mx-auto px-4 sm:px-6 py-6 sm:py-12 md:py-16 lg:py-20 pb-2 sm:pb-12 md:pb-16 lg:pb-20">
         <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 md:space-y-8">
           {/* Main Content */}
