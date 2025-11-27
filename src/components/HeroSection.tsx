@@ -60,11 +60,12 @@ export const HeroSection = () => {
             {/* Join Events CTA */}
             <div className="pt-6 animate-fade-in-delay">
               <Button 
+                variant="outline"
                 size="lg"
                 onClick={() => {
                   document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-6 sm:px-8 group"
+                className="border-primary/30 bg-background/40 backdrop-blur-md hover:bg-primary/5 hover:border-primary/50 text-foreground font-mono text-xs sm:text-sm tracking-wide min-h-[48px] px-6 sm:px-8 group transition-all duration-300"
               >
                 Join Our Events
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
