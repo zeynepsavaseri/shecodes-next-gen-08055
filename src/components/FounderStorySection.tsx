@@ -12,9 +12,8 @@ export const FounderStorySection = ({ trigger }: FounderStoryProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lines = [
-    "> system: zeynep initialized.",
-    "> focus: health sciences × creativity × tech.",
-    "> status: online — building things that connect people & ideas.",
+    "Zeynep",
+    "Exploring health & technology at ETH.",
   ];
 
 
