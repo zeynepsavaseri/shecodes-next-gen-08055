@@ -56,6 +56,20 @@ export const HeroSection = () => {
                 {nextEvent ? `Next Event: ${nextEvent.date}` : 'Next Event: Coming Soon'}
               </span>
             </div>
+
+            {/* Join Events CTA */}
+            <div className="pt-6 animate-fade-in-delay">
+              <Button 
+                size="lg"
+                onClick={() => {
+                  document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-6 sm:px-8 group"
+              >
+                Join Our Events
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
