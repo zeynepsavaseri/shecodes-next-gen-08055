@@ -6,12 +6,12 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { SponsorsSection } from "@/components/SponsorsSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
-import { ParticleBackground } from "@/components/ParticleBackground";
+import { GalaxyBackground } from "@/components/GalaxyBackground";
 
 const Index = () => {
   return (
     <main className="min-h-screen relative">
-      <ParticleBackground />
+      <GalaxyBackground />
       <Header />
       <HeroSection />
       <section id="mission"><MissionSection /></section>
