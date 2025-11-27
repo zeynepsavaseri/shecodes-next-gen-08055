@@ -30,15 +30,15 @@ export const SponsorsSection = () => {
 
   const sponsorCategories = {
     tech: [
-      { name: "Lovable", logo: "/lovable-logo-white.png" },
-      { name: "Claude", logo: "/claude-logo.png" },
+      { name: "Lovable", logo: "/lovable-logo-white.png", featured: true },
+      { name: "Claude", logo: "/claude-logo.png", featured: true },
       { name: "TF", logo: "/tf-logo.png" },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ],
     community: [
       { name: "Women In Robotics", logo: "/women-in-robotics-logo.png" },
       { name: "ETH Diversity", logo: "/eth-diversity-logo.png" },
-      { name: "ETH Student Project House", logo: "/eth-project-house-logo.png" },
+      { name: "ETH Student Project House", logo: "/eth-project-house-logo.png", featured: true },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ],
     food: [
@@ -72,7 +72,7 @@ export const SponsorsSection = () => {
                 {sponsorCategories.tech.concat(sponsorCategories.tech).concat(sponsorCategories.tech).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale p-2 shadow-glow"
+                    className={`flex-shrink-0 ${sponsor.featured ? 'w-48 sm:w-56 md:w-64 h-20 sm:h-24' : 'w-28 sm:w-32 md:w-36 h-12 sm:h-14'} mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale p-2 shadow-glow`}
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
@@ -96,7 +96,7 @@ export const SponsorsSection = () => {
                 {sponsorCategories.community.concat(sponsorCategories.community).concat(sponsorCategories.community).map((sponsor, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale p-2"
+                    className={`flex-shrink-0 ${sponsor.featured ? 'w-48 sm:w-56 md:w-64 h-20 sm:h-24' : 'w-28 sm:w-32 md:w-36 h-12 sm:h-14'} mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale p-2`}
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
