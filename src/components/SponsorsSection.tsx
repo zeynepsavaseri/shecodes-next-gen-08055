@@ -38,7 +38,7 @@ export const SponsorsSection = () => {
     community: [
       { name: "Women In Robotics", logo: "/women-in-robotics-logo.png" },
       { name: "ETH Diversity", logo: "/eth-diversity-logo.png" },
-      { name: "ETH Student Project House", logo: "/eth-project-house-logo.png", featured: true },
+      { name: "ETH Student Project House", logo: "/eth-project-house-logo.png", featured: true, superFeatured: true },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ],
     food: [
@@ -101,7 +101,7 @@ export const SponsorsSection = () => {
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                     ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-150' : ''}`} />
+                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.superFeatured ? 'scale-[2]' : sponsor.featured ? 'scale-150' : ''}`} />
                     )}
                   </div>
                 ))}
