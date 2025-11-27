@@ -39,6 +39,7 @@ export const SponsorsSection = () => {
       { name: "Women In Robotics", logo: "/women-in-robotics-logo.png" },
       { name: "ETH Diversity", logo: "/eth-diversity-logo.png" },
       { name: "ETH Student Project House", logo: "/eth-project-house-logo.png", featured: true, superFeatured: true },
+      { name: "New Community Partner", logo: "/new-community-logo.png" },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ],
     food: [
@@ -113,7 +114,7 @@ export const SponsorsSection = () => {
           <div className="relative">
             <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 opacity-50 blur-sm" />
             <h3 className="text-sm sm:text-base font-pixel uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-4 text-center">
-              Food
+              Food & Drinks
             </h3>
             <div className="relative overflow-hidden py-2">
               <div className="flex animate-scroll-left" style={{ animationDuration: '22s' }}>
