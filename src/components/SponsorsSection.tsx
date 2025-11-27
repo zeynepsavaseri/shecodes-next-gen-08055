@@ -72,12 +72,12 @@ export const SponsorsSection = () => {
                 {sponsorCategories.tech.concat(sponsorCategories.tech).concat(sponsorCategories.tech).map((sponsor, index) => (
                   <div
                     key={index}
-                    className={`flex-shrink-0 ${sponsor.featured ? 'w-48 sm:w-56 md:w-64 h-20 sm:h-24' : 'w-28 sm:w-32 md:w-36 h-12 sm:h-14'} mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale p-2 shadow-glow`}
+                    className={`flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale ${sponsor.featured ? 'p-1' : 'p-2'} shadow-glow`}
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                     ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-125' : ''}`} />
                     )}
                   </div>
                 ))}
@@ -96,12 +96,12 @@ export const SponsorsSection = () => {
                 {sponsorCategories.community.concat(sponsorCategories.community).concat(sponsorCategories.community).map((sponsor, index) => (
                   <div
                     key={index}
-                    className={`flex-shrink-0 ${sponsor.featured ? 'w-48 sm:w-56 md:w-64 h-20 sm:h-24' : 'w-28 sm:w-32 md:w-36 h-12 sm:h-14'} mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale p-2`}
+                    className={`flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale ${sponsor.featured ? 'p-1' : 'p-2'}`}
                   >
                     {sponsor.isComingSoon ? (
                       <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
                     ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className="max-w-full max-h-full object-contain" />
+                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-125' : ''}`} />
                     )}
                   </div>
                 ))}
