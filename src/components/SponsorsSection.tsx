@@ -39,7 +39,7 @@ export const SponsorsSection = () => {
       { name: "Women In Robotics", logo: "/women-in-robotics-logo.png" },
       { name: "ETH Diversity", logo: "/eth-diversity-logo.png" },
       { name: "ETH Student Project House", logo: "/eth-project-house-logo.png", featured: true, superFeatured: true },
-      { name: "New Community Partner", logo: "/new-community-logo.png" },
+      { name: "Longevity Hacks", logo: "/longevity-hacks-logo.png" },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ],
     food: [
