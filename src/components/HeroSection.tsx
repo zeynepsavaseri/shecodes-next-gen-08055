@@ -50,7 +50,7 @@ export const HeroSection = () => {
             </p>
             
             {/* Event Badge */}
-            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-primary/30 bg-card/40 backdrop-blur-sm animate-fade-in-delay shadow-lg shadow-primary/10 mx-2 mt-8 sm:mt-12">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-primary/30 bg-card/40 backdrop-blur-sm animate-fade-in-delay shadow-lg shadow-primary/10 mx-2 mt-12 sm:mt-16 md:mt-20">
               <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="text-xs sm:text-sm text-foreground/80">
                 {nextEvent ? `Next Event: ${nextEvent.date}` : 'Next Event: Coming Soon'}
