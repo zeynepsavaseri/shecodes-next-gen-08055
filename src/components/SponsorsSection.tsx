@@ -46,6 +46,7 @@ export const SponsorsSection = () => {
       { name: "Cosmic Dealer", logo: "/cosmic-dealer-logo.png" },
       { name: "Focus Water", logo: "/focus-water-logo.png" },
       { name: "MAD", logo: "/mad-logo.png", featured: true },
+      { name: "Brownie Paw", logo: "/brownie-paw-logo.png" },
       { name: "Coming Soon", logo: "", isComingSoon: true },
     ]
   };
