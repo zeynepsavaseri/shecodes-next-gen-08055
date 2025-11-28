@@ -131,7 +131,7 @@ export const SponsorsSection = () => {
         </div>
 
         {/* Partners Grid - Horizontal scroll on mobile, grid on desktop */}
-        <div className="mb-16 sm:mb-24">
+        <div className="mb-24 sm:mb-32">
           {/* Mobile: Horizontal scroll */}
           <div className="md:hidden -mx-3 sm:mx-0">
             <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-3">
@@ -339,7 +339,7 @@ export const SponsorsSection = () => {
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
 
           <div className="relative">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-foreground">
                   WHY
@@ -361,7 +361,77 @@ export const SponsorsSection = () => {
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Mobile: Horizontal scroll */}
+            <div className="md:hidden -mx-3 sm:mx-0">
+              <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-3">
+                {benefits.map((benefit, index) => (
+                  <Card
+                    key={index}
+                    onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+                    className={`flex-shrink-0 w-[280px] snap-center group relative bg-card/80 backdrop-blur-sm cursor-pointer border border-primary/20 transition-all duration-500 ease-out ${
+                      expandedCard === index 
+                        ? 'scale-105 shadow-glow border-primary/60 bg-card' 
+                        : 'hover:border-primary/40 hover:-translate-y-1'
+                    }`}
+                  >
+                    <CardContent className="p-6 relative overflow-hidden">
+                      {/* Animated gradient overlay */}
+                      <div className={`absolute inset-0 bg-gradient-primary transition-all duration-500 ${
+                        expandedCard === index ? 'opacity-10' : 'opacity-0 group-hover:opacity-5'
+                      }`} />
+
+                      <div className="relative flex flex-col items-center text-center">
+                        {/* Icon */}
+                        <div className={`relative transition-all duration-500 ${
+                          expandedCard === index ? 'mb-6 scale-110' : 'mb-4'
+                        }`}>
+                          <div className={`w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-500 shadow-glow ${
+                            expandedCard === index ? 'rotate-12' : 'group-hover:scale-110'
+                          }`}>
+                            <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                          </div>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className={`text-sm font-mono font-bold text-foreground uppercase tracking-wider transition-all duration-300 ${
+                          expandedCard === index ? 'mb-6 text-primary' : 'mb-2'
+                        }`}>
+                          {benefit.title}
+                        </h3>
+                        
+                        {/* Expanded content with creative reveal */}
+                        <div className={`overflow-hidden transition-all duration-500 ease-out ${
+                          expandedCard === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        }`}>
+                          <div className={`transition-all duration-500 delay-100 ${
+                            expandedCard === index ? 'translate-y-0' : 'translate-y-4'
+                          }`}>
+                            <p className="text-sm font-mono text-foreground leading-relaxed">
+                              {benefit.front}
+                              <br />
+                              {benefit.expanded}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Click indicator */}
+                        <div className={`absolute bottom-4 right-4 text-xs font-mono transition-all duration-300 ${
+                          expandedCard === index ? 'text-primary rotate-180' : 'text-primary/40 group-hover:text-primary/60'
+                        }`}>
+                          {expandedCard === index ? '✕' : '+'}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <p className="text-center text-[10px] sm:text-xs text-muted-foreground mt-4 italic">
+                Swipe to see more →
+              </p>
+            </div>
+
+            {/* Desktop: Grid layout */}
+            <div className="hidden md:grid grid-cols-3 gap-6 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
                 <Card
                   key={index}
@@ -419,10 +489,10 @@ export const SponsorsSection = () => {
                         {expandedCard === index ? '✕' : '+'}
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                     </CardContent>
+                  </Card>
+                ))}
+              </div>
           </div>
         </div>
       </div>
