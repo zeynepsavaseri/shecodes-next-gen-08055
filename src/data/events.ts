@@ -19,31 +19,7 @@ export interface Event {
   registrationUrl?: string;
 }
 
-export const upcomingEvents: Event[] = [
-  {
-    title: "EY Hackathon",
-    subtitle: "Build. Network. Win.",
-    date: "February 28, 2026",
-    location: "EY Office, Zürich",
-    participants: "Only 60 spots available",
-    partner: {
-      name: "EY",
-      logo: "/EY Logo.png",
-      accentColor: "48 96% 53%" // EY yellow
-    },
-    description: {
-      overview: "Join us at EY Zürich for a day of innovation, collaboration, and real-world problem-solving. You'll team up with driven students to tackle an actual EY challenge — guided by experts working at the intersection of business and technology. This is your chance to get inside one of the world's leading firms, turn ideas into solutions, and make connections that can shape your future.",
-      whatToExpect: [
-        "1-year mentorship with EY professionals",
-        "Exclusive dinner with EY mentors and team members",
-        "Recognition and exposure within the EY innovation network"
-      ],
-      whoCanJoin: "Open to students of all backgrounds : From first-time coders to experienced builders. Curiosity and creativity are all you need.",
-      whyJoin: "This is your chance to learn, build, and connect with a supportive community of women in tech. Make meaningful connections and gain real-world experience."
-    },
-    registrationUrl: "https://www.ey.com"
-  },
-];
+export const upcomingEvents: Event[] = [];
 
 export const pastEvents: Event[] = [];
 
