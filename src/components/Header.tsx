@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import hercodeLogo from "@/assets/hercode-logo.png";
-import { FounderStorySection } from "@/components/FounderStorySection";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import hercodeLogo from "@/assets/hercode-main-logo.png";
+import { useTheme } from "next-themes";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,61 +26,64 @@ export const Header = () => {
   };
 
   const navItems = [
-    { label: "Mission", id: "mission" },
-    { label: "Our Events", id: "events" },
-    { label: "Testimonials", id: "testimonials" },
-    { label: "Become a Partner", id: "sponsors" },
+    { label: "Event", id: "events" },
+    { label: "Ecosystem", id: "sponsors" },
+    { label: "Founder", id: "founder" },
+    { label: "Values", id: "mission" },
   ];
-
-  const [showFounderStory, setShowFounderStory] = useState(false);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-sm shadow-glow border-b border-border"
+          ? "bg-card/95 backdrop-blur-sm shadow-lg border-b border-border"
           : "bg-card/80 backdrop-blur-sm border-b border-border/50"
       }`}
     >
-      <div className="container mx-auto px-3 sm:px-4">
-        <div className="flex items-center justify-between h-14 sm:h-14 md:h-16 gap-2">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-4">
+          {/* Logo */}
           <img 
             src={hercodeLogo}
             alt="HerCode Logo"
-            className="h-9 sm:h-10 md:h-12 w-auto cursor-pointer hover:scale-105 transition-transform brightness-125"
+            className="h-8 sm:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-            {navItems.map((item, index) => (
-              <div key={item.id} className="flex items-center gap-4 lg:gap-6">
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
-                </button>
-                {index < navItems.length - 1 && (
-                  <div className="h-4 w-px bg-border/60" />
-                )}
-              </div>
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase tracking-wider"
+              >
+                {item.label}
+              </button>
             ))}
-            <div className="h-4 w-px bg-border/60" />
-            <FounderStorySection 
-              trigger={
-                <button className="text-sm text-foreground/80 hover:text-primary transition-all font-mono font-bold uppercase tracking-wider relative group">
-                  About the Founder
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full shadow-glow" />
-                </button>
-              }
-            />
+            
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-foreground/80 hover:text-primary transition-colors p-2"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            
+            {/* Register Button */}
+            <Button 
+              size="lg"
+              onClick={() => scrollToSection('events')}
+              className="font-bold uppercase tracking-wider text-xs px-6"
+            >
+              Register
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="md:hidden text-foreground p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -89,28 +93,32 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden pb-4 space-y-1 animate-fade-in">
-            {navItems.map((item, index) => (
-              <div key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-mono font-bold uppercase min-h-[44px]"
-                >
-                  {item.label}
-                </button>
-                {index < navItems.length - 1 && (
-                  <div className="h-px bg-border/40 mx-2" />
-                )}
-              </div>
+          <nav className="md:hidden pb-4 space-y-2">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase"
+              >
+                {item.label}
+              </button>
             ))}
-            <div className="h-px bg-border/40 mx-2" />
-            <FounderStorySection 
-              trigger={
-                <button className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-mono font-bold uppercase min-h-[44px]">
-                  About the Founder
-                </button>
-              }
-            />
+            <div className="flex items-center gap-2 pt-2">
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-foreground/80 hover:text-primary transition-colors p-2"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+              <Button 
+                size="lg"
+                onClick={() => scrollToSection('events')}
+                className="font-bold uppercase tracking-wider text-xs flex-1"
+              >
+                Register
+              </Button>
+            </div>
           </nav>
         )}
       </div>
