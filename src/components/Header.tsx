@@ -27,10 +27,11 @@ export const Header = () => {
   };
 
   const navItems = [
-    { label: "Event", id: "events" },
-    { label: "Ecosystem", id: "sponsors" },
-    { label: "Founder", id: "founder" },
-    { label: "Values", id: "mission" },
+    { label: "Join our events", id: "events", bright: true },
+    { label: "Partner up with us", id: "sponsors", bright: true, isPartnerLink: true },
+    { label: "Values", id: "mission", bright: false },
+    { label: "Testimonials", id: "testimonials", bright: false },
+    { label: "The Ecosystem", id: "sponsors", bright: false },
   ];
 
   return (
@@ -54,29 +55,35 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
-              if (item.id === "founder") {
+              if (item.isPartnerLink) {
                 return (
-                  <ArchitectGame 
+                  <a
                     key={item.id}
-                    trigger={
-                      <button className="text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase tracking-wider">
-                        {item.label}
-                      </button>
-                    }
-                  />
+                    href="/partner"
+                    className={`text-sm transition-colors font-bold uppercase tracking-wider ${
+                      item.bright 
+                        ? 'bg-gradient-primary bg-clip-text text-transparent hover:opacity-80' 
+                        : 'text-foreground/80 hover:text-primary'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
                 );
               }
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase tracking-wider"
+                  className={`text-sm transition-colors font-bold uppercase tracking-wider ${
+                    item.bright 
+                      ? 'bg-gradient-primary bg-clip-text text-transparent hover:opacity-80' 
+                      : 'text-foreground/80 hover:text-primary'
+                  }`}
                 >
                   {item.label}
                 </button>
               );
             })}
-            
             {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -85,15 +92,6 @@ export const Header = () => {
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            
-            {/* Register Button */}
-            <Button 
-              size="lg"
-              onClick={() => scrollToSection('events')}
-              className="font-bold uppercase tracking-wider text-xs px-6"
-            >
-              Register
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -110,23 +108,30 @@ export const Header = () => {
         {isMobileMenuOpen && (
           <nav className="md:hidden pb-4 space-y-2">
             {navItems.map((item) => {
-              if (item.id === "founder") {
+              if (item.isPartnerLink) {
                 return (
-                  <ArchitectGame 
+                  <a
                     key={item.id}
-                    trigger={
-                      <button className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase">
-                        {item.label}
-                      </button>
-                    }
-                  />
+                    href="/partner"
+                    className={`block w-full text-left py-3 px-2 text-sm transition-colors font-bold uppercase ${
+                      item.bright 
+                        ? 'bg-gradient-primary bg-clip-text text-transparent' 
+                        : 'text-foreground/80 hover:text-primary'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
                 );
               }
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase"
+                  className={`block w-full text-left py-3 px-2 text-sm transition-colors font-bold uppercase ${
+                    item.bright 
+                      ? 'bg-gradient-primary bg-clip-text text-transparent' 
+                      : 'text-foreground/80 hover:text-primary'
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -140,13 +145,6 @@ export const Header = () => {
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <Button 
-                size="lg"
-                onClick={() => scrollToSection('events')}
-                className="font-bold uppercase tracking-wider text-xs flex-1"
-              >
-                Register
-              </Button>
             </div>
           </nav>
         )}
