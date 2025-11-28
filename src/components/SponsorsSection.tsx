@@ -366,42 +366,59 @@ export const SponsorsSection = () => {
                 <Card
                   key={index}
                   onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                  className="group relative bg-card/80 backdrop-blur-sm cursor-pointer hover-lift border border-primary/20"
+                  className={`group relative bg-card/80 backdrop-blur-sm cursor-pointer border border-primary/20 transition-all duration-500 ease-out ${
+                    expandedCard === index 
+                      ? 'scale-105 shadow-glow border-primary/60 bg-card' 
+                      : 'hover:border-primary/40 hover:-translate-y-1'
+                  }`}
                 >
                   <CardContent className="p-8 relative overflow-hidden">
-                    {/* Subtle gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+                    {/* Animated gradient overlay */}
+                    <div className={`absolute inset-0 bg-gradient-primary transition-all duration-500 ${
+                      expandedCard === index ? 'opacity-10' : 'opacity-0 group-hover:opacity-5'
+                    }`} />
 
-                    <div className="relative flex flex-col items-center text-center gap-6">
-                      {/* Icon with smooth hover effect */}
-                      <div className="relative">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow">
+                    <div className="relative flex flex-col items-center text-center">
+                      {/* Icon */}
+                      <div className={`relative transition-all duration-500 ${
+                        expandedCard === index ? 'mb-6 scale-110' : 'mb-4'
+                      }`}>
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-500 shadow-glow ${
+                          expandedCard === index ? 'rotate-12' : 'group-hover:scale-110'
+                        }`}>
                           <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                         </div>
                       </div>
 
-                      {/* Content */}
-                      <div>
-                        <h3 className="text-base font-mono font-bold mb-4 text-foreground uppercase tracking-wider">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-sm font-mono text-muted-foreground leading-relaxed mb-4">
-                          {benefit.front}
-                        </p>
-                        
-                        {/* Expanded content */}
-                        <div className={`overflow-hidden transition-all duration-300 ease-out ${expandedCard === index ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                          <div className="pt-4 border-t border-primary/20">
-                            <p className="text-sm font-mono text-foreground/90 leading-relaxed">
-                              {benefit.expanded}
-                            </p>
-                          </div>
+                      {/* Title */}
+                      <h3 className={`text-base font-mono font-bold text-foreground uppercase tracking-wider transition-all duration-300 ${
+                        expandedCard === index ? 'mb-6 text-primary' : 'mb-2'
+                      }`}>
+                        {benefit.title}
+                      </h3>
+                      
+                      {/* Expanded content with creative reveal */}
+                      <div className={`overflow-hidden transition-all duration-500 ease-out ${
+                        expandedCard === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}>
+                        <div className={`space-y-4 transition-all duration-500 delay-100 ${
+                          expandedCard === index ? 'translate-y-0' : 'translate-y-4'
+                        }`}>
+                          <p className="text-sm font-mono text-foreground leading-relaxed font-semibold">
+                            {benefit.front}
+                          </p>
+                          <div className="h-px bg-gradient-primary opacity-30" />
+                          <p className="text-sm font-mono text-muted-foreground leading-relaxed">
+                            {benefit.expanded}
+                          </p>
                         </div>
                       </div>
 
                       {/* Click indicator */}
-                      <div className={`absolute bottom-4 right-4 text-xs font-mono text-primary/60 transition-all duration-300 ${expandedCard === index ? 'rotate-180' : 'group-hover:text-primary'}`}>
-                        {expandedCard === index ? '▲' : '▼'}
+                      <div className={`absolute bottom-4 right-4 text-xs font-mono transition-all duration-300 ${
+                        expandedCard === index ? 'text-primary rotate-180' : 'text-primary/40 group-hover:text-primary/60'
+                      }`}>
+                        {expandedCard === index ? '✕' : '+'}
                       </div>
                     </div>
                   </CardContent>
