@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail, Diamond } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -23,16 +23,17 @@ export const CTASection = () => {
   const whatsappGroupLink = "https://chat.whatsapp.com/HVJlizkRiFVDonC0TCeWgi";
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-3 sm:px-4 relative overflow-hidden" id="cta">
+    <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative overflow-hidden" id="cta">
       <div className="absolute inset-0 bg-gradient-primary opacity-10" />
       
       <div className="container mx-auto max-w-4xl relative z-10">
-        <div className="text-center mb-12 sm:mb-16 px-2">
-          <div className="space-y-2 mb-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
-              THE
+        <div className="text-center mb-8 sm:mb-12 px-2">
+          <div className="flex items-center justify-center gap-4 mb-3 sm:mb-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
+              <span className="text-foreground">THE</span>
             </h2>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase bg-gradient-primary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+            <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
               COMMUNITY
             </h2>
           </div>

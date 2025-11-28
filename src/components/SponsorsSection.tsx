@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Award, ExternalLink } from "lucide-react";
+import { Users, Target, Award, ExternalLink, Diamond } from "lucide-react";
 import { useState } from "react";
 
 export const SponsorsSection = () => {
@@ -117,14 +117,15 @@ export const SponsorsSection = () => {
 
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
-        <div className="text-center mb-12 sm:mb-16 px-2">
-          <div className="space-y-2">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
-              THE
+        <div className="text-center mb-6 sm:mb-8 px-2">
+          <div className="flex items-center justify-center gap-4 mb-2 sm:mb-3">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
+              <span className="text-foreground">THE</span>
             </h2>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase bg-gradient-primary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+            <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
               PARTNERS
             </h2>
           </div>
@@ -241,12 +242,13 @@ export const SponsorsSection = () => {
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
 
           <div className="relative">
-            <div className="text-center mb-16">
-              <div className="space-y-2 mb-4">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
-                  WHY
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+                  <span className="text-foreground">WHY</span>
                 </h2>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase bg-gradient-secondary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+                <Diamond className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-foreground/60 rotate-45" strokeWidth={1.5} />
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-secondary bg-clip-text text-transparent">
                   PARTNER
                 </h2>
               </div>
