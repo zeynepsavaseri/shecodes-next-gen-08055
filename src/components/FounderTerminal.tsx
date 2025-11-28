@@ -93,10 +93,10 @@ export const FounderTerminal = () => {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 border-primary hover:bg-primary/10 hover:border-primary shadow-glow hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] transition-all duration-300 hover:scale-105 animate-pulse"
+          className="gap-2 bg-primary/20 border-2 border-primary hover:bg-primary/30 hover:border-primary shadow-glow font-bold"
         >
-          <Terminal size={16} className="animate-pulse" />
-          <span className="hidden sm:inline font-semibold">Founder</span>
+          <Terminal size={16} />
+          <span className="hidden sm:inline">Founder</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl bg-card border-2 border-primary shadow-glow">
