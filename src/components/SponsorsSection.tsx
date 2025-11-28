@@ -36,7 +36,8 @@ export const SponsorsSection = () => {
       category: "TECH", 
       categoryColor: "197 71% 52%",
       logo: "/lovable-logo-white.png",
-      link: "https://lovable.dev"
+      link: "https://lovable.dev",
+      biggerLogo: false
     },
     { 
       name: "Claude", 
@@ -44,14 +45,16 @@ export const SponsorsSection = () => {
       category: "TECH", 
       categoryColor: "197 71% 52%",
       logo: "/claude-logo.png",
-      link: "https://anthropic.com"
+      link: "https://anthropic.com",
+      biggerLogo: true
     },
     { 
       name: "TF", 
       subtitle: "INNOVATION PARTNER", 
       category: "TECH", 
       categoryColor: "197 71% 52%",
-      logo: "/tf-logo.png"
+      logo: "/tf-logo.png",
+      biggerLogo: false
     },
     
     // Community Partners
@@ -60,28 +63,32 @@ export const SponsorsSection = () => {
       subtitle: "ETH ZURICH", 
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
-      logo: "/eth-diversity-logo.png"
+      logo: "/eth-diversity-logo.png",
+      biggerLogo: false
     },
     { 
       name: "Student Project House", 
       subtitle: "ETH ZURICH", 
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
-      logo: "/eth-project-house-logo.png"
+      logo: "/eth-project-house-logo.png",
+      biggerLogo: true
     },
     { 
       name: "Women In Robotics", 
       subtitle: "GLOBAL NETWORK", 
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
-      logo: "/women-in-robotics-logo.png"
+      logo: "/women-in-robotics-logo.png",
+      biggerLogo: false
     },
     { 
       name: "Longevity Hacks", 
       subtitle: "HEALTH & LONGEVITY", 
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
-      logo: "/longevity-hacks-logo.png"
+      logo: "/longevity-hacks-logo.png",
+      biggerLogo: true
     },
     
     // Food & Drinks Partners
@@ -90,28 +97,32 @@ export const SponsorsSection = () => {
       subtitle: "MAKE A DIFFERENCE", 
       category: "FUEL", 
       categoryColor: "38 92% 50%",
-      logo: "/mad-logo.png"
+      logo: "/mad-logo.png",
+      biggerLogo: true
     },
     { 
       name: "Cosmic Dealer", 
       subtitle: "HEALTHY SNACKS", 
       category: "FUEL", 
       categoryColor: "38 92% 50%",
-      logo: "/cosmic-dealer-logo.png"
+      logo: "/cosmic-dealer-logo.png",
+      biggerLogo: false
     },
     { 
       name: "Focus Water", 
       subtitle: "HYDRATION", 
       category: "FUEL", 
       categoryColor: "38 92% 50%",
-      logo: "/focus-water-logo.png"
+      logo: "/focus-water-logo.png",
+      biggerLogo: true
     },
     { 
       name: "Brownie Paw", 
       subtitle: "SWEET TREATS", 
       category: "FUEL", 
       categoryColor: "38 92% 50%",
-      logo: "/brownie-paw-logo.png"
+      logo: "/brownie-paw-logo.png",
+      biggerLogo: false
     },
   ];
 
@@ -188,7 +199,9 @@ export const SponsorsSection = () => {
                           <img 
                             src={partner.logo} 
                             alt={partner.name} 
-                            className="max-w-full max-h-24 object-contain transition-transform duration-300 group-hover:scale-110"
+                            className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
+                              partner.biggerLogo ? 'max-h-32' : 'max-h-24'
+                            }`}
                           />
                         </div>
                       )}
@@ -289,7 +302,7 @@ export const SponsorsSection = () => {
                           src={partner.logo} 
                           alt={partner.name} 
                           className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isBig ? 'max-h-32' : 'max-h-20'
+                            isBig ? (partner.biggerLogo ? 'max-h-40' : 'max-h-32') : (partner.biggerLogo ? 'max-h-28' : 'max-h-20')
                           }`}
                         />
                       </div>
