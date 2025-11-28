@@ -4,17 +4,27 @@ import { getNextEvent } from "@/data/events";
 export const HeroSection = () => {
   const nextEvent = getNextEvent();
   
+  const scrollToEvents = () => {
+    const eventsSection = document.getElementById('events');
+    if (eventsSection) {
+      eventsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+  
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-20 sm:pt-24">
       <div className="container relative mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12">
           {/* Applications Open Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary bg-primary/5">
-            <div className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-primary">
+          <button
+            onClick={scrollToEvents}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary bg-primary/5 hover:bg-primary/10 transition-all duration-300 hover:scale-105 cursor-pointer group"
+          >
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-primary font-bold">
               Applications Open
             </span>
-          </div>
+          </button>
 
           {/* Main Headline */}
           <div className="space-y-4">
