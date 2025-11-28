@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 250 15% 96%;
     --foreground: 240 10% 3.9%;
 
-    --card: 0 0% 95%;
+    --card: 250 15% 92%;
     --card-foreground: 240 10% 3.9%;
 
-    --popover: 0 0% 95%;
+    --popover: 250 15% 92%;
     --popover-foreground: 240 10% 3.9%;
 
     --primary: 270 60% 55%;
@@ -24,7 +24,7 @@ All colors MUST be HSL.
     --secondary: 250 50% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 4.8% 92%;
+    --muted: 250 15% 88%;
     --muted-foreground: 240 3.8% 35%;
 
     --accent: 270 55% 65%;
@@ -33,27 +33,27 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5.9% 85%;
-    --input: 240 5.9% 90%;
+    --border: 250 12% 82%;
+    --input: 250 12% 88%;
     --ring: 270 60% 55%;
 
     --radius: 0.5rem;
     
     --gradient-primary: linear-gradient(135deg, hsl(270 60% 55%) 0%, hsl(210 70% 60%) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(250 50% 50%), hsl(210 70% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 96%) 0%, hsl(240 5% 94%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(250 15% 94%) 0%, hsl(260 18% 92%) 100%);
     
-    --shadow-card: 0 4px 20px -5px hsla(0 0% 0% / 0.15);
+    --shadow-card: 0 4px 20px -5px hsla(250 20% 20% / 0.12);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 96%;
+    --sidebar-background: 250 15% 94%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 270 60% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4.8% 92%;
+    --sidebar-accent: 250 15% 90%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 240 5.9% 85%;
+    --sidebar-border: 250 12% 82%;
     --sidebar-ring: 270 60% 55%;
   }
 
