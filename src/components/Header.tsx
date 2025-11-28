@@ -28,7 +28,7 @@ export const Header = () => {
 
   const navItems = [
     { label: "Join our events", id: "events", bright: true },
-    { label: "Partner up with us", id: "sponsors", bright: true, isPartnerLink: true },
+    { label: "Partner up with us", id: "sponsors", bright: true },
     { label: "Values", id: "mission", bright: false },
     { label: "Testimonials", id: "testimonials", bright: false },
     { label: "The Ecosystem", id: "sponsors", bright: false },
@@ -55,21 +55,6 @@ export const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
-              if (item.isPartnerLink) {
-                return (
-                  <a
-                    key={item.id}
-                    href="/partner"
-                    className={`text-sm transition-colors font-bold uppercase tracking-wider ${
-                      item.bright 
-                        ? 'bg-gradient-primary bg-clip-text text-transparent hover:opacity-80' 
-                        : 'text-foreground/80 hover:text-primary'
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                );
-              }
               return (
                 <button
                   key={item.id}
@@ -108,21 +93,6 @@ export const Header = () => {
         {isMobileMenuOpen && (
           <nav className="md:hidden pb-4 space-y-2">
             {navItems.map((item) => {
-              if (item.isPartnerLink) {
-                return (
-                  <a
-                    key={item.id}
-                    href="/partner"
-                    className={`block w-full text-left py-3 px-2 text-sm transition-colors font-bold uppercase ${
-                      item.bright 
-                        ? 'bg-gradient-primary bg-clip-text text-transparent' 
-                        : 'text-foreground/80 hover:text-primary'
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                );
-              }
               return (
                 <button
                   key={item.id}
