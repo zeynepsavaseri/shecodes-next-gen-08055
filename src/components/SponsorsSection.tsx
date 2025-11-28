@@ -117,7 +117,7 @@ export const SponsorsSection = () => {
 
 
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-8 sm:mb-12 px-2">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
@@ -186,7 +186,7 @@ export const SponsorsSection = () => {
                           src={partner.logo} 
                           alt={partner.name} 
                           className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isBig ? 'max-h-20' : 'max-h-12'
+                            isBig ? 'max-h-32' : 'max-h-20'
                           }`}
                         />
                       </div>
