@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Award, ExternalLink, Diamond } from "lucide-react";
+import { Users, Target, Award, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 export const SponsorsSection = () => {
@@ -120,15 +120,9 @@ export const SponsorsSection = () => {
     <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 px-2">
-          <div className="flex items-center justify-center gap-4 mb-2 sm:mb-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
-              <span className="text-foreground">THE</span>
-            </h2>
-            <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
-              PARTNERS
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-primary bg-clip-text text-transparent mb-2">
+            Our Partners
+          </h2>
         </div>
 
         {/* Partners Grid - Techy Compact Design */}
@@ -243,15 +237,9 @@ export const SponsorsSection = () => {
 
           <div className="relative">
             <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
-                  <span className="text-foreground">WHY</span>
-                </h2>
-                <Diamond className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-foreground/60 rotate-45" strokeWidth={1.5} />
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-secondary bg-clip-text text-transparent">
-                  PARTNER
-                </h2>
-              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-secondary bg-clip-text text-transparent mb-4">
+                Why Partner with Us
+              </h2>
               <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto mb-6">
                 Join forward-thinking companies investing in the future of tech diversity
               </p>
