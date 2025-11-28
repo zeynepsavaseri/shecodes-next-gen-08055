@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import founderPixel from "@/assets/founder-pixel.png";
 
 interface Message {
@@ -6,7 +7,12 @@ interface Message {
   content: string;
 }
 
-export const ArchitectGame = () => {
+interface ArchitectGameProps {
+  trigger?: React.ReactNode;
+}
+
+export const ArchitectGame = ({ trigger }: ArchitectGameProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { type: "system", content: "Initializing secure connection..." },
     { type: "system", content: "Connection established. Welcome to THE ARCHITECT's terminal." },
@@ -16,6 +22,19 @@ export const ArchitectGame = () => {
   const [unlockedSections, setUnlockedSections] = useState<Set<string>>(new Set());
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Reset on open
+  useEffect(() => {
+    if (isOpen) {
+      setMessages([
+        { type: "system", content: "Initializing secure connection..." },
+        { type: "system", content: "Connection established. Welcome to THE ARCHITECT's terminal." },
+        { type: "system", content: "Type 'help' to view available commands." },
+      ]);
+      setInput("");
+      setUnlockedSections(new Set());
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (terminalRef.current) {
@@ -116,15 +135,18 @@ export const ArchitectGame = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        {trigger}
+      </DialogTrigger>
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden bg-card border-2 border-primary shadow-glow-intense">
+        <div className="space-y-6">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase tracking-wider">
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent uppercase tracking-wider">
               The Architect
             </h2>
-            <p className="text-sm sm:text-base text-foreground/70 font-mono">
+            <p className="text-xs sm:text-sm text-foreground/70 font-mono mt-2">
               Hack the terminal to discover the mind behind HerCode
             </p>
           </div>
@@ -203,14 +225,14 @@ export const ArchitectGame = () => {
 
           {/* Hint */}
           {unlockedSections.size < 4 && (
-            <div className="mt-6 text-center">
-              <p className="text-xs sm:text-sm text-muted-foreground font-mono">
+            <div className="mt-4 text-center">
+              <p className="text-xs text-muted-foreground font-mono">
                 💡 Hint: Try different commands to unlock all sections
               </p>
             </div>
           )}
         </div>
-      </div>
-    </section>
+      </DialogContent>
+    </Dialog>
   );
 };

@@ -7,7 +7,6 @@ import { SponsorsSection } from "@/components/SponsorsSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { ParticleBackground } from "@/components/ParticleBackground";
-import { ArchitectGame } from "@/components/ArchitectGame";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
       <section id="events"><EventsSection /></section>
       <section id="testimonials"><TestimonialsSection /></section>
       <section id="sponsors"><SponsorsSection /></section>
-      <section id="founder"><ArchitectGame /></section>
       <section id="cta"><CTASection /></section>
       <Footer />
     </main>
