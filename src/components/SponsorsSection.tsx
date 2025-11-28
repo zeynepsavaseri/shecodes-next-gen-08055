@@ -120,15 +120,9 @@ export const SponsorsSection = () => {
     <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 px-2">
-          <div className="flex items-center justify-center gap-4 mb-2 sm:mb-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
-              <span className="text-foreground">THE</span>
-            </h2>
-            <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
-              PARTNERS
-            </h2>
-          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-3">
+            PARTNERS
+          </h2>
         </div>
 
         {/* Partners Grid - Techy Compact Design */}
