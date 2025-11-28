@@ -5,7 +5,7 @@ import { EventCard } from "./EventCard";
 export const EventsSection = () => {
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-muted/20" id="events">
+    <section className="py-8 sm:py-10 md:py-12 bg-muted/20 mb-8 sm:mb-12 md:mb-16" id="events">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Upcoming Events */}
         <div className="mb-12 sm:mb-16 md:mb-20">

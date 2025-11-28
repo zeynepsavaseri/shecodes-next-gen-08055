@@ -117,7 +117,7 @@ export const SponsorsSection = () => {
 
 
   return (
-    <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-b from-background to-muted/30 mb-8 sm:mb-12 md:mb-16">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 px-2">
           <div className="flex items-center justify-center gap-3 mb-2 sm:mb-3">
