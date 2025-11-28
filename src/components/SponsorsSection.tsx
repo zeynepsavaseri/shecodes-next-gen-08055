@@ -121,10 +121,10 @@ export const SponsorsSection = () => {
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 px-2">
           <div className="flex items-center justify-center gap-3 mb-2 sm:mb-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-foreground">
               THE
             </h2>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
               ECOSYSTEM
             </h2>
           </div>
@@ -243,10 +243,10 @@ export const SponsorsSection = () => {
           <div className="relative">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-foreground">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-foreground">
                   WHY
                 </h2>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-secondary bg-clip-text text-transparent">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight bg-gradient-secondary bg-clip-text text-transparent">
                   PARTNER
                 </h2>
               </div>

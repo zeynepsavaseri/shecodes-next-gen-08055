@@ -10,7 +10,7 @@ export const EventsSection = () => {
         {/* Upcoming Events */}
         <div className="mb-12 sm:mb-16 md:mb-20">
           <div className="text-center mb-8 sm:mb-12 animate-fade-in px-2">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-3 sm:mb-4">
               EVENTS
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">

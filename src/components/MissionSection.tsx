@@ -45,7 +45,7 @@ export const MissionSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Core Values Intro */}
           <div className="text-center mb-6 sm:mb-8 animate-fade-in-delay px-2">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-2">
               VALUES
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 font-medium mt-3">
