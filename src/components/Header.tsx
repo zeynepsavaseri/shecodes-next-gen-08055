@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import hercodeLogo from "@/assets/hercode-main-logo.png";
+import hercodeLogo from "@/assets/hercode-icon.png";
 import { useTheme } from "next-themes";
 import { ArchitectGame } from "@/components/ArchitectGame";
 
@@ -48,7 +48,7 @@ export const Header = () => {
           <img 
             src={hercodeLogo}
             alt="HerCode Logo"
-            className="h-8 sm:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+            className="h-12 sm:h-14 w-auto cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
 
