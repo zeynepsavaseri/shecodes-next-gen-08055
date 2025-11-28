@@ -127,9 +127,9 @@ export const SponsorsSection = () => {
 
         {/* Partners Grid - Techy Compact Design */}
         <div className="mb-16 sm:mb-24">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2 sm:gap-3 max-w-7xl mx-auto">
+          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-2 sm:gap-3 max-w-7xl mx-auto auto-rows-fr">
             {partners.filter(p => p.logo && p.name).map((partner, index) => {
-              const isBig = index % 3 === 0; // Every third card is bigger
+              const isBig = index % 5 === 0; // Every fifth card is bigger
               
               return (
                 <Card
