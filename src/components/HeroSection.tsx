@@ -65,19 +65,6 @@ export const HeroSection = () => {
               </div>
             </div>
           </div>
-
-          {/* CTA Button */}
-          <div className="pt-8">
-            <Button 
-              size="lg"
-              onClick={() => {
-                document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="font-mono uppercase tracking-wider text-sm px-8 py-6"
-            >
-              Register Now
-            </Button>
-          </div>
         </div>
       </div>
     </section>
