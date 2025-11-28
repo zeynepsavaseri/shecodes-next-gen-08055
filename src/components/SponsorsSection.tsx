@@ -125,80 +125,107 @@ export const SponsorsSection = () => {
           </h2>
         </div>
 
-        {/* Partners Grid */}
+        {/* Partners Grid - Techy Compact Design */}
         <div className="mb-24 sm:mb-40">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-            {partners.map((partner, index) => (
-              <Card
-                key={index}
-                className="group relative bg-card/80 backdrop-blur-sm border border-border/40 hover:border-primary/40 transition-all duration-300 overflow-hidden"
-                style={{
-                  animationDelay: `${index * 0.05}s`,
-                }}
-              >
-                {/* Corner Decorations */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-border/60" />
-                <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-border/60" />
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-border/60" />
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-border/60" />
-                
-                {/* External Link Icon */}
-                {partner.link && (
-                  <a 
-                    href={partner.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="absolute top-3 right-3 z-10 opacity-50 hover:opacity-100 transition-opacity"
-                  >
-                    <ExternalLink className="w-4 h-4 text-muted-foreground" />
-                  </a>
-                )}
-
-                <CardContent className="p-6 sm:p-8 flex flex-col h-full min-h-[240px] sm:min-h-[280px]">
-                  {/* Category Badge */}
-                  <div className="mb-6">
-                    <span 
-                      className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-1 rounded border inline-block"
-                      style={{
-                        color: `hsl(${partner.categoryColor})`,
-                        borderColor: `hsla(${partner.categoryColor} / 0.5)`,
-                      }}
-                    >
-                      {partner.category}
-                    </span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
+            {partners.map((partner, index) => {
+              const isBig = index % 3 === 0; // Every third card is bigger
+              
+              return (
+                <Card
+                  key={index}
+                  className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 ${
+                    isBig ? 'col-span-2 row-span-2' : ''
+                  }`}
+                  style={{
+                    animationDelay: `${index * 0.05}s`,
+                  }}
+                >
+                  {/* Scanline Effect */}
+                  <div className="absolute inset-0 pointer-events-none opacity-5">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
                   </div>
-
-                  {/* Logo (if available) */}
-                  {partner.logo && (
-                    <div className="mb-6 flex items-center justify-center flex-1">
-                      <img 
-                        src={partner.logo} 
-                        alt={partner.name} 
-                        className="max-w-full max-h-24 object-contain"
-                      />
-                    </div>
+                  
+                  {/* Corner Brackets */}
+                  <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
+                  <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
+                  <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
+                  
+                  {/* External Link */}
+                  {partner.link && (
+                    <a 
+                      href={partner.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="absolute top-2 right-2 z-10 opacity-30 hover:opacity-100 transition-opacity"
+                    >
+                      <ExternalLink className="w-3 h-3 text-primary" />
+                    </a>
                   )}
 
-                  {/* Partner Name & Subtitle */}
-                  <div className="mt-auto">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-mono font-bold uppercase tracking-wide text-foreground mb-2">
-                      {partner.name}
-                    </h3>
-                    <p className="text-[10px] sm:text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                      {partner.subtitle}
-                    </p>
-                  </div>
-                </CardContent>
+                  <CardContent className={`flex flex-col h-full ${isBig ? 'p-6' : 'p-4'}`}>
+                    {/* Category Badge */}
+                    <div className="mb-3">
+                      <span 
+                        className="text-[8px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border inline-block"
+                        style={{
+                          color: `hsl(${partner.categoryColor})`,
+                          borderColor: `hsla(${partner.categoryColor} / 0.5)`,
+                          backgroundColor: `hsla(${partner.categoryColor} / 0.05)`,
+                        }}
+                      >
+                        {partner.category}
+                      </span>
+                    </div>
 
-                {/* Hover Glow Effect */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{
-                    background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.1), transparent 70%)`,
-                  }}
-                />
-              </Card>
-            ))}
+                    {/* Logo */}
+                    {partner.logo && (
+                      <div className={`flex items-center justify-center flex-1 ${isBig ? 'mb-4' : 'mb-2'}`}>
+                        <img 
+                          src={partner.logo} 
+                          alt={partner.name} 
+                          className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
+                            isBig ? 'max-h-20' : 'max-h-12'
+                          }`}
+                        />
+                      </div>
+                    )}
+
+                    {/* Partner Info */}
+                    <div className="mt-auto">
+                      <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground ${
+                        isBig ? 'text-base mb-1' : 'text-xs mb-1'
+                      }`}>
+                        {partner.name}
+                      </h3>
+                      <p className={`font-mono text-muted-foreground uppercase tracking-wider ${
+                        isBig ? 'text-[9px]' : 'text-[8px]'
+                      }`}>
+                        {partner.subtitle}
+                      </p>
+                    </div>
+                  </CardContent>
+
+                  {/* Hover Glow */}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.15), transparent 60%)`,
+                      boxShadow: `0 0 20px hsla(${partner.categoryColor} / 0.3)`,
+                    }}
+                  />
+                  
+                  {/* Grid Pattern Overlay */}
+                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                    style={{
+                      backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
+                      backgroundSize: '50px 50px'
+                    }}
+                  />
+                </Card>
+              );
+            })}
           </div>
         </div>
 
