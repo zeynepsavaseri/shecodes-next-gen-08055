@@ -127,19 +127,20 @@ export const SponsorsSection = () => {
 
         {/* Partners Grid - Techy Compact Design */}
         <div className="mb-12 sm:mb-16">
-          <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-1.5 sm:gap-2 max-w-6xl mx-auto auto-rows-fr">
+          <div className="grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 lg:grid-cols-14 gap-1.5 sm:gap-2 max-w-6xl mx-auto">
             {partners.filter(p => p.logo && p.name).map((partner, index) => {
-              // Asymmetric sizing pattern: big (3x3), medium (2x2), small (1x1)
-              const sizePattern = [3, 1, 1, 2, 1, 1, 1, 3, 1, 2, 1, 1];
+              // Asymmetric sizing pattern: big (3x2), medium (2x2), small (2x1), tiny (1x1)
+              const sizePattern = ['big', 'small', 'tiny', 'medium', 'tiny', 'small', 'big', 'tiny', 'medium', 'small'];
               const size = sizePattern[index % sizePattern.length];
-              const isBig = size === 3;
-              const isMedium = size === 2;
+              const isBig = size === 'big';
+              const isMedium = size === 'medium';
+              const isSmall = size === 'small';
               
               return (
                 <Card
                   key={index}
                   className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 ${
-                    isBig ? 'col-span-3 row-span-3' : isMedium ? 'col-span-2 row-span-2' : ''
+                    isBig ? 'col-span-3 row-span-2' : isMedium ? 'col-span-2 row-span-2' : isSmall ? 'col-span-2 row-span-1' : 'col-span-1 row-span-1'
                   }`}
                   style={{
                     animationDelay: `${index * 0.05}s`,
@@ -168,9 +169,9 @@ export const SponsorsSection = () => {
                     </a>
                   )}
 
-                  <CardContent className={`flex flex-col h-full ${isBig ? 'p-5' : isMedium ? 'p-3' : 'p-2'}`}>
+                  <CardContent className={`flex flex-col h-full ${isBig ? 'p-5' : isMedium || isSmall ? 'p-3' : 'p-2'}`}>
                     {/* Category Badge */}
-                    <div className={`${isBig ? 'mb-3' : isMedium ? 'mb-2' : 'mb-1'}`}>
+                    <div className={`${isBig ? 'mb-3' : (isMedium || isSmall) ? 'mb-2' : 'mb-1'}`}>
                       <span 
                         className="text-[7px] font-mono font-bold uppercase tracking-wider px-1 py-0.5 rounded border inline-block"
                         style={{
@@ -185,12 +186,12 @@ export const SponsorsSection = () => {
 
                     {/* Logo - BIGGER */}
                     {partner.logo && (
-                      <div className={`flex items-center justify-center flex-1 ${isBig ? 'mb-3' : isMedium ? 'mb-2' : 'mb-1'}`}>
+                      <div className={`flex items-center justify-center flex-1 ${isBig ? 'mb-3' : (isMedium || isSmall) ? 'mb-2' : 'mb-1'}`}>
                         <img 
                           src={partner.logo} 
                           alt={partner.name} 
                           className={`w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isBig ? 'max-h-40' : isMedium ? 'max-h-24' : 'max-h-14'
+                            isBig ? 'max-h-32' : isMedium ? 'max-h-20' : isSmall ? 'max-h-16' : 'max-h-12'
                           }`}
                         />
                       </div>
@@ -199,12 +200,12 @@ export const SponsorsSection = () => {
                     {/* Partner Info */}
                     <div className="mt-auto">
                       <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground leading-tight ${
-                        isBig ? 'text-base mb-1' : isMedium ? 'text-xs mb-0.5' : 'text-[9px] mb-0.5'
+                        isBig ? 'text-sm mb-1' : (isMedium || isSmall) ? 'text-[10px] mb-0.5' : 'text-[8px] mb-0.5'
                       }`}>
                         {partner.name}
                       </h3>
                       <p className={`font-mono text-muted-foreground uppercase tracking-wider leading-tight ${
-                        isBig ? 'text-[9px]' : isMedium ? 'text-[8px]' : 'text-[7px]'
+                        isBig ? 'text-[9px]' : (isMedium || isSmall) ? 'text-[7px]' : 'text-[6px]'
                       }`}>
                         {partner.subtitle}
                       </p>
