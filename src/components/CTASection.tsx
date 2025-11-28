@@ -23,7 +23,7 @@ export const CTASection = () => {
   const whatsappGroupLink = "https://chat.whatsapp.com/HVJlizkRiFVDonC0TCeWgi";
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative overflow-hidden" id="cta">
+    <section className="py-8 sm:py-10 md:py-12 px-3 sm:px-4 relative overflow-hidden mb-8 sm:mb-12 md:mb-16" id="cta">
       <div className="absolute inset-0 bg-gradient-primary opacity-10" />
       
       <div className="container mx-auto max-w-4xl relative z-10">

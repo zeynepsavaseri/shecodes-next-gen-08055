@@ -33,7 +33,7 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background" id="testimonials">
+    <section className="py-6 sm:py-8 md:py-10 bg-background mb-8 sm:mb-12 md:mb-16" id="testimonials">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 md:mb-12 px-2">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-3 md:mb-4">

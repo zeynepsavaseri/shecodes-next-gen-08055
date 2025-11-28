@@ -21,7 +21,7 @@ export const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-muted/20">
+    <section className="py-8 sm:py-10 md:py-12 bg-muted/20 mb-8 sm:mb-12 md:mb-16">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12 animate-fade-in px-2">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
