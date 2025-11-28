@@ -54,7 +54,7 @@ export const HeroSection = () => {
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">ELEVATE.</span>
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">RISE.</span>
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMBRACE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">THRIVE.</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">SUPPORT.</span>
               </div>
               {/* Duplicate for seamless loop */}
               <div className="flex items-center gap-8 px-4">
@@ -65,7 +65,7 @@ export const HeroSection = () => {
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">ELEVATE.</span>
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">RISE.</span>
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMBRACE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">THRIVE.</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">SUPPORT.</span>
               </div>
             </div>
           </div>
