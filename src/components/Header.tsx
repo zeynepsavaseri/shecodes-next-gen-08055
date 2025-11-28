@@ -48,7 +48,7 @@ export const Header = () => {
           <img 
             src={hercodeLogo}
             alt="HerCode Logo"
-            className="h-28 sm:h-32 md:h-48 lg:h-56 w-auto cursor-pointer hover:opacity-80 transition-opacity -ml-4"
+            className="h-28 sm:h-32 w-auto cursor-pointer hover:opacity-80 transition-opacity -ml-4"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
 
