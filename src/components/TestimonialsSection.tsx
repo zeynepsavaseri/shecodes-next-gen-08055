@@ -39,9 +39,6 @@ export const TestimonialsSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-3 md:mb-4">
             VOICES
           </h2>
-          <p className="text-xs sm:text-sm md:text-base font-mono text-muted-foreground max-w-3xl mx-auto px-2 sm:px-4">
-            Feedback from women who joined our events and partners who collaborated with us.
-          </p>
         </div>
 
         {/* Horizontal scrolling carousel */}
