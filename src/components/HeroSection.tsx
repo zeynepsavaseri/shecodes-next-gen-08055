@@ -39,7 +39,7 @@ export const HeroSection = () => {
           {/* Tagline */}
           <div className="max-w-3xl mx-auto">
             <p className="text-base sm:text-lg md:text-xl text-foreground/70 leading-relaxed">
-              <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">Event and hackathon series</span> to empower <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">women</span> in <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">tech</span> and <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">entrepreneurship</span>.
+              <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">Event</span> and <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">hackathon series</span> to empower <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">women</span> in <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">tech</span> and <span className="bg-gradient-primary bg-clip-text text-transparent font-semibold">entrepreneurship</span>.
             </p>
           </div>
 
