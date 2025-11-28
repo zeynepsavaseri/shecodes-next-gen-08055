@@ -31,7 +31,7 @@ export const MissionSection = () => {
 
 
   return (
-    <section className="relative -mt-8 sm:pt-8 md:pt-12 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+    <section className="relative -mt-8 sm:pt-12 md:pt-16 pb-16 sm:pb-20 md:pb-24 overflow-hidden">
       {/* Gradient overlay for smooth transition from stars */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" style={{ top: 0, height: '700px' }} />
       
@@ -44,11 +44,16 @@ export const MissionSection = () => {
       <div className="container relative mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Core Values Intro */}
-          <div className="text-center mb-6 sm:mb-8 animate-fade-in-delay px-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-primary bg-clip-text text-transparent mb-2">
-              Our Values
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg text-foreground/70 font-medium mt-3">
+          <div className="text-center mb-10 sm:mb-14 animate-fade-in-delay px-2">
+            <div className="space-y-2 mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
+                THE
+              </h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase bg-gradient-primary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+                VALUES
+              </h2>
+            </div>
+            <p className="text-sm sm:text-base md:text-lg text-foreground/70 font-medium">
               Everything we do is guided by our core values.
             </p>
           </div>

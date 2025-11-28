@@ -23,14 +23,19 @@ export const CTASection = () => {
   const whatsappGroupLink = "https://chat.whatsapp.com/HVJlizkRiFVDonC0TCeWgi";
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative overflow-hidden" id="cta">
+    <section className="py-16 sm:py-20 md:py-24 px-3 sm:px-4 relative overflow-hidden" id="cta">
       <div className="absolute inset-0 bg-gradient-primary opacity-10" />
       
       <div className="container mx-auto max-w-4xl relative z-10">
-        <div className="text-center mb-8 sm:mb-12 px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-primary bg-clip-text text-transparent mb-3 sm:mb-4">
-            Stay Connected
-          </h2>
+        <div className="text-center mb-12 sm:mb-16 px-2">
+          <div className="space-y-2 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
+              THE
+            </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase bg-gradient-primary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+              COMMUNITY
+            </h2>
+          </div>
           <p className="text-xs sm:text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
             Join our community and never miss an event
           </p>
