@@ -11,20 +11,20 @@ export const SponsorsSection = () => {
     {
       icon: Users,
       title: "TALENT & ENGAGEMENT",
-      front: "Access top female tech talent and a pool of CVs from ETH Zurich and Europe's leading universities.",
-      expanded: "See CVs in action and connect with future tech leaders."
+      front: "Access top female talent from ETH Zurich and Europe's leading universities.",
+      expanded: "Connect directly with emerging tech leaders."
     },
     {
       icon: Target,
       title: "CHALLENGE PARTNERSHIPS",
-      front: "Bring your company's real challenge and let brilliant women solve it.",
-      expanded: "Contribute a case study, gain fresh perspectives, and turn inclusion into action."
+      front: "Share a real challenge and collaborate with talented women on solutions.",
+      expanded: "Contribute a case study and gain fresh perspectives."
     },
     {
       icon: Award,
       title: "BRAND IMPACT",
-      front: "Position your company as a catalyst for innovation and equality.",
-      expanded: "Boost your female ratio and stand beside Europe's most forward-thinking partners."
+      front: "Show your commitment to inclusive innovation.",
+      expanded: "Join a network of forward-thinking partners."
     }
   ];
 
