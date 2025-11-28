@@ -37,7 +37,7 @@ export const SponsorsSection = () => {
       categoryColor: "197 71% 52%",
       logo: "/lovable-logo-white.png",
       link: "https://lovable.dev",
-      biggerLogo: false
+      biggerLogo: true
     },
     { 
       name: "Claude", 
@@ -46,7 +46,7 @@ export const SponsorsSection = () => {
       categoryColor: "197 71% 52%",
       logo: "/claude-logo.png",
       link: "https://anthropic.com",
-      biggerLogo: true
+      biggerLogo: false
     },
     { 
       name: "TF", 
@@ -98,7 +98,7 @@ export const SponsorsSection = () => {
       category: "FUEL", 
       categoryColor: "38 92% 50%",
       logo: "/mad-logo.png",
-      biggerLogo: true
+      biggerLogo: false
     },
     { 
       name: "Cosmic Dealer", 
@@ -114,7 +114,7 @@ export const SponsorsSection = () => {
       category: "FUEL", 
       categoryColor: "38 92% 50%",
       logo: "/focus-water-logo.png",
-      biggerLogo: true
+      biggerLogo: false
     },
     { 
       name: "Brownie Paw", 
@@ -200,7 +200,7 @@ export const SponsorsSection = () => {
                             src={partner.logo} 
                             alt={partner.name} 
                             className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                              partner.biggerLogo ? 'max-h-32' : 'max-h-24'
+                              partner.biggerLogo ? 'max-h-40' : 'max-h-24'
                             }`}
                           />
                         </div>
@@ -302,7 +302,7 @@ export const SponsorsSection = () => {
                           src={partner.logo} 
                           alt={partner.name} 
                           className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isBig ? (partner.biggerLogo ? 'max-h-40' : 'max-h-32') : (partner.biggerLogo ? 'max-h-28' : 'max-h-20')
+                            isBig ? (partner.biggerLogo ? 'max-h-48' : 'max-h-32') : (partner.biggerLogo ? 'max-h-36' : 'max-h-20')
                           }`}
                         />
                       </div>
