@@ -126,21 +126,16 @@ export const SponsorsSection = () => {
         </div>
 
         {/* Partners Grid - Techy Compact Design */}
-        <div className="mb-12 sm:mb-16">
-          <div className="grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 lg:grid-cols-14 gap-1.5 sm:gap-2 max-w-6xl mx-auto">
-            {partners.filter(p => p.logo && p.name).map((partner, index) => {
-              // Asymmetric sizing pattern: big (3x2), medium (2x2), small (2x1), tiny (1x1)
-              const sizePattern = ['big', 'small', 'tiny', 'medium', 'tiny', 'small', 'big', 'tiny', 'medium', 'small'];
-              const size = sizePattern[index % sizePattern.length];
-              const isBig = size === 'big';
-              const isMedium = size === 'medium';
-              const isSmall = size === 'small';
+        <div className="mb-24 sm:mb-40">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
+            {partners.map((partner, index) => {
+              const isBig = index % 3 === 0; // Every third card is bigger
               
               return (
                 <Card
                   key={index}
                   className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 ${
-                    isBig ? 'col-span-3 row-span-2' : isMedium ? 'col-span-2 row-span-2' : isSmall ? 'col-span-2 row-span-1' : 'col-span-1 row-span-1'
+                    isBig ? 'col-span-2 row-span-2' : ''
                   }`}
                   style={{
                     animationDelay: `${index * 0.05}s`,
@@ -152,10 +147,10 @@ export const SponsorsSection = () => {
                   </div>
                   
                   {/* Corner Brackets */}
-                  <div className="absolute top-0 left-0 w-2 h-2 border-l border-t border-primary/40" />
-                  <div className="absolute top-0 right-0 w-2 h-2 border-r border-t border-primary/40" />
-                  <div className="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-primary/40" />
-                  <div className="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-primary/40" />
+                  <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
+                  <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
+                  <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
                   
                   {/* External Link */}
                   {partner.link && (
@@ -163,17 +158,17 @@ export const SponsorsSection = () => {
                       href={partner.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="absolute top-1.5 right-1.5 z-10 opacity-30 hover:opacity-100 transition-opacity"
+                      className="absolute top-2 right-2 z-10 opacity-30 hover:opacity-100 transition-opacity"
                     >
-                      <ExternalLink className="w-2.5 h-2.5 text-primary" />
+                      <ExternalLink className="w-3 h-3 text-primary" />
                     </a>
                   )}
 
-                  <CardContent className={`flex flex-col h-full ${isBig ? 'p-5' : isMedium || isSmall ? 'p-3' : 'p-2'}`}>
+                  <CardContent className={`flex flex-col h-full ${isBig ? 'p-6' : 'p-4'}`}>
                     {/* Category Badge */}
-                    <div className={`${isBig ? 'mb-3' : (isMedium || isSmall) ? 'mb-2' : 'mb-1'}`}>
+                    <div className="mb-3">
                       <span 
-                        className="text-[7px] font-mono font-bold uppercase tracking-wider px-1 py-0.5 rounded border inline-block"
+                        className="text-[8px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border inline-block"
                         style={{
                           color: `hsl(${partner.categoryColor})`,
                           borderColor: `hsla(${partner.categoryColor} / 0.5)`,
@@ -184,14 +179,14 @@ export const SponsorsSection = () => {
                       </span>
                     </div>
 
-                    {/* Logo - BIGGER */}
+                    {/* Logo */}
                     {partner.logo && (
-                      <div className={`flex items-center justify-center flex-1 ${isBig ? 'mb-3' : (isMedium || isSmall) ? 'mb-2' : 'mb-1'}`}>
+                      <div className={`flex items-center justify-center flex-1 ${isBig ? 'mb-4' : 'mb-2'}`}>
                         <img 
                           src={partner.logo} 
                           alt={partner.name} 
-                          className={`w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isBig ? 'max-h-32' : isMedium ? 'max-h-20' : isSmall ? 'max-h-16' : 'max-h-12'
+                          className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
+                            isBig ? 'max-h-20' : 'max-h-12'
                           }`}
                         />
                       </div>
@@ -199,13 +194,13 @@ export const SponsorsSection = () => {
 
                     {/* Partner Info */}
                     <div className="mt-auto">
-                      <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground leading-tight ${
-                        isBig ? 'text-sm mb-1' : (isMedium || isSmall) ? 'text-[10px] mb-0.5' : 'text-[8px] mb-0.5'
+                      <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground ${
+                        isBig ? 'text-base mb-1' : 'text-xs mb-1'
                       }`}>
                         {partner.name}
                       </h3>
-                      <p className={`font-mono text-muted-foreground uppercase tracking-wider leading-tight ${
-                        isBig ? 'text-[9px]' : (isMedium || isSmall) ? 'text-[7px]' : 'text-[6px]'
+                      <p className={`font-mono text-muted-foreground uppercase tracking-wider ${
+                        isBig ? 'text-[9px]' : 'text-[8px]'
                       }`}>
                         {partner.subtitle}
                       </p>
