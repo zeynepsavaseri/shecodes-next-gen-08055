@@ -367,9 +367,15 @@ export const SponsorsSection = () => {
               <Button 
                 size="lg" 
                 onClick={() => {
-                  const element = document.getElementById('why-partner');
+                  const element = document.getElementById('partner-benefits');
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const offset = -100; // Offset for fixed header
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset + offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
                   }
                 }}
                 className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
@@ -378,6 +384,7 @@ export const SponsorsSection = () => {
               </Button>
             </div>
 
+            <div id="partner-benefits">
             {/* Mobile: Horizontal scroll */}
             <div className="md:hidden -mx-3 sm:mx-0">
               <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-3">
@@ -510,6 +517,7 @@ export const SponsorsSection = () => {
                   </Card>
                 ))}
               </div>
+            </div>
           </div>
         </div>
       </div>
