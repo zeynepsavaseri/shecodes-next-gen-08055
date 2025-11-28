@@ -1,19 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { getNextEvent } from "@/data/events";
-import { useState, useEffect } from "react";
-import herIcon from "@/assets/her-icon.png";
 
 export const HeroSection = () => {
   const nextEvent = getNextEvent();
-  const [showIcon, setShowIcon] = useState(false);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowIcon((prev) => !prev);
-    }, 4000); // Switch every 4 seconds
-    
-    return () => clearInterval(interval);
-  }, []);
   
   const scrollToEvents = () => {
     const eventsSection = document.getElementById('events');
@@ -38,31 +27,13 @@ export const HeroSection = () => {
           </button>
 
           {/* Main Headline */}
-          <div className="space-y-4 relative">
-            {/* Text Version */}
-            <h1 
-              className={`text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-black leading-none tracking-tight transition-opacity duration-1000 ${
-                showIcon ? 'opacity-0 absolute inset-0' : 'opacity-100'
-              }`}
-            >
+          <div className="space-y-4">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-black leading-none tracking-tight">
               <div className="text-foreground">HER</div>
               <div className="bg-gradient-to-b from-foreground/90 to-foreground/40 bg-clip-text text-transparent">
                 CODE
               </div>
             </h1>
-            
-            {/* Icon Version */}
-            <div 
-              className={`flex items-center justify-center transition-opacity duration-1000 ${
-                showIcon ? 'opacity-100' : 'opacity-0 absolute inset-0'
-              }`}
-            >
-              <img 
-                src={herIcon} 
-                alt="Her Code Icon" 
-                className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto"
-              />
-            </div>
           </div>
           
           {/* Tagline */}
