@@ -29,7 +29,7 @@ export const HeroSection = () => {
           {/* Tagline */}
           <div className="max-w-3xl mx-auto">
             <p className="text-base sm:text-lg md:text-xl text-foreground/70 leading-relaxed">
-              To <span className="text-primary">empower</span>, <span className="text-accent">connect</span>, and <span className="text-secondary">challenge</span> the next generation of women in technology.
+              To <span className="text-primary font-semibold">empower</span>, <span className="text-primary font-semibold">connect</span>, and <span className="text-primary font-semibold">challenge</span> the next generation of women in technology and entrepreneurship.
             </p>
           </div>
 
