@@ -1,4 +1,4 @@
-import { Users } from "lucide-react";
+import { Users, Diamond } from "lucide-react";
 import { upcomingEvents, pastEvents } from "@/data/events";
 import { EventCard } from "./EventCard";
 
@@ -10,9 +10,15 @@ export const EventsSection = () => {
         {/* Upcoming Events */}
         <div className="mb-12 sm:mb-16 md:mb-20">
           <div className="text-center mb-8 sm:mb-12 animate-fade-in px-2">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
-              Upcoming Events
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-3 sm:mb-4">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
+                <span className="text-foreground">THE</span>
+              </h2>
+              <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
+                EVENTS
+              </h2>
+            </div>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
               Join us at our next events and be part of the change
             </p>

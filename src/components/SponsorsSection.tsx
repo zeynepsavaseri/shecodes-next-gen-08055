@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Award, ExternalLink } from "lucide-react";
+import { Users, Target, Award, ExternalLink, Diamond } from "lucide-react";
 import { useState } from "react";
 
 export const SponsorsSection = () => {
@@ -120,9 +120,15 @@ export const SponsorsSection = () => {
     <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 px-2">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-pixel mb-2 sm:mb-3 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
-            Our Partners
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-2 sm:mb-3">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
+              <span className="text-foreground">THE</span>
+            </h2>
+            <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
+              PARTNERS
+            </h2>
+          </div>
         </div>
 
         {/* Partners Grid - Techy Compact Design */}
@@ -237,9 +243,15 @@ export const SponsorsSection = () => {
 
           <div className="relative">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-pixel mb-4 bg-gradient-secondary bg-clip-text text-transparent uppercase tracking-wider">
-                Why Partner with HerCode
-              </h2>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+                  <span className="text-foreground">WHY</span>
+                </h2>
+                <Diamond className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-foreground/60 rotate-45" strokeWidth={1.5} />
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-secondary bg-clip-text text-transparent">
+                  PARTNER
+                </h2>
+              </div>
               <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto mb-6">
                 Join forward-thinking companies investing in the future of tech diversity
               </p>

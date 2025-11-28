@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Mail, Diamond } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -28,9 +28,15 @@ export const CTASection = () => {
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-8 sm:mb-12 px-2">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel leading-tight mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
-            Stay in the Loop
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-3 sm:mb-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight">
+              <span className="text-foreground">THE</span>
+            </h2>
+            <Diamond className="w-6 h-6 sm:w-8 sm:h-8 text-foreground/60 rotate-45" strokeWidth={1.5} />
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
+              COMMUNITY
+            </h2>
+          </div>
           <p className="text-xs sm:text-sm font-mono text-muted-foreground max-w-2xl mx-auto">
             Join our community and never miss an event
           </p>
