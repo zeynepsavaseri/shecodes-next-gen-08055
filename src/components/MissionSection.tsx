@@ -1,4 +1,4 @@
-import { Heart, Zap, Users, Brain } from "lucide-react";
+import { Heart, Zap, Users, Brain, Diamond } from "lucide-react";
 
 export const MissionSection = () => {
 
@@ -45,7 +45,16 @@ export const MissionSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Core Values Intro */}
           <div className="text-center mb-6 sm:mb-8 animate-fade-in-delay px-2">
-            <p className="text-sm sm:text-base md:text-lg text-foreground font-semibold">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+                <span className="text-foreground">THE</span>
+              </h2>
+              <Diamond className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-foreground/60 rotate-45" strokeWidth={1.5} />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent">
+                VALUES
+              </h2>
+            </div>
+            <p className="text-sm sm:text-base md:text-lg text-foreground/70 font-medium mt-3">
               Everything we do is guided by our core values.
             </p>
           </div>
