@@ -401,14 +401,12 @@ export const SponsorsSection = () => {
                       <div className={`overflow-hidden transition-all duration-500 ease-out ${
                         expandedCard === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                       }`}>
-                        <div className={`space-y-4 transition-all duration-500 delay-100 ${
+                        <div className={`transition-all duration-500 delay-100 ${
                           expandedCard === index ? 'translate-y-0' : 'translate-y-4'
                         }`}>
-                          <p className="text-sm font-mono text-foreground leading-relaxed font-semibold">
+                          <p className="text-sm font-mono text-foreground leading-relaxed">
                             {benefit.front}
-                          </p>
-                          <div className="h-px bg-gradient-primary opacity-30" />
-                          <p className="text-sm font-mono text-muted-foreground leading-relaxed">
+                            <br />
                             {benefit.expanded}
                           </p>
                         </div>
