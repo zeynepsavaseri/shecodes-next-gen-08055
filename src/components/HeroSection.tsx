@@ -44,7 +44,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Scrolling Banner */}
-          <div className="absolute left-0 right-0 w-screen overflow-hidden bg-foreground py-4">
+          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-foreground py-4">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* Multiple repetitions for seamless infinite scroll */}
               {[...Array(4)].map((_, i) => (
