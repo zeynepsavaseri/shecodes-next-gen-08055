@@ -130,9 +130,107 @@ export const SponsorsSection = () => {
           </div>
         </div>
 
-        {/* Partners Grid - Techy Compact Design */}
+        {/* Partners Grid - Horizontal scroll on mobile, grid on desktop */}
         <div className="mb-16 sm:mb-24">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
+          {/* Mobile: Horizontal scroll */}
+          <div className="md:hidden -mx-3 sm:mx-0">
+            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-3">
+              {partners.map((partner, index) => {
+                return (
+                  <Card
+                    key={index}
+                    className="flex-shrink-0 w-[280px] snap-center group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1"
+                    style={{
+                      animationDelay: `${index * 0.05}s`,
+                    }}
+                  >
+                    {/* Scanline Effect */}
+                    <div className="absolute inset-0 pointer-events-none opacity-5">
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
+                    </div>
+                    
+                    {/* Corner Brackets */}
+                    <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
+                    <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
+                    <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
+                    <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
+                    
+                    {/* External Link */}
+                    {partner.link && (
+                      <a 
+                        href={partner.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="absolute top-2 right-2 z-10 opacity-30 hover:opacity-100 transition-opacity"
+                      >
+                        <ExternalLink className="w-3 h-3 text-primary" />
+                      </a>
+                    )}
+
+                    <CardContent className="flex flex-col h-full p-6">
+                      {/* Category Badge */}
+                      <div className="mb-3">
+                        <span 
+                          className="text-[8px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border inline-block"
+                          style={{
+                            color: `hsl(${partner.categoryColor})`,
+                            borderColor: `hsla(${partner.categoryColor} / 0.5)`,
+                            backgroundColor: `hsla(${partner.categoryColor} / 0.05)`,
+                          }}
+                        >
+                          {partner.category}
+                        </span>
+                      </div>
+
+                      {/* Logo */}
+                      {partner.logo && (
+                        <div className="flex items-center justify-center flex-1 mb-4">
+                          <img 
+                            src={partner.logo} 
+                            alt={partner.name} 
+                            className="max-w-full max-h-24 object-contain transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                      )}
+
+                      {/* Partner Info */}
+                      <div className="mt-auto">
+                        <h3 className="font-mono font-bold uppercase tracking-wide text-foreground text-sm mb-1">
+                          {partner.name}
+                        </h3>
+                        <p className="font-mono text-muted-foreground uppercase tracking-wider text-[9px]">
+                          {partner.subtitle}
+                        </p>
+                      </div>
+                    </CardContent>
+
+                    {/* Hover Glow */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{
+                        background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.15), transparent 60%)`,
+                        boxShadow: `0 0 20px hsla(${partner.categoryColor} / 0.3)`,
+                      }}
+                    />
+                    
+                    {/* Grid Pattern Overlay */}
+                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                      style={{
+                        backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
+                        backgroundSize: '50px 50px'
+                      }}
+                    />
+                  </Card>
+                );
+              })}
+            </div>
+            <p className="text-center text-[10px] sm:text-xs text-muted-foreground mt-4 italic">
+              Swipe to see more →
+            </p>
+          </div>
+
+          {/* Desktop: Grid layout */}
+          <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
               const isBig = index % 3 === 0; // Every third card is bigger
               
@@ -225,8 +323,8 @@ export const SponsorsSection = () => {
                   <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
                     style={{
                       backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
-                      backgroundSize: '50px 50px'
-                    }}
+                        backgroundSize: '50px 50px'
+                      }}
                   />
                 </Card>
               );
