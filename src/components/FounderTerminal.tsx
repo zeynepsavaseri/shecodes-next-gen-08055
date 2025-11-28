@@ -16,10 +16,10 @@ export const FounderTerminal = () => {
             <h3 className="text-xl font-bold text-primary">About the Founder</h3>
             <div className="space-y-3 text-sm">
               <p className="text-foreground/80">
-                <span className="text-primary font-semibold">Zeynep Savaseri</span> — Founder & Organizer of HerCode
+                <span className="text-primary font-semibold">Zeynep Savaseri</span> — Founder & Lead of HerCode
               </p>
               <p className="text-foreground/80">
-                Currently exploring health & technology at ETH Zürich, passionate about creating inclusive tech spaces.
+                Currently exploring health & technology at ETH Zürich.
               </p>
               <div className="pt-2">
                 <p className="text-foreground/80">
