@@ -39,7 +39,16 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         {event.partner && (
           <div className="text-center mb-4 pb-3 border-b border-border/40">
             <span className="text-[10px] sm:text-xs font-mono text-muted-foreground uppercase tracking-wider">
-              In collaboration with {event.partner.name}
+              In collaboration with{" "}
+            </span>
+            <span 
+              className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider px-2 py-1 rounded border"
+              style={{
+                color: `hsl(${accentColor})`,
+                borderColor: `hsla(${accentColor} / 0.5)`,
+              }}
+            >
+              {event.partner.name}
             </span>
           </div>
         )}
