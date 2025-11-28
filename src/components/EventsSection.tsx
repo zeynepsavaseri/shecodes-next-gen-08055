@@ -13,9 +13,6 @@ export const EventsSection = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-3 sm:mb-4">
               EVENTS
             </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
-              Join us at our next events and be part of the change
-            </p>
           </div>
 
           <div className="grid md:grid-cols-1 gap-4 sm:gap-6 max-w-3xl mx-auto animate-fade-in-delay px-2">
