@@ -18,7 +18,7 @@ export const HeroSection = () => {
 
           {/* Main Headline */}
           <div className="space-y-4">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight">
+            <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-black leading-none tracking-tight">
               <div className="text-foreground">HER</div>
               <div className="bg-gradient-to-b from-foreground/90 to-foreground/40 bg-clip-text text-transparent">
                 CODE
