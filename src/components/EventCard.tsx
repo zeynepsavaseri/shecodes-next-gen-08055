@@ -37,18 +37,10 @@ export const EventCard = ({ event, index }: EventCardProps) => {
       <div className="relative z-10">
         {/* Partner Badge */}
         {event.partner && (
-          <div className="flex items-center justify-center gap-2 mb-4 pb-3 border-b border-border/40">
+          <div className="text-center mb-4 pb-3 border-b border-border/40">
             <span className="text-[10px] sm:text-xs font-mono text-muted-foreground uppercase tracking-wider">
-              In collaboration with
+              In collaboration with {event.partner.name}
             </span>
-            <div 
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full border bg-card/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-105"
-              style={{
-                borderColor: `hsla(${accentColor} / 0.3)`,
-              }}
-            >
-              <img src={event.partner.logo} alt={event.partner.name} className="h-4 sm:h-5 w-auto object-contain" />
-            </div>
           </div>
         )}
 
