@@ -119,14 +119,14 @@ export const SponsorsSection = () => {
   return (
     <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
-        <div className="text-center mb-8 sm:mb-12 px-2">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-pixel mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
+        <div className="text-center mb-6 sm:mb-8 px-2">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-pixel mb-2 sm:mb-3 bg-gradient-primary bg-clip-text text-transparent uppercase" style={{ letterSpacing: '0.1em' }}>
             Our Partners
           </h2>
         </div>
 
         {/* Partners Grid - Techy Compact Design */}
-        <div className="mb-24 sm:mb-40">
+        <div className="mb-16 sm:mb-24">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
               const isBig = index % 3 === 0; // Every third card is bigger
