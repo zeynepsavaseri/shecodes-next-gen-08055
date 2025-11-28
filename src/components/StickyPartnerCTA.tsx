@@ -12,8 +12,8 @@ export const StickyPartnerCTA = () => {
       const sponsorsSection = document.getElementById('sponsors');
       if (sponsorsSection) {
         const rect = sponsorsSection.getBoundingClientRect();
-        // Show when sponsors section has scrolled past viewport
-        setIsVisible(rect.bottom < 0);
+        // Show when sponsors section has scrolled past viewport (slightly earlier)
+        setIsVisible(rect.bottom < 100);
       }
     };
 
