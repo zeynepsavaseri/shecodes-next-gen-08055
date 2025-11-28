@@ -44,29 +44,21 @@ export const HeroSection = () => {
           </div>
 
           {/* Scrolling Banner */}
-          <div className="relative w-full overflow-hidden bg-foreground py-4 -mx-4 sm:-mx-6">
+          <div className="absolute left-0 right-0 w-screen overflow-hidden bg-foreground py-4">
             <div className="flex animate-scroll whitespace-nowrap">
-              <div className="flex items-center gap-8 px-4">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">BELONG.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMPOWER.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">FLOURISH.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">INSPIRE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">ELEVATE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">RISE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMBRACE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">SUPPORT.</span>
-              </div>
-              {/* Duplicate for seamless loop */}
-              <div className="flex items-center gap-8 px-4">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">BELONG.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMPOWER.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">FLOURISH.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">INSPIRE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">ELEVATE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">RISE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMBRACE.</span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">SUPPORT.</span>
-              </div>
+              {/* Multiple repetitions for seamless infinite scroll */}
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="flex items-center gap-8 px-8">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">BELONG.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMPOWER.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">FLOURISH.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">INSPIRE.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">ELEVATE.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">RISE.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMBRACE.</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">SUPPORT.</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
