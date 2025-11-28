@@ -43,26 +43,6 @@ export const MissionSection = () => {
 
       <div className="container relative mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Headline */}
-          <div className="text-center mb-8 sm:mb-12 animate-fade-in mt-0 sm:mt-0">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-foreground px-2">
-              What is HerCode?
-            </h2>
-          </div>
-
-          {/* Flowing Story */}
-          <div className="text-center mb-12 sm:mb-16 px-3 sm:px-4 animate-fade-in-delay">
-            <div className="text-sm sm:text-base text-foreground/80 leading-relaxed space-y-3 sm:space-y-4 max-w-3xl mx-auto">
-              <p>
-                HerCode began with a simple insight: many talented women stay out of tech not because of ability, but because the spaces around them often don't feel built for them.
-                In entrepreneurial environments, I often saw women feel less encouraged to enter or "just start," even when they had strong ideas. And at hackathons, there were barely any women at all — and the few who joined were often spoken over before they even had the chance to contribute.
-              </p>
-              <p>
-                HerCode fills that gap by creating a space where women can explore tech comfortably, build meaningful connections, and grow with confidence
-              </p>
-            </div>
-          </div>
-
           {/* Core Values Intro */}
           <div className="text-center mb-6 sm:mb-8 animate-fade-in-delay px-2">
             <p className="text-sm sm:text-base md:text-lg text-foreground font-semibold">
