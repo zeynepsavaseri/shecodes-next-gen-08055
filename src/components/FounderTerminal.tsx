@@ -6,52 +6,56 @@ import founderPixel from "@/assets/founder-pixel.png";
 
 export const FounderTerminal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentView, setCurrentView] = useState<"menu" | "about" | "story" | "contact">("menu");
+  const [currentView, setCurrentView] = useState<"menu" | "about" | "story">("menu");
 
   const renderContent = () => {
     switch (currentView) {
       case "about":
         return (
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">⟨ THE ARCHITECT ⟩</h3>
-            <div className="space-y-2 text-sm">
-              <p><span className="text-primary">Name:</span> Zeynep Savaseri</p>
-              <p><span className="text-primary">Role:</span> Founder & Organizer of HerCode</p>
-              <p><span className="text-primary">Status:</span> Building bridges between health & technology</p>
+            <h3 className="text-xl font-bold text-primary">About the Founder</h3>
+            <div className="space-y-3 text-sm">
+              <p className="text-foreground/80">
+                <span className="text-primary font-semibold">Zeynep Savaseri</span> — Founder & Organizer of HerCode
+              </p>
+              <p className="text-foreground/80">
+                Currently exploring health & technology at ETH Zürich, passionate about creating inclusive tech spaces.
+              </p>
+              <div className="pt-2">
+                <p className="text-foreground/80">
+                  <span className="text-primary font-semibold">LinkedIn:</span>{" "}
+                  <a 
+                    href="https://linkedin.com/in/zeynep-savaseri-9653b92aa/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    linkedin.com/in/zeynep-savaseri-9653b92aa/
+                  </a>
+                </p>
+                <p className="text-primary font-semibold mt-3">Always open to meet new people & ideas!</p>
+              </div>
             </div>
           </div>
         );
       case "story":
         return (
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">Mission & Background</h3>
-            <div className="space-y-3 text-sm">
-              <p className="text-foreground/80">
-                Currently exploring health & technology at ETH Zurich, passionate about creating inclusive tech spaces.
+            <h3 className="text-xl font-bold text-primary">The Story Behind HerCode</h3>
+            <div className="space-y-3 text-sm text-foreground/80">
+              <p>
+                HerCode grew out of a personal frustration. Throughout my time at ETH Zürich — at networking events, hackathons, and even at the Student Project House — I often found myself one of the very few women in the room.
               </p>
-              <p className="text-foreground/80">
-                <span className="text-primary font-semibold">Mission:</span> To empower, connect, and challenge the next generation of women in technology through hands-on experiences, mentorship, and community building.
+              <p className="font-semibold">
+                I didn't want to wait for these spaces to change.<br />
+                So I started building my own.
               </p>
-            </div>
-          </div>
-        );
-      case "contact":
-        return (
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">Get In Touch</h3>
-            <div className="space-y-2 text-sm">
-              <p className="text-foreground/80">
-                <span className="text-primary">LinkedIn:</span>{" "}
-                <a 
-                  href="https://linkedin.com/in/zeynep-savaseri-9653b92aa/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-accent hover:underline"
-                >
-                  linkedin.com/in/zeynep-savaseri-9653b92aa/
-                </a>
+              <p>
+                HerCode is my attempt to create what I was missing: a welcoming, collaborative environment where women can explore technology, learn by doing, connect with industry partners, and create together. I want women to feel encouraged, not intimidated. Supported, not judged. Included, not isolated.
               </p>
-              <p className="text-primary font-semibold mt-4">Always open to meet new people & ideas!</p>
+              <p className="italic">
+                This is the community I needed — so I'm building it for others who need it too.
+              </p>
             </div>
           </div>
         );
@@ -72,14 +76,7 @@ export const FounderTerminal = () => {
                 variant="outline"
                 className="w-full justify-start font-mono text-left hover:bg-primary/10"
               >
-                <span className="text-primary mr-2">2.</span> Mission & Background
-              </Button>
-              <Button
-                onClick={() => setCurrentView("contact")}
-                variant="outline"
-                className="w-full justify-start font-mono text-left hover:bg-primary/10"
-              >
-                <span className="text-primary mr-2">3.</span> Contact Info
+                <span className="text-primary mr-2">2.</span> The Story Behind HerCode
               </Button>
             </div>
           </div>
