@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import hercodeLogo from "@/assets/hercode-main-logo.png";
 import { useTheme } from "next-themes";
+import { ArchitectGame } from "@/components/ArchitectGame";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,15 +53,29 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase tracking-wider"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              if (item.id === "founder") {
+                return (
+                  <ArchitectGame 
+                    key={item.id}
+                    trigger={
+                      <button className="text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase tracking-wider">
+                        {item.label}
+                      </button>
+                    }
+                  />
+                );
+              }
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase tracking-wider"
+                >
+                  {item.label}
+                </button>
+              );
+            })}
             
             {/* Theme Toggle */}
             <button
@@ -94,15 +109,29 @@ export const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="md:hidden pb-4 space-y-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              if (item.id === "founder") {
+                return (
+                  <ArchitectGame 
+                    key={item.id}
+                    trigger={
+                      <button className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase">
+                        {item.label}
+                      </button>
+                    }
+                  />
+                );
+              }
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left py-3 px-2 text-sm text-foreground/80 hover:text-primary transition-colors font-bold uppercase"
+                >
+                  {item.label}
+                </button>
+              );
+            })}
             <div className="flex items-center gap-2 pt-2">
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
