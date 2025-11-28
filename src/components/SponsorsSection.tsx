@@ -364,14 +364,18 @@ export const SponsorsSection = () => {
               <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto mb-6">
                 Join forward-thinking companies investing in the future of tech diversity
               </p>
-              <Link to="/partner">
-                <Button 
-                  size="lg" 
-                  className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
-                >
-                  Partner Up with Us
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                onClick={() => {
+                  const element = document.getElementById('why-partner');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
+              >
+                Partner Up with Us
+              </Button>
             </div>
 
             {/* Mobile: Horizontal scroll */}
