@@ -33,12 +33,17 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background" id="testimonials">
+    <section className="py-16 sm:py-20 md:py-24 bg-background" id="testimonials">
       <div className="container mx-auto px-3 sm:px-4">
-        <div className="text-center mb-6 sm:mb-8 md:mb-12 px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-3 md:mb-4">
-            Testimonials
-          </h2>
+        <div className="text-center mb-12 sm:mb-16 px-2">
+          <div className="space-y-2 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
+              THE
+            </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase bg-gradient-primary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+              VOICES
+            </h2>
+          </div>
           <p className="text-xs sm:text-sm md:text-base font-mono text-muted-foreground max-w-3xl mx-auto px-2 sm:px-4">
             Feedback from women who joined our events and partners who collaborated with us.
           </p>

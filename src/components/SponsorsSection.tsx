@@ -117,12 +117,17 @@ export const SponsorsSection = () => {
 
 
   return (
-    <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-3 sm:px-4">
-        <div className="text-center mb-6 sm:mb-8 px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-primary bg-clip-text text-transparent mb-2">
-            Our Partners
-          </h2>
+        <div className="text-center mb-12 sm:mb-16 px-2">
+          <div className="space-y-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
+              THE
+            </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase bg-gradient-primary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+              PARTNERS
+            </h2>
+          </div>
         </div>
 
         {/* Partners Grid - Techy Compact Design */}
@@ -236,10 +241,15 @@ export const SponsorsSection = () => {
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
 
           <div className="relative">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide bg-gradient-secondary bg-clip-text text-transparent mb-4">
-                Why Partner with Us
-              </h2>
+            <div className="text-center mb-16">
+              <div className="space-y-2 mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase text-foreground" style={{ letterSpacing: '0.15em' }}>
+                  WHY
+                </h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase bg-gradient-secondary bg-clip-text text-transparent" style={{ letterSpacing: '0.15em' }}>
+                  PARTNER
+                </h2>
+              </div>
               <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto mb-6">
                 Join forward-thinking companies investing in the future of tech diversity
               </p>
