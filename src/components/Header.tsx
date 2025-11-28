@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import hercodeLogo from "@/assets/hercode-icon.png";
 import { useTheme } from "next-themes";
-import { ArchitectGame } from "@/components/ArchitectGame";
+import { FounderTerminal } from "@/components/FounderTerminal";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,6 +69,8 @@ export const Header = () => {
                 </button>
               );
             })}
+            {/* Founder Terminal */}
+            <FounderTerminal />
             {/* Theme Toggle */}
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -108,6 +110,7 @@ export const Header = () => {
               );
             })}
             <div className="flex items-center gap-2 pt-2">
+              <FounderTerminal />
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="text-foreground/80 hover:text-primary transition-colors p-2"
