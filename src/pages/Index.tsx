@@ -14,6 +14,7 @@ const Index = () => {
       <ParticleBackground />
       <Header />
       <HeroSection />
+      <section id="mission"><MissionSection /></section>
       <section id="events"><EventsSection /></section>
       <section id="testimonials"><TestimonialsSection /></section>
       <section id="sponsors"><SponsorsSection /></section>
