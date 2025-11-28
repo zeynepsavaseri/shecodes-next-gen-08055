@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Award } from "lucide-react";
+import { Users, Target, Award, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 export const SponsorsSection = () => {
@@ -28,28 +28,92 @@ export const SponsorsSection = () => {
     }
   ];
 
-  const sponsorCategories = {
-    tech: [
-      { name: "Lovable", logo: "/lovable-logo-white.png", featured: true },
-      { name: "Claude", logo: "/claude-logo.png", featured: true },
-      { name: "TF", logo: "/tf-logo.png" },
-      { name: "Coming Soon", logo: "", isComingSoon: true },
-    ],
-    community: [
-      { name: "Women In Robotics", logo: "/women-in-robotics-logo.png" },
-      { name: "ETH Diversity", logo: "/eth-diversity-logo.png" },
-      { name: "ETH Student Project House", logo: "/eth-project-house-logo.png", featured: true, superFeatured: true },
-      { name: "Longevity Hacks", logo: "/longevity-hacks-logo.png", featured: true, superFeatured: true },
-      { name: "Coming Soon", logo: "", isComingSoon: true },
-    ],
-    food: [
-      { name: "Cosmic Dealer", logo: "/cosmic-dealer-logo.png" },
-      { name: "Focus Water", logo: "/focus-water-logo.png" },
-      { name: "MAD", logo: "/mad-logo.png", featured: true },
-      { name: "Brownie Paw", logo: "/brownie-paw-logo.png" },
-      { name: "Coming Soon", logo: "", isComingSoon: true },
-    ]
-  };
+  const partners = [
+    // Tech Partners
+    { 
+      name: "Lovable", 
+      subtitle: "AI-POWERED DEVELOPMENT", 
+      category: "TECH", 
+      categoryColor: "197 71% 52%",
+      logo: "/lovable-logo-white.png",
+      link: "https://lovable.dev"
+    },
+    { 
+      name: "Claude", 
+      subtitle: "ANTHROPIC", 
+      category: "TECH", 
+      categoryColor: "197 71% 52%",
+      logo: "/claude-logo.png",
+      link: "https://anthropic.com"
+    },
+    { 
+      name: "TF", 
+      subtitle: "INNOVATION PARTNER", 
+      category: "TECH", 
+      categoryColor: "197 71% 52%",
+      logo: "/tf-logo.png"
+    },
+    
+    // Community Partners
+    { 
+      name: "ETH Diversity", 
+      subtitle: "ETH ZURICH", 
+      category: "COMMUNITY", 
+      categoryColor: "280 65% 60%",
+      logo: "/eth-diversity-logo.png"
+    },
+    { 
+      name: "Student Project House", 
+      subtitle: "ETH ZURICH", 
+      category: "COMMUNITY", 
+      categoryColor: "280 65% 60%",
+      logo: "/eth-project-house-logo.png"
+    },
+    { 
+      name: "Women In Robotics", 
+      subtitle: "GLOBAL NETWORK", 
+      category: "COMMUNITY", 
+      categoryColor: "280 65% 60%",
+      logo: "/women-in-robotics-logo.png"
+    },
+    { 
+      name: "Longevity Hacks", 
+      subtitle: "HEALTH & LONGEVITY", 
+      category: "COMMUNITY", 
+      categoryColor: "280 65% 60%",
+      logo: "/longevity-hacks-logo.png"
+    },
+    
+    // Food & Drinks Partners
+    { 
+      name: "MAD", 
+      subtitle: "MAKE A DIFFERENCE", 
+      category: "FUEL", 
+      categoryColor: "38 92% 50%",
+      logo: "/mad-logo.png"
+    },
+    { 
+      name: "Cosmic Dealer", 
+      subtitle: "HEALTHY SNACKS", 
+      category: "FUEL", 
+      categoryColor: "38 92% 50%",
+      logo: "/cosmic-dealer-logo.png"
+    },
+    { 
+      name: "Focus Water", 
+      subtitle: "HYDRATION", 
+      category: "FUEL", 
+      categoryColor: "38 92% 50%",
+      logo: "/focus-water-logo.png"
+    },
+    { 
+      name: "Brownie Paw", 
+      subtitle: "SWEET TREATS", 
+      category: "FUEL", 
+      categoryColor: "38 92% 50%",
+      logo: "/brownie-paw-logo.png"
+    },
+  ];
 
 
   return (
@@ -61,78 +125,80 @@ export const SponsorsSection = () => {
           </h2>
         </div>
 
-        {/* Partner Categories - Horizontal Scrolling */}
-        <div className="space-y-6 mb-24 sm:mb-40">
-          {/* Tech Partners */}
-          <div className="relative">
-            <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-primary opacity-50 blur-sm" />
-            <h3 className="text-sm sm:text-base font-pixel uppercase tracking-wider text-primary mb-4 text-center">
-              Tech
-            </h3>
-            <div className="relative overflow-hidden py-2">
-              <div className="flex animate-scroll-left">
-                {sponsorCategories.tech.concat(sponsorCategories.tech).concat(sponsorCategories.tech).map((sponsor, index) => (
-                  <div
-                    key={index}
-                    className={`flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-primary/20 hover-scale ${sponsor.featured ? 'p-1' : 'p-2'} shadow-glow`}
+        {/* Partners Grid */}
+        <div className="mb-24 sm:mb-40">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
+            {partners.map((partner, index) => (
+              <Card
+                key={index}
+                className="group relative bg-card/80 backdrop-blur-sm border border-border/40 hover:border-primary/40 transition-all duration-300 overflow-hidden"
+                style={{
+                  animationDelay: `${index * 0.05}s`,
+                }}
+              >
+                {/* Corner Decorations */}
+                <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-border/60" />
+                <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-border/60" />
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-border/60" />
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-border/60" />
+                
+                {/* External Link Icon */}
+                {partner.link && (
+                  <a 
+                    href={partner.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 z-10 opacity-50 hover:opacity-100 transition-opacity"
                   >
-                    {sponsor.isComingSoon ? (
-                      <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
-                    ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-150' : ''}`} />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                  </a>
+                )}
 
-          {/* Community Partners */}
-          <div className="relative">
-            <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-secondary opacity-50 blur-sm" />
-            <h3 className="text-sm sm:text-base font-pixel uppercase tracking-wider text-accent mb-4 text-center">
-              Community
-            </h3>
-            <div className="relative overflow-hidden py-2">
-              <div className="flex animate-scroll-left" style={{ animationDuration: '25s' }}>
-                {sponsorCategories.community.concat(sponsorCategories.community).concat(sponsorCategories.community).map((sponsor, index) => (
-                  <div
-                    key={index}
-                    className={`flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-accent/20 hover-scale ${sponsor.featured ? 'p-1' : 'p-2'}`}
-                  >
-                    {sponsor.isComingSoon ? (
-                      <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
-                    ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.superFeatured ? 'scale-[2]' : sponsor.featured ? 'scale-150' : ''}`} />
-                    )}
+                <CardContent className="p-6 sm:p-8 flex flex-col h-full min-h-[240px] sm:min-h-[280px]">
+                  {/* Category Badge */}
+                  <div className="mb-6">
+                    <span 
+                      className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-1 rounded border inline-block"
+                      style={{
+                        color: `hsl(${partner.categoryColor})`,
+                        borderColor: `hsla(${partner.categoryColor} / 0.5)`,
+                      }}
+                    >
+                      {partner.category}
+                    </span>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
 
-          {/* Food Partners */}
-          <div className="relative">
-            <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 opacity-50 blur-sm" />
-            <h3 className="text-sm sm:text-base font-pixel uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-4 text-center">
-              Food & Drinks
-            </h3>
-            <div className="relative overflow-hidden py-2">
-              <div className="flex animate-scroll-left" style={{ animationDuration: '22s' }}>
-                {sponsorCategories.food.concat(sponsorCategories.food).concat(sponsorCategories.food).concat(sponsorCategories.food).map((sponsor, index) => (
-                  <div
-                    key={index}
-                    className={`flex-shrink-0 w-28 sm:w-32 md:w-36 h-12 sm:h-14 mx-2 sm:mx-3 flex items-center justify-center bg-card/50 backdrop-blur-sm rounded-lg border border-orange-500/20 hover-scale ${sponsor.featured ? 'p-1' : 'p-2'}`}
-                  >
-                    {sponsor.isComingSoon ? (
-                      <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Coming Soon</span>
-                    ) : (
-                      <img src={sponsor.logo} alt={sponsor.name} className={`max-w-full max-h-full object-contain ${sponsor.featured ? 'scale-150' : ''}`} />
-                    )}
+                  {/* Logo (if available) */}
+                  {partner.logo && (
+                    <div className="mb-6 flex items-center justify-center flex-1">
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name} 
+                        className="max-w-full max-h-24 object-contain"
+                      />
+                    </div>
+                  )}
+
+                  {/* Partner Name & Subtitle */}
+                  <div className="mt-auto">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-mono font-bold uppercase tracking-wide text-foreground mb-2">
+                      {partner.name}
+                    </h3>
+                    <p className="text-[10px] sm:text-xs font-mono text-muted-foreground uppercase tracking-wider">
+                      {partner.subtitle}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </div>
+                </CardContent>
+
+                {/* Hover Glow Effect */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.1), transparent 70%)`,
+                  }}
+                />
+              </Card>
+            ))}
           </div>
         </div>
 
