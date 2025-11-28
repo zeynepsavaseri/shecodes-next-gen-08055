@@ -54,6 +54,7 @@ export const SponsorsSection = () => {
       category: "TECH", 
       categoryColor: "197 71% 52%",
       logo: "/tf-logo.png",
+      link: "https://techface.ch/de/?gad_source=1&gad_campaignid=16873970615&gbraid=0AAAAAB3xNuJ4bFerdMERx2LRm0iSW9DN2&gclid=CjwKCAiAraXJBhBJEiwAjz7MZZ8ZaL3qesfWDzlIgSBW_-Y73fXyQex03m4QrgurNeTR6jzaTqQcMhoCcLYQAvD_BwE",
       biggerLogo: false
     },
     
@@ -72,6 +73,7 @@ export const SponsorsSection = () => {
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
       logo: "/eth-project-house-logo.png",
+      link: "https://sph.ethz.ch/",
       biggerLogo: true
     },
     { 
@@ -98,6 +100,7 @@ export const SponsorsSection = () => {
       category: "FUEL", 
       categoryColor: "38 92% 50%",
       logo: "/mad-logo.png",
+      link: "https://www.mad-drinks.com/",
       biggerLogo: false
     },
     { 
