@@ -258,9 +258,26 @@ export const SponsorsSection = () => {
           </div>
 
           {/* Desktop: Grid layout */}
-          <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
+          <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
-              const isBig = index % 3 === 0; // Every third card is bigger
+              // Define varied sizes like lego pieces - different combinations
+              const sizePatterns = [
+                'col-span-2 row-span-2', // 2x2 big square
+                'col-span-1 row-span-1', // 1x1 small square
+                'col-span-2 row-span-1', // 2x1 wide rectangle
+                'col-span-1 row-span-2', // 1x2 tall rectangle
+                'col-span-1 row-span-1', // 1x1 small square
+                'col-span-2 row-span-1', // 2x1 wide rectangle
+                'col-span-1 row-span-1', // 1x1 small square
+                'col-span-1 row-span-2', // 1x2 tall rectangle
+                'col-span-2 row-span-2', // 2x2 big square
+                'col-span-1 row-span-1', // 1x1 small square
+                'col-span-2 row-span-1', // 2x1 wide rectangle
+                'col-span-1 row-span-1', // 1x1 small square
+              ];
+              const sizeClass = sizePatterns[index % sizePatterns.length];
+              const isLarge = sizeClass.includes('row-span-2');
+              
               const CardWrapper = partner.link ? 'a' : 'div';
               const cardProps = partner.link ? {
                 href: partner.link,
@@ -272,9 +289,7 @@ export const SponsorsSection = () => {
               return (
                 <CardWrapper key={index} {...cardProps}>
                   <Card
-                    className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 cursor-pointer ${
-                      isBig ? 'col-span-2 row-span-2' : ''
-                    }`}
+                    className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 cursor-pointer ${sizeClass}`}
                     style={{
                       animationDelay: `${index * 0.05}s`,
                     }}
@@ -297,7 +312,7 @@ export const SponsorsSection = () => {
                       </div>
                     )}
 
-                  <CardContent className={`flex flex-col h-full ${isBig ? 'p-6' : 'p-4'}`}>
+                  <CardContent className={`flex flex-col h-full ${isLarge ? 'p-6' : 'p-4'}`}>
                     {/* Category Badge */}
                     <div className="mb-3">
                       <span 
@@ -314,12 +329,12 @@ export const SponsorsSection = () => {
 
                     {/* Logo */}
                     {partner.logo && (
-                      <div className={`flex items-center justify-center flex-1 ${isBig ? 'mb-4' : 'mb-2'}`}>
+                      <div className={`flex items-center justify-center flex-1 ${isLarge ? 'mb-4' : 'mb-2'}`}>
                         <img 
                           src={partner.logo} 
                           alt={partner.name} 
                           className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isBig ? (partner.biggerLogo ? 'max-h-48' : 'max-h-32') : (partner.biggerLogo ? 'max-h-36' : 'max-h-20')
+                            isLarge ? (partner.biggerLogo ? 'max-h-48' : 'max-h-32') : (partner.biggerLogo ? 'max-h-36' : 'max-h-20')
                           }`}
                         />
                       </div>
@@ -328,12 +343,12 @@ export const SponsorsSection = () => {
                     {/* Partner Info */}
                     <div className="mt-auto">
                       <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground ${
-                        isBig ? 'text-base mb-1' : 'text-xs mb-1'
+                        isLarge ? 'text-base mb-1' : 'text-xs mb-1'
                       }`}>
                         {partner.name}
                       </h3>
                       <p className={`font-mono text-muted-foreground uppercase tracking-wider ${
-                        isBig ? 'text-[9px]' : 'text-[8px]'
+                        isLarge ? 'text-[9px]' : 'text-[8px]'
                       }`}>
                         {partner.subtitle}
                       </p>
