@@ -10,6 +10,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { z } from "zod";
 import { CheckCircle2, ArrowLeft, Calendar, Home } from "lucide-react";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { supabase } from "@/integrations/supabase/client";
 
 const partnershipInterests = [
   "Event Sponsorship",
@@ -71,15 +72,34 @@ export default function Partner() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
 
     try {
       const validatedData = partnerFormSchema.parse(formData);
       
-      // TODO: Send to backend/database
-      console.log("Partner form submission:", validatedData);
+      // Send email via edge function
+      const { error } = await supabase.functions.invoke("send-partner-inquiry", {
+        body: {
+          name: validatedData.contactName,
+          email: validatedData.email,
+          organization: validatedData.company,
+          message: `Partnership Interest: ${validatedData.partnershipInterests.join(", ")}
+          
+Event Context: ${validatedData.eventContext}${validatedData.eventOther ? ` (${validatedData.eventOther})` : ""}
+
+Website/LinkedIn: ${validatedData.websiteLinkedIn || "Not provided"}
+
+Message:
+${validatedData.message}`,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending inquiry:", error);
+        throw error;
+      }
       
       setIsSubmitted(true);
       toast({
@@ -98,6 +118,12 @@ export default function Partner() {
         toast({
           title: "Please fix the errors",
           description: "Some fields need your attention.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Error sending inquiry",
+          description: "Please try again or email us directly.",
           variant: "destructive",
         });
       }
