@@ -12,7 +12,7 @@ export const HeroSection = () => {
   };
   
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black pt-20 sm:pt-24">
+    <section className="relative min-h-screen overflow-hidden bg-background pt-20 sm:pt-24">
       <div className="container relative mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12">
           {/* Applications Open Badge */}
