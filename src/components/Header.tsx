@@ -4,10 +4,12 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import hercodeLogo from "@/assets/hercode-icon.png";
 import { useTheme } from "next-themes";
 import { FounderTerminal } from "@/components/FounderTerminal";
+import { PartnerInquiryTerminal } from "@/components/PartnerInquiryTerminal";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPartnerTerminalOpen, setIsPartnerTerminalOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -27,12 +29,21 @@ export const Header = () => {
   };
 
   const navItems = [
-    { label: "Join our events", id: "events", bright: true },
-    { label: "Partner up with us", id: "why-partner", bright: true },
-    { label: "Values", id: "mission", bright: false },
-    { label: "Testimonials", id: "testimonials", bright: false },
-    { label: "The Ecosystem", id: "sponsors", bright: false },
+    { label: "Join our events", id: "events", bright: true, action: "scroll" as const },
+    { label: "Partner up with us", id: "partner", bright: true, action: "terminal" as const },
+    { label: "Values", id: "mission", bright: false, action: "scroll" as const },
+    { label: "Testimonials", id: "testimonials", bright: false, action: "scroll" as const },
+    { label: "The Ecosystem", id: "sponsors", bright: false, action: "scroll" as const },
   ];
+
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (item.action === "terminal") {
+      setIsPartnerTerminalOpen(true);
+      setIsMobileMenuOpen(false);
+    } else {
+      scrollToSection(item.id);
+    }
+  };
 
   return (
     <header
@@ -58,7 +69,7 @@ export const Header = () => {
               return (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item)}
                   className={`text-sm transition-colors font-bold uppercase tracking-wider ${
                     item.bright 
                       ? 'bg-gradient-primary bg-clip-text text-transparent hover:opacity-80' 
@@ -98,7 +109,7 @@ export const Header = () => {
               return (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item)}
                   className={`block w-full text-left py-3 px-2 text-sm transition-colors font-bold uppercase ${
                     item.bright 
                       ? 'bg-gradient-primary bg-clip-text text-transparent' 
@@ -122,6 +133,9 @@ export const Header = () => {
           </nav>
         )}
       </div>
+      {isPartnerTerminalOpen && (
+        <PartnerInquiryTerminal onClose={() => setIsPartnerTerminalOpen(false)} />
+      )}
     </header>
   );
 };
