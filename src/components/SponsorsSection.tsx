@@ -258,25 +258,25 @@ export const SponsorsSection = () => {
           </div>
 
           {/* Desktop: Grid layout */}
-          <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
+          <div className="hidden md:grid grid-cols-12 gap-2 max-w-7xl mx-auto auto-rows-[120px]">
             {partners.map((partner, index) => {
-              // Define varied sizes like lego pieces - different combinations
+              // Define varied sizes like lego pieces - more dramatic differences
               const sizePatterns = [
-                'col-span-2 row-span-2', // 2x2 big square
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-2 row-span-1', // 2x1 wide rectangle
-                'col-span-1 row-span-2', // 1x2 tall rectangle
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-2 row-span-1', // 2x1 wide rectangle
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-1 row-span-2', // 1x2 tall rectangle
-                'col-span-2 row-span-2', // 2x2 big square
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-2 row-span-1', // 2x1 wide rectangle
-                'col-span-1 row-span-1', // 1x1 small square
+                'col-span-4 row-span-3', // large
+                'col-span-2 row-span-2', // medium
+                'col-span-3 row-span-2', // wide medium
+                'col-span-2 row-span-3', // tall medium
+                'col-span-3 row-span-1', // wide small
+                'col-span-2 row-span-2', // medium
+                'col-span-4 row-span-2', // extra wide
+                'col-span-2 row-span-1', // small wide
+                'col-span-3 row-span-3', // large tall
+                'col-span-2 row-span-2', // medium
+                'col-span-3 row-span-2', // wide medium
+                'col-span-2 row-span-1', // small wide
               ];
               const sizeClass = sizePatterns[index % sizePatterns.length];
-              const isLarge = sizeClass.includes('row-span-2');
+              const isLarge = sizeClass.includes('row-span-3') || sizeClass.includes('col-span-4');
               
               const CardWrapper = partner.link ? 'a' : 'div';
               const cardProps = partner.link ? {
@@ -312,7 +312,7 @@ export const SponsorsSection = () => {
                       </div>
                     )}
 
-                  <CardContent className={`flex flex-col h-full ${isLarge ? 'p-6' : 'p-4'}`}>
+                  <CardContent className={`flex flex-col h-full ${isLarge ? 'p-8' : 'p-4'}`}>
                     {/* Category Badge */}
                     <div className="mb-3">
                       <span 
@@ -329,12 +329,12 @@ export const SponsorsSection = () => {
 
                     {/* Logo */}
                     {partner.logo && (
-                      <div className={`flex items-center justify-center flex-1 ${isLarge ? 'mb-4' : 'mb-2'}`}>
+                      <div className={`flex items-center justify-center flex-1 ${isLarge ? 'mb-6' : 'mb-2'}`}>
                         <img 
                           src={partner.logo} 
                           alt={partner.name} 
                           className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isLarge ? (partner.biggerLogo ? 'max-h-48' : 'max-h-32') : (partner.biggerLogo ? 'max-h-36' : 'max-h-20')
+                            isLarge ? (partner.biggerLogo ? 'max-h-64' : 'max-h-48') : (partner.biggerLogo ? 'max-h-28' : 'max-h-20')
                           }`}
                         />
                       </div>
@@ -343,12 +343,12 @@ export const SponsorsSection = () => {
                     {/* Partner Info */}
                     <div className="mt-auto">
                       <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground ${
-                        isLarge ? 'text-base mb-1' : 'text-xs mb-1'
+                        isLarge ? 'text-lg mb-2' : 'text-xs mb-1'
                       }`}>
                         {partner.name}
                       </h3>
                       <p className={`font-mono text-muted-foreground uppercase tracking-wider ${
-                        isLarge ? 'text-[9px]' : 'text-[8px]'
+                        isLarge ? 'text-[10px]' : 'text-[8px]'
                       }`}>
                         {partner.subtitle}
                       </p>
