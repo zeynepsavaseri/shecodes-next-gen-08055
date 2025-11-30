@@ -67,6 +67,7 @@ export const SponsorsSection = () => {
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
       logo: "/eth-diversity-logo.png",
+      link: "https://ethz.ch/staffnet/en/employment-and-work/working-environment/diversity.html",
       biggerLogo: false
     },
     { 
@@ -84,6 +85,7 @@ export const SponsorsSection = () => {
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
       logo: "/women-in-robotics-logo.png",
+      link: "https://www.womeninrobotics.org/",
       biggerLogo: false
     },
     { 
@@ -92,6 +94,7 @@ export const SponsorsSection = () => {
       category: "COMMUNITY", 
       categoryColor: "280 65% 60%",
       logo: "/longevity-hacks-logo.png",
+      link: "https://longevityhackathons.com/",
       biggerLogo: true
     },
     
@@ -111,6 +114,7 @@ export const SponsorsSection = () => {
       category: "FUEL", 
       categoryColor: "38 92% 50%",
       logo: "/cosmic-dealer-logo.png",
+      link: "https://getcosmicdealer.com/",
       biggerLogo: false
     },
     { 
@@ -119,6 +123,7 @@ export const SponsorsSection = () => {
       category: "FUEL", 
       categoryColor: "38 92% 50%",
       logo: "/focus-water-logo.png",
+      link: "https://focuswater.ch/",
       biggerLogo: false
     },
     { 
@@ -127,6 +132,7 @@ export const SponsorsSection = () => {
       category: "FUEL", 
       categoryColor: "38 92% 50%",
       logo: "/brownie-paw-logo.png",
+      link: "https://www.browniepaw.ch/",
       biggerLogo: false
     },
   ];
