@@ -11,6 +11,16 @@ interface Star {
   twinklePhase: number;
 }
 
+interface Nebula {
+  x: number;
+  y: number;
+  radius: number;
+  color: { h: number; s: number; l: number };
+  speed: number;
+  angle: number;
+  rotationSpeed: number;
+}
+
 export const GalaxyBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -30,7 +40,7 @@ export const GalaxyBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     // Create stars - more realistic
-    const numStars = 500;
+    const numStars = 600;
     const stars: Star[] = [];
     
     for (let i = 0; i < numStars; i++) {
@@ -38,11 +48,31 @@ export const GalaxyBackground = () => {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         z: Math.random() * 1.5 + 0.3,
-        size: Math.random() * 1.5 + 0.3,
-        speed: Math.random() * 0.3 + 0.1,
-        opacity: Math.random() * 0.8 + 0.2,
-        twinkleSpeed: Math.random() * 0.03 + 0.01,
+        size: Math.random() * 1.8 + 0.3,
+        speed: Math.random() * 0.4 + 0.05,
+        opacity: Math.random() * 0.9 + 0.1,
+        twinkleSpeed: Math.random() * 0.02 + 0.005,
         twinklePhase: Math.random() * Math.PI * 2,
+      });
+    }
+
+    // Create nebula clouds for smooth galaxy effect
+    const numNebulas = 8;
+    const nebulas: Nebula[] = [];
+    
+    for (let i = 0; i < numNebulas; i++) {
+      nebulas.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 300 + 200,
+        color: {
+          h: Math.random() * 60 + 260, // Purple to blue range
+          s: Math.random() * 30 + 60,
+          l: Math.random() * 20 + 30,
+        },
+        speed: Math.random() * 0.2 + 0.1,
+        angle: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.001,
       });
     }
 
@@ -62,13 +92,50 @@ export const GalaxyBackground = () => {
     
     const animate = () => {
       frame++;
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      
+      // Clear with slight trail for smooth movement
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Draw and animate nebula clouds
+      nebulas.forEach((nebula) => {
+        // Move nebula in circular pattern
+        nebula.angle += nebula.rotationSpeed;
+        nebula.x += Math.cos(nebula.angle) * nebula.speed;
+        nebula.y += Math.sin(nebula.angle) * nebula.speed;
+
+        // Wrap around edges
+        if (nebula.x < -nebula.radius) nebula.x = canvas.width + nebula.radius;
+        if (nebula.x > canvas.width + nebula.radius) nebula.x = -nebula.radius;
+        if (nebula.y < -nebula.radius) nebula.y = canvas.height + nebula.radius;
+        if (nebula.y > canvas.height + nebula.radius) nebula.y = -nebula.radius;
+
+        // Draw smooth nebula with multiple gradient layers
+        const pulsePhase = Math.sin(frame * 0.01) * 0.3 + 0.7;
+        
+        for (let layer = 0; layer < 3; layer++) {
+          const layerRadius = nebula.radius * (1 - layer * 0.25);
+          const gradient = ctx.createRadialGradient(
+            nebula.x, nebula.y, 0,
+            nebula.x, nebula.y, layerRadius
+          );
+          
+          const opacity = (0.15 - layer * 0.04) * pulsePhase;
+          gradient.addColorStop(0, `hsla(${nebula.color.h}, ${nebula.color.s}%, ${nebula.color.l + layer * 10}%, ${opacity})`);
+          gradient.addColorStop(0.5, `hsla(${nebula.color.h + 20}, ${nebula.color.s - 10}%, ${nebula.color.l}%, ${opacity * 0.6})`);
+          gradient.addColorStop(1, 'transparent');
+          
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(nebula.x, nebula.y, layerRadius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+
       stars.forEach((star, index) => {
-        // Move stars
+        // Move stars with smooth flowing motion
         star.y -= star.speed;
-        star.x += Math.sin(star.y * 0.01) * 0.5;
+        star.x += Math.sin(star.y * 0.005 + frame * 0.01) * 0.8;
 
         // Reset star position when it goes off screen
         if (star.y < -10) {
