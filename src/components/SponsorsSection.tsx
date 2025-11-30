@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Award, ExternalLink, Diamond } from "lucide-react";
 import { useState } from "react";
+import { PartnerInquiryTerminal } from "@/components/PartnerInquiryTerminal";
 
 export const SponsorsSection = () => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [isPartnerTerminalOpen, setIsPartnerTerminalOpen] = useState(false);
 
   const benefits = [
     {
@@ -369,18 +371,7 @@ export const SponsorsSection = () => {
               </p>
               <Button 
                 size="lg" 
-                onClick={() => {
-                  const element = document.getElementById('partner-benefits');
-                  if (element) {
-                    const offset = -100; // Offset for fixed header
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset + offset;
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
+                onClick={() => setIsPartnerTerminalOpen(true)}
                 className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
               >
                 Partner Up with Us
@@ -524,6 +515,9 @@ export const SponsorsSection = () => {
           </div>
         </div>
       </div>
+      {isPartnerTerminalOpen && (
+        <PartnerInquiryTerminal onClose={() => setIsPartnerTerminalOpen(false)} />
+      )}
     </section>
   );
 };
