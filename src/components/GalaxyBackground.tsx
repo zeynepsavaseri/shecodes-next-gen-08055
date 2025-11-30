@@ -39,40 +39,40 @@ export const GalaxyBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Create stars - more realistic
-    const numStars = 600;
+    // Create stars - minimal and elegant
+    const numStars = 150;
     const stars: Star[] = [];
     
     for (let i = 0; i < numStars; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        z: Math.random() * 1.5 + 0.3,
-        size: Math.random() * 1.8 + 0.3,
-        speed: Math.random() * 0.4 + 0.05,
-        opacity: Math.random() * 0.9 + 0.1,
-        twinkleSpeed: Math.random() * 0.02 + 0.005,
+        z: Math.random() * 0.8 + 0.5,
+        size: Math.random() * 0.8 + 0.3,
+        speed: Math.random() * 0.05 + 0.01,
+        opacity: Math.random() * 0.4 + 0.2,
+        twinkleSpeed: Math.random() * 0.005 + 0.001,
         twinklePhase: Math.random() * Math.PI * 2,
       });
     }
 
-    // Create nebula clouds for smooth galaxy effect
-    const numNebulas = 8;
+    // Create subtle ambient glow - very minimal
+    const numNebulas = 3;
     const nebulas: Nebula[] = [];
     
     for (let i = 0; i < numNebulas; i++) {
       nebulas.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 300 + 200,
+        radius: Math.random() * 400 + 300,
         color: {
-          h: Math.random() * 60 + 260, // Purple to blue range
-          s: Math.random() * 30 + 60,
-          l: Math.random() * 20 + 30,
+          h: Math.random() * 20 + 270, // Subtle purple/blue
+          s: Math.random() * 20 + 40,
+          l: Math.random() * 10 + 15,
         },
-        speed: Math.random() * 0.2 + 0.1,
+        speed: Math.random() * 0.03 + 0.01,
         angle: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.001,
+        rotationSpeed: (Math.random() - 0.5) * 0.0002,
       });
     }
 
@@ -93,13 +93,13 @@ export const GalaxyBackground = () => {
     const animate = () => {
       frame++;
       
-      // Clear with slight trail for smooth movement
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+      // Clear background - solid for clean look
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw and animate nebula clouds
+      // Draw very subtle ambient glow
       nebulas.forEach((nebula) => {
-        // Move nebula in circular pattern
+        // Minimal movement
         nebula.angle += nebula.rotationSpeed;
         nebula.x += Math.cos(nebula.angle) * nebula.speed;
         nebula.y += Math.sin(nebula.angle) * nebula.speed;
@@ -110,32 +110,27 @@ export const GalaxyBackground = () => {
         if (nebula.y < -nebula.radius) nebula.y = canvas.height + nebula.radius;
         if (nebula.y > canvas.height + nebula.radius) nebula.y = -nebula.radius;
 
-        // Draw smooth nebula with multiple gradient layers
-        const pulsePhase = Math.sin(frame * 0.01) * 0.3 + 0.7;
+        // Draw single subtle gradient layer
+        const gradient = ctx.createRadialGradient(
+          nebula.x, nebula.y, 0,
+          nebula.x, nebula.y, nebula.radius
+        );
         
-        for (let layer = 0; layer < 3; layer++) {
-          const layerRadius = nebula.radius * (1 - layer * 0.25);
-          const gradient = ctx.createRadialGradient(
-            nebula.x, nebula.y, 0,
-            nebula.x, nebula.y, layerRadius
-          );
-          
-          const opacity = (0.15 - layer * 0.04) * pulsePhase;
-          gradient.addColorStop(0, `hsla(${nebula.color.h}, ${nebula.color.s}%, ${nebula.color.l + layer * 10}%, ${opacity})`);
-          gradient.addColorStop(0.5, `hsla(${nebula.color.h + 20}, ${nebula.color.s - 10}%, ${nebula.color.l}%, ${opacity * 0.6})`);
-          gradient.addColorStop(1, 'transparent');
-          
-          ctx.fillStyle = gradient;
-          ctx.beginPath();
-          ctx.arc(nebula.x, nebula.y, layerRadius, 0, Math.PI * 2);
-          ctx.fill();
-        }
+        const opacity = 0.04;
+        gradient.addColorStop(0, `hsla(${nebula.color.h}, ${nebula.color.s}%, ${nebula.color.l}%, ${opacity})`);
+        gradient.addColorStop(0.6, `hsla(${nebula.color.h}, ${nebula.color.s - 10}%, ${nebula.color.l - 5}%, ${opacity * 0.4})`);
+        gradient.addColorStop(1, 'transparent');
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(nebula.x, nebula.y, nebula.radius, 0, Math.PI * 2);
+        ctx.fill();
       });
 
       stars.forEach((star, index) => {
-        // Move stars with smooth flowing motion
+        // Minimal movement - mostly static
         star.y -= star.speed;
-        star.x += Math.sin(star.y * 0.005 + frame * 0.01) * 0.8;
+        star.x += Math.sin(star.y * 0.002 + frame * 0.005) * 0.15;
 
         // Reset star position when it goes off screen
         if (star.y < -10) {
@@ -143,78 +138,45 @@ export const GalaxyBackground = () => {
           star.x = Math.random() * canvas.width;
         }
 
-        // Interactive effect - stars move away from cursor
+        // Interactive effect - very subtle
         const dx = star.x - mouseX;
         const dy = star.y - mouseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < 150) {
-          const force = (150 - distance) / 150;
-          star.x += dx * force * 0.1;
-          star.y += dy * force * 0.1;
+        if (distance < 100) {
+          const force = (100 - distance) / 100;
+          star.x += dx * force * 0.02;
+          star.y += dy * force * 0.02;
         }
 
-        // Twinkle effect
+        // Very subtle twinkle
         star.twinklePhase += star.twinkleSpeed;
-        const twinkle = Math.sin(star.twinklePhase) * 0.5 + 0.5;
+        const twinkle = Math.sin(star.twinklePhase) * 0.3 + 0.7;
         const currentOpacity = star.opacity * twinkle;
 
-        // Draw star more realistically
+        // Draw minimal, modern stars
         ctx.save();
         
-        // Main star body
-        const hue = 280 + Math.sin(star.y * 0.01 + index) * 30;
-        
-        // Core of the star (bright white center)
+        // Simple clean dot - no sparkle effects
         ctx.beginPath();
-        ctx.fillStyle = `hsla(0, 0%, 100%, ${currentOpacity * 0.9})`;
-        ctx.arc(star.x, star.y, star.size * star.z * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${currentOpacity * 0.6})`;
+        ctx.arc(star.x, star.y, star.size * star.z, 0, Math.PI * 2);
         ctx.fill();
         
-        // Glow around star
-        const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size * star.z * 4);
-        gradient.addColorStop(0, `hsla(${hue}, 80%, 90%, ${currentOpacity * 0.6})`);
-        gradient.addColorStop(0.4, `hsla(${hue}, 70%, 70%, ${currentOpacity * 0.3})`);
+        // Subtle soft glow
+        const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size * star.z * 3);
+        gradient.addColorStop(0, `rgba(200, 200, 255, ${currentOpacity * 0.15})`);
         gradient.addColorStop(1, 'transparent');
         
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * star.z * 4, 0, Math.PI * 2);
+        ctx.arc(star.x, star.y, star.size * star.z * 3, 0, Math.PI * 2);
         ctx.fill();
-        
-        // Add sparkle effect to larger stars
-        if (star.size > 1 && twinkle > 0.7) {
-          ctx.strokeStyle = `hsla(0, 0%, 100%, ${currentOpacity * 0.5})`;
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(star.x - star.size * 2, star.y);
-          ctx.lineTo(star.x + star.size * 2, star.y);
-          ctx.moveTo(star.x, star.y - star.size * 2);
-          ctx.lineTo(star.x, star.y + star.size * 2);
-          ctx.stroke();
-        }
         
         ctx.restore();
       });
 
-      // Draw subtle connecting lines between very close stars
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i + 1; j < stars.length; j++) {
-          const dx = stars[i].x - stars[j].x;
-          const dy = stars[i].y - stars[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < 80) {
-            const opacity = (80 - distance) / 80 * 0.1;
-            ctx.strokeStyle = `rgba(200, 180, 255, ${opacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(stars[i].x, stars[i].y);
-            ctx.lineTo(stars[j].x, stars[j].y);
-            ctx.stroke();
-          }
-        }
-      }
+      // Remove connecting lines - too busy
       
       // Add gradient fade at bottom for smooth transition into next section
       const fadeHeight = 700;
