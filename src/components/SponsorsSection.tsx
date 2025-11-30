@@ -366,10 +366,7 @@ export const SponsorsSection = () => {
                   PARTNER
                 </h2>
               </div>
-              <p className="text-sm font-mono text-muted-foreground max-w-2xl mx-auto mb-6">
-                Join forward-thinking companies investing in the future of tech diversity
-              </p>
-              <Button 
+              <Button
                 size="lg" 
                 onClick={() => setIsPartnerTerminalOpen(true)}
                 className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
