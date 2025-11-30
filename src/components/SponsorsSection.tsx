@@ -152,36 +152,39 @@ export const SponsorsSection = () => {
           <div className="md:hidden -mx-3 sm:mx-0">
             <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-3">
               {partners.map((partner, index) => {
+                const CardWrapper = partner.link ? 'a' : 'div';
+                const cardProps = partner.link ? {
+                  href: partner.link,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className: "block"
+                } : {};
+                
                 return (
-                  <Card
-                    key={index}
-                    className="flex-shrink-0 w-[280px] snap-center group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1"
-                    style={{
-                      animationDelay: `${index * 0.05}s`,
-                    }}
-                  >
-                    {/* Scanline Effect */}
-                    <div className="absolute inset-0 pointer-events-none opacity-5">
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
-                    </div>
-                    
-                    {/* Corner Brackets */}
-                    <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
-                    <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
-                    <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
-                    <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
-                    
-                    {/* External Link */}
-                    {partner.link && (
-                      <a 
-                        href={partner.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="absolute top-2 right-2 z-10 opacity-30 hover:opacity-100 transition-opacity"
-                      >
-                        <ExternalLink className="w-3 h-3 text-primary" />
-                      </a>
-                    )}
+                  <CardWrapper key={index} {...cardProps}>
+                    <Card
+                      className="flex-shrink-0 w-[280px] snap-center group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 cursor-pointer"
+                      style={{
+                        animationDelay: `${index * 0.05}s`,
+                      }}
+                    >
+                      {/* Scanline Effect */}
+                      <div className="absolute inset-0 pointer-events-none opacity-5">
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
+                      </div>
+                      
+                      {/* Corner Brackets */}
+                      <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
+                      <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
+                      <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
+                      <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
+                      
+                      {/* External Link Indicator */}
+                      {partner.link && (
+                        <div className="absolute top-2 right-2 z-10 opacity-30 group-hover:opacity-100 transition-opacity">
+                          <ExternalLink className="w-3 h-3 text-primary" />
+                        </div>
+                      )}
 
                     <CardContent className="flex flex-col h-full p-6">
                       {/* Category Badge */}
@@ -238,7 +241,8 @@ export const SponsorsSection = () => {
                         backgroundSize: '50px 50px'
                       }}
                     />
-                  </Card>
+                    </Card>
+                  </CardWrapper>
                 );
               })}
             </div>
@@ -251,39 +255,41 @@ export const SponsorsSection = () => {
           <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
               const isBig = index % 3 === 0; // Every third card is bigger
+              const CardWrapper = partner.link ? 'a' : 'div';
+              const cardProps = partner.link ? {
+                href: partner.link,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "block"
+              } : {};
               
               return (
-                <Card
-                  key={index}
-                  className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 ${
-                    isBig ? 'col-span-2 row-span-2' : ''
-                  }`}
-                  style={{
-                    animationDelay: `${index * 0.05}s`,
-                  }}
-                >
-                  {/* Scanline Effect */}
-                  <div className="absolute inset-0 pointer-events-none opacity-5">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
-                  </div>
-                  
-                  {/* Corner Brackets */}
-                  <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
-                  <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
-                  <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
-                  <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
-                  
-                  {/* External Link */}
-                  {partner.link && (
-                    <a 
-                      href={partner.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="absolute top-2 right-2 z-10 opacity-30 hover:opacity-100 transition-opacity"
-                    >
-                      <ExternalLink className="w-3 h-3 text-primary" />
-                    </a>
-                  )}
+                <CardWrapper key={index} {...cardProps}>
+                  <Card
+                    className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 cursor-pointer ${
+                      isBig ? 'col-span-2 row-span-2' : ''
+                    }`}
+                    style={{
+                      animationDelay: `${index * 0.05}s`,
+                    }}
+                  >
+                    {/* Scanline Effect */}
+                    <div className="absolute inset-0 pointer-events-none opacity-5">
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
+                    </div>
+                    
+                    {/* Corner Brackets */}
+                    <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
+                    <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
+                    <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
+                    <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
+                    
+                    {/* External Link Indicator */}
+                    {partner.link && (
+                      <div className="absolute top-2 right-2 z-10 opacity-30 group-hover:opacity-100 transition-opacity">
+                        <ExternalLink className="w-3 h-3 text-primary" />
+                      </div>
+                    )}
 
                   <CardContent className={`flex flex-col h-full ${isBig ? 'p-6' : 'p-4'}`}>
                     {/* Category Badge */}
@@ -343,8 +349,9 @@ export const SponsorsSection = () => {
                       backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
                         backgroundSize: '50px 50px'
                       }}
-                  />
-                </Card>
+                    />
+                  </Card>
+                </CardWrapper>
               );
             })}
           </div>
