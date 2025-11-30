@@ -28,7 +28,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "HerCode Partnerships <onboarding@resend.dev>",
-      to: ["zsavaseri@ethz.ch"],
+      to: ["zbsavaseri@gmail.com"],
       replyTo: email,
       subject: `New Partnership Inquiry from ${name}`,
       html: `
