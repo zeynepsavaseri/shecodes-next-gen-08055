@@ -37,12 +37,7 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           className="relative flex-1 p-6 sm:p-8 md:p-10 bg-[#0f1729] text-white overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
         >
           {/* Top Section */}
-          <div className="flex items-start justify-between mb-8">
-            {/* Event Code Badge */}
-            <div className="px-3 py-1.5 rounded border border-white/20 font-mono text-xs tracking-wider">
-              {event.partner?.name.toUpperCase().replace(/\s/g, '_')}_EVENT
-            </div>
-            
+          <div className="flex items-start justify-end mb-8">
             {/* Crosshair Icon */}
             <Target className="w-6 h-6 text-white/60" strokeWidth={1.5} />
           </div>
