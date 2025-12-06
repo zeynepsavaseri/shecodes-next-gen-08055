@@ -21,9 +21,32 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
+    title: "Her Circles",
+    subtitle: "Networking Without The Cringe.",
+    date: "December 18, 2025",
+    location: "Ruby Mimi, Zürich",
+    participants: "Limited spots available",
+    partner: {
+      name: "HerCode",
+      logo: "/hercode-logo.png",
+      accentColor: "340 70% 55%" // Pink/red accent
+    },
+    description: {
+      overview: "An intimate meetup designed for meaningful conversations. Join ambitious women for curated circles and real connection at Ruby Mimi in Zürich.",
+      whatToExpect: [
+        "Curated conversation circles",
+        "Meaningful networking opportunities",
+        "A welcoming, cringe-free environment"
+      ],
+      whoCanJoin: "Women-only event. Open to ambitious women looking for real connections and meaningful conversations.",
+      whyJoin: "Skip the awkward small talk and dive into conversations that matter. Connect with like-minded women in a curated, intimate setting."
+    },
+    registrationUrl: "https://luma.com/lvnhywjv"
+  },
+  {
     title: "EY Hackathon",
     subtitle: "Build. Network. Win.",
-    date: "March 7, 2025",
+    date: "March 7, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",
     partner: {
