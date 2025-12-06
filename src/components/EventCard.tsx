@@ -1,13 +1,6 @@
-import { Calendar, MapPin, Users, ArrowRight, Target } from "lucide-react";
-import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Target, ArrowRight } from "lucide-react";
 import { Event } from "@/data/events";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 interface EventCardProps {
   event: Event;
@@ -15,9 +8,9 @@ interface EventCardProps {
 }
 
 export const EventCard = ({ event, index }: EventCardProps) => {
-  const accentColor = event.partner?.accentColor || "280 65% 60%"; // default purple
+  const [isGrabbing, setIsGrabbing] = useState(false);
+  const accentColor = event.partner?.accentColor || "280 65% 60%";
   
-  // Extract capacity number from participants string
   const capacityMatch = event.participants.match(/(\d+)/);
   const capacity = capacityMatch ? capacityMatch[1] : "∞";
 
@@ -31,12 +24,22 @@ export const EventCard = ({ event, index }: EventCardProps) => {
     }
   };
 
+  const handleTicketGrab = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsGrabbing(true);
+    
+    // Navigate after animation completes
+    setTimeout(() => {
+      if (event.registrationUrl) {
+        window.open(event.registrationUrl, '_blank');
+      }
+      setIsGrabbing(false);
+    }, 800);
+  };
+
   return (
-    <a
-      href={event.registrationUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-lg transition-all duration-300 animate-fade-in hover:-translate-y-2 cursor-pointer"
+    <div
+      className="group relative overflow-hidden rounded-lg transition-all duration-300 animate-fade-in hover:-translate-y-2"
       style={{ 
         animationDelay: `${index * 0.1}s`,
       }}
@@ -48,7 +51,6 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         >
           {/* Top Section */}
           <div className="flex items-start justify-end mb-8">
-            {/* Crosshair Icon */}
             <Target className="w-6 h-6 text-white/60" strokeWidth={1.5} />
           </div>
 
@@ -105,7 +107,18 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         </div>
 
         {/* Right Section - Ticket Stub */}
-        <div className="w-full md:w-64 bg-white text-black p-6 flex flex-col items-center justify-between rounded-b-lg md:rounded-r-lg md:rounded-bl-none border-l-2 border-dashed border-gray-300 group-hover:bg-gray-50 transition-colors">
+        <div 
+          className={`relative w-full md:w-64 bg-white text-black p-6 flex flex-col items-center justify-between rounded-b-lg md:rounded-r-lg md:rounded-bl-none border-l-2 border-dashed border-gray-300 group-hover:bg-gray-50 transition-all duration-300 ${
+            isGrabbing ? 'animate-ticket-grab' : ''
+          }`}
+        >
+          {/* Hand grabbing animation */}
+          {isGrabbing && (
+            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+              <span className="text-6xl animate-hand-grab">✋</span>
+            </div>
+          )}
+
           {/* Top */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-6">
@@ -130,20 +143,62 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           </div>
 
           {/* CTA Button */}
-          <div className="w-full space-y-3">
-            <div 
-              className="w-full py-3 px-4 rounded-md text-white font-bold text-sm uppercase tracking-wider text-center transition-all group-hover:scale-105 group-hover:shadow-lg flex items-center justify-center gap-2"
+          <div className="w-full">
+            <button 
+              onClick={handleTicketGrab}
+              className="w-full py-3 px-4 rounded-md text-white font-bold text-sm uppercase tracking-wider text-center transition-all hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               style={{ backgroundColor: `hsl(${accentColor})` }}
             >
               <span>Register Now</span>
               <ArrowRight className="w-4 h-4" />
-            </div>
-            <p className="text-[10px] font-mono text-center text-gray-500 uppercase tracking-wider">
-              Click anywhere to sign up
-            </p>
+            </button>
           </div>
         </div>
       </div>
-    </a>
+
+      <style>{`
+        @keyframes ticket-grab {
+          0% {
+            transform: translateX(0) rotate(0deg);
+            opacity: 1;
+          }
+          50% {
+            transform: translateX(20px) rotate(-5deg);
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(150%) rotate(-15deg);
+            opacity: 0;
+          }
+        }
+        
+        @keyframes hand-grab {
+          0% {
+            transform: translateX(-100px) rotate(0deg) scale(0.8);
+            opacity: 0;
+          }
+          30% {
+            transform: translateX(0) rotate(10deg) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: translateX(0) rotate(-5deg) scale(1.1);
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(150px) rotate(-15deg) scale(1);
+            opacity: 0;
+          }
+        }
+        
+        .animate-ticket-grab {
+          animation: ticket-grab 0.8s ease-in-out forwards;
+        }
+        
+        .animate-hand-grab {
+          animation: hand-grab 0.8s ease-in-out forwards;
+        }
+      `}</style>
+    </div>
   );
 };
