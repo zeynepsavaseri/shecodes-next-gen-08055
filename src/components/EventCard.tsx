@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Target, ArrowRight } from "lucide-react";
 import { Event } from "@/data/events";
-import pixelHand from "@/assets/pixel-hand.png";
 
 interface EventCardProps {
   event: Event;
@@ -115,15 +114,11 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         >
           {/* Hand grabbing animation */}
           {isGrabbing && (
-            <div className="absolute inset-0 flex items-start justify-center z-20 pointer-events-none pt-4">
-              <img 
-                src={pixelHand} 
-                alt="Grabbing hand" 
-                className="w-28 h-28 animate-hand-grab object-contain"
-                style={{ imageRendering: 'pixelated' }}
-              />
+            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+              <span className="text-6xl animate-hand-grab">✋</span>
             </div>
           )}
+
           {/* Top */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-6">
@@ -164,34 +159,34 @@ export const EventCard = ({ event, index }: EventCardProps) => {
       <style>{`
         @keyframes ticket-grab {
           0% {
-            transform: translateY(0);
+            transform: translateX(0) rotate(0deg);
             opacity: 1;
           }
-          40% {
-            transform: translateY(0);
+          50% {
+            transform: translateX(20px) rotate(-5deg);
             opacity: 1;
           }
           100% {
-            transform: translateY(100px);
+            transform: translateX(150%) rotate(-15deg);
             opacity: 0;
           }
         }
         
         @keyframes hand-grab {
           0% {
-            transform: translateY(-80px) scale(0.8);
+            transform: translateX(-100px) rotate(0deg) scale(0.8);
             opacity: 0;
           }
           30% {
-            transform: translateY(0) scale(1);
+            transform: translateX(0) rotate(10deg) scale(1);
             opacity: 1;
           }
           50% {
-            transform: translateY(10px) scale(1.05);
+            transform: translateX(0) rotate(-5deg) scale(1.1);
             opacity: 1;
           }
           100% {
-            transform: translateY(200px) scale(1);
+            transform: translateX(150px) rotate(-15deg) scale(1);
             opacity: 0;
           }
         }
