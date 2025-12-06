@@ -90,13 +90,13 @@ export const EventCard = ({ event, index }: EventCardProps) => {
         </div>
 
         {/* Right Section - Ticket Stub */}
-        <div className="w-full md:w-64 bg-white text-black p-6 flex flex-col items-center justify-between rounded-b-lg md:rounded-r-lg md:rounded-bl-none border-l-2 border-dashed border-gray-300">
+        <div className="w-full md:w-64 bg-white text-black p-6 flex flex-col items-center justify-between rounded-b-lg md:rounded-r-lg md:rounded-bl-none border-l-2 border-dashed border-gray-300 group-hover:bg-gray-50 transition-colors">
           {/* Top */}
           <div className="w-full">
-            <div className="flex items-center justify-between mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider">Register Now</span>
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-xs font-bold uppercase tracking-wider">Sign Up</span>
               <div 
-                className="w-3 h-3 rounded-full"
+                className="w-3 h-3 rounded-full animate-pulse"
                 style={{ backgroundColor: `hsl(${accentColor})` }}
               />
             </div>
@@ -114,19 +114,17 @@ export const EventCard = ({ event, index }: EventCardProps) => {
             </div>
           </div>
 
-          {/* Bottom - Barcode & Details */}
-          <div className="w-full">
-            <div className="flex justify-center gap-1 mb-3">
-              {[2, 2, 2, 4, 2, 4, 2, 2, 2, 4].map((height, i) => (
-                <div 
-                  key={i} 
-                  className="bg-black"
-                  style={{ width: '3px', height: `${height * 3}px` }}
-                />
-              ))}
+          {/* CTA Button */}
+          <div className="w-full space-y-3">
+            <div 
+              className="w-full py-3 px-4 rounded-md text-white font-bold text-sm uppercase tracking-wider text-center transition-all group-hover:scale-105 group-hover:shadow-lg flex items-center justify-center gap-2"
+              style={{ backgroundColor: `hsl(${accentColor})` }}
+            >
+              <span>Register Now</span>
+              <ArrowRight className="w-4 h-4" />
             </div>
             <p className="text-[10px] font-mono text-center text-gray-500 uppercase tracking-wider">
-              Click to register
+              Click anywhere to sign up
             </p>
           </div>
         </div>

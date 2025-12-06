@@ -64,7 +64,7 @@ export const upcomingEvents: Event[] = [
       whoCanJoin: "Open to students of all backgrounds : From first-time coders to experienced builders. Curiosity and creativity are all you need.",
       whyJoin: "This is your chance to learn, build, and connect with a supportive community of women in tech. Make meaningful connections and gain real-world experience."
     },
-    registrationUrl: "https://www.ey.com"
+    registrationUrl: "https://www.ey.com/en_ch/careers"
   },
 ];
 
