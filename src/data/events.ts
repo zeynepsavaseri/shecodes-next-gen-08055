@@ -1,9 +1,12 @@
+export type EventType = "hackathon" | "meetup" | "workshop" | "conference";
+
 export interface Event {
   title: string;
   subtitle: string;
   date: string;
   location: string;
   participants: string;
+  eventType: EventType;
   partner?: {
     name: string;
     logo: string;
@@ -25,7 +28,8 @@ export const upcomingEvents: Event[] = [
     subtitle: "Networking Without The Cringe.",
     date: "December 18, 2025",
     location: "Ruby Mimi, Zürich",
-    participants: "Limited spots available",
+    participants: "Only 25 spots available",
+    eventType: "meetup",
     partner: {
       name: "HerCode",
       logo: "/hercode-logo.png",
@@ -49,6 +53,7 @@ export const upcomingEvents: Event[] = [
     date: "March 7, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",
+    eventType: "hackathon",
     partner: {
       name: "EY",
       logo: "/EY Logo.png",
