@@ -19,11 +19,14 @@ export const EventCard = ({ event, index }: EventCardProps) => {
   
   // Extract capacity number from participants string
   const capacityMatch = event.participants.match(/(\d+)/);
-  const capacity = capacityMatch ? capacityMatch[1] : "60";
+  const capacity = capacityMatch ? capacityMatch[1] : "∞";
 
   return (
-    <div
-      className="group relative overflow-hidden rounded-lg transition-all duration-300 animate-fade-in hover:-translate-y-2"
+    <a
+      href={event.registrationUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block overflow-hidden rounded-lg transition-all duration-300 animate-fade-in hover:-translate-y-2 cursor-pointer"
       style={{ 
         animationDelay: `${index * 0.1}s`,
       }}
@@ -37,7 +40,7 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           <div className="flex items-start justify-between mb-8">
             {/* Event Code Badge */}
             <div className="px-3 py-1.5 rounded border border-white/20 font-mono text-xs tracking-wider">
-              {event.partner?.name.toUpperCase().replace(/\s/g, '_')}_2026
+              {event.partner?.name.toUpperCase().replace(/\s/g, '_')}_EVENT
             </div>
             
             {/* Crosshair Icon */}
@@ -91,17 +94,22 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           {/* Top */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider">Admit One</span>
-              <div className="w-3 h-3 rounded-full bg-black" />
+              <span className="text-xs font-bold uppercase tracking-wider">Register Now</span>
+              <div 
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: `hsl(${accentColor})` }}
+              />
             </div>
 
             {/* Capacity Number */}
             <div className="text-center mb-4">
-              <div className="text-7xl sm:text-8xl font-black leading-none">
+              <div className="text-5xl sm:text-6xl font-black leading-none" style={{ color: `hsl(${accentColor})` }}>
                 {capacity}
               </div>
               <div className="border-t-2 border-black mt-4 pt-2">
-                <span className="text-xs font-mono uppercase tracking-widest">Capacity Limit</span>
+                <span className="text-xs font-mono uppercase tracking-widest">
+                  {event.participants.includes("Limited") ? "Limited Spots" : "Capacity Limit"}
+                </span>
               </div>
             </div>
           </div>
@@ -118,11 +126,11 @@ export const EventCard = ({ event, index }: EventCardProps) => {
               ))}
             </div>
             <p className="text-[10px] font-mono text-center text-gray-500 uppercase tracking-wider">
-              Non-transferable • ID req
+              Click to register
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
