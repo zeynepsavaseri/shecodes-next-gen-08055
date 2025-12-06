@@ -21,6 +21,16 @@ export const EventCard = ({ event, index }: EventCardProps) => {
   const capacityMatch = event.participants.match(/(\d+)/);
   const capacity = capacityMatch ? capacityMatch[1] : "∞";
 
+  const getEventTypeLabel = (type: string) => {
+    switch (type) {
+      case "hackathon": return "Hackathon";
+      case "meetup": return "Meetup";
+      case "workshop": return "Workshop";
+      case "conference": return "Conference";
+      default: return "Event";
+    }
+  };
+
   return (
     <a
       href={event.registrationUrl}
@@ -44,6 +54,16 @@ export const EventCard = ({ event, index }: EventCardProps) => {
 
           {/* Title Section */}
           <div className="mb-12">
+            {/* Event Type Tag */}
+            <div 
+              className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
+              style={{ 
+                backgroundColor: `hsl(${accentColor} / 0.2)`,
+                color: `hsl(${accentColor})`
+              }}
+            >
+              {getEventTypeLabel(event.eventType)}
+            </div>
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 text-white uppercase tracking-tight leading-none">
               {event.title}
             </h3>
