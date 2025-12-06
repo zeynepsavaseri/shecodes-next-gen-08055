@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Target, ArrowRight } from "lucide-react";
+import pawGrab from "@/assets/paw-grab.png";
 import { Event } from "@/data/events";
 
 interface EventCardProps {
@@ -115,7 +116,7 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           {/* Hand grabbing animation */}
           {isGrabbing && (
             <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-              <span className="text-6xl animate-hand-grab">✋</span>
+              <img src={pawGrab} alt="Paw grab" className="w-16 h-16 animate-hand-grab" />
             </div>
           )}
 
