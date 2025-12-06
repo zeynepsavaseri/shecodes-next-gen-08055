@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Target, ArrowRight } from "lucide-react";
 import { Event } from "@/data/events";
+import pixelHand from "@/assets/pixel-hand.png";
 
 interface EventCardProps {
   event: Event;
@@ -115,10 +116,14 @@ export const EventCard = ({ event, index }: EventCardProps) => {
           {/* Hand grabbing animation */}
           {isGrabbing && (
             <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-              <span className="text-6xl animate-hand-grab">✋</span>
+              <img 
+                src={pixelHand} 
+                alt="Grabbing hand" 
+                className="w-20 h-20 animate-hand-grab object-contain"
+                style={{ imageRendering: 'pixelated' }}
+              />
             </div>
           )}
-
           {/* Top */}
           <div className="w-full">
             <div className="flex items-center justify-between mb-6">
