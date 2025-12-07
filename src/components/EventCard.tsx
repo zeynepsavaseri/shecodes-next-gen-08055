@@ -48,12 +48,19 @@ export const EventCard = ({ event, index }: EventCardProps) => {
 
   return (
     <div
-      className="group relative animate-fade-in"
+      className={`group relative animate-fade-in ${isGrabbing ? 'animate-card-grab' : ''}`}
       style={{ 
         animationDelay: `${index * 0.1}s`,
         perspective: '1000px',
       }}
     >
+      {/* Paw grab overlay */}
+      {isGrabbing && (
+        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+          <img src={pawGrab} alt="" className="w-24 h-24 animate-hand-grab" />
+        </div>
+      )}
+
       <div 
         className="relative w-full transition-transform duration-500 ease-out"
         style={{ 
@@ -109,17 +116,7 @@ export const EventCard = ({ event, index }: EventCardProps) => {
             </div>
 
             {/* Right Section */}
-            <div 
-              className={`relative w-full md:w-52 p-6 flex flex-col items-center justify-center text-center ${
-                isGrabbing ? 'animate-ticket-grab' : ''
-              }`}
-            >
-              {isGrabbing && (
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                  <img src={pawGrab} alt="" className="w-16 h-16 animate-hand-grab" />
-                </div>
-              )}
-
+            <div className="relative w-full md:w-52 p-6 flex flex-col items-center justify-center text-center">
               <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/40 mb-2">
                 Event Date
               </span>
@@ -160,40 +157,31 @@ export const EventCard = ({ event, index }: EventCardProps) => {
             </div>
 
             {/* Description */}
-            <p className="text-white/70 text-sm leading-relaxed mb-4 flex-1">
+            <p className="text-white/70 text-sm leading-relaxed flex-1">
               {event.description.overview}
             </p>
 
             {/* Footer */}
-            <div className="flex items-center justify-between pt-4 border-t border-white/10">
-              <div className="text-white/40 text-xs">
-                {event.location} • {month} {day}
-              </div>
-              <button
-                onClick={handleRegisterClick}
-                className="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider text-white transition-all hover:scale-105"
-                style={{ backgroundColor: `hsl(${accentColor})` }}
-              >
-                Register
-              </button>
+            <div className="pt-4 border-t border-white/10 text-white/40 text-xs">
+              {event.location} • {month} {day}, {year}
             </div>
           </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes ticket-grab {
+        @keyframes card-grab {
           0% { transform: translateX(0) rotate(0deg); opacity: 1; }
-          50% { transform: translateX(20px) rotate(-5deg); opacity: 1; }
-          100% { transform: translateX(150%) rotate(-15deg); opacity: 0; }
+          30% { transform: translateX(10px) rotate(-2deg); opacity: 1; }
+          100% { transform: translateX(120%) rotate(-10deg); opacity: 0; }
         }
         @keyframes hand-grab {
-          0% { transform: translateX(-100px) rotate(0deg) scale(0.8); opacity: 0; }
-          30% { transform: translateX(0) rotate(10deg) scale(1); opacity: 1; }
-          50% { transform: translateX(0) rotate(-5deg) scale(1.1); opacity: 1; }
-          100% { transform: translateX(150px) rotate(-15deg) scale(1); opacity: 0; }
+          0% { transform: translateX(-150px) rotate(0deg) scale(0.8); opacity: 0; }
+          25% { transform: translateX(0) rotate(10deg) scale(1); opacity: 1; }
+          45% { transform: translateX(0) rotate(-5deg) scale(1.1); opacity: 1; }
+          100% { transform: translateX(120%) rotate(-10deg) scale(1); opacity: 0; }
         }
-        .animate-ticket-grab { animation: ticket-grab 0.8s ease-in-out forwards; }
+        .animate-card-grab { animation: card-grab 0.8s ease-in-out forwards; }
         .animate-hand-grab { animation: hand-grab 0.8s ease-in-out forwards; }
       `}</style>
     </div>
