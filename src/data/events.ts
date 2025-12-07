@@ -25,7 +25,7 @@ export interface Event {
 export const upcomingEvents: Event[] = [
   {
     title: "Her Circles",
-    subtitle: "Networking Without The Cringe.",
+    subtitle: "A Space for Honest Connection.",
     date: "December 18, 2025",
     location: "Ruby Mimi, Zürich",
     participants: "Only 25 spots available",
@@ -49,7 +49,7 @@ export const upcomingEvents: Event[] = [
   },
   {
     title: "EY Hackathon",
-    subtitle: "Build. Network. Win.",
+    subtitle: "Build. Network. Grow.",
     date: "March 7, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",

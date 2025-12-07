@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, RotateCcw } from "lucide-react";
+import { MapPin, X } from "lucide-react";
 import pawGrab from "@/assets/paw-grab.png";
 import { Event } from "@/data/events";
 
@@ -150,9 +150,9 @@ export const EventCard = ({ event, index }: EventCardProps) => {
               <h3 className="text-xl font-bold text-white">{event.title}</h3>
               <button
                 onClick={() => setIsFlipped(false)}
-                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 transition-all"
+                className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/20 transition-all"
               >
-                <RotateCcw className="w-4 h-4" />
+                <X className="w-3 h-3" />
               </button>
             </div>
 
