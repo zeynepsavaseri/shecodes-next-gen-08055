@@ -258,21 +258,21 @@ export const SponsorsSection = () => {
           </div>
 
           {/* Desktop: Masonry-style staggered layout */}
-          <div className="hidden md:flex flex-wrap justify-center gap-4 max-w-7xl mx-auto">
+          <div className="hidden md:flex flex-wrap justify-center gap-2 max-w-7xl mx-auto pb-8">
             {partners.map((partner, index) => {
               // Define varied sizes - highly disproportional
               const sizeConfigs = [
-                { width: 'w-72', height: 'h-56', offset: 'mt-8' },      // wide medium, offset down
-                { width: 'w-40', height: 'h-40', offset: 'mt-0' },      // small square
-                { width: 'w-36', height: 'h-72', offset: 'mt-12' },     // narrow tall, offset
-                { width: 'w-64', height: 'h-44', offset: 'mt-4' },      // wide short
-                { width: 'w-44', height: 'h-44', offset: 'mt-16' },     // medium square, big offset
-                { width: 'w-48', height: 'h-64', offset: 'mt-2' },      // medium tall
-                { width: 'w-80', height: 'h-48', offset: 'mt-10' },     // extra wide
-                { width: 'w-36', height: 'h-36', offset: 'mt-0' },      // tiny
-                { width: 'w-56', height: 'h-56', offset: 'mt-6' },      // medium square
-                { width: 'w-40', height: 'h-52', offset: 'mt-14' },     // small tall
-                { width: 'w-52', height: 'h-40', offset: 'mt-3' },      // wide short
+                { width: 'w-64', height: 'h-48', offset: 'mt-6' },
+                { width: 'w-36', height: 'h-36', offset: 'mt-0' },
+                { width: 'w-32', height: 'h-56', offset: 'mt-10' },
+                { width: 'w-56', height: 'h-40', offset: 'mt-3' },
+                { width: 'w-40', height: 'h-40', offset: 'mt-12' },
+                { width: 'w-44', height: 'h-52', offset: 'mt-2' },
+                { width: 'w-72', height: 'h-44', offset: 'mt-8' },
+                { width: 'w-32', height: 'h-32', offset: 'mt-0' },
+                { width: 'w-48', height: 'h-48', offset: 'mt-5' },
+                { width: 'w-36', height: 'h-44', offset: 'mt-10' },
+                { width: 'w-44', height: 'h-36', offset: 'mt-2' },
               ];
               const config = sizeConfigs[index % sizeConfigs.length];
               const isLarge = parseInt(config.height.replace(/\D/g, '')) > 50;
@@ -341,16 +341,9 @@ export const SponsorsSection = () => {
 
                     {/* Partner Info */}
                     <div className="mt-auto">
-                      <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground ${
-                        isLarge ? 'text-base mb-1' : 'text-xs mb-1'
-                      }`}>
+                      <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground text-xs`}>
                         {partner.name}
                       </h3>
-                      <p className={`font-mono text-muted-foreground uppercase tracking-wider ${
-                        isLarge ? 'text-[9px]' : 'text-[8px]'
-                      }`}>
-                        {partner.subtitle}
-                      </p>
                     </div>
                   </CardContent>
 
