@@ -4,6 +4,7 @@ import { MissionSection } from "@/components/MissionSection";
 import { EventsSection } from "@/components/EventsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { SponsorsSection } from "@/components/SponsorsSection";
+import { AlgorithmRhythmGame } from "@/components/AlgorithmRhythmGame";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <section id="events"><EventsSection /></section>
       <section id="testimonials"><TestimonialsSection /></section>
       <section id="sponsors"><SponsorsSection /></section>
+      <section id="game"><AlgorithmRhythmGame /></section>
       <Footer />
     </main>
   );
