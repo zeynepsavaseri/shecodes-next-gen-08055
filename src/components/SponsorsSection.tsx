@@ -311,9 +311,9 @@ export const SponsorsSection = () => {
                       </div>
                     )}
 
-                  <CardContent className={`flex flex-col h-full ${isLarge ? 'p-6' : 'p-4'}`}>
+                  <CardContent className="flex flex-col h-full p-3 overflow-visible">
                     {/* Category Badge */}
-                    <div className="mb-3">
+                    <div className="mb-2 flex-shrink-0">
                       <span 
                         className="text-[8px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border inline-block"
                         style={{
@@ -328,20 +328,18 @@ export const SponsorsSection = () => {
 
                     {/* Logo */}
                     {partner.logo && (
-                      <div className={`flex items-center justify-center flex-1 ${isLarge ? 'mb-4' : 'mb-2'}`}>
+                      <div className="flex items-center justify-center flex-1 min-h-0 mb-2">
                         <img 
                           src={partner.logo} 
                           alt={partner.name} 
-                          className={`max-w-full object-contain transition-transform duration-300 group-hover:scale-110 ${
-                            isLarge ? (partner.biggerLogo ? 'max-h-48' : 'max-h-32') : (partner.biggerLogo ? 'max-h-36' : 'max-h-20')
-                          }`}
+                          className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     )}
 
                     {/* Partner Info */}
-                    <div className="mt-auto">
-                      <h3 className={`font-mono font-bold uppercase tracking-wide text-foreground text-xs`}>
+                    <div className="flex-shrink-0 pt-1">
+                      <h3 className="font-mono font-bold uppercase tracking-wide text-foreground text-[10px] leading-tight truncate">
                         {partner.name}
                       </h3>
                     </div>
