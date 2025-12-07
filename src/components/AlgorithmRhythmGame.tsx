@@ -109,38 +109,38 @@ export const AlgorithmRhythmGame = () => {
   }, [sequence, gameState, showSequence]);
 
   return (
-    <section className="py-20 px-4 bg-background">
-      <div className="max-w-lg mx-auto">
+    <section className="py-12 px-4 bg-background">
+      <div className="max-w-xs mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-2 tracking-tight">
+        <div className="text-center mb-4">
+          <h2 className="text-xl font-bold text-foreground mb-1">
             Algorithm Rhythm
           </h2>
-          <p className="text-foreground/50 text-sm">
-            Repeat the pattern to score points
+          <p className="text-foreground/50 text-xs">
+            Repeat the pattern • Level {sequence.length || 1}
           </p>
         </div>
 
         {/* Score Display */}
-        <div className="flex justify-center gap-8 mb-6">
+        <div className="flex justify-center gap-6 mb-4">
           <div className="text-center">
-            <div className="text-xs font-medium uppercase tracking-wider text-foreground/40 mb-1">
+            <div className="text-[10px] font-medium uppercase tracking-wider text-foreground/40">
               Score
             </div>
-            <div className="text-3xl font-black text-foreground">{score}</div>
+            <div className="text-xl font-bold text-foreground">{score}</div>
           </div>
           <div className="text-center">
-            <div className="text-xs font-medium uppercase tracking-wider text-foreground/40 mb-1">
+            <div className="text-[10px] font-medium uppercase tracking-wider text-foreground/40">
               Best
             </div>
-            <div className="text-3xl font-black text-primary">{bestScore}</div>
+            <div className="text-xl font-bold text-primary">{bestScore}</div>
           </div>
         </div>
 
         {/* Message */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4">
           <span 
-            className={`inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+            className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all duration-300 ${
               gameState === "gameover" 
                 ? "bg-red-500/20 text-red-400" 
                 : gameState === "playing"
@@ -153,7 +153,7 @@ export const AlgorithmRhythmGame = () => {
         </div>
 
         {/* Game Grid */}
-        <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-foreground/5 border border-foreground/10">
+        <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-foreground/5 border border-foreground/10">
           {[...Array(9)].map((_, index) => {
             const isActive = activeTile === index;
             const color = TILE_COLORS[index];
@@ -164,7 +164,7 @@ export const AlgorithmRhythmGame = () => {
                 onClick={() => handleTileClick(index)}
                 disabled={gameState === "showing"}
                 className={`
-                  aspect-square rounded-xl transition-all duration-150 cursor-pointer
+                  aspect-square rounded-lg transition-all duration-150 cursor-pointer
                   border border-white/10
                   ${gameState === "showing" ? "cursor-not-allowed" : "hover:scale-[1.02] active:scale-95"}
                 `}
@@ -173,9 +173,9 @@ export const AlgorithmRhythmGame = () => {
                     ? `hsl(${color})` 
                     : `hsl(${color} / 0.15)`,
                   boxShadow: isActive 
-                    ? `0 0 30px hsl(${color} / 0.6), inset 0 0 20px hsl(${color} / 0.3)` 
+                    ? `0 0 20px hsl(${color} / 0.5)` 
                     : `inset 0 1px 0 rgba(255,255,255,0.05)`,
-                  transform: isActive ? "scale(1.05)" : undefined,
+                  transform: isActive ? "scale(1.03)" : undefined,
                 }}
               />
             );
@@ -183,12 +183,12 @@ export const AlgorithmRhythmGame = () => {
         </div>
 
         {/* Instructions */}
-        <div className="mt-6 text-center text-foreground/30 text-xs">
+        <div className="mt-4 text-center text-foreground/30 text-[10px]">
           {gameState === "idle" && sequence.length === 0 && (
-            <span>Tap any tile to start the game</span>
+            <span>Tap any tile to start</span>
           )}
           {gameState === "gameover" && (
-            <span>You reached level {score}! Tap to try again.</span>
+            <span>Level {score} reached! Tap to retry</span>
           )}
         </div>
       </div>
