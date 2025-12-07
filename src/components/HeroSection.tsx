@@ -44,19 +44,19 @@ export const HeroSection = () => {
           </div>
 
           {/* Scrolling Banner */}
-          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-foreground py-4">
-            <div className="flex animate-scroll whitespace-nowrap">
+          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-foreground py-5 sm:py-6">
+            <div className="flex animate-scroll-fast whitespace-nowrap">
               {/* Multiple repetitions for seamless infinite scroll */}
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="flex items-center gap-8 px-8">
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">BELONG.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMPOWER.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">FLOURISH.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">INSPIRE.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">ELEVATE.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">RISE.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">EMBRACE.</span>
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background uppercase">SUPPORT.</span>
+                <div key={i} className="flex items-center gap-10 sm:gap-12 px-10 sm:px-12">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">BELONG.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">EMPOWER.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">FLOURISH.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">INSPIRE.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">ELEVATE.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">RISE.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">EMBRACE.</span>
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-background uppercase">SUPPORT.</span>
                 </div>
               ))}
             </div>
