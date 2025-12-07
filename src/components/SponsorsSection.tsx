@@ -51,12 +51,12 @@ export const SponsorsSection = () => {
       biggerLogo: false
     },
     { 
-      name: "TF", 
+      name: "Tech Face", 
       subtitle: "INNOVATION PARTNER", 
-      category: "TECH", 
-      categoryColor: "197 71% 52%",
+      category: "COMMUNITY", 
+      categoryColor: "280 65% 60%",
       logo: "/tf-logo.png",
-      link: "https://techface.ch/de/?gad_source=1&gad_campaignid=16873970615&gbraid=0AAAAAB3xNuJ4bFerdMERx2LRm0iSW9DN2&gclid=CjwKCAiAraXJBhBJEiwAjz7MZZ8ZaL3qesfWDzlIgSBW_-Y73fXyQex03m4QrgurNeTR6jzaTqQcMhoCcLYQAvD_BwE",
+      link: "https://techface.ch",
       biggerLogo: false
     },
     
