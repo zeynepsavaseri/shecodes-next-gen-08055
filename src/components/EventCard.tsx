@@ -70,69 +70,77 @@ export const EventCard = ({ event, index }: EventCardProps) => {
       >
         {/* Front of Card */}
         <div 
-          className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0c1222] hover:border-white/20 transition-all duration-300"
+          className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0d1424] to-[#0a0f1a] shadow-2xl shadow-black/40 hover:border-white/15 hover:shadow-black/50 transition-all duration-300"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <div className="flex flex-col md:flex-row">
+          {/* Subtle inner glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+          
+          <div className="relative flex flex-col md:flex-row">
             {/* Left Section */}
             <div className="flex-1 p-6 sm:p-8">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-3 mb-4">
+                {/* Glassy badge */}
                 <span 
-                  className="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider"
-                  style={{ backgroundColor: `hsl(${accentColor})`, color: 'white' }}
+                  className="px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider backdrop-blur-md border border-white/10 shadow-lg"
+                  style={{ 
+                    background: `linear-gradient(135deg, hsl(${accentColor} / 0.9), hsl(${accentColor} / 0.7))`,
+                    boxShadow: `0 4px 15px hsl(${accentColor} / 0.3), inset 0 1px 0 rgba(255,255,255,0.2)`,
+                    color: 'white'
+                  }}
                 >
                   {getEventTypeLabel(event.eventType)}
                 </span>
-                <span className="text-white/50 text-sm flex items-center gap-1">
-                  <MapPin className="w-3 h-3" />
+                <span className="text-white/40 text-sm flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5" />
                   {event.location}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-1">{event.title}</h3>
-              <p className="text-base italic mb-3" style={{ color: `hsl(${accentColor})` }}>
+              <h3 className="text-2xl sm:text-[1.7rem] font-bold text-white mb-2 tracking-tight">{event.title}</h3>
+              <p className="text-base italic text-white/50 mb-4" style={{ color: `hsl(${accentColor} / 0.8)` }}>
                 "{event.subtitle}"
               </p>
 
               <button
                 onClick={() => setIsFlipped(true)}
-                className="text-white/50 text-sm hover:text-white transition-colors"
+                className="text-white/40 text-sm hover:text-white/70 transition-colors"
               >
                 Learn more →
               </button>
             </div>
 
             {/* Separator */}
-            <div className="hidden md:flex flex-col items-center py-4">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0c1222] border-2 border-white/20" />
-              <div className="flex-1 border-l-2 border-dashed border-white/20" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0c1222] border-2 border-white/20" />
+            <div className="hidden md:flex flex-col items-center py-6">
+              <div className="w-3 h-3 rounded-full bg-[#0a0f1a] border border-white/10 shadow-inner" />
+              <div className="flex-1 border-l border-dashed border-white/10" />
+              <div className="w-3 h-3 rounded-full bg-[#0a0f1a] border border-white/10 shadow-inner" />
             </div>
 
             <div className="md:hidden flex items-center px-6">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0c1222] border-2 border-white/20" />
-              <div className="flex-1 border-t-2 border-dashed border-white/20" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0c1222] border-2 border-white/20" />
+              <div className="w-3 h-3 rounded-full bg-[#0a0f1a] border border-white/10" />
+              <div className="flex-1 border-t border-dashed border-white/10" />
+              <div className="w-3 h-3 rounded-full bg-[#0a0f1a] border border-white/10" />
             </div>
 
             {/* Right Section */}
-            <div className="relative w-full md:w-52 p-6 flex flex-col items-center justify-center text-center">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/40 mb-2">
+            <div className="relative w-full md:w-56 p-6 sm:p-8 flex flex-col items-center justify-center text-center">
+              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/30 mb-2">
                 Event Date
               </span>
-              <span className="text-3xl font-black text-white mb-0.5">{month} {day}</span>
-              <span className="text-white/40 text-xs mb-4">{year}</span>
+              <span className="text-4xl font-black text-white tracking-tight mb-0.5">{month} {day}</span>
+              <span className="text-white/30 text-sm mb-5">{year}</span>
 
               <button
                 onClick={handleRegisterClick}
-                className="w-full py-2.5 rounded-lg border-2 border-white text-white font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-[#0c1222] transition-all cursor-pointer"
+                className="w-full py-3 rounded-xl bg-white/[0.03] border border-white/20 text-white font-semibold text-sm tracking-wide hover:bg-white hover:text-[#0a0f1a] transition-all duration-300 cursor-pointer backdrop-blur-sm"
               >
                 Register Now
               </button>
 
-              <div className="flex items-end justify-center gap-[2px] mt-4 h-6 opacity-20">
-                {[...Array(18)].map((_, i) => (
-                  <div key={i} className="w-[1.5px] bg-white" style={{ height: `${10 + (i % 3) * 6}px` }} />
+              <div className="flex items-end justify-center gap-[2px] mt-5 h-7 opacity-15">
+                {[...Array(20)].map((_, i) => (
+                  <div key={i} className="w-[1.5px] bg-white rounded-full" style={{ height: `${12 + (i % 3) * 5}px` }} />
                 ))}
               </div>
             </div>
@@ -141,28 +149,31 @@ export const EventCard = ({ event, index }: EventCardProps) => {
 
         {/* Back of Card */}
         <div 
-          className="absolute inset-0 overflow-hidden rounded-xl border border-white/10 bg-[#0c1222]"
+          className="absolute inset-0 overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0d1424] to-[#0a0f1a] shadow-2xl"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <div className="h-full p-6 sm:p-8 flex flex-col">
+          {/* Subtle inner glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+          
+          <div className="relative h-full p-6 sm:p-8 flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold text-white">{event.title}</h3>
+              <h3 className="text-xl font-bold text-white tracking-tight">{event.title}</h3>
               <button
                 onClick={() => setIsFlipped(false)}
-                className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/20 transition-all"
+                className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
               >
-                <X className="w-3 h-3" />
+                <X className="w-3.5 h-3.5" />
               </button>
             </div>
 
             {/* Description */}
-            <p className="text-white/70 text-sm leading-relaxed flex-1">
+            <p className="text-white/60 text-sm leading-relaxed flex-1">
               {event.description.overview}
             </p>
 
             {/* Footer */}
-            <div className="pt-4 border-t border-white/10 text-white/40 text-xs">
+            <div className="pt-4 border-t border-white/[0.06] text-white/30 text-xs">
               {event.location} • {month} {day}, {year}
             </div>
           </div>
