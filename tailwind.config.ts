@@ -147,6 +147,10 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-25%)" },
         },
+        "scroll-fast": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-25%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -164,6 +168,7 @@ export default {
         "pixel-pop": "pixel-pop 3s ease-in-out infinite",
         "pixel-drift": "pixel-drift 4s ease-in-out infinite",
         "scroll": "scroll 30s linear infinite",
+        "scroll-fast": "scroll-fast 18s linear infinite",
       },
     },
   },
