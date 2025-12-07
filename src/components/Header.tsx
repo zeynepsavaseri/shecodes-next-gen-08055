@@ -28,9 +28,10 @@ export const Header = () => {
 
   const navItems = [
     { label: "Join our events", id: "events", bright: true },
-    { label: "Why partner with us", id: "why-partner", bright: true },
+    { label: "Partner up with us", id: "why-partner", bright: true },
     { label: "Values", id: "mission", bright: false },
     { label: "Testimonials", id: "testimonials", bright: false },
+    { label: "The Ecosystem", id: "sponsors", bright: false },
   ];
 
   return (
