@@ -43,6 +43,20 @@ export const HeroSection = () => {
             </p>
           </div>
 
+          {/* Partner CTA */}
+          <div className="pt-2">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="font-mono font-bold uppercase text-xs sm:text-sm tracking-wider"
+            >
+              <a href="https://tally.so/r/obEMYM" target="_blank" rel="noopener noreferrer">
+                Partner Up with Us
+              </a>
+            </Button>
+          </div>
+
           {/* Scrolling Banner */}
           <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-foreground py-5 sm:py-6">
             <div className="flex animate-scroll-fast whitespace-nowrap">
