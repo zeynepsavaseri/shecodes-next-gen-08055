@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Target, ArrowRight } from "lucide-react";
-import pawGrab from "@/assets/paw-grab.png";
+import { MapPin } from "lucide-react";
 import { Event } from "@/data/events";
 
 interface EventCardProps {
@@ -9,197 +7,148 @@ interface EventCardProps {
 }
 
 export const EventCard = ({ event, index }: EventCardProps) => {
-  const [isGrabbing, setIsGrabbing] = useState(false);
   const accentColor = event.partner?.accentColor || "280 65% 60%";
   
-  const capacityMatch = event.participants.match(/(\d+)/);
-  const capacity = capacityMatch ? capacityMatch[1] : "∞";
-
   const getEventTypeLabel = (type: string) => {
     switch (type) {
-      case "hackathon": return "Hackathon";
-      case "meetup": return "Meetup";
-      case "workshop": return "Workshop";
-      case "conference": return "Conference";
-      default: return "Event";
+      case "hackathon": return "HACKATHON";
+      case "meetup": return "MEETUP";
+      case "workshop": return "WORKSHOP";
+      case "conference": return "CONFERENCE";
+      default: return "EVENT";
     }
   };
 
-  const handleTicketGrab = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsGrabbing(true);
-    
-    // Navigate after animation completes
-    setTimeout(() => {
-      if (event.registrationUrl) {
-        window.open(event.registrationUrl, '_blank');
-      }
-      setIsGrabbing(false);
-    }, 800);
+  const getInitial = () => {
+    return event.title.charAt(0).toUpperCase();
   };
+
+  // Parse date to get formatted parts
+  const parseDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    const month = date.toLocaleDateString('en-US', { month: 'short' });
+    const day = date.getDate().toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return { month, day, year };
+  };
+
+  const { month, day, year } = parseDate(event.date);
 
   return (
     <div
-      className="group relative overflow-hidden rounded-lg transition-all duration-300 animate-fade-in hover:-translate-y-2"
-      style={{ 
-        animationDelay: `${index * 0.1}s`,
-      }}
+      className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#0c1222] transition-all duration-300 animate-fade-in hover:border-white/20"
+      style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="flex flex-col md:flex-row">
-        {/* Left Section - Dark Background */}
-        <div 
-          className="relative flex-1 p-6 sm:p-8 md:p-10 bg-[#0f1729] text-white overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
-        >
-          {/* Top Section */}
-          <div className="flex items-start justify-end mb-8">
-            <Target className="w-6 h-6 text-white/60" strokeWidth={1.5} />
-          </div>
-
-          {/* Title Section */}
-          <div className="mb-12">
-            {/* Event Type Tag */}
+        {/* Left Section - Event Info */}
+        <div className="flex-1 p-6 sm:p-8">
+          <div className="flex items-start gap-5">
+            {/* Icon */}
             <div 
-              className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
+              className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl font-bold"
               style={{ 
-                backgroundColor: `hsl(${accentColor} / 0.2)`,
-                color: `hsl(${accentColor})`
+                background: `linear-gradient(135deg, hsl(${accentColor}), hsl(${accentColor} / 0.6))`,
               }}
             >
-              {getEventTypeLabel(event.eventType)}
-            </div>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 text-white uppercase tracking-tight leading-none">
-              {event.title}
-            </h3>
-            <p 
-              className="text-lg sm:text-xl font-serif italic"
-              style={{ color: `hsl(${accentColor})` }}
-            >
-              "{event.subtitle}"
-            </p>
-          </div>
-
-          {/* Bottom Section - Coordinates & Timeline */}
-          <div className="grid grid-cols-2 gap-8">
-            <div>
-              <div className="text-xs font-mono text-white/50 uppercase tracking-wider mb-2">
-                Coordinates
-              </div>
-              <div className="text-base sm:text-lg font-medium">
-                {event.location}
-              </div>
-            </div>
-            <div>
-              <div className="text-xs font-mono text-white/50 uppercase tracking-wider mb-2">
-                Timeline
-              </div>
-              <div className="text-base sm:text-lg font-medium">
-                {event.date.split(',')[0]}
-              </div>
-            </div>
-          </div>
-
-          {/* Decorative corner accent */}
-          <div 
-            className="absolute top-0 right-0 w-32 h-32 opacity-10"
-            style={{
-              background: `radial-gradient(circle at top right, hsl(${accentColor}), transparent 70%)`,
-            }}
-          />
-        </div>
-
-        {/* Right Section - Ticket Stub */}
-        <div 
-          className={`relative w-full md:w-64 bg-white text-black p-6 flex flex-col items-center justify-between rounded-b-lg md:rounded-r-lg md:rounded-bl-none border-l-2 border-dashed border-gray-300 group-hover:bg-gray-50 transition-all duration-300 ${
-            isGrabbing ? 'animate-ticket-grab' : ''
-          }`}
-        >
-          {/* Hand grabbing animation */}
-          {isGrabbing && (
-            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-              <img src={pawGrab} alt="Paw grab" className="w-16 h-16 animate-hand-grab" />
-            </div>
-          )}
-
-          {/* Top */}
-          <div className="w-full">
-            <div className="flex items-center justify-between mb-6">
-              <span className="text-xs font-bold uppercase tracking-wider">Sign Up</span>
-              <div 
-                className="w-3 h-3 rounded-full animate-pulse"
-                style={{ backgroundColor: `hsl(${accentColor})` }}
-              />
+              {getInitial()}
             </div>
 
-            {/* Capacity Number */}
-            <div className="text-center mb-4">
-              <div className="text-5xl sm:text-6xl font-black leading-none" style={{ color: `hsl(${accentColor})` }}>
-                {capacity}
-              </div>
-              <div className="border-t-2 border-black mt-4 pt-2">
-                <span className="text-xs font-mono uppercase tracking-widest">
-                  {event.participants.includes("Limited") ? "Limited Spots" : "Capacity Limit"}
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              {/* Tags */}
+              <div className="flex items-center gap-3 mb-3">
+                <span 
+                  className="px-3 py-1 rounded text-xs font-bold uppercase tracking-wider"
+                  style={{ 
+                    backgroundColor: `hsl(${accentColor})`,
+                    color: 'white'
+                  }}
+                >
+                  {getEventTypeLabel(event.eventType)}
+                </span>
+                <span className="text-white/50 text-sm flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {event.location}
                 </span>
               </div>
+
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                {event.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-white/60 text-sm sm:text-base line-clamp-2">
+                {event.description.overview}
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* CTA Button */}
-          <div className="w-full">
-            <button 
-              onClick={handleTicketGrab}
-              className="w-full py-3 px-4 rounded-md text-white font-bold text-sm uppercase tracking-wider text-center transition-all hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
-              style={{ backgroundColor: `hsl(${accentColor})` }}
-            >
-              <span>Register Now</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+        {/* Dashed Separator with Dots */}
+        <div className="hidden md:flex flex-col items-center py-6 relative">
+          {/* Top dot */}
+          <div className="w-3 h-3 rounded-full bg-[#0c1222] border-2 border-white/20 -mt-3" />
+          
+          {/* Dashed line */}
+          <div className="flex-1 border-l-2 border-dashed border-white/20" />
+          
+          {/* Middle dot */}
+          <div className="w-3 h-3 rounded-full bg-[#0c1222] border-2 border-white/20 my-2" />
+          
+          {/* Dashed line */}
+          <div className="flex-1 border-l-2 border-dashed border-white/20" />
+          
+          {/* Bottom dot */}
+          <div className="w-3 h-3 rounded-full bg-[#0c1222] border-2 border-white/20 -mb-3" />
+        </div>
+
+        {/* Mobile separator */}
+        <div className="md:hidden flex items-center px-6">
+          <div className="w-3 h-3 rounded-full bg-[#0c1222] border-2 border-white/20" />
+          <div className="flex-1 border-t-2 border-dashed border-white/20" />
+          <div className="w-3 h-3 rounded-full bg-[#0c1222] border-2 border-white/20" />
+        </div>
+
+        {/* Right Section - Date & Register */}
+        <div className="w-full md:w-56 p-6 sm:p-8 flex flex-col items-center justify-center text-center">
+          {/* Event Date Label */}
+          <span className="text-xs font-medium uppercase tracking-widest text-white/40 mb-2">
+            Event Date
+          </span>
+
+          {/* Date */}
+          <div className="mb-1">
+            <span className="text-3xl sm:text-4xl font-bold text-white">
+              {month} {day}
+            </span>
+          </div>
+          <span className="text-white/50 text-sm mb-5">
+            {year}
+          </span>
+
+          {/* Register Button */}
+          <a
+            href={event.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full px-6 py-3 rounded-lg border-2 border-white/80 text-white font-semibold text-sm uppercase tracking-wider hover:bg-white hover:text-[#0c1222] transition-all duration-300"
+          >
+            Register Now
+          </a>
+
+          {/* Barcode decoration */}
+          <div className="flex items-end justify-center gap-[2px] mt-5 h-8 opacity-30">
+            {[...Array(20)].map((_, i) => (
+              <div 
+                key={i} 
+                className="w-[2px] bg-white"
+                style={{ height: `${12 + Math.random() * 16}px` }}
+              />
+            ))}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes ticket-grab {
-          0% {
-            transform: translateX(0) rotate(0deg);
-            opacity: 1;
-          }
-          50% {
-            transform: translateX(20px) rotate(-5deg);
-            opacity: 1;
-          }
-          100% {
-            transform: translateX(150%) rotate(-15deg);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes hand-grab {
-          0% {
-            transform: translateX(-100px) rotate(0deg) scale(0.8);
-            opacity: 0;
-          }
-          30% {
-            transform: translateX(0) rotate(10deg) scale(1);
-            opacity: 1;
-          }
-          50% {
-            transform: translateX(0) rotate(-5deg) scale(1.1);
-            opacity: 1;
-          }
-          100% {
-            transform: translateX(150px) rotate(-15deg) scale(1);
-            opacity: 0;
-          }
-        }
-        
-        .animate-ticket-grab {
-          animation: ticket-grab 0.8s ease-in-out forwards;
-        }
-        
-        .animate-hand-grab {
-          animation: hand-grab 0.8s ease-in-out forwards;
-        }
-      `}</style>
     </div>
   );
 };
