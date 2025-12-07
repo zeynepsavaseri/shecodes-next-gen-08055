@@ -106,7 +106,7 @@ export const SponsorsSection = () => {
       categoryColor: "38 92% 50%",
       logo: "/mad-logo.png",
       link: "https://www.mad-drinks.com/",
-      biggerLogo: false
+      biggerLogo: true
     },
     { 
       name: "Cosmic Dealer", 
@@ -328,11 +328,13 @@ export const SponsorsSection = () => {
 
                     {/* Logo */}
                     {partner.logo && (
-                      <div className="flex items-center justify-center flex-1 min-h-0 mb-2">
+                      <div className={`flex items-center justify-center flex-1 min-h-0 mb-2 ${partner.biggerLogo ? 'p-1' : 'p-2'}`}>
                         <img 
                           src={partner.logo} 
                           alt={partner.name} 
-                          className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                          className={`object-contain transition-transform duration-300 group-hover:scale-110 ${
+                            partner.biggerLogo ? 'max-w-[90%] max-h-[90%] scale-125' : 'max-w-full max-h-full'
+                          }`}
                         />
                       </div>
                     )}
