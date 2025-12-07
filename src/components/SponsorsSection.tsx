@@ -257,38 +257,38 @@ export const SponsorsSection = () => {
             </p>
           </div>
 
-          {/* Desktop: Grid layout */}
-          <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
+          {/* Desktop: Masonry-style staggered layout */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
-              // Define varied sizes - highly disproportional mix
-              const sizePatterns = [
-                'col-span-3 row-span-2', // extra wide tall
-                'col-span-1 row-span-1', // tiny
-                'col-span-1 row-span-3', // super tall narrow
-                'col-span-2 row-span-1', // wide short
-                'col-span-1 row-span-1', // tiny
-                'col-span-1 row-span-2', // tall narrow
-                'col-span-3 row-span-1', // extra wide short
-                'col-span-1 row-span-1', // tiny
-                'col-span-2 row-span-2', // medium square
-                'col-span-1 row-span-1', // tiny
-                'col-span-1 row-span-2', // tall narrow
+              // Define varied sizes - highly disproportional
+              const sizeConfigs = [
+                { width: 'w-72', height: 'h-56', offset: 'mt-8' },      // wide medium, offset down
+                { width: 'w-40', height: 'h-40', offset: 'mt-0' },      // small square
+                { width: 'w-36', height: 'h-72', offset: 'mt-12' },     // narrow tall, offset
+                { width: 'w-64', height: 'h-44', offset: 'mt-4' },      // wide short
+                { width: 'w-44', height: 'h-44', offset: 'mt-16' },     // medium square, big offset
+                { width: 'w-48', height: 'h-64', offset: 'mt-2' },      // medium tall
+                { width: 'w-80', height: 'h-48', offset: 'mt-10' },     // extra wide
+                { width: 'w-36', height: 'h-36', offset: 'mt-0' },      // tiny
+                { width: 'w-56', height: 'h-56', offset: 'mt-6' },      // medium square
+                { width: 'w-40', height: 'h-52', offset: 'mt-14' },     // small tall
+                { width: 'w-52', height: 'h-40', offset: 'mt-3' },      // wide short
               ];
-              const sizeClass = sizePatterns[index % sizePatterns.length];
-              const isLarge = sizeClass.includes('row-span-2');
+              const config = sizeConfigs[index % sizeConfigs.length];
+              const isLarge = parseInt(config.height.replace(/\D/g, '')) > 50;
               
               const CardWrapper = partner.link ? 'a' : 'div';
               const cardProps = partner.link ? {
                 href: partner.link,
                 target: "_blank",
                 rel: "noopener noreferrer",
-                className: "block"
-              } : {};
+                className: `block ${config.width} ${config.height} ${config.offset}`
+              } : { className: `${config.width} ${config.height} ${config.offset}` };
               
               return (
                 <CardWrapper key={index} {...cardProps}>
                   <Card
-                    className={`group relative bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-1 cursor-pointer ${sizeClass}`}
+                    className="group relative w-full h-full bg-card/60 backdrop-blur-sm border border-border/60 hover:border-primary/60 transition-all duration-300 overflow-hidden hover:-translate-y-2 cursor-pointer"
                     style={{
                       animationDelay: `${index * 0.05}s`,
                     }}
