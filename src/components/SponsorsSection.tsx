@@ -260,18 +260,18 @@ export const SponsorsSection = () => {
           {/* Desktop: Grid layout */}
           <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
-              // Define varied sizes - more disproportional mix
+              // Define varied sizes - highly disproportional mix
               const sizePatterns = [
-                'col-span-1 row-span-2', // tall narrow
+                'col-span-3 row-span-2', // extra wide tall
+                'col-span-1 row-span-1', // tiny
+                'col-span-1 row-span-3', // super tall narrow
                 'col-span-2 row-span-1', // wide short
-                'col-span-1 row-span-1', // tiny square
+                'col-span-1 row-span-1', // tiny
+                'col-span-1 row-span-2', // tall narrow
+                'col-span-3 row-span-1', // extra wide short
+                'col-span-1 row-span-1', // tiny
                 'col-span-2 row-span-2', // medium square
-                'col-span-1 row-span-1', // tiny square
-                'col-span-1 row-span-2', // tall narrow
-                'col-span-2 row-span-1', // wide short
-                'col-span-1 row-span-1', // tiny square
-                'col-span-1 row-span-1', // tiny square
-                'col-span-2 row-span-1', // wide short
+                'col-span-1 row-span-1', // tiny
                 'col-span-1 row-span-2', // tall narrow
               ];
               const sizeClass = sizePatterns[index % sizePatterns.length];
