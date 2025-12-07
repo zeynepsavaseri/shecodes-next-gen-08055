@@ -260,20 +260,19 @@ export const SponsorsSection = () => {
           {/* Desktop: Grid layout */}
           <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 max-w-7xl mx-auto">
             {partners.map((partner, index) => {
-              // Define varied sizes like lego pieces - different combinations
+              // Define varied sizes - more disproportional mix
               const sizePatterns = [
-                'col-span-2 row-span-2', // 2x2 big square
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-2 row-span-1', // 2x1 wide rectangle
-                'col-span-1 row-span-2', // 1x2 tall rectangle
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-2 row-span-1', // 2x1 wide rectangle
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-1 row-span-2', // 1x2 tall rectangle
-                'col-span-2 row-span-2', // 2x2 big square
-                'col-span-1 row-span-1', // 1x1 small square
-                'col-span-2 row-span-1', // 2x1 wide rectangle
-                'col-span-1 row-span-1', // 1x1 small square
+                'col-span-1 row-span-2', // tall narrow
+                'col-span-2 row-span-1', // wide short
+                'col-span-1 row-span-1', // tiny square
+                'col-span-2 row-span-2', // medium square
+                'col-span-1 row-span-1', // tiny square
+                'col-span-1 row-span-2', // tall narrow
+                'col-span-2 row-span-1', // wide short
+                'col-span-1 row-span-1', // tiny square
+                'col-span-1 row-span-1', // tiny square
+                'col-span-2 row-span-1', // wide short
+                'col-span-1 row-span-2', // tall narrow
               ];
               const sizeClass = sizePatterns[index % sizePatterns.length];
               const isLarge = sizeClass.includes('row-span-2');
