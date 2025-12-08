@@ -1,4 +1,4 @@
-import { Copy, Linkedin, Instagram, ArrowRight } from "lucide-react";
+import { Copy, Linkedin, Instagram, ArrowRight, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -67,6 +67,15 @@ export const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="w-6 h-6" />
+              </a>
+              <a 
+                href="https://discord.gg/sFrQnZ76" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-foreground hover:text-primary transition-colors"
+                aria-label="Discord"
+              >
+                <MessageCircle className="w-6 h-6" />
               </a>
             </div>
           </div>
