@@ -68,15 +68,6 @@ export const Footer = () => {
               >
                 <Instagram className="w-6 h-6" />
               </a>
-              <a 
-                href="https://discord.gg/sFrQnZ76" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-foreground hover:text-primary transition-colors"
-                aria-label="Discord"
-              >
-                <MessageCircle className="w-6 h-6" />
-              </a>
             </div>
           </div>
 
@@ -85,15 +76,26 @@ export const Footer = () => {
             <h4 className="font-mono font-bold text-sm mb-6 uppercase tracking-wider text-foreground">
               COMMUNITY
             </h4>
-            <a 
-              href={whatsappGroupLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-base text-foreground hover:text-primary transition-colors border-b border-foreground hover:border-primary pb-1"
-            >
-              Join WhatsApp Group
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            <div className="flex flex-col gap-3">
+              <a 
+                href={whatsappGroupLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-base text-foreground hover:text-primary transition-colors border-b border-foreground hover:border-primary pb-1 w-fit"
+              >
+                Join WhatsApp Group
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://discord.gg/sFrQnZ76"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-base text-foreground hover:text-primary transition-colors border-b border-foreground hover:border-primary pb-1 w-fit"
+              >
+                Join Discord
+                <MessageCircle className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
         
