@@ -40,20 +40,41 @@ export const EventsSection = () => {
           ) : (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto px-2">
               {pastEvents.map((event, index) => (
-                <div
+                <a
                   key={index}
-                  className="bg-card rounded-lg shadow-card p-4 sm:p-6 border-l-2 border-primary"
+                  href={event.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-card/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 cursor-pointer"
                 >
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-foreground">{event.title}</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{event.date}</p>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-xs sm:text-sm">
-                      <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2 text-primary flex-shrink-0" />
-                      <span className="text-foreground">{event.participants}</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{event.achievements}</p>
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-xs font-mono uppercase tracking-wider text-primary/80 bg-primary/10 px-2 py-1 rounded">
+                      {event.eventType}
+                    </span>
+                    {event.partner && (
+                      <img 
+                        src={event.partner.logo} 
+                        alt={event.partner.name}
+                        className="h-6 w-auto opacity-60 group-hover:opacity-100 transition-opacity"
+                      />
+                    )}
                   </div>
-                </div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-1 text-foreground group-hover:text-primary transition-colors">{event.title}</h3>
+                  <p className="text-xs text-muted-foreground mb-3">{event.subtitle}</p>
+                  <div className="space-y-1.5 text-xs text-muted-foreground">
+                    <p>{event.date} • {event.location}</p>
+                    <div className="flex items-center gap-1.5">
+                      <Users className="w-3 h-3 text-primary" />
+                      <span>{event.participants}</span>
+                    </div>
+                    {event.achievements && (
+                      <p className="text-primary/70 italic">{event.achievements}</p>
+                    )}
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-border/30">
+                    <span className="text-xs font-mono text-primary group-hover:underline">View Event →</span>
+                  </div>
+                </a>
               ))}
             </div>
           )}
