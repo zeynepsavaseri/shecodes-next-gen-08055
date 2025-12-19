@@ -89,7 +89,7 @@ export const EventsSection = () => {
                             <img 
                               src={event.partner.logo} 
                               alt={event.partner.name}
-                              className="h-5 w-auto opacity-40"
+                              className="h-6 w-auto opacity-70 grayscale"
                             />
                           )}
                         </div>
