@@ -1,11 +1,11 @@
-import { Users, MapPin } from "lucide-react";
+import { Users, MapPin, ExternalLink } from "lucide-react";
 import { upcomingEvents, pastEvents } from "@/data/events";
 import { EventCard } from "./EventCard";
 
 export const EventsSection = () => {
   const parseDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    const month = date.toLocaleDateString('en-US', { month: 'short' });
+    const month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
     const day = date.getDate().toString().padStart(2, '0');
     const year = date.getFullYear();
     return { month, day, year };
@@ -52,109 +52,108 @@ export const EventsSection = () => {
               <p className="text-sm">No past events yet. Stay tuned!</p>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto px-2">
+            <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto px-2">
               {pastEvents.map((event, index) => {
                 const { month, day, year } = parseDate(event.date);
                 const accentColor = event.partner?.accentColor || "280 65% 60%";
                 
                 return (
-                  <a
+                  <div
                     key={index}
-                    href={event.registrationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative"
+                    className="relative w-full sm:w-72"
                   >
-                    {/* Used ticket card */}
-                    <div className="used-ticket relative overflow-hidden border border-white/[0.05] bg-[#0c1321]/70 opacity-75 hover:opacity-100 transition-all duration-300 hover:border-white/10">
-                      {/* ATTENDED stamp */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-15deg] pointer-events-none z-10">
-                        <div 
-                          className="px-4 py-1.5 border-2 rounded-sm text-xs font-black uppercase tracking-widest opacity-30"
-                          style={{ 
-                            borderColor: `hsl(${accentColor})`,
-                            color: `hsl(${accentColor})`
-                          }}
-                        >
-                          Attended
-                        </div>
+                    {/* Stub ticket design */}
+                    <div className="relative bg-gradient-to-b from-[#1a1f2e] to-[#0f1219] rounded-xl overflow-hidden border border-white/5">
+                      
+                      {/* Perforated top edge */}
+                      <div className="absolute top-0 left-0 right-0 h-3 flex justify-between px-2">
+                        {[...Array(12)].map((_, i) => (
+                          <div key={i} className="w-1.5 h-1.5 rounded-full bg-background -mt-0.5" />
+                        ))}
                       </div>
 
-                      <div className="relative flex flex-col">
-                        {/* Main content */}
-                        <div className="px-5 py-4">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span 
-                              className="px-2 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider opacity-60"
-                              style={{ 
-                                backgroundColor: `hsl(${accentColor})`,
-                                color: 'white'
-                              }}
-                            >
-                              {getEventTypeLabel(event.eventType)}
-                            </span>
-                          </div>
-
-                          <h3 className="text-base font-bold text-white/80 mb-0.5 tracking-tight group-hover:text-white transition-colors">
-                            {event.title}
-                          </h3>
-                          <p className="text-[11px] italic text-white/30 mb-2">
-                            "{event.subtitle}"
-                          </p>
-
-                          <div className="flex items-center gap-3 text-[10px] text-white/30">
-                            <span className="flex items-center gap-1">
-                              <MapPin className="w-2.5 h-2.5" />
-                              {event.location}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <Users className="w-2.5 h-2.5" />
-                              {event.participants}
-                            </span>
-                          </div>
+                      {/* Content */}
+                      <div className="pt-6 pb-4 px-5">
+                        {/* Header with badge and partner */}
+                        <div className="flex items-center justify-between mb-4">
+                          <span 
+                            className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider"
+                            style={{ 
+                              backgroundColor: `hsl(${accentColor} / 0.15)`,
+                              color: `hsl(${accentColor})`
+                            }}
+                          >
+                            {getEventTypeLabel(event.eventType)}
+                          </span>
+                          {event.partner && (
+                            <img 
+                              src={event.partner.logo} 
+                              alt={event.partner.name}
+                              className="h-5 w-auto opacity-40"
+                            />
+                          )}
                         </div>
 
-                        {/* Separator with notches */}
-                        <div className="flex items-center px-0">
-                          <div className="w-3 h-3 rounded-full bg-background -ml-1.5 border-r border-white/[0.05]" />
-                          <div className="flex-1 border-t border-dashed border-white/[0.06]" />
-                          <div className="w-3 h-3 rounded-full bg-background -mr-1.5 border-l border-white/[0.05]" />
+                        {/* Event title */}
+                        <h4 className="text-lg font-bold text-white/90 mb-1 leading-tight">
+                          {event.title}
+                        </h4>
+                        <p className="text-xs text-white/40 italic mb-4">
+                          {event.subtitle}
+                        </p>
+
+                        {/* Date display */}
+                        <div className="flex items-baseline gap-2 mb-4">
+                          <span className="text-2xl font-black text-white/70">{day}</span>
+                          <span className="text-sm font-semibold text-white/50">{month}</span>
+                          <span className="text-xs text-white/30">{year}</span>
                         </div>
 
-                        {/* Bottom section with date */}
-                        <div className="px-5 py-3 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="text-lg font-black text-white/50">{month} {day}</span>
-                            <span className="text-white/20 text-[10px]">{year}</span>
-                          </div>
-                          
-                          <span className="text-[10px] font-mono text-primary/60 group-hover:text-primary transition-colors">
-                            View →
+                        {/* Location & participants */}
+                        <div className="flex flex-col gap-1.5 text-xs text-white/40 mb-4">
+                          <span className="flex items-center gap-1.5">
+                            <MapPin className="w-3 h-3" />
+                            {event.location}
+                          </span>
+                          <span className="flex items-center gap-1.5">
+                            <Users className="w-3 h-3" />
+                            {event.participants}
                           </span>
                         </div>
 
-                        {/* Barcode */}
-                        <div className="flex items-end justify-center gap-[1px] pb-3 h-4 opacity-10">
-                          {[...Array(24)].map((_, i) => (
-                            <div key={i} className="w-[1px] bg-white rounded-full" style={{ height: `${6 + (i % 3) * 3}px` }} />
-                          ))}
+                        {/* Divider */}
+                        <div className="border-t border-dashed border-white/10 my-4" />
+
+                        {/* Footer with stamp and view link */}
+                        <div className="flex items-center justify-between">
+                          <div 
+                            className="px-3 py-1 border border-dashed rounded text-[10px] font-bold uppercase tracking-wider rotate-[-3deg]"
+                            style={{ 
+                              borderColor: `hsl(${accentColor} / 0.4)`,
+                              color: `hsl(${accentColor} / 0.5)`
+                            }}
+                          >
+                            ✓ Attended
+                          </div>
+                          
+                          {event.registrationUrl && (
+                            <a
+                              href={event.registrationUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 text-xs font-medium text-primary/70 hover:text-primary transition-colors"
+                            >
+                              View
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          )}
                         </div>
                       </div>
 
-                      {/* Subtle worn texture overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/[0.01] to-transparent pointer-events-none" />
+                      {/* Subtle noise/grain overlay */}
+                      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E')]" />
                     </div>
-
-                    <style>{`
-                      .used-ticket {
-                        border-radius: 12px;
-                        filter: saturate(0.7);
-                      }
-                      .used-ticket:hover {
-                        filter: saturate(0.9);
-                      }
-                    `}</style>
-                  </a>
+                  </div>
                 );
               })}
             </div>
