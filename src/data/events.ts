@@ -72,7 +72,8 @@ export const pastEvents: Event[] = [
       whoCanJoin: "Women-only event. Open to ambitious women looking for real connections and meaningful conversations.",
       whyJoin: "Skip the awkward small talk and dive into conversations that matter. Connect with like-minded women in a curated, intimate setting."
     },
-    achievements: "Meaningful connections made in an intimate setting"
+    achievements: "Meaningful connections made in an intimate setting",
+    registrationUrl: "https://lu.ma/lvnhywjv"
   }
 ];
 
