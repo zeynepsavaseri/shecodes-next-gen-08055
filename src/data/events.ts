@@ -24,30 +24,6 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
-    title: "Her Circles",
-    subtitle: "A Space for Honest Connection.",
-    date: "December 18, 2025",
-    location: "Ruby Mimi, Zürich",
-    participants: "Only 25 spots available",
-    eventType: "meetup",
-    partner: {
-      name: "HerCode",
-      logo: "/hercode-logo.png",
-      accentColor: "340 70% 55%" // Pink/red accent
-    },
-    description: {
-      overview: "An intimate meetup designed for meaningful conversations. Join ambitious women for curated circles and real connection at Ruby Mimi in Zürich.",
-      whatToExpect: [
-        "Curated conversation circles",
-        "Meaningful networking opportunities",
-        "A welcoming, cringe-free environment"
-      ],
-      whoCanJoin: "Women-only event. Open to ambitious women looking for real connections and meaningful conversations.",
-      whyJoin: "Skip the awkward small talk and dive into conversations that matter. Connect with like-minded women in a curated, intimate setting."
-    },
-    registrationUrl: "https://luma.com/lvnhywjv"
-  },
-  {
     title: "EY Hackathon",
     subtitle: "Build. Network. Grow.",
     date: "March 7, 2026",
@@ -73,7 +49,32 @@ export const upcomingEvents: Event[] = [
   },
 ];
 
-export const pastEvents: Event[] = [];
+export const pastEvents: Event[] = [
+  {
+    title: "Her Circles",
+    subtitle: "A Space for Honest Connection.",
+    date: "December 18, 2025",
+    location: "Ruby Mimi, Zürich",
+    participants: "25 attendees",
+    eventType: "meetup",
+    partner: {
+      name: "HerCode",
+      logo: "/hercode-logo.png",
+      accentColor: "340 70% 55%"
+    },
+    description: {
+      overview: "An intimate meetup designed for meaningful conversations. Join ambitious women for curated circles and real connection at Ruby Mimi in Zürich.",
+      whatToExpect: [
+        "Curated conversation circles",
+        "Meaningful networking opportunities",
+        "A welcoming, cringe-free environment"
+      ],
+      whoCanJoin: "Women-only event. Open to ambitious women looking for real connections and meaningful conversations.",
+      whyJoin: "Skip the awkward small talk and dive into conversations that matter. Connect with like-minded women in a curated, intimate setting."
+    },
+    achievements: "Meaningful connections made in an intimate setting"
+  }
+];
 
 export const getNextEvent = (): Event | null => {
   if (upcomingEvents.length === 0) return null;
