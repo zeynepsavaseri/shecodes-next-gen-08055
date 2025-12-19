@@ -86,11 +86,13 @@ export const EventsSection = () => {
                             {getEventTypeLabel(event.eventType)}
                           </span>
                           {event.partner && (
-                            <img 
-                              src={event.partner.logo} 
-                              alt={event.partner.name}
-                              className="h-5 w-auto opacity-40"
-                            />
+                            <div className="bg-white/90 rounded px-2 py-1">
+                              <img 
+                                src={event.partner.logo} 
+                                alt={event.partner.name}
+                                className="h-4 w-auto"
+                              />
+                            </div>
                           )}
                         </div>
 
