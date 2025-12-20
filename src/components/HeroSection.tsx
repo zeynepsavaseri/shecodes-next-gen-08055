@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { getNextEvent } from "@/data/events";
-import { AnimatedBlob } from "@/components/AnimatedBlob";
 
 export const HeroSection = () => {
   const nextEvent = getNextEvent();
@@ -14,10 +13,6 @@ export const HeroSection = () => {
   
   return (
     <section className="relative min-h-screen overflow-hidden bg-background pt-20 sm:pt-24">
-      {/* Animated Iridescent Blob Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <AnimatedBlob />
-      </div>
       <div className="container relative mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12">
           {/* Applications Open Badge */}
