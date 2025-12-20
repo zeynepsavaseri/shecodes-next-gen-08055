@@ -1,8 +1,6 @@
 import { Quote } from "lucide-react";
-import { useState } from "react";
 
 export const TestimonialsSection = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const testimonials = [
     {
@@ -91,24 +89,22 @@ export const TestimonialsSection = () => {
                       — {testimonial.author}
                     </p>
                     {testimonial.date ? (
-                      expandedIndex === index && testimonial.eventUrl ? (
-                        <a
-                          href={testimonial.eventUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[10px] sm:text-xs font-mono hover:text-foreground transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
-                          style={{ color: getAccentColor(testimonial.type) }}
-                        >
-                          {testimonial.eventDetails} →
-                        </a>
-                      ) : (
-                        <button
-                          onClick={() => setExpandedIndex(index)}
-                          className="text-[10px] sm:text-xs font-mono text-muted-foreground/70 hover:text-foreground transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
-                        >
+                      <div className="flex flex-col gap-1">
+                        <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/70">
                           {testimonial.date}
-                        </button>
-                      )
+                        </p>
+                        {testimonial.eventUrl && (
+                          <a
+                            href={testimonial.eventUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[10px] sm:text-xs font-mono hover:text-foreground transition-colors underline decoration-dotted underline-offset-2"
+                            style={{ color: getAccentColor(testimonial.type) }}
+                          >
+                            {testimonial.eventDetails} →
+                          </a>
+                        )}
+                      </div>
                     ) : (
                       <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/70">
                         {testimonial.event}
