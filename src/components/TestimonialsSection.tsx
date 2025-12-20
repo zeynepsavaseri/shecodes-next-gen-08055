@@ -8,7 +8,7 @@ export const TestimonialsSection = () => {
       author: "Letitia",
       type: "participant",
       event: "Her Circles Meetup",
-      date: "December 2024",
+      date: "December 2025",
       eventDetails: "Her Circles Meetup",
       eventUrl: "https://lu.ma/lvnhywjv"
     },
