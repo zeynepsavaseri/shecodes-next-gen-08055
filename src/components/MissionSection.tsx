@@ -24,7 +24,7 @@ export const MissionSection = () => {
     {
       icon: Brain,
       title: "Well-Being",
-      description: "Mental and physical health at the heart of everything we do.",
+      description: "A foundation where mental and physical health are at the heart of everything we do.",
       microLine: "Clarity fuels creativity."
     }
   ];
