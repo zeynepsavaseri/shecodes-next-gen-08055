@@ -3,10 +3,10 @@ import { Quote, Diamond } from "lucide-react";
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "Coming soon.",
-      author: "Participant",
+      quote: "Her-Circles is a great networking event to meet other women from different fields and backgrounds. The location, ambience and women were inspiring and I can only recommend!",
+      author: "Letitia",
       type: "participant",
-      event: "Upcoming Events"
+      event: "Her Circles Meetup"
     },
     {
       quote: "Coming soon.",
