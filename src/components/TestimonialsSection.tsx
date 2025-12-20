@@ -11,7 +11,8 @@ export const TestimonialsSection = () => {
       type: "participant",
       event: "Her Circles Meetup",
       date: "December 2024",
-      eventDetails: "Her Circles @ Longevity Hacks"
+      eventDetails: "Her Circles Meetup",
+      eventUrl: "https://lu.ma/lvnhywjv"
     },
     {
       quote: "Coming soon.",
@@ -90,12 +91,24 @@ export const TestimonialsSection = () => {
                       — {testimonial.author}
                     </p>
                     {testimonial.date ? (
-                      <button
-                        onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                        className="text-[10px] sm:text-xs font-mono text-muted-foreground/70 hover:text-foreground transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
-                      >
-                        {expandedIndex === index ? testimonial.eventDetails : testimonial.date}
-                      </button>
+                      expandedIndex === index && testimonial.eventUrl ? (
+                        <a
+                          href={testimonial.eventUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[10px] sm:text-xs font-mono hover:text-foreground transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
+                          style={{ color: getAccentColor(testimonial.type) }}
+                        >
+                          {testimonial.eventDetails} →
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => setExpandedIndex(index)}
+                          className="text-[10px] sm:text-xs font-mono text-muted-foreground/70 hover:text-foreground transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
+                        >
+                          {testimonial.date}
+                        </button>
+                      )
                     ) : (
                       <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/70">
                         {testimonial.event}
