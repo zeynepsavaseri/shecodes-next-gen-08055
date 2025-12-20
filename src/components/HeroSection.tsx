@@ -19,7 +19,7 @@ export const HeroSection = () => {
         <img 
           src={iridescentBlob}
           alt=""
-          className="absolute w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] md:w-[1000px] md:h-[1000px] object-contain opacity-40 blur-sm animate-gentle-float"
+          className="absolute w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] md:w-[1000px] md:h-[1000px] object-contain opacity-50 animate-blob-morph"
           style={{
             top: '50%',
             left: '50%',
