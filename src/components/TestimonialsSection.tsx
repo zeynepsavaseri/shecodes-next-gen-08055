@@ -1,24 +1,33 @@
-import { Quote, Diamond } from "lucide-react";
+import { Quote } from "lucide-react";
+import { useState } from "react";
 
 export const TestimonialsSection = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   const testimonials = [
     {
       quote: "Her-Circles is a great networking event to meet other women from different fields and backgrounds. The location, ambience and women were inspiring and I can only recommend!",
       author: "Letitia",
       type: "participant",
-      event: "Her Circles Meetup"
+      event: "Her Circles Meetup",
+      date: "December 2024",
+      eventDetails: "Her Circles @ Longevity Hacks"
     },
     {
       quote: "Coming soon.",
       author: "Partner",
       type: "partner",
-      event: "Upcoming Events"
+      event: "Upcoming Events",
+      date: null,
+      eventDetails: null
     },
     {
       quote: "Coming soon.",
       author: "Participant",
       type: "participant",
-      event: "Upcoming Events"
+      event: "Upcoming Events",
+      date: null,
+      eventDetails: null
     }
   ];
 
@@ -80,9 +89,18 @@ export const TestimonialsSection = () => {
                     >
                       — {testimonial.author}
                     </p>
-                    <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/70">
-                      {testimonial.event}
-                    </p>
+                    {testimonial.date ? (
+                      <button
+                        onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                        className="text-[10px] sm:text-xs font-mono text-muted-foreground/70 hover:text-foreground transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
+                      >
+                        {expandedIndex === index ? testimonial.eventDetails : testimonial.date}
+                      </button>
+                    ) : (
+                      <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/70">
+                        {testimonial.event}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
