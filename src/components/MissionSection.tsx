@@ -6,25 +6,25 @@ export const MissionSection = () => {
     {
       icon: Heart,
       title: "Inclusion",
-      description: "A space where every woman feels welcome and empowered to thrive in tech.",
+      description: "A space where all women feel welcome, valued, and empowered.",
       microLine: "ETH roots. EU network."
     },
     {
       icon: Zap,
       title: "Courage", 
-      description: "Bold ideas and fearless experimentation drive everything we create.",
+      description: "A culture that encourages bold ideas, confidence, and action.",
       microLine: "Ideas → prototypes. Fast."
     },
     {
       icon: Users,
       title: "Community",
-      description: "Women supporting women, learning and growing together.",
+      description: "A network where women support, uplift, and grow together.",
       microLine: "Build together, grow together."
     },
     {
       icon: Brain,
       title: "Well-Being",
-      description: "A clear mind and balanced energy fuel creativity and innovation.",
+      description: "Mental and physical health at the heart of everything we do.",
       microLine: "Clarity fuels creativity."
     }
   ];
