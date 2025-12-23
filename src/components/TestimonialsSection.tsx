@@ -10,7 +10,8 @@ export const TestimonialsSection = () => {
       event: "Her Circles Meetup",
       date: "December 2025",
       eventDetails: "Her Circles Meetup",
-      eventUrl: "https://lu.ma/lvnhywjv"
+      eventUrl: "https://lu.ma/lvnhywjv",
+      linkedIn: "https://www.linkedin.com/in/letitia-kan-632a29220/"
     },
     {
       quote: "Coming soon.",
@@ -82,12 +83,24 @@ export const TestimonialsSection = () => {
                     </p>
                   </div>
                   <div className="pt-3 sm:pt-4 mt-4 sm:mt-5 md:mt-6 space-y-1.5 sm:space-y-2" style={{ borderTop: `1px solid ${getAccentColor(testimonial.type)}30` }}>
-                    <p 
-                      className="text-xs md:text-sm font-mono font-semibold"
-                      style={{ color: getAccentColor(testimonial.type) }}
-                    >
-                      — {testimonial.author}
-                    </p>
+                    {testimonial.linkedIn ? (
+                      <a
+                        href={testimonial.linkedIn}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs md:text-sm font-mono font-semibold hover:underline transition-opacity hover:opacity-80"
+                        style={{ color: getAccentColor(testimonial.type) }}
+                      >
+                        — {testimonial.author}
+                      </a>
+                    ) : (
+                      <p 
+                        className="text-xs md:text-sm font-mono font-semibold"
+                        style={{ color: getAccentColor(testimonial.type) }}
+                      >
+                        — {testimonial.author}
+                      </p>
+                    )}
                     {testimonial.date ? (
                       <div className="flex flex-col gap-1">
                         <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/70">
