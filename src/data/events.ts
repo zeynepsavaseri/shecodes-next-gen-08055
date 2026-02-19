@@ -26,7 +26,7 @@ export const upcomingEvents: Event[] = [
   {
     title: "EY Hackathon",
     subtitle: "Build. Network. Grow.",
-    date: "March 7, 2026",
+    date: "March 21, 2026",
     location: "EY Office, Zürich",
     participants: "Only 60 spots available",
     eventType: "hackathon",
