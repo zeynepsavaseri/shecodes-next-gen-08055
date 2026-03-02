@@ -57,7 +57,7 @@ export const upcomingEvents: Event[] = [
     partner: {
       name: "EY",
       logo: "/EY Logo.png",
-      accentColor: "48 96% 53%" // EY yellow
+      accentColor: "48 96% 53%"
     },
     description: {
       overview: "Join us at EY Zürich for a day of innovation, collaboration, and real-world problem-solving. You'll team up with driven students to tackle an actual EY challenge — guided by experts working at the intersection of business and technology. This is your chance to get inside one of the world's leading firms, turn ideas into solutions, and make connections that can shape your future.",
@@ -70,6 +70,30 @@ export const upcomingEvents: Event[] = [
       whyJoin: "This is your chance to learn, build, and connect with a supportive community of women in tech. Make meaningful connections and gain real-world experience."
     },
     registrationUrl: "https://www.ey.com/en_ch/careers/ey-women-hackathon"
+  },
+  {
+    title: "The Future of Health",
+    subtitle: "Hack the Future of Healthcare.",
+    date: "May 8, 2026",
+    location: "ETH Zürich",
+    participants: "Limited spots available",
+    eventType: "hackathon",
+    partner: {
+      name: "HerCode",
+      logo: "/hercode-logo.png",
+      accentColor: "160 60% 45%"
+    },
+    description: {
+      overview: "A public panel and 30-hour innovation sprint uniting leading minds from academia and industry to actively shape the next generation of health technology. Choose from three tracks — Genomics, Pharma, and Clinical — and build solutions to real health challenges.",
+      whatToExpect: [
+        "Public panel with leading health & tech experts",
+        "30-hour hackathon across Genomics, Pharma & Clinical tracks",
+        "Non-equity incubation for winning teams"
+      ],
+      whoCanJoin: "Open to students and professionals passionate about health innovation. All backgrounds welcome.",
+      whyJoin: "Turn your ideas into real-world health solutions. Winning teams receive incubation support and continued mentorship."
+    },
+    registrationUrl: "https://luma.com/y0emjscy"
   },
 ];
 
