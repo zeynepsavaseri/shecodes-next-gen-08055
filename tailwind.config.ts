@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Space Mono', 'monospace'],
-        mono: ['Space Mono', 'monospace'],
-        pixel: ['Space Mono', 'monospace'],
+        sans: ['Fira Code', 'monospace'],
+        mono: ['Fira Code', 'monospace'],
+        pixel: ['"Press Start 2P"', 'monospace'],
+        display: ['"Press Start 2P"', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
