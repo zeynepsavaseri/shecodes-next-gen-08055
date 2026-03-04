@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, Target, Globe } from "lucide-react";
+import { PixelIcon } from "@/components/PixelIcon";
 
 export const BenefitsSection = () => {
   const companyBenefits = [
@@ -37,9 +38,9 @@ export const BenefitsSection = () => {
             <Card key={index} className="group bg-card hover-lift">
               <CardContent className="p-4 sm:p-6 relative overflow-hidden">
                 <div className="relative flex flex-col gap-3 sm:gap-4">
-                  {/* Icon — simple with border */}
+                  {/* Pixelated Icon */}
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-primary/30 flex items-center justify-center">
-                    <benefit.icon className="w-5 h-5 sm:w-5 sm:h-5 text-primary" strokeWidth={1.5} />
+                    <PixelIcon icon={benefit.icon} size={20} className="text-primary" strokeWidth={2} />
                   </div>
                   <div>
                     <h3 className="text-xs sm:text-sm font-semibold mb-1.5 sm:mb-2 text-foreground">{benefit.title}</h3>

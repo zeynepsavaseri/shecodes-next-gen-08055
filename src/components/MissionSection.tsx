@@ -1,3 +1,4 @@
+import { PixelIcon } from "@/components/PixelIcon";
 import { Heart, Zap, Users, Brain } from "lucide-react";
 
 export const MissionSection = () => {
@@ -53,8 +54,8 @@ export const MissionSection = () => {
                   minHeight: '160px'
                 }}
               >
-                {/* Icon — raw, no container */}
-                <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" strokeWidth={1.5} />
+                {/* Pixelated Icon */}
+                <PixelIcon icon={value.icon} size={22} className="text-primary" strokeWidth={2} />
                 
                 {/* Content */}
                 <div className="flex-1 flex flex-col">
