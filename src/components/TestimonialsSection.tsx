@@ -14,18 +14,18 @@ export const TestimonialsSection = () => {
       linkedIn: "https://www.linkedin.com/in/letitia-kan-632a29220/"
     },
     {
-      quote: "Coming soon.",
+      quote: "More voices coming soon — we're just getting started.",
       author: "Partner",
       type: "partner",
-      event: "Upcoming Events",
+      event: "Stay tuned",
       date: null,
       eventDetails: null
     },
     {
-      quote: "Coming soon.",
+      quote: "More voices coming soon — we're just getting started.",
       author: "Participant",
       type: "participant",
-      event: "Upcoming Events",
+      event: "Stay tuned",
       date: null,
       eventDetails: null
     }
@@ -45,8 +45,8 @@ export const TestimonialsSection = () => {
     <section className="py-6 sm:py-8 md:py-10 bg-background mb-8 sm:mb-12 md:mb-16" id="testimonials">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center mb-6 sm:mb-8 md:mb-12 px-2">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight bg-gradient-primary bg-clip-text text-transparent mb-2 sm:mb-3 md:mb-4">
-            VOICES
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-foreground mb-2 sm:mb-3 md:mb-4">
+            WHAT PEOPLE <span className="bg-gradient-primary bg-clip-text text-transparent">SAY</span>
           </h2>
         </div>
 
@@ -77,6 +77,7 @@ export const TestimonialsSection = () => {
                     <Quote 
                       className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 mb-3 sm:mb-4 transition-all duration-300" 
                       style={{ color: `${getAccentColor(testimonial.type)}80` }}
+                      strokeWidth={1}
                     />
                     <p className="text-xs sm:text-sm md:text-base font-mono text-foreground/90 leading-relaxed">
                       "{testimonial.quote}"

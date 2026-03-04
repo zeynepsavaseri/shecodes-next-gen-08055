@@ -6,17 +6,17 @@ export const BenefitsSection = () => {
     {
       icon: Briefcase,
       title: "Talent & Engagement",
-      description: "Connect with skilled women through collaborative events and experience their talent in action."
+      description: "Meet skilled women building real projects — not just résumés. See their work firsthand at our events."
     },
     {
       icon: Target,
       title: "Diversity & Inclusion",
-      description: "Build a stronger, more inclusive team that reflects modern workplace values and fuels innovation."
+      description: "Build teams that actually reflect the world. Diverse perspectives make better products."
     },
     {
       icon: Globe,
       title: "Brand Impact",
-      description: "Demonstrate your commitment to diversity and equality while positioning your company as a forward-thinking industry leader."
+      description: "Actions speak louder than mission statements. Show up where it matters."
     }
   ];
 
@@ -28,7 +28,7 @@ export const BenefitsSection = () => {
             Benefits for Companies
           </h2>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            Partner with us to strengthen your team and brand
+            Why companies partner with us
           </p>
         </div>
 
@@ -36,12 +36,10 @@ export const BenefitsSection = () => {
           {companyBenefits.map((benefit, index) => (
             <Card key={index} className="group bg-card hover-lift">
               <CardContent className="p-4 sm:p-6 relative overflow-hidden">
-                {/* Subtle glow overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
-                
-                <div className="relative flex flex-col items-center text-center gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-primary flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-glow mx-auto">
-                    <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" strokeWidth={2.5} />
+                <div className="relative flex flex-col gap-3 sm:gap-4">
+                  {/* Icon — simple with border */}
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-primary/30 flex items-center justify-center">
+                    <benefit.icon className="w-5 h-5 sm:w-5 sm:h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <div>
                     <h3 className="text-xs sm:text-sm font-semibold mb-1.5 sm:mb-2 text-foreground">{benefit.title}</h3>
