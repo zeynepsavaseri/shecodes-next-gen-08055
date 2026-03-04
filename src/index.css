@@ -109,12 +109,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Fira Code', monospace;
+    font-family: system-ui, -apple-system, sans-serif;
     letter-spacing: 0.01em;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Press Start 2P', monospace;
   }
   
   .shine-dot {
