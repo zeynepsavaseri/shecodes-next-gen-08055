@@ -13,20 +13,20 @@ export const SponsorsSection = () => {
     {
       icon: Users,
       title: "TALENT & ENGAGEMENT",
-      front: "Access top female talent from ETH Zurich and Europe's leading universities.",
-      expanded: "Connect directly with emerging tech leaders."
+      front: "Work with driven women from ETH Zurich and top European universities — on real problems, not hypotheticals.",
+      expanded: "See their skills in action before you even post a job."
     },
     {
       icon: Target,
       title: "CHALLENGE PARTNERSHIPS",
-      front: "Share a real challenge and collaborate with talented women on solutions.",
-      expanded: "Contribute a case study and gain fresh perspectives."
+      front: "Bring a real problem. Get fresh perspectives from people who think differently.",
+      expanded: "Your challenge, their creativity. Everyone wins."
     },
     {
       icon: Award,
       title: "BRAND IMPACT",
-      front: "Show your commitment to inclusive innovation.",
-      expanded: "Join a network of forward-thinking partners."
+      front: "Don't just say you care about diversity — prove it.",
+      expanded: "Be part of something people actually talk about."
     }
   ];
 
@@ -174,17 +174,6 @@ export const SponsorsSection = () => {
                         animationDelay: `${index * 0.05}s`,
                       }}
                     >
-                      {/* Scanline Effect */}
-                      <div className="absolute inset-0 pointer-events-none opacity-5">
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
-                      </div>
-                      
-                      {/* Corner Brackets */}
-                      <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
-                      <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
-                      <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
-                      <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
-                      
                       {/* External Link Indicator */}
                       {partner.link && (
                         <div className="absolute top-2 right-2 z-10 opacity-30 group-hover:opacity-100 transition-opacity">
@@ -235,16 +224,7 @@ export const SponsorsSection = () => {
                     <div 
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                       style={{
-                        background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.15), transparent 60%)`,
-                        boxShadow: `0 0 20px hsla(${partner.categoryColor} / 0.3)`,
-                      }}
-                    />
-                    
-                    {/* Grid Pattern Overlay */}
-                    <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                      style={{
-                        backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
-                        backgroundSize: '50px 50px'
+                        background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.1), transparent 60%)`,
                       }}
                     />
                     </Card>
@@ -275,7 +255,6 @@ export const SponsorsSection = () => {
                 { width: 'w-44', height: 'h-36', offset: 'mt-2' },
               ];
               const config = sizeConfigs[index % sizeConfigs.length];
-              const isLarge = parseInt(config.height.replace(/\D/g, '')) > 50;
               
               const CardWrapper = partner.link ? 'a' : 'div';
               const cardProps = partner.link ? {
@@ -293,17 +272,6 @@ export const SponsorsSection = () => {
                       animationDelay: `${index * 0.05}s`,
                     }}
                   >
-                    {/* Scanline Effect */}
-                    <div className="absolute inset-0 pointer-events-none opacity-5">
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }} />
-                    </div>
-                    
-                    {/* Corner Brackets */}
-                    <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-primary/40" />
-                    <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-primary/40" />
-                    <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-primary/40" />
-                    <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-primary/40" />
-                    
                     {/* External Link Indicator */}
                     {partner.link && (
                       <div className="absolute top-2 right-2 z-10 opacity-30 group-hover:opacity-100 transition-opacity">
@@ -351,18 +319,9 @@ export const SponsorsSection = () => {
                   <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
-                      background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.15), transparent 60%)`,
-                      boxShadow: `0 0 20px hsla(${partner.categoryColor} / 0.3)`,
+                      background: `radial-gradient(circle at 50% 50%, hsla(${partner.categoryColor} / 0.1), transparent 60%)`,
                     }}
                   />
-                  
-                  {/* Grid Pattern Overlay */}
-                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                    style={{
-                      backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)',
-                        backgroundSize: '50px 50px'
-                      }}
-                    />
                   </Card>
                 </CardWrapper>
               );
@@ -372,10 +331,6 @@ export const SponsorsSection = () => {
 
         {/* Why Partner with HerCode Section */}
         <div id="why-partner" className="relative overflow-hidden">
-          {/* Glowing orbs */}
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
-
           <div className="relative">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -389,7 +344,7 @@ export const SponsorsSection = () => {
               <Button
                 size="lg" 
                 asChild
-                className="shadow-glow font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
+                className="font-mono font-bold uppercase text-xs sm:text-sm tracking-wider min-h-[48px] px-5 sm:px-8"
               >
                 <a href="https://tally.so/r/obEMYM" target="_blank" rel="noopener noreferrer">
                   Partner Up with Us
@@ -407,25 +362,18 @@ export const SponsorsSection = () => {
                     onClick={() => setExpandedCard(expandedCard === index ? null : index)}
                     className={`flex-shrink-0 w-[280px] snap-center group relative bg-card/80 backdrop-blur-sm cursor-pointer border border-primary/20 transition-all duration-500 ease-out ${
                       expandedCard === index 
-                        ? 'scale-105 shadow-glow border-primary/60 bg-card' 
+                        ? 'scale-105 border-primary/60 bg-card' 
                         : 'hover:border-primary/40 hover:-translate-y-1'
                     }`}
                   >
                     <CardContent className="p-6 relative overflow-hidden">
-                      {/* Animated gradient overlay */}
-                      <div className={`absolute inset-0 bg-gradient-primary transition-all duration-500 ${
-                        expandedCard === index ? 'opacity-10' : 'opacity-0 group-hover:opacity-5'
-                      }`} />
-
                       <div className="relative flex flex-col items-center text-center">
-                        {/* Icon */}
+                        {/* Icon — bordered square */}
                         <div className={`relative transition-all duration-500 ${
-                          expandedCard === index ? 'mb-6 scale-110' : 'mb-4'
+                          expandedCard === index ? 'mb-6' : 'mb-4'
                         }`}>
-                          <div className={`w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-500 shadow-glow ${
-                            expandedCard === index ? 'rotate-12' : 'group-hover:scale-110'
-                          }`}>
-                            <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                          <div className="w-12 h-12 rounded-lg border-2 border-primary/40 flex items-center justify-center">
+                            <benefit.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
                           </div>
                         </div>
 
@@ -436,7 +384,7 @@ export const SponsorsSection = () => {
                           {benefit.title}
                         </h3>
                         
-                        {/* Expanded content with creative reveal */}
+                        {/* Expanded content */}
                         <div className={`overflow-hidden transition-all duration-500 ease-out ${
                           expandedCard === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                         }`}>
@@ -475,25 +423,18 @@ export const SponsorsSection = () => {
                   onClick={() => setExpandedCard(expandedCard === index ? null : index)}
                   className={`group relative bg-card/80 backdrop-blur-sm cursor-pointer border border-primary/20 transition-all duration-500 ease-out ${
                     expandedCard === index 
-                      ? 'scale-105 shadow-glow border-primary/60 bg-card' 
+                      ? 'scale-105 border-primary/60 bg-card' 
                       : 'hover:border-primary/40 hover:-translate-y-1'
                   }`}
                 >
                   <CardContent className="p-8 relative overflow-hidden">
-                    {/* Animated gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-primary transition-all duration-500 ${
-                      expandedCard === index ? 'opacity-10' : 'opacity-0 group-hover:opacity-5'
-                    }`} />
-
                     <div className="relative flex flex-col items-center text-center">
-                      {/* Icon */}
+                      {/* Icon — bordered square */}
                       <div className={`relative transition-all duration-500 ${
-                        expandedCard === index ? 'mb-6 scale-110' : 'mb-4'
+                        expandedCard === index ? 'mb-6' : 'mb-4'
                       }`}>
-                        <div className={`w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center transition-all duration-500 shadow-glow ${
-                          expandedCard === index ? 'rotate-12' : 'group-hover:scale-110'
-                        }`}>
-                          <benefit.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                        <div className="w-14 h-14 rounded-lg border-2 border-primary/40 flex items-center justify-center">
+                          <benefit.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
                         </div>
                       </div>
 
@@ -504,7 +445,7 @@ export const SponsorsSection = () => {
                         {benefit.title}
                       </h3>
                       
-                      {/* Expanded content with creative reveal */}
+                      {/* Expanded content */}
                       <div className={`overflow-hidden transition-all duration-500 ease-out ${
                         expandedCard === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                       }`}>
