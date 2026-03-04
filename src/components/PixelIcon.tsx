@@ -7,18 +7,18 @@ export const PixelFilter = () => (
   <svg width="0" height="0" className="absolute" aria-hidden="true">
     <defs>
       <filter id="pixelate-sm">
+        <feFlood x="2" y="2" height="1" width="1" />
+        <feComposite width="4" height="4" />
+        <feTile result="a" />
+        <feComposite in="SourceGraphic" in2="a" operator="in" />
+        <feMorphology operator="dilate" radius="2" />
+      </filter>
+      <filter id="pixelate-md">
         <feFlood x="3" y="3" height="1" width="1" />
         <feComposite width="5" height="5" />
         <feTile result="a" />
         <feComposite in="SourceGraphic" in2="a" operator="in" />
         <feMorphology operator="dilate" radius="2.5" />
-      </filter>
-      <filter id="pixelate-md">
-        <feFlood x="4" y="4" height="1" width="1" />
-        <feComposite width="6" height="6" />
-        <feTile result="a" />
-        <feComposite in="SourceGraphic" in2="a" operator="in" />
-        <feMorphology operator="dilate" radius="3" />
       </filter>
     </defs>
   </svg>

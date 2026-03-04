@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Award, ExternalLink, Diamond } from "lucide-react";
 import { useState } from "react";
 import { PartnerInquiryTerminal } from "@/components/PartnerInquiryTerminal";
+import { PixelIcon } from "@/components/PixelIcon";
 
 export const SponsorsSection = () => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
@@ -373,7 +374,7 @@ export const SponsorsSection = () => {
                           expandedCard === index ? 'mb-6' : 'mb-4'
                         }`}>
                           <div className="w-12 h-12 rounded-lg border-2 border-primary/40 flex items-center justify-center">
-                            <benefit.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                            <PixelIcon icon={benefit.icon} size={24} className="text-primary" />
                           </div>
                         </div>
 
@@ -434,7 +435,7 @@ export const SponsorsSection = () => {
                         expandedCard === index ? 'mb-6' : 'mb-4'
                       }`}>
                         <div className="w-14 h-14 rounded-lg border-2 border-primary/40 flex items-center justify-center">
-                          <benefit.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                          <PixelIcon icon={benefit.icon} size={28} className="text-primary" />
                         </div>
                       </div>
 
