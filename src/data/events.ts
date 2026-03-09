@@ -75,6 +75,31 @@ export const upcomingEvents: Event[] = [
 
 export const pastEvents: Event[] = [
   {
+    title: "Vibe Coding Morning",
+    subtitle: "Build. Connect. Create.",
+    date: "March 8, 2026",
+    location: "Rämistrasse 59, Zürich",
+    participants: "30 attendees",
+    eventType: "workshop",
+    partner: {
+      name: "Lovable",
+      logo: "/lovable-logo.png",
+      accentColor: "280 65% 60%"
+    },
+    description: {
+      overview: "A Women's Day Coding Morning with Lovable. A hands-on, beginner-friendly session where participants discovered how easy it is to build real products without prior coding experience.",
+      whatToExpect: [
+        "Hands-on vibe coding session with Lovable",
+        "Beginner-friendly — no coding experience needed",
+        "Connect with inspiring women in tech"
+      ],
+      whoCanJoin: "Open to all women — no prior coding experience required.",
+      whyJoin: "Celebrated International Women's Day by building something real with AI-powered tools."
+    },
+    achievements: "Hands-on coding experience in a supportive environment",
+    registrationUrl: "https://luma.com/87ehec8x"
+  },
+  {
     title: "Her Circles",
     subtitle: "A Space for Honest Connection.",
     date: "December 18, 2025",
