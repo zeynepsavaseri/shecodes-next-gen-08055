@@ -51,6 +51,31 @@ export const upcomingEvents: Event[] = [
 
 export const pastEvents: Event[] = [
   {
+    title: "EY Hackathon",
+    subtitle: "Build. Network. Grow.",
+    date: "March 21, 2026",
+    location: "EY Office, Zürich",
+    participants: "60 attendees",
+    eventType: "hackathon",
+    partner: {
+      name: "EY",
+      logo: "/EY Logo.png",
+      accentColor: "48 96% 53%"
+    },
+    description: {
+      overview: "A day of innovation, collaboration, and real-world problem-solving at EY Zürich. Participants teamed up to tackle an actual EY challenge — guided by experts working at the intersection of business and technology.",
+      whatToExpect: [
+        "1-year mentorship with EY professionals",
+        "Exclusive dinner with EY mentors and team members",
+        "Recognition and exposure within the EY innovation network"
+      ],
+      whoCanJoin: "Open to students of all backgrounds.",
+      whyJoin: "Participants learned, built, and connected with a supportive community of women in tech."
+    },
+    achievements: "Real-world problem-solving with EY professionals",
+    registrationUrl: "https://www.ey.com/en_ch/careers/ey-women-hackathon"
+  },
+  {
     title: "Vibe Coding Morning",
     subtitle: "Build. Connect. Create.",
     date: "March 8, 2026",
