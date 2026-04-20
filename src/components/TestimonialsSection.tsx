@@ -23,12 +23,13 @@ export const TestimonialsSection = () => {
       linkedIn: "https://www.linkedin.com/in/joanne-filbin/"
     },
     {
-      quote: "More voices coming soon — we're just getting started.",
-      author: "Participant",
+      quote: "What you're building with HerCode is genuinely important. Creating spaces like this, especially for people who might not usually have access, has a real impact.",
+      author: "Stefan Hristov",
       type: "participant",
-      event: "Stay tuned",
+      event: "Supporter",
       date: null,
-      eventDetails: null
+      eventDetails: null,
+      linkedIn: "https://www.linkedin.com/in/stefan-hristov/"
     }
   ];
 
