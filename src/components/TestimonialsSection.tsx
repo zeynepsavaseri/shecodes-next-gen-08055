@@ -14,7 +14,7 @@ export const TestimonialsSection = () => {
       linkedIn: "https://www.linkedin.com/in/letitia-kan-632a29220/"
     },
     {
-      quote: "I love what you're building and would love to support you.",
+      quote: "I love what you're building and would love to support you and the community in any way I can.",
       author: "Joanne Filbin",
       type: "partner",
       event: "Founder & Investor",
