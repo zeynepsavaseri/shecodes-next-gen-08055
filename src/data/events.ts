@@ -51,6 +51,31 @@ export const upcomingEvents: Event[] = [
 
 export const pastEvents: Event[] = [
   {
+    title: "Hello 50:50 World",
+    subtitle: "Hacking the Culture.",
+    date: "April 13, 2026",
+    location: "ETH Zürich, RZ PB Labs",
+    participants: "~30 attendees",
+    eventType: "meetup",
+    partner: {
+      name: "Hello 50:50 World Zurich",
+      logo: "",
+      accentColor: "200 70% 55%"
+    },
+    description: {
+      overview: "An evening at ETH Zürich exploring how we hack culture to build a more equal tech ecosystem. Part of the global Hello 50:50 World movement bringing together changemakers committed to gender balance in science & tech.",
+      whatToExpect: [
+        "Talks from culture-shaping leaders in tech",
+        "Open discussion on driving real change",
+        "Networking with the Zürich 50:50 community"
+      ],
+      whoCanJoin: "Open to everyone passionate about gender equality in tech and science.",
+      whyJoin: "Connected with a global movement working to reshape tech culture from the inside out."
+    },
+    achievements: "Cross-community conversations on hacking tech culture",
+    registrationUrl: "https://www.eventbrite.ch/e/hello-5050-world-in-zurich-hacking-the-culture-tickets-1984670769698"
+  },
+  {
     title: "EY Hackathon",
     subtitle: "Build. Network. Grow.",
     date: "March 21, 2026",
