@@ -14,12 +14,13 @@ export const TestimonialsSection = () => {
       linkedIn: "https://www.linkedin.com/in/letitia-kan-632a29220/"
     },
     {
-      quote: "More voices coming soon — we're just getting started.",
-      author: "Partner",
+      quote: "I love what you're building and would love to support you.",
+      author: "Joanne Filbin",
       type: "partner",
-      event: "Stay tuned",
+      event: "Founder & Investor",
       date: null,
-      eventDetails: null
+      eventDetails: null,
+      linkedIn: "https://www.linkedin.com/in/joanne-filbin/"
     },
     {
       quote: "More voices coming soon — we're just getting started.",
