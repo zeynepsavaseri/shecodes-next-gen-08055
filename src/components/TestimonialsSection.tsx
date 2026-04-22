@@ -30,6 +30,15 @@ export const TestimonialsSection = () => {
       date: null,
       eventDetails: null,
       linkedIn: "https://www.linkedin.com/in/onurmehmed/"
+    },
+    {
+      quote: "Initiatives like HerCode keep me optimistic about the future. By bringing together diverse, interdisciplinary teams, HerCode creates a welcoming space where innovation serves not just profit or a select few, but an entire generation to come, regardless of background.",
+      author: "Sandra Schmid",
+      type: "partner",
+      event: "Supporter",
+      date: null,
+      eventDetails: null,
+      linkedIn: "https://www.linkedin.com/in/sandra-schmid-zurich/"
     }
   ];
 
