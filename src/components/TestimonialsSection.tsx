@@ -26,7 +26,7 @@ export const TestimonialsSection = () => {
       quote: "{her} brings together some of the most ambitious, startup-driven women I've come across. All in an atmosphere that actually feels welcoming rather than performative. Zeynep has built something special, and the community speaks for itself.",
       author: "Onur Mehmed",
       type: "participant",
-      event: "Supporter",
+      event: "VC at Redalpine",
       date: null,
       eventDetails: null,
       linkedIn: "https://www.linkedin.com/in/onurmehmed/"
