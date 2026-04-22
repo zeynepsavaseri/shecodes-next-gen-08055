@@ -23,13 +23,13 @@ export const TestimonialsSection = () => {
       linkedIn: "https://www.linkedin.com/in/joanne-filbin/"
     },
     {
-      quote: "What you're building with HerCode is genuinely important. Creating spaces like this, especially for people who might not usually have access, has a real impact.",
-      author: "Stefan Hristov",
+      quote: "{her} brings together some of the most ambitious, startup-driven women I've come across. All in an atmosphere that actually feels welcoming rather than performative. Zeynep has built something special, and the community speaks for itself.",
+      author: "Onur Mehmed",
       type: "participant",
       event: "Supporter",
       date: null,
       eventDetails: null,
-      linkedIn: "https://www.linkedin.com/in/stefan-hristov/"
+      linkedIn: "https://www.linkedin.com/in/onurmehmed/"
     }
   ];
 
