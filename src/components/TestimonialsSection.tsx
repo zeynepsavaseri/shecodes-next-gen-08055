@@ -13,14 +13,14 @@ export const TestimonialsSection = () => {
       eventUrl: "https://lu.ma/lvnhywjv",
       linkedIn: "https://www.linkedin.com/in/letitia-kan-632a29220/"
     },
-    {
-      quote: "I love what you're building and would love to support you and the community in any way I can.",
-      author: "Joanne Filbin",
+      {
+      quote: "Her Code is helping to change the outdated narrative that the tech industry is only for nerds in hoodies. Tech desperately needs everyone to participate, and we love that Zeynep and her team are making hackathons more accessible and inclusive.",
+      author: "Lisa Staehli",
       type: "partner",
-      event: "Founder & Investor",
+      event: "Supporter",
       date: null,
       eventDetails: null,
-      linkedIn: "https://www.linkedin.com/in/joanne-filbin/"
+      linkedIn: "https://www.linkedin.com/in/lisa-staehli/"
     },
     {
       quote: "{her} brings together some of the most ambitious, startup-driven women I've come across. All in an atmosphere that actually feels welcoming rather than performative. Zeynep has built something special, and the community speaks for itself.",
