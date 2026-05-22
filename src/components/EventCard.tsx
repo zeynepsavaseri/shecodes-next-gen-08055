@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { MapPin, X } from "lucide-react";
-import pawGrab from "@/assets/paw-grab.png";
 import { Event } from "@/data/events";
 
 interface EventCardProps {
@@ -9,7 +8,6 @@ interface EventCardProps {
 }
 
 export const EventCard = ({ event, index }: EventCardProps) => {
-  const [isGrabbing, setIsGrabbing] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const accentColor = event.partner?.accentColor || "280 65% 60%";
   
@@ -36,30 +34,20 @@ export const EventCard = ({ event, index }: EventCardProps) => {
   const handleRegisterClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsGrabbing(true);
-    
-    setTimeout(() => {
-      if (event.registrationUrl) {
-        window.open(event.registrationUrl, '_blank');
-      }
-      setIsGrabbing(false);
-    }, 800);
+    if (event.registrationUrl) {
+      window.open(event.registrationUrl, '_blank');
+    }
   };
 
   return (
     <div
-      className={`group relative animate-fade-in ${isGrabbing ? 'animate-card-grab' : ''}`}
+      className="group relative animate-fade-in"
       style={{ 
         animationDelay: `${index * 0.1}s`,
         perspective: '1000px',
       }}
     >
-      {/* Paw grab overlay */}
-      {isGrabbing && (
-        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-          <img src={pawGrab} alt="" className="w-24 h-24 animate-hand-grab" />
-        </div>
-      )}
+
 
       <div 
         className="relative w-full transition-transform duration-500 ease-out"
