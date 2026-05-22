@@ -24,11 +24,39 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
+    title: "Her Summer Hack",
+    subtitle: "Build. Move. Celebrate by the Lake.",
+    date: "June 19, 2026",
+    location: "Zenline HQ, Zürich",
+    participants: "Limited to 50 participants",
+    eventType: "hackathon",
+    partner: {
+      name: "Zenline AI",
+      logo: "",
+      accentColor: "190 80% 50%"
+    },
+    description: {
+      overview: "A one-day summer hack in Zürich for women in tech. Start with movement by the lake, build on agentic challenges with credits from Lovable and Anthropic, and wrap up with a MISS LIQUID bar by the water. Hosted by Zenline AI in partnership with HerCode and Scandit.",
+      whatToExpect: [
+        "1,000 CHF for 1st place (cash prizes 1st–3rd)",
+        "Job interviews with Zenline AI and Scandit",
+        "1 month of ElevenLabs Creator Tier for all participants"
+      ],
+      whoCanJoin: "Women in tech. Spots limited to 50 participants — apply quickly.",
+      whyJoin: "Build agent-first solutions with credits from Lovable and Anthropic, win cash prizes, and connect with leading Zürich tech companies."
+    },
+    registrationUrl: "https://luma.com/apx8dojf?tk=JYnMsx"
+  },
+
+];
+
+export const pastEvents: Event[] = [
+  {
     title: "The Future of Health",
     subtitle: "Hack the Future of Healthcare.",
     date: "May 8, 2026",
     location: "ETH Zürich",
-    participants: "Limited spots available",
+    participants: "Limited spots",
     eventType: "hackathon",
     partner: {
       name: "HerCode",
@@ -43,13 +71,11 @@ export const upcomingEvents: Event[] = [
         "Non-equity incubation for winning teams"
       ],
       whoCanJoin: "Open to students and professionals passionate about health innovation. All backgrounds welcome.",
-      whyJoin: "Turn your ideas into real-world health solutions. Winning teams receive incubation support and continued mentorship."
+      whyJoin: "Turn ideas into real-world health solutions with incubation support and continued mentorship."
     },
+    achievements: "Innovation sprint across Genomics, Pharma & Clinical tracks",
     registrationUrl: "https://luma.com/y0emjscy"
   },
-];
-
-export const pastEvents: Event[] = [
   {
     title: "Hello 50:50 World",
     subtitle: "Hacking the Culture.",
