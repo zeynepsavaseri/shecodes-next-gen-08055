@@ -52,7 +52,7 @@ export const upcomingEvents: Event[] = [
 
 export const pastEvents: Event[] = [
   {
-    title: "The Future of Health",
+    title: "The Future of Health Hackathon",
     subtitle: "Hack the Future of Healthcare.",
     date: "May 8, 2026",
     location: "ETH Zürich",
