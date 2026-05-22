@@ -24,29 +24,30 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
-    title: "The Future of Health",
-    subtitle: "Hack the Future of Healthcare.",
-    date: "May 8, 2026",
-    location: "ETH Zürich",
-    participants: "Limited spots available",
+    title: "Her Summer Hack",
+    subtitle: "Build. Move. Celebrate by the Lake.",
+    date: "June 19, 2026",
+    location: "Zenline HQ, Zürich",
+    participants: "Limited to 50 participants",
     eventType: "hackathon",
     partner: {
-      name: "HerCode",
-      logo: "/hercode-logo.png",
-      accentColor: "160 60% 45%"
+      name: "Zenline AI",
+      logo: "",
+      accentColor: "190 80% 50%"
     },
     description: {
-      overview: "A public panel and 30-hour innovation sprint uniting leading minds from academia and industry to actively shape the next generation of health technology. Choose from three tracks — Genomics, Pharma, and Clinical — and build solutions to real health challenges.",
+      overview: "A one-day summer hack in Zürich for women in tech. Start with movement by the lake, build on agentic challenges with credits from Lovable and Anthropic, and wrap up with a MISS LIQUID bar by the water. Hosted by Zenline AI in partnership with HerCode and Scandit.",
       whatToExpect: [
-        "Public panel with leading health & tech experts",
-        "30-hour hackathon across Genomics, Pharma & Clinical tracks",
-        "Non-equity incubation for winning teams"
+        "1,000 CHF for 1st place (cash prizes 1st–3rd)",
+        "Job interviews with Zenline AI and Scandit",
+        "1 month of ElevenLabs Creator Tier for all participants"
       ],
-      whoCanJoin: "Open to students and professionals passionate about health innovation. All backgrounds welcome.",
-      whyJoin: "Turn your ideas into real-world health solutions. Winning teams receive incubation support and continued mentorship."
+      whoCanJoin: "Women in tech. Spots limited to 50 participants — apply quickly.",
+      whyJoin: "Build agent-first solutions with credits from Lovable and Anthropic, win cash prizes, and connect with leading Zürich tech companies."
     },
-    registrationUrl: "https://luma.com/y0emjscy"
+    registrationUrl: "https://luma.com/apx8dojf?tk=JYnMsx"
   },
+
 ];
 
 export const pastEvents: Event[] = [
