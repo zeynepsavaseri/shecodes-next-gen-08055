@@ -52,6 +52,31 @@ export const upcomingEvents: Event[] = [
 
 export const pastEvents: Event[] = [
   {
+    title: "The Future of Health",
+    subtitle: "Hack the Future of Healthcare.",
+    date: "May 8, 2026",
+    location: "ETH Zürich",
+    participants: "Limited spots",
+    eventType: "hackathon",
+    partner: {
+      name: "HerCode",
+      logo: "/hercode-logo.png",
+      accentColor: "160 60% 45%"
+    },
+    description: {
+      overview: "A public panel and 30-hour innovation sprint uniting leading minds from academia and industry to actively shape the next generation of health technology. Choose from three tracks — Genomics, Pharma, and Clinical — and build solutions to real health challenges.",
+      whatToExpect: [
+        "Public panel with leading health & tech experts",
+        "30-hour hackathon across Genomics, Pharma & Clinical tracks",
+        "Non-equity incubation for winning teams"
+      ],
+      whoCanJoin: "Open to students and professionals passionate about health innovation. All backgrounds welcome.",
+      whyJoin: "Turn ideas into real-world health solutions with incubation support and continued mentorship."
+    },
+    achievements: "Innovation sprint across Genomics, Pharma & Clinical tracks",
+    registrationUrl: "https://luma.com/y0emjscy"
+  },
+  {
     title: "Hello 50:50 World",
     subtitle: "Hacking the Culture.",
     date: "April 13, 2026",
